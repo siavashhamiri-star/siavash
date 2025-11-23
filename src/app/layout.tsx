@@ -7,7 +7,7 @@ import { FirebaseClientProvider } from '@/firebase/client-provider';
 export const metadata: Metadata = {
   title: 'Farsh Bazaar',
   description:
-    'A global hub for carpet vendors, merchants, and enthusiasts to connect, trade, and celebrate the art of carpets.',
+    'Farsh Bazaar serves as a global intermediary, connecting buyers, sellers, and merchants of fine carpets. Our platform fosters interaction and trade among carpet professionals worldwide. We use Google for secure authentication and are committed to complying with the laws of Iran and international regulations.',
 };
 
 export default function RootLayout({
