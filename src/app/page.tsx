@@ -71,7 +71,7 @@ export default function Home() {
           )}
           <div className="relative z-20 container mx-auto h-full flex flex-col items-center justify-center text-center">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-headline font-bold leading-tight">
-              Every carpet seller, an online showroom.
+              رویای ما این است هر فرش فروش یک غرفه
             </h1>
             <p className="mt-4 text-lg md:text-xl max-w-3xl">
               خواسته ما معرفی مجدد هنر فرش دستباف و کمک در جهت رشد و ارتقای حضور فرش دستباف در منازل مردمان در سراسر جهان است
