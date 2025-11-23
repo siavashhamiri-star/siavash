@@ -24,10 +24,10 @@ export function Footer() {
               <Link href="/collaboration" className="text-sm text-muted-foreground hover:text-primary">
                 Collaborate
               </Link>
-              <Link href="#" className="text-sm text-muted-foreground hover:text-primary">
+              <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary">
                 Privacy Policy
               </Link>
-              <Link href="#" className="text-sm text-muted-foreground hover:text-primary">
+              <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary">
                 Terms of Service
               </Link>
             </nav>
