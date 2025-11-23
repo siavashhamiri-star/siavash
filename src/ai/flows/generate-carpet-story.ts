@@ -14,11 +14,16 @@ import {z} from 'genkit';
 const GenerateCarpetStoryInputSchema = z.object({
   carpetType: z
     .string()
+    .optional()
     .describe('The type of carpet to generate a story about.'),
   style: z
     .string()
     .optional()
     .describe('The writing style of the story.'),
+  imageDataUri: z
+    .string()
+    .optional()
+    .describe("A photo of a carpet, as a data URI that must include a MIME type and use Base64 encoding. Expected format: 'data:<mimetype>;base64,<encoded_data>'."),
 });
 export type GenerateCarpetStoryInput = z.infer<typeof GenerateCarpetStoryInputSchema>;
 
@@ -37,7 +42,12 @@ const prompt = ai.definePrompt({
   output: {schema: GenerateCarpetStoryOutputSchema},
   prompt: `You are a storyteller specializing in the history and artistry of carpets.
 
+  {{#if imageDataUri}}
+  Analyze the following image of a carpet. Based on its patterns, colors, and style, generate a story about it.
+  Photo: {{media url=imageDataUri}}
+  {{else}}
   Generate a story about a carpet of type {{{carpetType}}}.
+  {{/if}}
 
   The style of the story should be {{{style}}}.
 

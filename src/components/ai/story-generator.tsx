@@ -20,10 +20,10 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, Wand2 } from 'lucide-react';
-import { Textarea } from '../ui/textarea';
+import { Loader2, Wand2, Image as ImageIcon, X } from 'lucide-react';
+import Image from 'next/image';
 
 const initialState: StoryState = { message: null, story: null, errors: {} };
 
@@ -51,6 +51,8 @@ export function StoryGenerator() {
   const [state, formAction] = useFormState(createStory, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [imageDataUri, setImageDataUri] = useState<string | null>(null);
 
   useEffect(() => {
     if (state.message) {
@@ -62,32 +64,84 @@ export function StoryGenerator() {
     }
     if (state.story) {
       formRef.current?.reset();
+      setImageDataUri(null);
     }
   }, [state, toast]);
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (loadEvent) => {
+        setImageDataUri(loadEvent.target?.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+  
+  const handleRemoveImage = () => {
+    setImageDataUri(null);
+    if(fileInputRef.current) {
+        fileInputRef.current.value = '';
+    }
+  }
 
   return (
     <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
       <div>
         <h2 className="text-3xl md:text-4xl font-headline font-bold">The Magic Carpet's Tale</h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          Every carpet has a story woven into its threads. What tale will yours tell? Use our AI storyteller to bring the history, artistry, and cultural relevance of any carpet to life.
+          Every carpet has a story woven into its threads. Upload a photo or enter a type below to bring its history, artistry, and cultural relevance to life.
         </p>
 
         <Card className="mt-8">
-          <CardHeader>
-            <CardTitle className="font-headline">Create a Carpet Story</CardTitle>
-            <CardDescription>
-              Enter a carpet type and choose a style to generate a unique story.
-            </CardDescription>
-          </CardHeader>
           <form action={formAction} ref={formRef}>
+            <CardHeader>
+              <CardTitle className="font-headline">Create a Carpet Story</CardTitle>
+              <CardDescription>
+                Upload a picture of a carpet, or enter a type and choose a style.
+              </CardDescription>
+            </CardHeader>
             <CardContent className="space-y-4">
+               <div className="space-y-2">
+                <Label htmlFor="image">Carpet Image (Optional)</Label>
+                {imageDataUri ? (
+                    <div className="relative">
+                        <Image src={imageDataUri} alt="Carpet preview" width={200} height={150} className="rounded-md object-cover w-full h-48" />
+                        <Button variant="destructive" size="icon" className="absolute top-2 right-2 h-8 w-8" onClick={handleRemoveImage}>
+                            <X className="h-4 w-4" />
+                            <span className="sr-only">Remove image</span>
+                        </Button>
+                    </div>
+                ) : (
+                    <label htmlFor="file-upload" className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer bg-card hover:bg-muted transition-colors">
+                        <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                            <ImageIcon className="w-8 h-8 mb-3 text-muted-foreground" />
+                            <p className="mb-2 text-sm text-muted-foreground"><span className="font-semibold">Click to upload</span> or drag and drop</p>
+                            <p className="text-xs text-muted-foreground">PNG, JPG, or WEBP</p>
+                        </div>
+                        <Input id="file-upload" type="file" className="hidden" accept="image/*" onChange={handleFileChange} ref={fileInputRef} />
+                    </label>
+                )}
+                 <input type="hidden" name="imageDataUri" value={imageDataUri || ''} />
+              </div>
+              
+              <div className="relative py-2">
+                <div className="absolute inset-0 flex items-center">
+                    <span className="w-full border-t" />
+                </div>
+                <div className="relative flex justify-center text-xs uppercase">
+                    <span className="bg-card px-2 text-muted-foreground">Or</span>
+                </div>
+              </div>
+
               <div className="space-y-2">
                 <Label htmlFor="carpetType">Carpet Type</Label>
                 <Input
                   id="carpetType"
                   name="carpetType"
                   placeholder="e.g., 'Persian Tabriz', 'Turkish Oushak'"
+                  disabled={!!imageDataUri}
                 />
                 {state.errors?.carpetType && (
                   <p className="text-sm text-destructive">{state.errors.carpetType[0]}</p>

@@ -5,9 +5,14 @@ import { generateCarpetStory } from '@/ai/flows/generate-carpet-story';
 import { z } from 'zod';
 
 const StorySchema = z.object({
-  carpetType: z.string().min(3, "Please enter a carpet type with at least 3 characters."),
+  carpetType: z.string().optional(),
   style: z.string(),
+  imageDataUri: z.string().optional(),
+}).refine(data => !!data.carpetType || !!data.imageDataUri, {
+    message: "Please enter a carpet type or upload an image.",
+    path: ["carpetType"],
 });
+
 
 export type StoryState = {
   message?: string | null;
@@ -15,6 +20,7 @@ export type StoryState = {
   errors?: {
     carpetType?: string[];
     style?: string[];
+    imageDataUri?: string[];
   };
 };
 
@@ -25,6 +31,7 @@ export async function createStory(
   const validatedFields = StorySchema.safeParse({
     carpetType: formData.get('carpetType'),
     style: formData.get('style'),
+    imageDataUri: formData.get('imageDataUri'),
   });
 
   if (!validatedFields.success) {
