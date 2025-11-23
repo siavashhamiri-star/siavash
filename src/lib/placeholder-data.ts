@@ -20,6 +20,13 @@ export type Vendor = {
   bio: string;
 };
 
+export type UserProfile = {
+  displayName: string;
+  photoURL?: string;
+  email: string;
+};
+
+
 const getImage = (id: string) => {
   const image = PlaceHolderImages.find((img) => img.id === id);
   return {

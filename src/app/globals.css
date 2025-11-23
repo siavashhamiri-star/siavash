@@ -67,3 +67,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* For Headless UI */
+[data-headlessui-state="open"] {
+  @apply bg-accent text-accent-foreground;
+}
+
+[data-headlessui-state="open"] > svg {
+  @apply text-accent-foreground;
+}

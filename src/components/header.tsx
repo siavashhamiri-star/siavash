@@ -3,14 +3,14 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
-import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
-import { cn } from '@/lib/utils';
+import { Menu } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
-} from "@/components/ui/sheet"
+} from "@/components/ui/sheet";
+import { UserNav } from '@/components/user-nav';
+import { useUser } from '@/firebase';
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -19,6 +19,8 @@ const navItems = [
 ];
 
 export function Header() {
+  const { data: user, isLoading } = useUser();
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
@@ -41,9 +43,18 @@ export function Header() {
         </div>
         
         <div className="flex flex-1 items-center justify-end space-x-2">
-            <Button className="hidden md:inline-flex bg-accent hover:bg-accent/90 text-accent-foreground" asChild>
-                <Link href="#">Premium Access</Link>
-            </Button>
+            {isLoading ? null : user ? (
+              <UserNav />
+            ) : (
+              <div className="hidden md:flex items-center space-x-2">
+                <Button variant="ghost" asChild>
+                  <Link href="/login">Login</Link>
+                </Button>
+                <Button className="bg-accent hover:bg-accent/90 text-accent-foreground" asChild>
+                  <Link href="/signup">Sign Up</Link>
+                </Button>
+              </div>
+            )}
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
@@ -68,9 +79,16 @@ export function Header() {
                         </Link>
                         ))}
                     </nav>
-                    <Button className="mt-auto bg-accent hover:bg-accent/90 text-accent-foreground" asChild>
-                        <Link href="#">Premium Access</Link>
-                    </Button>
+                    {!user && (
+                       <div className="mt-auto flex flex-col space-y-2">
+                         <Button variant="outline" asChild>
+                           <Link href="/login">Login</Link>
+                         </Button>
+                         <Button className="bg-accent hover:bg-accent/90 text-accent-foreground" asChild>
+                           <Link href="/signup">Sign Up</Link>
+                         </Button>
+                       </div>
+                    )}
                 </div>
               </SheetContent>
             </Sheet>
