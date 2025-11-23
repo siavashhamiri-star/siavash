@@ -36,7 +36,7 @@ const features = [
     icon: <Globe className="w-8 h-8 text-primary" />,
     title: 'Global Trade Hub',
     description:
-      'Our platform is built to facilitate international trade, with a future plan to support secure transactions with a fair 2-5% commission.',
+      'Our platform is built for international trade, with a plan for secure transactions, a fair 2-5% commission, and applicable VAT per Iranian law.',
     link: '#',
     linkText: 'Start Trading',
   },
