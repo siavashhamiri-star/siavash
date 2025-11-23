@@ -14,7 +14,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { MapPin, Phone } from 'lucide-react';
+import { MapPin, Phone, Pencil } from 'lucide-react';
 import { useCollection, useDoc, useFirestore, useUser } from '@/firebase';
 import { collection, doc } from 'firebase/firestore';
 import type { Vendor, Carpet } from '@/lib/types';
@@ -97,7 +97,10 @@ export default function VendorShowroomPage({
                 </div>
                 {isOwner ? (
                    <Button asChild className="w-full md:w-auto mt-4 md:mt-0">
-                      <Link href={`/account/edit-vendor/${params.id}`}>Edit Showroom</Link>
+                      <Link href={`/account/edit-vendor/${params.id}`}>
+                        <Pencil className="mr-2 h-4 w-4" />
+                        Edit Showroom
+                      </Link>
                    </Button>
                 ) : (
                   <Button className="w-full md:w-auto mt-4 md:mt-0 bg-accent hover:bg-accent/90 text-accent-foreground">
