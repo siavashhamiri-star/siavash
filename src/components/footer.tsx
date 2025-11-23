@@ -18,6 +18,9 @@ export function Footer() {
               <Link href="/feedback" className="text-sm text-muted-foreground hover:text-primary">
                 Feedback
               </Link>
+              <Link href="/teach" className="text-sm text-muted-foreground hover:text-primary">
+                Teach with Us
+              </Link>
               <Link href="#" className="text-sm text-muted-foreground hover:text-primary">
                 Privacy Policy
               </Link>
