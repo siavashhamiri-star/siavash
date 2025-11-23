@@ -126,6 +126,35 @@
                 }
             },
             "required": ["reviewerName", "rating", "comment", "vendorId", "userId", "createdAt"]
+        },
+        "Suggestion": {
+            "title": "Suggestion",
+            "description": "Represents a user's suggestion for improving the app.",
+            "type": "object",
+            "properties": {
+                "suggestionText": {
+                    "type": "string",
+                    "description": "The text of the suggestion."
+                },
+                "userType": {
+                    "type": "string",
+                    "enum": ["buyer", "vendor"],
+                    "description": "The type of user submitting the suggestion."
+                },
+                "userId": {
+                    "type": "string",
+                    "description": "The ID of the user who submitted the suggestion."
+                },
+                "userName": {
+                    "type": "string",
+                    "description": "The name of the user who submitted the suggestion."
+                },
+                "createdAt": {
+                    "type": "object",
+                    "description": "The timestamp when the suggestion was created."
+                }
+            },
+            "required": ["suggestionText", "userType", "userId", "userName", "createdAt"]
         }
     },
     "auth": {
@@ -155,6 +184,12 @@
                 "$ref": "#/backend/entities/Review"
             },
             "description": "Stores the reviews for a specific vendor."
+        },
+        "/suggestions/{suggestionId}": {
+            "schema": {
+                "$ref": "#/backend/entities/Suggestion"
+            },
+            "description": "Stores user suggestions for improving the app."
         }
     }
 }

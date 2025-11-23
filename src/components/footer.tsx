@@ -15,6 +15,9 @@ export function Footer() {
               &copy; {new Date().getFullYear()} Farsh Bazaar. All rights reserved.
             </p>
             <nav className="flex justify-center md:justify-end space-x-4 mt-2">
+              <Link href="/feedback" className="text-sm text-muted-foreground hover:text-primary">
+                Feedback
+              </Link>
               <Link href="#" className="text-sm text-muted-foreground hover:text-primary">
                 Privacy Policy
               </Link>

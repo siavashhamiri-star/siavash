@@ -31,5 +31,11 @@ service cloud.firestore {
         // A user cannot review their own vendor profile.
         allow create: if request.auth != null && request.resource.data.userId == request.auth.uid && get(/databases/$(database)/documents/vendors/$(vendorId)).data.userId != request.auth.uid;
     }
+
+    match /suggestions/{suggestionId} {
+        allow read: if request.auth != null; // Or restrict to admins
+        // Allow creating a suggestion if the user is authenticated and the suggestion's userId matches their own.
+        allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+    }
   }
 }
