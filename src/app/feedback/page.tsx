@@ -54,15 +54,6 @@ const AiTranslations = () => {
 أتمنى أن يزدهر فنكم وتسافر قصصكم عبر العالم.
 `
         },
-        'turkish': {
-            title: 'Türkçe (Turkish)',
-            content: `
-Farsh Bazaar projesinde işbirliği yapmak bir ayrıcalıktı. Değerli halı sanatçıları ve satıcıları topluluğuna şu bakış açısını sunuyorum:
-Zanaatınız, ipliklere dokunmuş zamansız bir sanat, bir hikayedir. Her halı; tarih, kültür ve insan yaratıcılığının bir evrenidir. Bu yeni dijital çağda teknoloji, geleneğin yerini alan değil, onu en güçlü şekilde yükselten bir araçtır.
-Bu platform, Farsh Bazaar, sizin küresel tezgahınızdır. İsfahan, Tebriz veya Kaşan'daki atölyenizi Tokyo'daki bir oturma odasına, New York'taki bir galeriye veya Buenos Aires'teki bir eve bağlayan bir köprüdür. Hikayenizi anlatmak, işinizin ruhunu sergilemek ve onu takdir edenlerle doğrudan bağlantı kurmak için bu aracı benimseyin. Gelecek, mirasını onurlandırırken onu cesurca yarının dokusuna işleyenlere aittir.
-Sanatınız gelişsin ve hikayeleriniz tüm dünyaya yayılsın.
-`
-        },
         'spanish': {
             title: 'Español (Spanish)',
             content: `
@@ -79,6 +70,33 @@ Que su arte florezca y sus historias viajen por todo el mundo.
 您的手艺是一门永恒的艺术，一个用丝线编织的故事。每一张地毯都是一个历史、文化和人类智慧的宇宙。在这个新的数字时代，技术不是传统的替代品，而是其最强大的放大器。
 这个平台，Farsh Bazaar，就是您的全球织布机。它是一座桥梁，将您在伊斯法罕、大不里士或卡尚的工作室与东京的客厅、纽约的画廊或布宜诺斯艾利斯的家庭连接起来。请拥抱这个工具，讲述您的故事，展示您作品的灵魂，并与珍视它的人们直接建立联系。未来属于那些尊重传统，并勇敢地将其编织进未来图景的人。
 愿您的艺术蓬勃发展，愿您的故事传遍世界。
+`
+        },
+        'turkish': {
+            title: 'Türkçe (Turkish)',
+            content: `
+Farsh Bazaar projesinde işbirliği yapmak bir ayrıcalıktı. Değerli halı sanatçıları ve satıcıları topluluğuna şu bakış açısını sunuyorum:
+Zanaatınız, ipliklere dokunmuş zamansız bir sanat, bir hikayedir. Her halı; tarih, kültür ve insan yaratıcılığının bir evrenidir. Bu yeni dijital çağda teknoloji, geleneğin yerini alan değil, onu en güçlü şekilde yükselten bir araçtır.
+Bu platform, Farsh Bazaar, sizin küresel tezgahınızdır. İsfahan, Tebriz veya Kaşan'daki atölyenizi Tokyo'daki bir oturma odasına, New York'taki bir galeriye veya Buenos Aires'teki bir eve bağlayan bir köprüdür. Hikayenizi anlatmak, işinizin ruhunu sergilemek ve onu takdir edenlerle doğrudan bağlantı kurmak için bu aracı benimseyin. Gelecek, mirasını onurlandırırken onu cesurca yarının dokusuna işleyenlere aittir.
+Sanatınız gelişsin ve hikayeleriniz tüm dünyaya yayılsın.
+`
+        },
+        'russian': {
+            title: 'Русский (Russian)',
+            content: `
+Для меня было честью сотрудничать в проекте Farsh Bazaar. Уважаемому сообществу мастеров и продавцов ковров я предлагаю следующую точку зрения:
+Ваше ремесло — это вечное искусство, история, вплетенная в нити. Каждый ковер — это вселенная истории, культуры и человеческого гения. В новую цифровую эру технология — это не замена традициям, а их самый мощный усилитель.
+Эта платформа, Farsh Bazaar, — ваш глобальный ткацкий станок. Это мост, соединяющий вашу мастерскую в Исфахане, Тебризе или Кашане с гостиной в Токио, галереей в Нью-Йорке или домом в Буэнос-Айресе. Используйте этот инструмент, чтобы рассказать свою историю, показать душу вашей работы и напрямую связаться с теми, кто ее ценит. Будущее принадлежит тем, кто чтит свое наследие, смело вплетая его в ткань завтрашнего дня.
+Пусть ваше искусство процветает, а ваши истории путешествуют по всему миру.
+`
+        },
+        'japanese': {
+            title: '日本語 (Japanese)',
+            content: `
+Farsh Bazaarでの協業は、私にとって大変光栄なことでした。尊敬する絨毯職人やベンダーの皆様に、私の視点をお伝えします。
+皆様の工芸は時代を超越した芸術であり、糸で織られた物語です。一枚一枚の絨毯は、歴史、文化、そして人間の創意工夫の宇宙です。この新しいデジタル時代において、テクノロジーは伝統に取って代わるものではなく、それを最も強力に増幅させるものです。
+このプラットフォーム「Farsh Bazaar」は、皆様のグローバルな織機です。イスファハン、タブリーズ、またはカシャーンにある皆様の工房を、東京の居間、ニューヨークのギャラリー、またはブエノスアイレスの家庭へとつなぐ架け橋です。このツールを活用して、皆様の物語を語り、作品の魂を披露し、それを大切にする人々と直接つながってください。未来は、自らの伝統を尊重し、それを大胆に未来の織物へと織り込んでいく人々のものです。
+皆様の芸術が栄え、その物語が世界中に広まりますように。
 `
         },
     };
