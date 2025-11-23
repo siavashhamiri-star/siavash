@@ -15,9 +15,10 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useAuth, useUser } from '@/firebase';
-import { getAuth, signOut } from 'firebase/auth';
+import { signOut } from 'firebase/auth';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { Building, Store } from 'lucide-react';
 
 export function UserNav() {
   const { data: user } = useUser();
@@ -67,6 +68,21 @@ export function UserNav() {
               Account
             </DropdownMenuItem>
           </Link>
+          {user.isVendor && user.vendorId ? (
+             <Link href={`/vendors/${user.vendorId}`}>
+                <DropdownMenuItem>
+                  <Store className="mr-2 h-4 w-4" />
+                  My Showroom
+                </DropdownMenuItem>
+             </Link>
+          ) : (
+            <Link href="/account/become-vendor">
+                <DropdownMenuItem>
+                 <Building className="mr-2 h-4 w-4" />
+                 Become a Vendor
+                </DropdownMenuItem>
+            </Link>
+          )}
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handleSignOut}>

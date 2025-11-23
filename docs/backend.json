@@ -18,9 +18,77 @@
                     "type": "string",
                     "format": "uri",
                     "description": "URL of the user's profile picture."
+                },
+                "isVendor": {
+                    "type": "boolean",
+                    "description": "Whether the user is a vendor."
+                },
+                "vendorId": {
+                    "type": "string",
+                    "description": "The ID of the vendor profile associated with this user."
                 }
             },
             "required": ["displayName", "email"]
+        },
+        "Vendor": {
+            "title": "Vendor",
+            "description": "Represents a vendor in the system.",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The vendor's name."
+                },
+                "location": {
+                    "type": "string",
+                    "description": "The vendor's location."
+                },
+                "bio": {
+                    "type": "string",
+                    "description": "A short biography of the vendor."
+                },
+                "specialties": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A list of the vendor's specialties."
+                },
+                "avatarUrl": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URL of the vendor's avatar."
+                },
+                "userId": {
+                    "type": "string",
+                    "description": "The ID of the user associated with this vendor profile."
+                }
+            },
+            "required": ["name", "location", "bio", "userId"]
+        },
+        "Carpet": {
+            "title": "Carpet",
+            "description": "Represents a carpet in the system.",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "string"
+                },
+                "imageUrl": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "vendorId": {
+                    "type": "string"
+                }
+            },
+            "required": ["name", "description", "price", "imageUrl", "vendorId"]
         }
     },
     "auth": {
@@ -32,6 +100,18 @@
                 "$ref": "#/backend/entities/UserProfile"
             },
             "description": "Stores public information about a user."
+        },
+        "/vendors/{vendorId}": {
+            "schema": {
+                "$ref": "#/backend/entities/Vendor"
+            },
+            "description": "Stores information about a vendor."
+        },
+        "/vendors/{vendorId}/carpets/{carpetId}": {
+            "schema": {
+                "$ref": "#/backend/entities/Carpet"
+            },
+            "description": "Stores the carpets for a specific vendor."
         }
     }
 }
