@@ -15,33 +15,10 @@ import { Button } from '@/components/ui/button';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { MapPin, Phone } from 'lucide-react';
-import { useCollection, useDoc, useFirestore } from '@/firebase';
+import { useCollection, useDoc, useFirestore, useUser } from '@/firebase';
 import { collection, doc } from 'firebase/firestore';
 import type { Vendor, Carpet } from '@/lib/types';
-import type { Metadata } from 'next';
-
-async function getVendor(firestore: any, id: string): Promise<Vendor | null> {
-    const vendorRef = doc(firestore, 'vendors', id);
-    const { data } = useDoc(vendorRef);
-    return data as Vendor | null;
-}
-
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const { firestore } = initializeFirebase();
-  const vendor = await getVendor(firestore, params.id);
-
-  if (!vendor) {
-    return {
-      title: 'Vendor Not Found',
-      description: "The vendor you are looking for does not exist."
-    }
-  }
-
-  return {
-    title: `${vendor.name} | Farsh Bazaar`,
-    description: vendor.bio,
-  }
-}
+import Link from 'next/link';
 
 export default function VendorShowroomPage({
   params,
@@ -49,6 +26,7 @@ export default function VendorShowroomPage({
   params: { id: string };
 }) {
   const firestore = useFirestore();
+  const { data: user } = useUser();
   const vendorRef = doc(firestore, 'vendors', params.id);
   const { data: vendor, loading: vendorLoading } = useDoc(vendorRef);
 
@@ -74,6 +52,7 @@ export default function VendorShowroomPage({
 
   const typedVendor = vendor as Vendor;
   const typedCarpets = (vendorCarpets as Carpet[]) || [];
+  const isOwner = user && user.uid === typedVendor.userId;
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -114,16 +93,30 @@ export default function VendorShowroomPage({
                     ))}
                   </div>
                 </div>
-                <Button className="w-full md:w-auto mt-4 md:mt-0 bg-accent hover:bg-accent/90 text-accent-foreground">
-                  <Phone className="w-4 h-4 mr-2" /> Contact Vendor
-                </Button>
+                {isOwner ? (
+                   <Button asChild className="w-full md:w-auto mt-4 md:mt-0">
+                      <Link href={`/account/edit-vendor/${params.id}`}>Edit Showroom</Link>
+                   </Button>
+                ) : (
+                  <Button className="w-full md:w-auto mt-4 md:mt-0 bg-accent hover:bg-accent/90 text-accent-foreground">
+                    <Phone className="w-4 h-4 mr-2" /> Contact Vendor
+                  </Button>
+                )}
               </div>
             </CardHeader>
           </Card>
 
-          <h2 className="text-3xl font-headline font-bold mb-8">
-            Virtual Showroom
-          </h2>
+          <div className="flex justify-between items-center mb-8">
+             <h2 className="text-3xl font-headline font-bold">
+                Virtual Showroom
+            </h2>
+            {isOwner && (
+                <Button asChild>
+                    <Link href={`/account/add-carpet/${params.id}`}>Add a Carpet</Link>
+                </Button>
+            )}
+          </div>
+
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {typedCarpets.map((carpet) => (
@@ -157,9 +150,12 @@ export default function VendorShowroomPage({
               </Card>
             ))}
             {typedCarpets.length === 0 && (
-              <p className="col-span-full text-center text-muted-foreground py-12">
-                This vendor's showroom is currently empty.
-              </p>
+              <Card className="col-span-full">
+                <CardContent className="flex flex-col items-center justify-center text-center text-muted-foreground h-64">
+                    <p>This vendor's showroom is currently empty.</p>
+                    {isOwner && <p className="mt-2 text-sm">You can add your first carpet now!</p>}
+                </CardContent>
+              </Card>
             )}
           </div>
         </div>
@@ -168,6 +164,3 @@ export default function VendorShowroomPage({
     </div>
   );
 }
-
-// We need to import initializeFirebase for server-side data fetching for metadata
-import { initializeFirebase } from '@/firebase';

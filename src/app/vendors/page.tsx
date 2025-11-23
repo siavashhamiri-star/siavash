@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import Link from 'next/link';
 import {
   Card,
@@ -23,14 +22,14 @@ import { Skeleton } from '@/components/ui/skeleton';
 function VendorCardSkeleton() {
     return (
         <Card className="flex flex-col overflow-hidden">
-            <CardHeader className="flex-row items-center gap-4 p-6">
+            <CardHeader className="flex-row items-center gap-4 p-6 bg-card">
                 <Skeleton className="w-16 h-16 rounded-full" />
                 <div className='space-y-2'>
                     <Skeleton className="h-6 w-40" />
                     <Skeleton className="h-4 w-24" />
                 </div>
             </CardHeader>
-            <CardContent className="flex-grow p-6 pt-0">
+            <CardContent className="flex-grow p-6 pt-4">
                 <div className="flex flex-wrap gap-2 mb-4">
                     <Skeleton className="h-5 w-20 rounded-full" />
                     <Skeleton className="h-5 w-24 rounded-full" />
@@ -41,7 +40,7 @@ function VendorCardSkeleton() {
                     <Skeleton className="h-4 w-3/4" />
                 </div>
             </CardContent>
-            <CardFooter className="p-6 bg-secondary/20">
+            <CardFooter className="p-4 bg-card-foreground/5">
                 <Skeleton className="h-10 w-full" />
             </CardFooter>
         </Card>
@@ -58,7 +57,7 @@ export default function VendorsPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 bg-secondary/20">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-headline font-bold">
@@ -76,7 +75,7 @@ export default function VendorsPage() {
             {!loading && typedVendors.map((vendor) => (
               <Card
                 key={vendor.id}
-                className="flex flex-col overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="flex flex-col overflow-hidden hover:shadow-xl transition-shadow duration-300 bg-card"
               >
                 <CardHeader className="flex-row items-center gap-4 p-6">
                   <Avatar className="w-16 h-16 border-2 border-primary/20">
@@ -98,7 +97,7 @@ export default function VendorsPage() {
                 </CardHeader>
                 <CardContent className="flex-grow p-6 pt-0">
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {vendor.specialties?.map((specialty) => (
+                    {vendor.specialties?.slice(0, 3).map((specialty) => (
                       <Badge
                         key={specialty}
                         variant="secondary"
@@ -112,7 +111,7 @@ export default function VendorsPage() {
                     {vendor.bio}
                   </p>
                 </CardContent>
-                <CardFooter className="p-6 bg-secondary/20">
+                <CardFooter className="p-4 bg-card-foreground/5 mt-auto">
                   <Button asChild className="w-full">
                     <Link href={`/vendors/${vendor.id}`}>View Showroom</Link>
                   </Button>
@@ -121,9 +120,14 @@ export default function VendorsPage() {
             ))}
           </div>
           {!loading && typedVendors.length === 0 && (
-            <div className='text-center py-12 text-muted-foreground'>
-                <p>No vendors found. Be the first to register!</p>
-            </div>
+             <Card>
+                <CardContent className="flex flex-col items-center justify-center text-center text-muted-foreground h-64">
+                    <p>No vendors have registered yet.</p>
+                    <Button asChild variant="link" className="mt-2">
+                        <Link href="/account/become-vendor">Be the first to become a vendor!</Link>
+                    </Button>
+                </CardContent>
+            </Card>
           )}
         </div>
       </main>
