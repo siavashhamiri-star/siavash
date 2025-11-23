@@ -36,7 +36,7 @@ const features = [
     icon: <Globe className="w-8 h-8 text-primary" />,
     title: 'Global Trade Hub',
     description:
-      'Connect with merchants and businesses, discover new opportunities, and become part of a thriving international carpet trade community.',
+      'Our platform is built to facilitate international trade, with a future plan to support secure transactions with a fair 2-5% commission.',
     link: '#',
     linkText: 'Start Trading',
   },
