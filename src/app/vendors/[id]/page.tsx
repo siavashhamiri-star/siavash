@@ -14,7 +14,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { MapPin, Phone, Pencil } from 'lucide-react';
+import { MapPin, Phone, Pencil, ShieldCheck } from 'lucide-react';
 import { useCollection, useDoc, useFirestore, useUser } from '@/firebase';
 import { collection, doc } from 'firebase/firestore';
 import type { Vendor, Carpet } from '@/lib/types';
@@ -74,9 +74,17 @@ export default function VendorShowroomPage({
                   </AvatarFallback>
                 </Avatar>
                 <div className="flex-1">
-                  <h1 className="text-3xl md:text-4xl font-headline font-bold">
-                    {typedVendor.name}
-                  </h1>
+                  <div className="flex items-center gap-3">
+                    <h1 className="text-3xl md:text-4xl font-headline font-bold">
+                        {typedVendor.name}
+                    </h1>
+                    {typedVendor.isVerified && (
+                        <div className="flex items-center gap-1 text-blue-500 bg-blue-500/10 px-3 py-1 rounded-full">
+                            <ShieldCheck className="w-5 h-5" />
+                            <span className="text-sm font-medium">Verified Vendor</span>
+                        </div>
+                    )}
+                  </div>
                   <div className="flex items-center gap-2 mt-2 text-muted-foreground">
                     <MapPin className="w-4 h-4" /> {typedVendor.location}
                   </div>

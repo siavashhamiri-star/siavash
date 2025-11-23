@@ -15,6 +15,7 @@ export type Vendor = {
     avatarUrl: string;
     bio: string;
     userId: string;
+    isVerified?: boolean;
 };
 
 export type UserProfile = {

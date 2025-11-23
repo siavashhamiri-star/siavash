@@ -13,11 +13,13 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { MapPin } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { MapPin, Search, ShieldCheck } from 'lucide-react';
 import { useCollection, useFirestore } from '@/firebase';
 import { collection } from 'firebase/firestore';
 import type { Vendor } from '@/lib/types';
 import { Skeleton } from '@/components/ui/skeleton';
+import { useMemo, useState } from 'react';
 
 function VendorCardSkeleton() {
     return (
@@ -48,18 +50,31 @@ function VendorCardSkeleton() {
 }
 
 export default function VendorsPage() {
+  const [searchTerm, setSearchTerm] = useState('');
   const firestore = useFirestore();
   const vendorsRef = collection(firestore, 'vendors');
   const { data: vendors, loading } = useCollection(vendorsRef);
 
   const typedVendors = (vendors as Vendor[]) || [];
 
+  const filteredVendors = useMemo(() => {
+    if (!searchTerm) return typedVendors;
+
+    const lowercasedTerm = searchTerm.toLowerCase();
+    return typedVendors.filter(vendor => 
+        vendor.name.toLowerCase().includes(lowercasedTerm) ||
+        vendor.location.toLowerCase().includes(lowercasedTerm) ||
+        (vendor.bio && vendor.bio.toLowerCase().includes(lowercasedTerm)) ||
+        (vendor.specialties && vendor.specialties.some(s => s.toLowerCase().includes(lowercasedTerm)))
+    );
+  }, [searchTerm, typedVendors]);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1 bg-secondary/20">
         <div className="container mx-auto px-4 py-16">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-headline font-bold">
               Global Vendor Directory
             </h1>
@@ -69,10 +84,24 @@ export default function VendorsPage() {
             </p>
           </div>
 
+          <div className="mb-12 max-w-2xl mx-auto">
+            <div className="relative">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Input 
+                    type="search"
+                    placeholder="Search by name, location, specialty..."
+                    className="pl-12 h-12 text-base"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
+            </div>
+          </div>
+
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {loading && Array.from({ length: 3 }).map((_, i) => <VendorCardSkeleton key={i} />)}
             
-            {!loading && typedVendors.map((vendor) => (
+            {!loading && filteredVendors.map((vendor) => (
               <Card
                 key={vendor.id}
                 className="flex flex-col overflow-hidden hover:shadow-xl transition-shadow duration-300 bg-card"
@@ -86,8 +115,11 @@ export default function VendorsPage() {
                     <AvatarFallback>{vendor.name.charAt(0)}</AvatarFallback>
                   </Avatar>
                   <div>
-                    <CardTitle className="font-headline text-xl leading-tight">
+                    <CardTitle className="font-headline text-xl leading-tight flex items-center gap-2">
                       {vendor.name}
+                      {vendor.isVerified && (
+                          <ShieldCheck className="h-5 w-5 text-blue-500" title="Verified Vendor" />
+                      )}
                     </CardTitle>
                     <CardDescription className="flex items-center gap-1 mt-1 text-sm">
                       <MapPin className="w-3 h-3" />
@@ -119,13 +151,17 @@ export default function VendorsPage() {
               </Card>
             ))}
           </div>
-          {!loading && typedVendors.length === 0 && (
+          {!loading && filteredVendors.length === 0 && (
              <Card>
                 <CardContent className="flex flex-col items-center justify-center text-center text-muted-foreground h-64">
-                    <p>No vendors have registered yet.</p>
-                    <Button asChild variant="link" className="mt-2">
-                        <Link href="/account/become-vendor">Be the first to become a vendor!</Link>
-                    </Button>
+                    <p>
+                        {typedVendors.length > 0 ? "No vendors match your search." : "No vendors have registered yet."}
+                    </p>
+                    {typedVendors.length === 0 && (
+                         <Button asChild variant="link" className="mt-2">
+                            <Link href="/account/become-vendor">Be the first to become a vendor!</Link>
+                        </Button>
+                    )}
                 </CardContent>
             </Card>
           )}
