@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import {
   Card,
@@ -45,7 +46,7 @@ const features = [
     description:
       'Find support or invest in businesses related to the art of carpet-making, from weaving workshops to material suppliers.',
     link: '#',
-    linkText: 'Explore Opportunities',
+leLink: 'Explore Opportunities',
   },
 ];
 
@@ -70,10 +71,10 @@ export default function Home() {
           )}
           <div className="relative z-20 container mx-auto h-full flex flex-col items-center justify-center text-center">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-headline font-bold leading-tight">
-              Weaving the World Together
+              An Online Showroom for Every Carpet Seller
             </h1>
             <p className="mt-4 text-lg md:text-xl max-w-3xl">
-              The global marketplace for the art, culture, and trade of exquisite carpets.
+              Our dream is to weave the world together through the art, culture, and trade of exquisite carpets.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
