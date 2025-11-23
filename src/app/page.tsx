@@ -13,7 +13,7 @@ import { StoryGenerator } from '@/components/ai/story-generator';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ArrowRight, Brush, Globe, Handshake, Warehouse } from 'lucide-react';
+import { ArrowRight, Brush, Globe, Handshake, Warehouse, Sparkles } from 'lucide-react';
 
 const features = [
   {
@@ -114,6 +114,21 @@ export default function Home() {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="mission" className="py-16 md:py-24 bg-secondary/20">
+          <div className="container mx-auto px-4">
+            <div className="text-center max-w-4xl mx-auto">
+                <Sparkles className="w-12 h-12 mx-auto mb-4 text-accent" />
+                <h2 className="text-3xl md:text-4xl font-headline font-bold">Our Visionary Mission</h2>
+                <p className="mt-6 text-lg md:text-xl text-foreground/80 leading-relaxed">
+                میخواهیم با زبان هنر در جهت ارتباط و گفتگوی فرهنگی یک واسطه در جهت برقراری روابط کشورها تعاملات تجاری و حتی کمک به طور اندیشه های نو در جهت تولیدات فاخر فرش و معرفی هنر دست در ساخت فرش دستبaf به نسل‌های جدید و new generation باشیم
+                </p>
+                <p className="mt-4 text-base text-muted-foreground">
+                We aim to be an intermediary, using the language of art for cultural dialogue, to establish international relations, foster trade, and inspire new ideas for fine carpet production, introducing the art of hand-weaving to new generations.
+                </p>
             </div>
           </div>
         </section>
