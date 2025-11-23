@@ -14,12 +14,15 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               &copy; {new Date().getFullYear()} Farsh Bazaar. All rights reserved.
             </p>
-            <nav className="flex justify-center md:justify-end space-x-4 mt-2">
+            <nav className="flex justify-center md:justify-end flex-wrap gap-x-4 mt-2">
               <Link href="/feedback" className="text-sm text-muted-foreground hover:text-primary">
                 Feedback
               </Link>
               <Link href="/teach" className="text-sm text-muted-foreground hover:text-primary">
                 Teach with Us
+              </Link>
+              <Link href="/collaboration" className="text-sm text-muted-foreground hover:text-primary">
+                Collaborate
               </Link>
               <Link href="#" className="text-sm text-muted-foreground hover:text-primary">
                 Privacy Policy
