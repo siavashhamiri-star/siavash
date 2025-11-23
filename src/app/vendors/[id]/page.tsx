@@ -129,29 +129,31 @@ export default function VendorShowroomPage({
                 key={carpet.id}
                 className="overflow-hidden group flex flex-col"
               >
-                <CardHeader className="p-0 relative">
-                  <Image
-                    src={carpet.imageUrl}
-                    alt={carpet.name}
-                    width={800}
-                    height={600}
-                    className="w-full h-auto object-cover aspect-[4/3] transition-transform duration-300 group-hover:scale-105"
-                  />
-                </CardHeader>
-                <CardContent className="p-4 flex-grow">
-                  <CardTitle className="font-headline text-lg">
-                    {carpet.name}
-                  </CardTitle>
-                  <CardDescription className="mt-1 text-sm line-clamp-2">
-                    {carpet.description}
-                  </CardDescription>
-                </CardContent>
-                <CardFooter className="p-4 pt-0 flex justify-between items-center">
-                  <p className="font-semibold text-primary">{carpet.price}</p>
-                  <Button variant="ghost" size="sm">
-                    View Details
-                  </Button>
-                </CardFooter>
+                <Link href={`/carpets/${carpet.id}?vendorId=${params.id}`} className="flex flex-col flex-grow">
+                  <CardHeader className="p-0 relative">
+                    <Image
+                      src={carpet.imageUrl}
+                      alt={carpet.name}
+                      width={800}
+                      height={600}
+                      className="w-full h-auto object-cover aspect-[4/3] transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </CardHeader>
+                  <CardContent className="p-4 flex-grow">
+                    <CardTitle className="font-headline text-lg">
+                      {carpet.name}
+                    </CardTitle>
+                    <CardDescription className="mt-1 text-sm line-clamp-2">
+                      {carpet.description}
+                    </CardDescription>
+                  </CardContent>
+                  <CardFooter className="p-4 pt-0 flex justify-between items-center">
+                    <p className="font-semibold text-primary">{carpet.price}</p>
+                    <Button variant="ghost" size="sm" asChild>
+                      <span className="cursor-pointer">View Details</span>
+                    </Button>
+                  </CardFooter>
+                </Link>
               </Card>
             ))}
             {typedCarpets.length === 0 && (
