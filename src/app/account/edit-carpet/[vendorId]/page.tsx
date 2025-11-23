@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
@@ -25,6 +26,7 @@ export default function EditCarpetPage() {
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [imageUrl, setImageUrl] = useState('');
+  const [consignment, setConsignment] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const router = useRouter();
@@ -54,6 +56,7 @@ export default function EditCarpetPage() {
       setDescription(typedCarpet.description);
       setPrice(typedCarpet.price);
       setImageUrl(typedCarpet.imageUrl);
+      setConsignment(typedCarpet.consignment || false);
     }
   }, [carpet]);
 
@@ -85,6 +88,7 @@ export default function EditCarpetPage() {
         description,
         price,
         imageUrl,
+        consignment,
       });
 
       toast({
@@ -188,6 +192,20 @@ export default function EditCarpetPage() {
                     onChange={(e) => setDescription(e.target.value)}
                     rows={4}
                   />
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="consignment"
+                    checked={consignment}
+                    onCheckedChange={(checked) => setConsignment(checked as boolean)}
+                  />
+                  <Label
+                    htmlFor="consignment"
+                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    Request to sell this carpet in the Farsh Bazaar Specialty Catalog (Consignment)
+                  </Label>
                 </div>
 
                 {error && <p className="text-destructive text-sm">{error}</p>}

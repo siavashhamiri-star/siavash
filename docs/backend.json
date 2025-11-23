@@ -90,6 +90,10 @@
                 },
                 "vendorId": {
                     "type": "string"
+                },
+                "consignment": {
+                    "type": "boolean",
+                    "description": "Indicates if the carpet is for sale via consignment through Farsh Bazaar."
                 }
             },
             "required": ["name", "description", "price", "imageUrl", "vendorId"]
@@ -194,6 +198,12 @@
                 "$ref": "#/backend/entities/Suggestion"
             },
             "description": "Stores user suggestions for improving the app."
+        },
+        "/catalog/{carpetId}": {
+            "schema": {
+                "$ref": "#/backend/entities/Carpet"
+            },
+            "description": "A curated collection of carpets sold directly by Farsh Bazaar."
         }
     }
 }

@@ -5,6 +5,7 @@ export type Carpet = {
     price: string;
     imageUrl: string;
     vendorId: string;
+    consignment?: boolean;
 };
   
 export type Vendor = {
