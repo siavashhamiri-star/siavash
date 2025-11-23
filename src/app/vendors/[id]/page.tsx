@@ -19,6 +19,8 @@ import { useCollection, useDoc, useFirestore, useUser } from '@/firebase';
 import { collection, doc } from 'firebase/firestore';
 import type { Vendor, Carpet } from '@/lib/types';
 import Link from 'next/link';
+import { ReviewsSection } from '@/components/reviews';
+import { Separator } from '@/components/ui/separator';
 
 export default function VendorShowroomPage({
   params,
@@ -158,6 +160,11 @@ export default function VendorShowroomPage({
               </Card>
             )}
           </div>
+
+          <Separator className="my-16" />
+
+          <ReviewsSection vendorId={params.id} vendorUserId={typedVendor.userId} />
+
         </div>
       </main>
       <Footer />

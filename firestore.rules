@@ -24,5 +24,12 @@ service cloud.firestore {
         allow read: if true;
         allow write: if request.auth != null && get(/databases/$(database)/documents/vendors/$(vendorId)).data.userId == request.auth.uid;
     }
+
+    match /vendors/{vendorId}/reviews/{reviewId} {
+        allow read: if true;
+        // Allow creating a review if the user is authenticated and the review's userId matches their own.
+        // A user cannot review their own vendor profile.
+        allow create: if request.auth != null && request.resource.data.userId == request.auth.uid && get(/databases/$(database)/documents/vendors/$(vendorId)).data.userId != request.auth.uid;
+    }
   }
 }

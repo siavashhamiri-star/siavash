@@ -24,3 +24,14 @@ export type UserProfile = {
     isVendor?: boolean;
     vendorId?: string;
 };
+
+export type Review = {
+    id: string;
+    reviewerName: string;
+    reviewerImage?: string;
+    rating: number;
+    comment: string;
+    vendorId: string;
+    userId: string;
+    createdAt: any;
+};

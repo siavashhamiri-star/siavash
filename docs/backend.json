@@ -89,6 +89,43 @@
                 }
             },
             "required": ["name", "description", "price", "imageUrl", "vendorId"]
+        },
+        "Review": {
+            "title": "Review",
+            "description": "Represents a buyer's review of a vendor.",
+            "type": "object",
+            "properties": {
+                "reviewerName": {
+                    "type": "string",
+                    "description": "The name of the user who wrote the review."
+                },
+                "reviewerImage": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "URL of the reviewer's profile picture."
+                },
+                "rating": {
+                    "type": "number",
+                    "description": "A rating from 1 to 5."
+                },
+                "comment": {
+                    "type": "string",
+                    "description": "The text content of the review."
+                },
+                "vendorId": {
+                    "type": "string",
+                    "description": "The ID of the vendor being reviewed."
+                },
+                "userId": {
+                    "type": "string",
+                    "description": "The ID of the user who wrote the review."
+                },
+                 "createdAt": {
+                    "type": "object",
+                    "description": "The timestamp when the review was created."
+                }
+            },
+            "required": ["reviewerName", "rating", "comment", "vendorId", "userId", "createdAt"]
         }
     },
     "auth": {
@@ -112,6 +149,12 @@
                 "$ref": "#/backend/entities/Carpet"
             },
             "description": "Stores the carpets for a specific vendor."
+        },
+        "/vendors/{vendorId}/reviews/{reviewId}": {
+            "schema": {
+                "$ref": "#/backend/entities/Review"
+            },
+            "description": "Stores the reviews for a specific vendor."
         }
     }
 }
