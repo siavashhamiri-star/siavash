@@ -8,7 +8,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Cubes, CheckCircle, Clock, Music, Mic, Users, BookOpen, ToyBrick, Briefcase, BrainCircuit, Diamond, Banknote, Link as LinkIcon } from 'lucide-react';
+import { Blocks, CheckCircle, Clock, Music, Mic, Users, BookOpen, ToyBrick, Briefcase, BrainCircuit, Diamond, Banknote, Link as LinkIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 const ecosystemApps = [
@@ -17,14 +17,14 @@ const ecosystemApps = [
         description: "A global marketplace for artisans, connecting creators directly with a worldwide audience. The first pillar of our new economy.",
         fa_description: "یک بازار جهانی برای صنعتگران که خالقان را مستقیماً به مخاطبان جهانی متصل می‌کند. اولین ستون اقتصاد جدید ما.",
         status: "Live",
-        icon: <Cubes className="w-8 h-8 text-primary" />
+        icon: <Blocks className="w-8 h-8 text-primary" />
     },
     {
         name: "LingoView (آپ گویا)",
         description: "A revolutionary educational platform focused on building 'capability', not just providing knowledge. Starting with language, expanding to all skills.",
         fa_description: "یک پلتفرم آموزشی انقلابی که بر ساختن «توانایی» تمرکز دارد، نه فقط ارائه دانش. شروع با زبان، و گسترش به تمام مهارت‌ها.",
         status: "Coming Soon",
-        icon: <Cubes className="w-8 h-8 text-muted-foreground" />
+        icon: <Blocks className="w-8 h-8 text-muted-foreground" />
     },
     {
         name: "Nava Studio (استودیو نوا)",
@@ -99,7 +99,7 @@ export default function EcosystemPage() {
                 <div className="container mx-auto px-4 py-16">
                     <div className="text-center mb-12">
                         <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4">
-                            <Cubes className="w-10 h-10 text-primary" />
+                            <Blocks className="w-10 h-10 text-primary" />
                         </div>
                         <h1 className="text-4xl md:text-5xl font-headline font-bold">The FB New Meta Ecosystem</h1>
                         <p className="mt-2 text-xl text-muted-foreground">The Executive Arms of Tavana City (بازوهای اجرایی شهر توانا)</p>
