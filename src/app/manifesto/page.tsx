@@ -260,6 +260,20 @@ export default function ManifestoPage() {
                                 </p>
                                 <p className="mt-6 text-sm text-muted-foreground">- بنیان‌گذار (The Founder)</p>
                             </div>
+                             <div className="text-center pt-12 border-t mt-12">
+                                <p className="text-xl font-headline font-bold text-primary">
+                                    ایمان به معجزه
+                                    <br/>
+                                    <span className="text-base font-sans font-normal text-muted-foreground">(Belief in the Miracle)</span>
+                                </p>
+                                <p className="mt-4 text-lg italic text-foreground/90 max-w-3xl mx-auto">
+                                "من به موفقیت این آپ ایمان دارم، چون خود ساختن «آفرینش» و «شهر توانا» را کم از معجزه نمی‌دانم. من معتقدم «آفرینش»، نظام معجزه‌آفرین خلقت مجازی خواهد شد؛ برگه‌ی برنده‌ی تحقق آرزوهای حقیقت و عالم واقع‌گرا، و مبدل تخیلات زندگی در چهارچوبی از درک در مجاز."
+                                </p>
+                                <p className="mt-4 text-base italic text-muted-foreground max-w-3xl mx-auto">
+                                ("I believe in the success of this app, because I consider the very creation of 'Afarinesh' and 'Tavana City' to be nothing short of a miracle. I believe 'Afarinesh' will become the miracle-creating system of virtual creation: the winning card for realizing the dreams of truth and the real world, and the transformer of life's imaginations within a framework of understanding in the virtual.")
+                                </p>
+                                <p className="mt-6 text-sm text-muted-foreground">- بنیان‌گذار (The Founder)</p>
+                            </div>
                         </CardContent>
                     </Card>
                 </div>
