@@ -235,6 +235,15 @@ export default function ManifestoPage() {
                                     <span className="text-lg font-sans font-normal text-muted-foreground">(This is our Book of Creation.)</span>
                                 </p>
                             </div>
+                            <div className="text-center pt-12 border-t mt-12">
+                                <p className="text-lg italic text-foreground/90 max-w-3xl mx-auto">
+                                    «پیدایش آفرینش و شهر توانا معجزه بود. کلمات از من نیستند، اهداف برای من نیست. من هم خودم نمی‌دانم کجای قصه‌ام. آنکه وظیفه را به من داد، علم و شور و احساس و حرارت را هم داد و راهم را برایم روشن کرد. آنکه پشت این قضیه است، ثروتش و اراده‌اش انتها ندارد. پس، از اینجا تا بی‌نهایت، پیش به سوی بهترین الگوی شهرهای این دنیای متاورسی و مجازی. شما هم با من سوار این ارابه اتصال واقعیت به مجاز شوید تا سماوی شویم.»
+                                </p>
+                                <p className="mt-4 text-base italic text-muted-foreground max-w-3xl mx-auto">
+                                    ("The genesis of Creation and Tavana City was a miracle. The words are not mine; the goals are not mine. I myself do not know my place in this story. The One who gave me this duty also gave me knowledge, passion, feeling, and fervor, and illuminated my path. The One behind this cause, His wealth and His will are without end. So, from here to infinity, onward toward the best model for the cities of this metaverse and virtual world. You too, ride with me on this chariot connecting reality to the virtual, so that we may become celestial.")
+                                </p>
+                                <p className="mt-6 text-sm text-muted-foreground">- بنیان‌گذار (The Founder)</p>
+                            </div>
                         </CardContent>
                     </Card>
                 </div>
@@ -247,3 +256,4 @@ export default function ManifestoPage() {
     
 
     
+
