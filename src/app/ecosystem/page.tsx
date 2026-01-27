@@ -8,7 +8,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Cubes, CheckCircle, Clock, Music, Mic, Users, BookOpen, ToyBrick, Briefcase, BrainCircuit } from 'lucide-react';
+import { Cubes, CheckCircle, Clock, Music, Mic, Users, BookOpen, ToyBrick, Briefcase, BrainCircuit, Diamond } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 const ecosystemApps = [
@@ -53,6 +53,13 @@ const ecosystemApps = [
         fa_description: "هاب مرکزی برای آفرینش‌گران. از ابزارهای هوش مصنوعی برای تولید محتوا استفاده کنید، با دیگر ایده‌پردازان متصل شوید و ایده‌های خود را در شهر توانا به واقعیت تبدیل کنید.",
         status: "Coming Soon",
         icon: <BrainCircuit className="w-8 h-8 text-muted-foreground" />
+    },
+    {
+        name: "Siavash Studio (استودیو سیاوش)",
+        description: "An exclusive, invitation-only virtual studio for a curated collective of elite, versatile specialists. This is the inner circle of Tavana City's master creators.",
+        fa_description: "یک استودیوی مجازی انحصاری و دعوتی برای مجموعه‌ای از متخصصان زبده و همه‌فن‌حریف. این حلقه داخلی استادان و خالقان شهر توانا است.",
+        status: "Planned",
+        icon: <Diamond className="w-8 h-8 text-muted-foreground" />
     },
     {
         name: "Tavana Work (توانا کار)",

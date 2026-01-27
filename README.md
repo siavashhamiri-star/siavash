@@ -34,8 +34,9 @@ Farsh Bazaar is the first of many "executive arms" for Tavana City. Our roadmap 
 -   **Nava Studio (استودیو نوا) (Planned):** An AI-powered suite for music creation, from lyrics to music videos.
 -   **Hamnava (هم‌نوا) (Planned):** The social heart of our music ecosystem for artists and fans to connect.
 -   **Ghese Go (قصه‌گو) (Planned):** A magical platform for children's stories, educational content, and preserving memories.
--   **Tavana Work (توانا کار) (Coming Soon):** A future-of-work platform for AI-powered freelancing, advertising, and skill matching.
 -   **Afarinesh Hub (آفرینش هاب) (Coming Soon):** The central social and collaborative hub for creators in Tavana City.
+-   **Siavash Studio (استودیو سیاوش) (Planned):** An exclusive, invitation-only virtual studio for the ecosystem's most elite and versatile specialists.
+-   **Tavana Work (توانا کار) (Coming Soon):** A future-of-work platform for AI-powered freelancing, advertising, and skill matching.
 -   **Bazi Land (بازی لند) (Planned):** The entertainment and gaming wing of Tavana City.
 -   **Mehr Bank (مهر بانک) (Planned):** A community-driven funding platform for new projects.
 -   **Unity Chain (زنجیره وحدت) (Planned):** Our native digital currency and blockchain infrastructure.
