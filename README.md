@@ -20,7 +20,9 @@ Our vision extends beyond a simple marketplace. We believe in a new digital econ
 
 This is not just a metaverse; it is a new paradigm for human interaction and economic collaboration, with the ultimate goal of uniting humanity to reach for the stars.
 
-> "Wealth is found in human endeavor. In the belief in growth, and in the courage to strive for one's dreams. Wealth is a positive outlook on the future, and the effort to reach goals, until the last breath." - The Founder
+> "در دنیای ما، توزیع ثروت و قدرت، بر پایه همت، آموزش، باور به آینده، ممارست و تعامل استوار است، نه پیشینه و سرمایه. ما باور داریم که هر انسانی، با هر استعدادی، یک مسیر منحصربه‌فرد به سوی موفقیت دارد. این، فلسفه‌ی بنیادین شهر تواناست." - The Founder
+>
+> *(In our world, the distribution of wealth and power is based on effort, education, belief in the future, practice, and interaction—not on background or capital. We believe that every human, with any talent, has a unique path to success. This is the fundamental philosophy of Tavana City.)*
 
 [**Read the full story in our Book of Creation &rarr;**](/manifesto)
 

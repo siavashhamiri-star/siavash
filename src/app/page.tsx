@@ -131,9 +131,12 @@ export default function Home() {
                 </p>
                  <blockquote className="mt-8 p-6 border-l-4 border-accent bg-accent/10 text-left">
                     <p className="text-lg font-semibold text-foreground/90 italic">
-                    "ثروت هستی، در همت انسان است. در باور به رشد و در شهامت تلاش برای رسیدن به آرزوها. ثروت، نگاه مثبت به آینده است و تلاش برای رسیدن به اهداف، تا آخرین نفس."
+                    "در دنیای ما، توزیع ثروت و قدرت، بر پایه همت، آموزش، باور به آینده، ممارست و تعامل استوار است، نه پیشینه و سرمایه. ما باور داریم که هر انسانی، با هر استعدادی، یک مسیر منحصربه‌فرد به سوی موفقیت دارد."
                     </p>
-                    <footer className="mt-2 text-sm text-muted-foreground">- The Founder</footer>
+                     <p className="mt-4 text-base text-muted-foreground italic">
+                    (In our world, the distribution of wealth and power is based on effort, education, belief in the future, practice, and interaction—not on background or capital. We believe that every human, with any talent, has a unique path to success.)
+                    </p>
+                    <footer className="mt-4 text-sm text-muted-foreground">- The Founder</footer>
                 </blockquote>
                 <div className="mt-8">
                     <Button asChild variant="outline">
