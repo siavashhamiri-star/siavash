@@ -120,8 +120,8 @@ const chapters: {
                 en: "2. The Sacred Promise: A promise is made with one's entire being, not just with the tongue. Trust is a sacred and often singular opportunity. Every promise might be the last hope for someone in despair, and saving one soul is saving all of humanity."
             },
             {
-                fa: { prefix: "۳. ", title: "ثروت و معنا:", text: "دنیایی که ثروت ارائه می‌دهد اما معنا را از بین می‌برد، به ناچار به فقر منجر خواهد شد. قدرتمندترین افراد روی زمین، کسانی هستند که پیامی برای هدیه دادن به جهان دارند. در 'شهر توانا'، هر فردی، از 'پایین‌ترین' تا 'بالاترین'، خود را یک 'قطب'، یک 'نماد'، و نیرویی تعیین‌کننده در خلق ثروت و معنای جمعی احساس می‌کند. اینجا، همت بر ثروت مقدم است؛ اگر همت و استعداد داری، ما تو را به توانایی و ثروت می‌رسانیم." },
-                en: "3. Wealth and Meaning: A world that offers wealth but destroys meaning will inevitably lead to poverty. The most powerful people on Earth are those who have a message to gift to the world. In 'Tavana City', every individual, from the 'lowest' to the 'highest', feels themselves to be a 'pole', a 'symbol', and a decisive force in the collective creation of wealth and meaning. Here, effort precedes wealth; if you have the determination and talent, we will lead you to capability and fortune."
+                fa: { prefix: "۳. ", title: "ثروت و معنا:", text: "دنیایی که ثروت ارائه می‌دهد اما معنا را از بین می‌برد، به ناچار به فقر منجر خواهد شد. قدرتمندترین افراد روی زمین، کسانی هستند که پیامی برای هدیه دادن به جهان دارند. در 'شهر توانا'، هر فردی، از 'پایین‌ترین' تا 'بالاترین'، خود را یک 'قطب'، یک 'نماد'، و نیرویی تعیین‌کننده در خلق ثروت و معنای جمعی احساس می‌کند. اینجا، همت بر ثروت مقدم است؛ اگر همت و استعداد داری، ما تو را به توانایی و ثروت می‌رسانیم. آری، ابزار و نردبان مهیاست، اما همت فروشی نیست." },
+                en: "3. Wealth and Meaning: A world that offers wealth but destroys meaning will inevitably lead to poverty. The most powerful people on Earth are those who have a message to gift to the world. In 'Tavana City', every individual, from the 'lowest' to the 'highest', feels themselves to be a 'pole', a 'symbol', and a decisive force in the collective creation of wealth and meaning. Here, effort precedes wealth; if you have the determination and talent, we will lead you to capability and fortune. Yes, the tools and the ladder are ready, but determination is not for sale."
             },
             {
                 fa: "همانطور که بشریت دموکراسی را برای عادلانه کردن قدرت ایجاد کرد، ما در آستانه‌ی خلق یک 'دموکراسی ثروت' در دنیای مجازی هستیم. باور داشته باشید که امروز، دیگر غیرممکن، غیرممکن نیست. یک آرمان بزرگ، اگر برای امروز بلند به نظر برسد، برای فردا کوچک خواهد بود.",
@@ -212,16 +212,23 @@ export default function ManifestoPage() {
                                     {index < chapters.length - 1 && <hr className="my-12 border-border" />}
                                 </div>
                             ))}
-                             <div className="text-center pt-8 border-t mt-12 space-y-6">
-                                <p className="text-muted-foreground italic max-w-2xl mx-auto">
-                                "باور دارم که این ایده، یک جهش کوانتومی در افکار جهانی ایجاد خواهد کرد. این یک دعوت به وحدت است تا با هم، نردبانی از اینجا تا ملکوت آسمان بسازیم و نگاه بشریت را برای همیشه به سوی کهکشان معطوف کنیم."
-                                <br/>
-                                <span className="text-sm">(I believe this idea will create a quantum leap in global thought. This is an invitation to unity, to build a ladder together from here to the kingdom of heaven, and to turn humanity's gaze towards the galaxy forever.)</span>
-                                </p>
-                                <p className="text-xl font-headline font-bold text-primary">
+                             <div className="text-center pt-8 border-t mt-12 space-y-8">
+                                <div className="space-y-4">
+                                     <p className="text-xl font-headline font-bold text-primary">
+                                        در شهر توانا، هرکس غلام همت خویش است.
+                                        <br/>
+                                        <span className="text-base font-sans font-normal text-muted-foreground">(In Tavana City, everyone is the architect of their own fortune.)</span>
+                                    </p>
+                                    <p className="text-lg font-headline text-accent">
+                                        آری، ابزار و نردبان مهیاست، اما همت فروشی نیست.
+                                        <br/>
+                                        <span className="text-sm font-sans font-normal text-muted-foreground">(Yes, the tools and the ladder are ready, but determination is not for sale.)</span>
+                                    </p>
+                                </div>
+                                <p className="text-2xl font-headline font-bold text-primary pt-8 mt-8 border-t border-dashed">
                                     این، کتاب آفرینش ماست.
                                     <br/>
-                                    <span className="text-base font-sans font-normal text-muted-foreground">(This is our Book of Creation.)</span>
+                                    <span className="text-lg font-sans font-normal text-muted-foreground">(This is our Book of Creation.)</span>
                                 </p>
                             </div>
                         </CardContent>
