@@ -139,6 +139,11 @@ export default function EcosystemPage() {
                         <br/>
                         <span className="text-base">(سیستم‌های پاداش ما نیز برای الهام‌بخشی جهانی طراحی شده‌اند. فراتر از تجلیل از مشارکت‌کنندگان برتر، ما به خلق لحظات جادویی برای همه باور داریم. در سراسر اپلیکیشن‌هایمان، جوایز رویایی را حتی برای کاربران مهمان ارائه خواهیم داد تا فرهنگ مشارکت گسترده را تقویت کنیم. و این قول مقدس ماست: این جوایز رویایی از طریق قرعه‌کشی تصادفی اهدا خواهند شد، زیرا ما باور داریم که معجزه نهایی، لمس سرنوشت و هدیه‌ای از قدرتی برتر است. این، آن باور هیجان‌انگیز را تقویت می‌کند که در شهر توانا، هر امر فوق‌العاده‌ای برای هر کسی همواره در دسترس است.)</span>
                         </p>
+                        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                        Furthermore, membership in our world is unified. A single account grants you access to every platform in the FB New Meta ecosystem. As a member of our community, you are automatically eligible for every prize draw across all our applications, amplifying your chances to experience the magic of Tavana City.
+                        <br/>
+                        <span className="text-base">(علاوه بر این، عضویت در دنیای ما یکپارچه است. با یک حساب کاربری واحد، شما به تمام پلتفرم‌های اکوسیستم FB New Meta دسترسی خواهید داشت. به عنوان عضوی از جامعه ما، شما به طور خودکار واجد شرایط شرکت در تمام قرعه‌کشی‌های جوایز در سراسر اپلیکیشن‌های ما خواهید بود و این شانس شما را برای تجربه جادوی شهر توانا افزایش می‌دهد.)</span>
+                        </p>
                     </div>
                 </div>
             </main>
