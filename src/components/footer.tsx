@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Logo } from './logo';
 
@@ -17,6 +18,9 @@ export function Footer() {
             <nav className="flex justify-center md:justify-end flex-wrap gap-x-4 mt-2">
               <Link href="/about" className="text-sm text-muted-foreground hover:text-primary">
                 About Us
+              </Link>
+              <Link href="/manifesto" className="text-sm text-muted-foreground hover:text-primary">
+                Our Vision
               </Link>
               <Link href="/feedback" className="text-sm text-muted-foreground hover:text-primary">
                 Feedback
@@ -40,3 +44,5 @@ export function Footer() {
     </footer>
   );
 }
+
+    

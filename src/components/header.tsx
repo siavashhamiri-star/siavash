@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -16,6 +17,7 @@ const navItems = [
   { href: '/', label: 'Home' },
   { href: '/vendors', label: 'Vendors' },
   { href: '/about', label: 'About Us' },
+  { href: '/manifesto', label: 'Our Vision' },
   { href: '/#story-generator', label: 'AI Storyteller' },
 ];
 
@@ -99,3 +101,5 @@ export function Header() {
     </header>
   );
 }
+
+    
