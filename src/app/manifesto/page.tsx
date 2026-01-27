@@ -121,7 +121,10 @@ export default function ManifestoPage() {
                                     {index < chapters.length - 1 && <hr className="my-12 border-border" />}
                                 </div>
                             ))}
-                             <div className="text-center pt-8 border-t mt-12">
+                             <div className="text-center pt-8 border-t mt-12 space-y-6">
+                                <p className="text-muted-foreground italic max-w-2xl mx-auto">
+                                "باور دارم که این ایده، یک جهش کوانتومی در افکار جهانی ایجاد خواهد کرد. این یک دعوت به وحدت است تا با هم، نردبانی از اینجا تا ملکوت آسمان بسازیم و نگاه بشریت را برای همیشه به سوی کهکشان معطوف کنیم."
+                                </p>
                                 <p className="text-xl font-headline font-bold text-primary">
                                     این، کتاب آفرینش ماست.
                                 </p>
@@ -134,13 +137,3 @@ export default function ManifestoPage() {
         </div>
     );
 }
-
-    
-
-    
-
-
-
-    
-
-    
