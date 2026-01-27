@@ -37,16 +37,16 @@ const features = [
     title: 'Global Trade Hub',
     description:
       'Our platform is built for international trade, with a plan for secure transactions, a fair 2-5% commission, and applicable VAT per Iranian law.',
-    link: '#',
-    linkText: 'Start Trading',
+    link: '/terms',
+    linkText: 'Learn More',
   },
   {
     icon: <Handshake className="w-8 h-8 text-primary" />,
     title: 'Investment & Partnerships',
     description:
       'Find support or invest in businesses related to the art of carpet-making, from weaving workshops to material suppliers.',
-    link: '#',
-leLink: 'Explore Opportunities',
+    link: '/collaboration',
+    linkText: 'Explore Opportunities',
   },
 ];
 
@@ -159,8 +159,12 @@ export default function Home() {
                             Our platform connects you with opportunities to support the carpet industry's ecosystem. From sponsoring an artisan's workshop to investing in innovative, sustainable material production, you can be part of the story.
                         </p>
                         <div className="mt-8 flex gap-4">
-                             <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">Become an Investor</Button>
-                             <Button size="lg" variant="outline">Seek Partnership</Button>
+                            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                                <Link href="/collaboration">Become an Investor</Link>
+                            </Button>
+                            <Button asChild size="lg" variant="outline">
+                                <Link href="/collaboration">Seek Partnership</Link>
+                            </Button>
                         </div>
                     </div>
                     <div>

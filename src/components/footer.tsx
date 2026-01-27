@@ -29,7 +29,7 @@ export function Footer() {
                 Teach with Us / آموزش
               </Link>
               <Link href="/collaboration" className="text-sm text-muted-foreground hover:text-primary">
-                Collaborate / همکاری
+                Partnership / مشارکت
               </Link>
               <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary">
                 Privacy / حریم خصوصی

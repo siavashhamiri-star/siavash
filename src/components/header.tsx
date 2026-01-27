@@ -19,6 +19,7 @@ const navItems = [
   { href: '/about', label: 'About Us / درباره ما' },
   { href: '/manifesto', label: 'Our Vision / چشم‌انداز' },
   { href: '/#story-generator', label: 'AI Storyteller' },
+  { href: '/collaboration', label: 'Partnership / مشارکت' },
 ];
 
 export function Header() {
