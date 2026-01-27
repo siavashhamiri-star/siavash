@@ -28,8 +28,8 @@ export function Footer() {
               <Link href="/feedback" className="text-sm text-muted-foreground hover:text-primary">
                 Feedback / بازخورد
               </Link>
-              <Link href="/teach" className="text-sm text-muted-foreground hover:text-primary">
-                Teach / آموزش
+              <Link href="/legwit" className="text-sm text-muted-foreground hover:text-primary">
+                Legwit / لگویت
               </Link>
               <Link href="/collaboration" className="text-sm text-muted-foreground hover:text-primary">
                 Partnership / مشارکت
