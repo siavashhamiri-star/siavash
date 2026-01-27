@@ -18,7 +18,7 @@ const navItems = [
   { href: '/ecosystem', label: 'Ecosystem / اکوسیستم' },
   { href: '/manifesto', label: 'Our Vision / چشم‌انداز' },
   { href: '/collaboration', label: 'Partnership / مشارکت' },
-  { href: '/legwit', label: 'Legwit / لگویت' },
+  { href: '/lingoview', label: 'LingoView / گویا' },
 ];
 
 export function Header() {

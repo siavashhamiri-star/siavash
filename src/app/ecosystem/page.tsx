@@ -20,7 +20,7 @@ const ecosystemApps = [
         icon: <Cubes className="w-8 h-8 text-primary" />
     },
     {
-        name: "Project Legwit (پروژه لگویت)",
+        name: "LingoView (آپ گویا)",
         description: "A revolutionary educational platform focused on building 'capability', not just providing knowledge. Starting with language, expanding to all skills.",
         fa_description: "یک پلتفرم آموزشی انقلابی که بر ساختن «توانایی» تمرکز دارد، نه فقط ارائه دانش. شروع با زبان، و گسترش به تمام مهارت‌ها.",
         status: "Coming Soon",

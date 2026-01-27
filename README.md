@@ -30,7 +30,7 @@ This is not just a metaverse; it is a new paradigm for human interaction and eco
 Farsh Bazaar is the first of many "executive arms" for Tavana City. Our roadmap is public because our mission is collective.
 
 -   **Farsh Bazaar (Live):** A global marketplace for artisans.
--   **Project Legwit (Coming Soon):** A revolutionary educational platform focused on building 'capability'.
+-   **LingoView (آپ گویا) (Coming Soon):** A revolutionary educational platform focused on building 'capability'.
 -   **Tavana Work (Coming Soon):** A future-of-work platform matching opportunities based on proven skills.
 -   **Afarinesh Hub (Coming Soon):** The central social and collaborative hub for creators in Tavana City.
 -   **Mehr Bank (Planned):** A community-driven funding platform for new projects.
