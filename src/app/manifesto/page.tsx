@@ -153,7 +153,7 @@ const chapters: {
                 en: "So let this world be a symbol of hope for all those who feel trapped, limited, or forgotten. Your spirit, too, is uncontainable. Your dreams, too, can build new worlds."
             },
             {
-                fa: "آری، بازی در «توانا» خواهیم ساخت. بانک خواهیم ساخت. پول و آرزو خواهیم ساخت. نردبانی تا عرش کبریا و تا آخر زمین و زمان برپا خواهیم کرد. اما نه در تخیل، بلکه در واقعیت زندگی حقیقی و ارتباط آن با «حقیقت در مجاز».",
+                fa: "آری، بازی هم در «توانا» خواهیم ساخت. بانک خواهیم ساخت. پول و آرزو خواهیم ساخت. نردبانی تا عرش کبریا و تا آخر زمین و زمان برپا خواهیم کرد. اما نه در تخیل، بلکه در واقعیت زندگی حقیقی و ارتباط آن با «حقیقت در مجاز».",
                 en: "Yes, we will build games in 'Tavana'. We will build banks. We will build money and dreams. We will erect a ladder to the highest heavens and to the end of time. But not in imagination, but in the reality of true life and its connection with 'truth in the virtual'."
             }
         ]
@@ -244,6 +244,14 @@ export default function ManifestoPage() {
                                 </p>
                                 <p className="mt-6 text-sm text-muted-foreground">- بنیان‌گذار (The Founder)</p>
                             </div>
+                            <div className="text-center pt-12 border-t mt-12">
+                                <p className="text-lg italic text-foreground/90 max-w-3xl mx-auto">
+                                    «سعی درست، انسان را ساعی نمی‌کند، بلکه سماواتی می‌کند. سعی غلط، ظلم به خویشتن است. این راه، رهنمود و شعله‌ی امید است در دل آرزومندان. معجزه، خودِ شما هستید که یار و یاور تحقق اراده‌ی معنا و حقیقت می‌شوید. و معجزه، آن چیزی است که باعث شده شما بخوانید و بپیوندید.»
+                                </p>
+                                <p className="mt-4 text-base italic text-muted-foreground max-w-3xl mx-auto">
+                                    ("The right effort does not just make one diligent; it makes one celestial. Wrong effort is an injustice to oneself. This path is a guide and a flame of hope in the hearts of the aspirational. The miracle is you yourself, who becomes an ally for the realization of the will of meaning and truth. And the miracle is that which has compelled you to read and to join.")
+                                </p>
+                            </div>
                         </CardContent>
                     </Card>
                 </div>
@@ -256,4 +264,5 @@ export default function ManifestoPage() {
     
 
     
+
 
