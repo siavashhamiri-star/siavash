@@ -8,7 +8,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Cubes, CheckCircle, Clock } from 'lucide-react';
+import { Cubes, CheckCircle, Clock, Music, Mic, Users, BookOpen, ToyBrick, Briefcase, BrainCircuit } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 const ecosystemApps = [
@@ -27,24 +27,52 @@ const ecosystemApps = [
         icon: <Cubes className="w-8 h-8 text-muted-foreground" />
     },
     {
-        name: "Tavana Work (توانا کار)",
-        description: "A future-of-work platform where opportunities are matched based on proven skills and capabilities, transcending traditional resumes and credentials.",
-        fa_description: "یک پلتفرم برای آینده کار که در آن فرصت‌ها بر اساس مهارت‌ها و توانایی‌های اثبات‌شده منطبق می‌شوند و از رزومه‌ها و مدارک سنتی فراتر می‌روند.",
-        status: "Coming Soon",
-        icon: <Cubes className="w-8 h-8 text-muted-foreground" />
+        name: "Nava Studio (استودیو نوا)",
+        description: "An AI-powered suite for music creation. Generate melodies, write lyrics, produce songs, and create stunning music videos and karaoke tracks.",
+        fa_description: "یک مجموعه ابزار مجهز به هوش مصنوعی برای خلق موسیقی. ملودی بسازید، شعر بنویسید، آهنگ تولید کنید و موزیک ویدیوها و ترک‌های کارائوکه خیره‌کننده بسازید.",
+        status: "Planned",
+        icon: <Mic className="w-8 h-8 text-muted-foreground" />
+    },
+    {
+        name: "Hamnava (هم‌نوا)",
+        description: "The social heart of our music ecosystem. Connect with artists, share your creations, collaborate on new projects, and discover emerging talent.",
+        fa_description: "قلب اجتماعی اکوسیستم موسیقی ما. با هنرمندان ارتباط برقرار کنید، آثار خود را به اشتراک بگذارید، در پروژه‌های جدید همکاری کنید و استعدادهای نوظهور را کشف نمایید.",
+        status: "Planned",
+        icon: <Users className="w-8 h-8 text-muted-foreground" />
+    },
+     {
+        name: "Ghese Go (قصه‌گو)",
+        description: "A magical space for children's stories, educational content, and a digital vault for capturing precious childhood moments like birthdays and milestones.",
+        fa_description: "یک فضای جادویی برای قصه‌های کودکان، محتوای آموزشی و یک صندوقچه دیجیتال برای ثبت لحظات ارزشمند کودکی مانند تولدها و دستاوردهای شیرین.",
+        status: "Planned",
+        icon: <BookOpen className="w-8 h-8 text-muted-foreground" />
     },
     {
         name: "Afarinesh Hub (آفرینش هاب)",
-        description: "The central social and collaborative hub for creators, builders, and visionaries within Tavana City to connect, share, and co-create.",
-        fa_description: "مرکز اجتماعی و همکاری برای خالقان، سازندگان و رویاپردازان در شهر توانا برای اتصال، اشتراک‌گذاری و خلق مشترک.",
+        description: "The central hub for creators. Leverage AI tools for content creation, connect with other visionaries, and bring your ideas to life within Tavana City.",
+        fa_description: "هاب مرکزی برای آفرینش‌گران. از ابزارهای هوش مصنوعی برای تولید محتوا استفاده کنید، با دیگر ایده‌پردازان متصل شوید و ایده‌های خود را در شهر توانا به واقعیت تبدیل کنید.",
         status: "Coming Soon",
-        icon: <Cubes className="w-8 h-8 text-muted-foreground" />
+        icon: <BrainCircuit className="w-8 h-8 text-muted-foreground" />
+    },
+    {
+        name: "Tavana Work (توانا کار)",
+        description: "The future-of-work platform. Find freelance opportunities, advertise your skills, and leverage AI to enhance your capabilities. Merit over resumes.",
+        fa_description: "پلتفرم آینده‌ی کار. فرصت‌های فریلنسری پیدا کنید، مهارت‌های خود را تبلیغ کنید و از هوش مصنوعی برای افزایش توانایی‌هایتان بهره ببرید. شایستگی فراتر از رزومه.",
+        status: "Coming Soon",
+        icon: <Briefcase className="w-8 h-8 text-muted-foreground" />
+    },
+     {
+        name: "Bazi Land (بازی لند)",
+        description: "The entertainment and gaming wing of Tavana City, where playing games creates value and connects the community in new, exciting ways.",
+        fa_description: "بازوی سرگرمی و بازی شهر توانا، جایی که بازی کردن، ارزش خلق می‌کند و جامعه را به شیوه‌هایی نوین و هیجان‌انگیز به هم متصل می‌سازد.",
+        status: "Planned",
+        icon: <ToyBrick className="w-8 h-8 text-muted-foreground" />
     },
     {
         name: "Mehr Bank (مهر بانک)",
         description: "A community-driven micro-investment and funding platform designed to support new projects and ideas that align with the ecosystem's values.",
         fa_description: "یک پلتفرم سرمایه‌گذاری خرد و تأمین مالی جامعه‌محور که برای حمایت از پروژه‌ها و ایده‌های جدید همسو با ارزش‌های اکوسیستم طراحی شده است.",
-        status: "Coming Soon",
+        status: "Planned",
         icon: <Cubes className="w-8 h-8 text-muted-foreground" />
     },
     {
