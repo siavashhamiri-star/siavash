@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -16,11 +15,10 @@ import { useUser } from '@/firebase';
 const navItems = [
   { href: '/', label: 'Home / خانه' },
   { href: '/vendors', label: 'Vendors / فروشندگان' },
-  { href: '/about', label: 'About Us / درباره ما' },
+  { href: '/ecosystem', label: 'Ecosystem / اکوسیستم' },
   { href: '/manifesto', label: 'Our Vision / چشم‌انداز' },
-  { href: '/#story-generator', label: 'AI Storyteller' },
   { href: '/collaboration', label: 'Partnership / مشارکت' },
-  { href: '/teach', label: 'Teach with Us / آموزش' },
+  { href: '/teach', label: 'Teach / آموزش' },
 ];
 
 export function Header() {

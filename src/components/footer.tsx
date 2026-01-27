@@ -22,11 +22,14 @@ export function Footer() {
               <Link href="/manifesto" className="text-sm text-muted-foreground hover:text-primary">
                 Our Vision / چشم‌انداز
               </Link>
+              <Link href="/ecosystem" className="text-sm text-muted-foreground hover:text-primary">
+                Ecosystem / اکوسیستم
+              </Link>
               <Link href="/feedback" className="text-sm text-muted-foreground hover:text-primary">
                 Feedback / بازخورد
               </Link>
               <Link href="/teach" className="text-sm text-muted-foreground hover:text-primary">
-                Teach with Us / آموزش
+                Teach / آموزش
               </Link>
               <Link href="/collaboration" className="text-sm text-muted-foreground hover:text-primary">
                 Partnership / مشارکت
