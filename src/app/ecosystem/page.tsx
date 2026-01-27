@@ -8,7 +8,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Cubes, CheckCircle, Clock, Music, Mic, Users, BookOpen, ToyBrick, Briefcase, BrainCircuit, Diamond } from 'lucide-react';
+import { Cubes, CheckCircle, Clock, Music, Mic, Users, BookOpen, ToyBrick, Briefcase, BrainCircuit, Diamond, Banknote, Link as LinkIcon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 const ecosystemApps = [
@@ -80,14 +80,14 @@ const ecosystemApps = [
         description: "A community-driven micro-investment and funding platform designed to support new projects and ideas that align with the ecosystem's values.",
         fa_description: "یک پلتفرم سرمایه‌گذاری خرد و تأمین مالی جامعه‌محور که برای حمایت از پروژه‌ها و ایده‌های جدید همسو با ارزش‌های اکوسیستم طراحی شده است.",
         status: "Planned",
-        icon: <Cubes className="w-8 h-8 text-muted-foreground" />
+        icon: <Banknote className="w-8 h-8 text-muted-foreground" />
     },
     {
         name: "Unity Chain (زنجیره وحدت)",
         description: "Our native digital currency and blockchain infrastructure, designed to facilitate a fair, transparent, and self-sustaining economy within Tavana City.",
         fa_description: "ارز دیجیتال بومی و زیرساخت بلاکچین ما که برای تسهیل یک اقتصاد عادلانه، شفاف و خودپایدار در شهر توانا طراحی شده است.",
         status: "Planned",
-        icon: <Cubes className="w-8 h-8 text-muted-foreground" />
+        icon: <LinkIcon className="w-8 h-8 text-muted-foreground" />
     }
 ];
 

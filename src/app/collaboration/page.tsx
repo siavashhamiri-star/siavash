@@ -33,8 +33,8 @@ const partnershipAreas = [
         id: 'talent',
         icon: <BrainCircuit className="w-10 h-10 text-primary" />,
         title: 'Lend Your Talent / استعداد خود را به اشتراک بگذارید',
-        description: 'Are you an expert in education, technology, community management, or international trade? We are building a new world and need pioneers. Join us as a consultant or a core team member.',
-        fa_description: 'آیا شما در زمینه آموزش، فناوری، مدیریت جامعه یا تجارت بین‌الملل متخصص هستید؟ ما در حال ساختن دنیایی جدید هستیم و به پیشگامان نیاز داریم. به عنوان مشاور یا عضو تیم اصلی به ما بپیوندید.',
+        description: 'Are you an expert in education, technology, community management, or international trade? We are building a new world and need pioneers. Join us as a consultant or a core team member to build this new paradigm.',
+        fa_description: 'آیا شما در زمینه آموزش، فناوری، مدیریت جامعه یا تجارت بین‌الملل متخصص هستید؟ ما در حال ساختن دنیایی جدید هستیم و به پیشگامان نیاز داریم. به عنوان مشاور یا عضو تیم اصلی به ما بپیوندید تا این پارادایم جدید را بسازیم.',
         link: 'mailto:info@fbnewmeta.com?subject=Talent%20Partnership'
 
     }
