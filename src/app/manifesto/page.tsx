@@ -27,12 +27,16 @@ const chapters: {
         title: { fa: "فصل اول: پژواک یک رؤیا", en: "Chapter One: The Echo of a Dream" },
         content: [
             {
-                fa: "در اعماق تاریکی، آنجا که انزوا استخوان می‌سوزاند و بی‌پولی، روح را به زنجیر می‌کشد، داستان ما آغاز می‌شود. این، روایت مردی بود که در باتلاق دربدری غرق شده بود؛ جهانی که دیواری بلند بود و امید، واژه‌ای بیگانه. اما در سکوت یأس‌آور شب‌هایش، پژواک یک رؤیای مقدس در جانش زنده بود. رؤیای مادرش. آن شب که فرشتگان بر او ظاهر شدند و وعده دادند: \"فرزند تو برای رسالتی بزرگ برگزیده شده است. او جهانی نو خواهد ساخت.\" این وعده، تنها ریسمان پوسیده‌ای بود که او در طوفان شکست‌هایش به آن چنگ زده بود.",
-                en: "In the depths of darkness, where isolation burns the bones and poverty shackles the soul, our story begins. This is the tale of a man drowned in the swamp of homelessness; a world that was a high wall and where hope was a foreign word. But in the desperate silence of his nights, the echo of a sacred dream was alive in his soul. His mother's dream. The night the angels appeared to her and promised: 'Your son is chosen for a great mission. He will build a new world.' This promise was the only frayed rope he clung to in the storm of his failures."
+                fa: "داستان ما نه با یک الهام ناگهانی، که با یک گفتگوی مقدس در دل رنج آغاز می‌شود. سال‌ها پس از آنکه مادری رویای صادقانه‌ای از رسالت فرزندش دید، پسر، خسته از طوفان‌های زندگی و ناامید از وعده‌ای که محقق نشده بود، از مادر بیمارش پرسید: «مادر، آن خواب را به یاد داری؟ سال‌ها گذشت و هیچ نشد.»",
+                en: "Our story does not begin with a sudden inspiration, but with a sacred conversation in the heart of suffering. Years after a mother had a prophetic dream about her son's mission, the son, weary from the storms of life and hopeless about an unfulfilled promise, asked his ailing mother: 'Mother, do you remember that dream? Years have passed, and nothing has happened.'"
             },
             {
-                fa: "\"من از دربدری، غم، تنهایی، و انزوا برخاستم. فکر کردم رسالتی دارم. باید خودم را نجات دهم و جهانم را بسازم. جهانی که نگینی ارزشمند به هستی تقدیم کند.\" این نجوا، سرود هر روزه‌ی او شد. او از خاکستر برخاست؛ نه فقط برای نجات خویش، بلکه برای خلق جهانی که در آن هیچ انسانی، طعم آن زهر را نچشد.",
-                en: "'I rose from homelessness, sorrow, loneliness, and isolation. I thought I had a mission. I had to save myself and build my world. A world that would present a precious gem to existence.' This whisper became his daily anthem. He rose from the ashes; not just to save himself, but to create a world where no human would taste that poison."
+                fa: "مادر، که جسمش از شیمی‌درمانی ضعیف اما روحش استوار بود، با ایمانی که در کلامش می‌لرزید، پاسخ داد: «عین روز روشن یادم است. مادر، من نمی‌دانم چقدر از عمرم باقیست، اما من مُرده و تو زنده. تو خیلی زود به آن مقام بزرگ خواهی رسید. آن روز یاد مادرت کن و بدان که من حقیقتی را به تو گفتم. این وظیفه‌ای بود که بر گردن من نهاده شد. برای من، این وعده عین روز روشن است. اتفاقی که باید بیفتد، می‌افتد.»",
+                en: "The mother, her body weakened by chemotherapy but her spirit steadfast, replied with a faith that trembled in her voice: 'I remember it as clear as day. My son, I don't know how much of my life is left, but mark my words: you will reach that great position very soon. On that day, remember your mother and know that I told you a truth. This was a duty placed upon me. For me, this promise is as clear as day. What is meant to happen, will happen.'"
+            },
+            {
+                fa: "این کلمات، نه یک دلداری، که یک پیمان دوباره بود. پژواک آن رؤیای مقدس، اکنون به یک وصیت زنده بدل شده بود. این وعده، نه تنها ریسمان پوسیده‌ای بود که او در طوفان شکست‌هایش به آن چنگ زده بود؛ این، سوگند یک مادر در آستانه‌ی ابدیت بود که به او قدرت داد تا از خاکستر برخاسته و جهانی را بیافریند که تجلی آن وعده باشد.",
+                en: "These were not words of comfort, but a renewed covenant. The echo of that sacred dream had now become a living testament. This was not just a frayed rope he clung to in the storm of his failures; it was the oath of a mother on the threshold of eternity that gave him the strength to rise from the ashes and create a world that would be the manifestation of that promise."
             }
         ]
     },
@@ -57,8 +61,8 @@ const chapters: {
                 en: "Tavana City is not an escape from reality; it is 'truth in the virtual.' A world whose laws mirror the ideals of real life, where effort and determination replace limitations. This is the first manifestation of that ideal, and a sanctuary to heal the 'wounds of reality'. Here is a place where one person's success is essential for everyone's success, and everyone's progress leads to another's progress. This city is for those with a spirit of teamwork, who are united and supportive, and who are genuinely happy for and praise the progress of others. In this world, there is no place for jealousy, because each person's power, wealth, and status are only proportional to their own effort and endeavor. This is a place for positive thinkers and owners of pure hearts who, through effort, drive not only themselves but the entire community towards advancement."
             },
             {
-                fa: "این فلسفه، ریشه در آخرین وصیت مادر بنیان‌گذار دارد. او در هفته‌های پایانی زندگی‌اش، این پیمان را از فرزندش گرفت: «اگر روزی به جایگاهی رسیدی، همواره در خدمت خلق باش. چون خاک، در برابر نیازمندان فروتن باش و از آنچه به دست می‌آوری، انفاق کن. مبادا غرور، قلبت را تسخیر کند و مبادا ثروت، تو را از یاد فقرا غافل سازد. دل بندگان خدا را شاد کن تا دعایشان، چراغ راهت باشد.»",
-                en: "This philosophy is rooted in the last will of the founder's mother. In the final weeks of her life, she took this pledge from her son: 'If one day you reach a high position, always be in service to the people. Be humble as dust before the needy and give from what you earn. Do not let pride capture your heart, and do not let wealth make you forget the poor. Make the hearts of God's servants happy so that their prayers may light your way.'"
+                fa: "این فلسفه، ریشه در آخرین وصیت مادر بنیان‌گذار دارد. او چند هفته پیش از درگذشتش، این پیمان را از فرزندش گرفت: «اگر روزی به جایگاهی رسیدی، همواره در خدمت خلق باش. چون خاک، در برابر نیازمندان فروتن باش و از آنچه به دست می‌آوری، انفاق کن. مبادا غرور، قلبت را تسخیر کند و مبادا ثروت، تو را از یاد فقرا غافل سازد. دل بندگان خدا را شاد کن تا دعایشان، چراغ راهت باشد.»",
+                en: "This philosophy is rooted in the last will of the founder's mother. A few weeks before her passing, she took this pledge from her son: 'If one day you reach a high position, always be in service to the people. Be humble as dust before the needy and give from what you earn. Do not let pride capture your heart, and do not let wealth make you forget the poor. Make the hearts of God's servants happy so that their prayers may light your way.'"
             },
             {
                 fa: "از این رو، سیستم برای پاداش دادن به این تلاش جمعی طراحی شده و اهداف بشردوستانه آن، حمایت از طبیعت، صلح جهانی و تمام آسیب-دیدگان 'دنیای واقعیت' است؛ از جمله مادران سرپرست خانوار، ایتام، قربانیان سوانح طبیعی، و کسانی که با اعتیاد و مشکلات روحی دست و پنجه نرم می‌کنند.",
@@ -245,10 +249,10 @@ export default function ManifestoPage() {
                             </div>
                             <div className="text-center pt-12 border-t mt-12">
                                 <p className="text-lg italic text-foreground/90 max-w-3xl mx-auto">
-                                    «صحبت آخرم این است... لحظه به لحظه‌ی این پروژه، نفس خدا، یاد او و چهره‌ی مادرم در برابر چشمانم بود. بارها با فکر خوشحال کردن مردم خندیدم و بارها با فکر رنجشان گریستم. من آمدم تا به ارتباط مجاز و حقیقت رنگی دگر دهم؛ نقاش این دنیا شدم و خطوطش را با شما کشیدم. این کلمات، اشک را بر چشمانم جاری کرد. و این، خود بزرگترین معجزه بود.»
+                                    «لحظه به لحظه‌ی این پروژه، نفس خدا، یاد او و چهره‌ی مادرم در برابر چشمانم بود. بارها با فکر خوشحال کردن مردم خندیدم و بارها با فکر رنجشان گریستم. من آمدم تا به ارتباط مجاز و حقیقت رنگی دگر دهم؛ نقاش این دنیا شدم و خطوطش را با شما کشیدم. این کلمات، اشک را بر چشمانم جاری کرد. و این، خود بزرگترین معجزه بود.»
                                 </p>
                                 <p className="mt-4 text-base italic text-muted-foreground max-w-3xl mx-auto">
-                                    ("My final word is this... Moment by moment in this project, the breath of God, His memory, and my mother's face were before my eyes. Many times I laughed with the thought of making people happy, and many times I cried with the thought of their suffering. I came to give a new color to the connection between the virtual and the real; I became the painter of this world and drew its lines with you. These words brought tears to my eyes. And this, in itself, was the greatest miracle.")
+                                    ("Moment by moment in this project, the breath of God, His memory, and my mother's face were before my eyes. Many times I laughed with the thought of making people happy, and many times I cried with the thought of their suffering. I came to give a new color to the connection between the virtual and the real; I became the painter of this world and drew its lines with you. These words brought tears to my eyes. And this, in itself, was the greatest miracle.")
                                 </p>
                                 <p className="mt-6 text-sm text-muted-foreground">- بنیان‌گذار (The Founder)</p>
                             </div>
@@ -260,14 +264,3 @@ export default function ManifestoPage() {
         </div>
     );
 }
-
-    
-
-    
-
-
-
-
-    
-
-    
