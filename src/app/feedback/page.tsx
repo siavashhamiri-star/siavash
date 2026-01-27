@@ -1,4 +1,3 @@
-
 'use client';
 import { useState } from 'react';
 import { useFirestore, useUser } from '@/firebase';
@@ -23,7 +22,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/hooks/use-toast';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { useRouter } from 'next/navigation';
 import { Lightbulb, Send, Sparkles } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import {
@@ -124,11 +122,6 @@ export default function FeedbackPage() {
   const [error, setError] = useState<string | null>(null);
   const firestore = useFirestore();
   const { data: user, isLoading } = useUser();
-  const router = useRouter();
-
-  if (!isLoading && !user) {
-    router.push('/login?redirect=/feedback');
-  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
