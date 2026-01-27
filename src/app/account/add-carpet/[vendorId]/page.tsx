@@ -19,6 +19,8 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { toast } from '@/hooks/use-toast';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
 
 export default function AddCarpetPage() {
   const [name, setName] = useState('');
@@ -58,7 +60,7 @@ export default function AddCarpetPage() {
     }
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
@@ -67,30 +69,38 @@ export default function AddCarpetPage() {
       return;
     }
 
-    try {
-      await addDoc(collection(firestore, 'vendors', vendorId, 'carpets'), {
-        name,
-        description,
-        price,
-        imageUrl,
-        vendorId,
-        consignment
-      });
+    const carpetData = {
+      name,
+      description,
+      price,
+      imageUrl,
+      vendorId,
+      consignment
+    };
+    const carpetsCollection = collection(firestore, 'vendors', vendorId, 'carpets');
 
-      toast({
-        title: "Carpet Added!",
-        description: `${name} has been added to your showroom.`,
+    addDoc(carpetsCollection, carpetData)
+      .then(() => {
+        toast({
+          title: "Carpet Added!",
+          description: `${name} has been added to your showroom.`,
+        });
+        router.push(`/vendors/${vendorId}`);
       })
-      router.push(`/vendors/${vendorId}`);
-    } catch (err: any) {
-      console.error(err);
-      setError(err.message);
-      toast({
-        title: "Error adding carpet",
-        description: err.message,
-        variant: "destructive"
-      })
-    }
+      .catch(serverError => {
+        const permissionError = new FirestorePermissionError({
+            path: carpetsCollection.path,
+            operation: 'create',
+            requestResourceData: carpetData,
+        });
+        errorEmitter.emit('permission-error', permissionError);
+        setError(serverError.message);
+        toast({
+          title: "Error adding carpet",
+          description: serverError.message,
+          variant: "destructive"
+        });
+      });
   };
 
   if (userLoading || vendorLoading) {

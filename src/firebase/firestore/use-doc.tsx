@@ -5,6 +5,8 @@ import {
   type DocumentData,
   type DocumentReference,
 } from 'firebase/firestore';
+import { errorEmitter } from '../error-emitter';
+import { FirestorePermissionError } from '../errors';
 
 export function useDoc(ref: DocumentReference | undefined) {
   const [data, setData] = useState<DocumentData>();
@@ -25,11 +27,17 @@ export function useDoc(ref: DocumentReference | undefined) {
             id: snapshot.id,
           };
           setData(data);
+        } else {
+            setData(undefined);
         }
         setLoading(false);
       },
-      (error) => {
-        console.error(error);
+      (serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: ref.path,
+            operation: 'get',
+        });
+        errorEmitter.emit('permission-error', permissionError);
         setError(true);
         setLoading(false);
       }

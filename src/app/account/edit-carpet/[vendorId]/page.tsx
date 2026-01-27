@@ -14,12 +14,14 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useFirestore, useUser, useDoc } from '@/firebase';
 import { doc, updateDoc } from 'firebase/firestore';
-import { useRouter, useParams, useSearchParams } from 'next/navigation';
+import { useRouter, useParams, useSearchParams, notFound } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { toast } from '@/hooks/use-toast';
 import type { Carpet } from '@/lib/types';
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
 
 export default function EditCarpetPage() {
   const [name, setName] = useState('');
@@ -35,6 +37,10 @@ export default function EditCarpetPage() {
 
   const carpetId = params.vendorId as string; // Note: In this route, the carpet ID is the dynamic part
   const vendorId = searchParams.get('vendorId');
+  
+  if (!vendorId) {
+    notFound();
+  }
 
   const firestore = useFirestore();
   const { data: user, isLoading: userLoading } = useUser();
@@ -73,7 +79,7 @@ export default function EditCarpetPage() {
     }
   }, [user, userLoading, vendor, vendorLoading, router, vendorId]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
@@ -82,29 +88,36 @@ export default function EditCarpetPage() {
       return;
     }
 
-    try {
-      await updateDoc(carpetRef, {
+    const carpetUpdateData = {
         name,
         description,
         price,
         imageUrl,
         consignment,
-      });
+    };
 
-      toast({
-        title: 'Carpet Updated!',
-        description: 'Your carpet details have been successfully updated.',
+    updateDoc(carpetRef, carpetUpdateData)
+      .then(() => {
+        toast({
+          title: 'Carpet Updated!',
+          description: 'Your carpet details have been successfully updated.',
+        });
+        router.push(`/carpets/${carpetId}?vendorId=${vendorId}`);
+      })
+      .catch((serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: carpetRef.path,
+            operation: 'update',
+            requestResourceData: carpetUpdateData,
+        });
+        errorEmitter.emit('permission-error', permissionError);
+        setError(serverError.message);
+        toast({
+          title: 'Error updating carpet',
+          description: serverError.message,
+          variant: 'destructive',
+        });
       });
-      router.push(`/carpets/${carpetId}?vendorId=${vendorId}`);
-    } catch (err: any) {
-      console.error(err);
-      setError(err.message);
-      toast({
-        title: 'Error updating carpet',
-        description: err.message,
-        variant: 'destructive',
-      });
-    }
   };
 
   const isOwner = user && vendor && user.uid === vendor.userId;

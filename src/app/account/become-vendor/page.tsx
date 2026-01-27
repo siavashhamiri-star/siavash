@@ -10,13 +10,16 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { useAuth, useFirestore, useUser } from '@/firebase';
-import { doc, setDoc, addDoc, collection, updateDoc } from 'firebase/firestore';
+import { useFirestore, useUser } from '@/firebase';
+import { doc, updateDoc, addDoc, collection } from 'firebase/firestore';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Metadata } from 'next';
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
+import { toast } from '@/hooks/use-toast';
 
 export const metadata: Metadata = {
     title: 'Become a Vendor | Farsh Bazaar',
@@ -30,7 +33,6 @@ export default function BecomeVendorPage() {
   const [specialties, setSpecialties] = useState('');
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
-  const auth = useAuth();
   const firestore = useFirestore();
   const { data: user, isLoading } = useUser();
 
@@ -43,7 +45,7 @@ export default function BecomeVendorPage() {
     }
   }, [user, isLoading, router]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
@@ -52,28 +54,48 @@ export default function BecomeVendorPage() {
       return;
     }
 
-    try {
-      // 1. Create the vendor document
-      const vendorRef = await addDoc(collection(firestore, 'vendors'), {
+    const vendorsCollection = collection(firestore, 'vendors');
+    const vendorData = {
         name,
         location,
         bio,
         specialties: specialties.split(',').map(s => s.trim()).filter(Boolean),
         userId: user.uid,
         avatarUrl: user.photoURL || `https://ui-avatars.com/api/?name=${name.replace(' ', '+')}&background=random`,
-      });
+      };
 
-      // 2. Update the user's profile
-      await updateDoc(doc(firestore, 'users', user.uid), {
-        isVendor: true,
-        vendorId: vendorRef.id,
+    addDoc(vendorsCollection, vendorData)
+      .then((vendorRef) => {
+        const userDocRef = doc(firestore, 'users', user.uid);
+        const userUpdateData = {
+            isVendor: true,
+            vendorId: vendorRef.id,
+        };
+        updateDoc(userDocRef, userUpdateData)
+            .then(() => {
+                router.push(`/vendors/${vendorRef.id}`);
+            })
+            .catch(serverError => {
+                 const permissionError = new FirestorePermissionError({
+                    path: userDocRef.path,
+                    operation: 'update',
+                    requestResourceData: userUpdateData,
+                });
+                errorEmitter.emit('permission-error', permissionError);
+                setError(serverError.message);
+                toast({ title: "Error", description: "Could not update user profile to vendor.", variant: "destructive"})
+            });
+      })
+      .catch(serverError => {
+        const permissionError = new FirestorePermissionError({
+            path: vendorsCollection.path,
+            operation: 'create',
+            requestResourceData: vendorData
+        });
+        errorEmitter.emit('permission-error', permissionError);
+        setError(serverError.message);
+        toast({ title: "Error", description: "Could not create vendor profile.", variant: "destructive"})
       });
-
-      router.push(`/vendors/${vendorRef.id}`);
-    } catch (err: any) {
-      console.error(err);
-      setError(err.message);
-    }
   };
 
   if (isLoading || !user) {

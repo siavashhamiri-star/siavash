@@ -11,6 +11,8 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { toast } from '@/hooks/use-toast';
 import type { Review } from '@/lib/types';
 import { formatDistanceToNow } from 'date-fns';
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
 
 function StarRating({ rating }: { rating: number }) {
   const fullStars = Math.floor(rating);
@@ -37,7 +39,7 @@ function ReviewForm({ vendorId, vendorUserId }: { vendorId: string; vendorUserId
   const firestore = useFirestore();
   const { data: user } = useUser();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!user) {
       toast({ title: "Please log in to leave a review.", variant: "destructive"});
@@ -52,8 +54,8 @@ function ReviewForm({ vendorId, vendorUserId }: { vendorId: string; vendorUserId
       return;
     }
 
-    try {
-      await addDoc(collection(firestore, 'vendors', vendorId, 'reviews'), {
+    const reviewsCollection = collection(firestore, 'vendors', vendorId, 'reviews');
+    const reviewData = {
         rating,
         comment,
         vendorId,
@@ -61,14 +63,23 @@ function ReviewForm({ vendorId, vendorUserId }: { vendorId: string; vendorUserId
         reviewerName: user.displayName,
         reviewerImage: user.photoURL,
         createdAt: serverTimestamp(),
-      });
-      toast({ title: "Review submitted successfully!" });
-      setRating(0);
-      setComment('');
-    } catch (error: any) {
-      console.error('Error submitting review: ', error);
-      toast({ title: "Error submitting review", description: error.message, variant: "destructive"});
-    }
+      };
+    
+    addDoc(reviewsCollection, reviewData)
+        .then(() => {
+            toast({ title: "Review submitted successfully!" });
+            setRating(0);
+            setComment('');
+        })
+        .catch(serverError => {
+            const permissionError = new FirestorePermissionError({
+                path: reviewsCollection.path,
+                operation: 'create',
+                requestResourceData: reviewData
+            });
+            errorEmitter.emit('permission-error', permissionError);
+            toast({ title: "Error submitting review", description: serverError.message, variant: "destructive"});
+        });
   };
 
   return (

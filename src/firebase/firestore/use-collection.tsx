@@ -18,6 +18,8 @@ import {
   type Query,
   type CollectionReference,
 } from 'firebase/firestore';
+import { errorEmitter } from '../error-emitter';
+import { FirestorePermissionError } from '../errors';
 
 type QueryOptions = {
   where?: [string, any, any] | [string, any, any][];
@@ -111,14 +113,20 @@ export function useCollection(
         setData(data);
         setLoading(false);
       },
-      (error) => {
-        console.error(error);
+      (serverError) => {
+        const permissionError = new FirestorePermissionError({
+          path: ref.path,
+          operation: 'list',
+        });
+        errorEmitter.emit('permission-error', permissionError);
         setError(true);
         setLoading(false);
       }
     );
     return () => unsubscribe();
-  }, [ref, options]);
+  // The options object is stringified to ensure the effect only re-runs when the query options actually change.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ref, JSON.stringify(options)]);
 
   return { data, error, loading };
 }

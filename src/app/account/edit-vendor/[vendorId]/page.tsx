@@ -18,6 +18,8 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { toast } from '@/hooks/use-toast';
 import type { Vendor } from '@/lib/types';
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
 
 export default function EditVendorPage() {
   const [name, setName] = useState('');
@@ -52,7 +54,7 @@ export default function EditVendorPage() {
     }
   }, [user, userLoading, router]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
@@ -66,30 +68,36 @@ export default function EditVendorPage() {
         return;
     }
 
-    try {
-      await updateDoc(vendorRef, {
+    const vendorUpdateData = {
         name,
         location,
         bio,
         specialties: specialties.split(',').map(s => s.trim()).filter(Boolean),
         avatarUrl: user.photoURL || `https://ui-avatars.com/api/?name=${name.replace(' ', '+')}&background=random`,
-      });
-      
-      toast({
-        title: "Showroom Updated!",
-        description: "Your vendor profile has been successfully updated.",
-      });
+    };
 
-      router.push(`/vendors/${vendorId}`);
-    } catch (err: any) {
-      console.error(err);
-      setError(err.message);
-      toast({
-        title: "Error updating profile",
-        description: err.message,
-        variant: "destructive",
+    updateDoc(vendorRef, vendorUpdateData)
+      .then(() => {
+        toast({
+          title: "Showroom Updated!",
+          description: "Your vendor profile has been successfully updated.",
+        });
+        router.push(`/vendors/${vendorId}`);
+      })
+      .catch((serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: vendorRef.path,
+            operation: 'update',
+            requestResourceData: vendorUpdateData,
+        });
+        errorEmitter.emit('permission-error', permissionError);
+        setError(serverError.message);
+        toast({
+          title: "Error updating profile",
+          description: serverError.message,
+          variant: "destructive",
+        });
       });
-    }
   };
 
   if (userLoading || vendorLoading) {

@@ -3,6 +3,7 @@ import { createContext, useContext } from 'react';
 import type { FirebaseApp } from 'firebase/app';
 import type { Auth } from 'firebase/auth';
 import type { Firestore } from 'firebase/firestore';
+import { FirebaseErrorListener } from '@/components/FirebaseErrorListener';
 
 type FirebaseContextValue = {
   firebaseApp: FirebaseApp;
@@ -21,7 +22,11 @@ export function FirebaseProvider({
   children: React.ReactNode;
 } & FirebaseContextValue) {
   return (
-    <FirebaseContext.Provider value={value}>{children}</FirebaseContext.Provider>
+    <FirebaseContext.Provider value={value}>
+      {children}
+      {/* The FirebaseErrorListener is only active in development to prevent exposing detailed errors in production. */}
+      {process.env.NODE_ENV === 'development' && <FirebaseErrorListener />}
+    </FirebaseContext.Provider>
   );
 }
 

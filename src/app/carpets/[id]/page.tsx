@@ -26,6 +26,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound, useParams, useRouter, useSearchParams } from 'next/navigation';
 import { toast } from '@/hooks/use-toast';
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
 
 export default function CarpetDetailsPage() {
   const router = useRouter();
@@ -69,7 +71,7 @@ export default function CarpetDetailsPage() {
   const typedVendor = vendor as Vendor;
   const isOwner = user && user.uid === typedVendor.userId;
 
-  const handleDelete = async () => {
+  const handleDelete = () => {
     if (!isOwner || !carpetRef) {
       toast({
         title: 'Unauthorized',
@@ -78,20 +80,26 @@ export default function CarpetDetailsPage() {
       });
       return;
     }
-    try {
-      await deleteDoc(carpetRef);
-      toast({
-        title: 'Carpet Deleted',
-        description: `${typedCarpet.name} has been removed from your showroom.`,
-      });
-      router.push(`/vendors/${vendorId}`);
-    } catch (error: any) {
-      toast({
-        title: 'Error Deleting Carpet',
-        description: error.message,
-        variant: 'destructive',
-      });
-    }
+    deleteDoc(carpetRef)
+        .then(() => {
+            toast({
+                title: 'Carpet Deleted',
+                description: `${typedCarpet.name} has been removed from your showroom.`,
+            });
+            router.push(`/vendors/${vendorId}`);
+        })
+        .catch(serverError => {
+            const permissionError = new FirestorePermissionError({
+                path: carpetRef.path,
+                operation: 'delete',
+            });
+            errorEmitter.emit('permission-error', permissionError);
+            toast({
+                title: 'Error Deleting Carpet',
+                description: serverError.message,
+                variant: 'destructive',
+            });
+        });
   };
 
   return (

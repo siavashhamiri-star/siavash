@@ -124,11 +124,16 @@ export default function Home() {
                 <Sparkles className="w-12 h-12 mx-auto mb-4 text-accent" />
                 <h2 className="text-3xl md:text-4xl font-headline font-bold">Our Visionary Mission</h2>
                 <p className="mt-6 text-lg md:text-xl text-foreground/80 leading-relaxed">
-                میخواهیم با زبان هنر در جهت ارتباط و گفتگوی فرهنگی یک واسطه در جهت برقراری روابط کشورها تعاملات تجاری و حتی کمک به ظهور اندیشه های نو در جهت تولیدات فاخر فرش و معرفی هنر دست در ساخت فرش دستبaf به نسل‌های جدید و new generation باشیم
+                چشم‌انداز ما فراتر از مرزهای زمین است. ما به جای جنگ بر سر منابع محدود، رویای وحدت بشریت برای تسخیر کیهان را در سر می‌پرورانیم. FB New Meta یک متاورس صرف نیست؛ بلکه پیمانی برای هم‌اندیشی، و نردبانی برای رسیدن به ستارگان است.
                 </p>
                 <p className="mt-4 text-base text-muted-foreground">
-                We aim to be an intermediary, using the language of art for cultural dialogue, to establish international relations, foster trade, and inspire new ideas for fine carpet production, introducing the art of hand-weaving to new generations.
+                Our vision extends beyond the confines of Earth. Instead of war over limited resources, we dream of uniting humanity to reach for the cosmos. FB New Meta is not merely a metaverse; it is a pact for co-creation and a ladder to the stars.
                 </p>
+                <div className="mt-8">
+                    <Button asChild variant="outline">
+                        <Link href="/manifesto">Read Our Book of Creation</Link>
+                    </Button>
+                </div>
             </div>
           </div>
         </section>

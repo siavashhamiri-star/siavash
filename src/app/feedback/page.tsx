@@ -32,6 +32,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
 
 
 const AiTranslations = () => {
@@ -128,7 +130,7 @@ export default function FeedbackPage() {
     router.push('/login?redirect=/feedback');
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
@@ -146,32 +148,40 @@ export default function FeedbackPage() {
       return;
     }
 
-    try {
-      await addDoc(collection(firestore, 'suggestions'), {
+    const suggestionData = {
         suggestionText,
         userType,
         userId: user.uid,
         userName: user.displayName,
         createdAt: serverTimestamp(),
-      });
+      };
+    const suggestionsCollection = collection(firestore, 'suggestions');
 
-      toast({
-        title: 'Feedback Submitted!',
-        description:
-          "Thank you for your suggestion. We appreciate you helping us improve.",
-      });
+    addDoc(suggestionsCollection, suggestionData)
+      .then(() => {
+        toast({
+          title: 'Feedback Submitted!',
+          description:
+            "Thank you for your suggestion. We appreciate you helping us improve.",
+        });
 
-      setSuggestionText('');
-      setUserType('');
-    } catch (err: any) {
-      console.error('Error submitting suggestion:', err);
-      setError(err.message);
-      toast({
-        title: 'Error Submitting Feedback',
-        description: err.message,
-        variant: 'destructive',
+        setSuggestionText('');
+        setUserType('');
+      })
+      .catch((serverError) => {
+        const permissionError = new FirestorePermissionError({
+            path: suggestionsCollection.path,
+            operation: 'create',
+            requestResourceData: suggestionData
+        });
+        errorEmitter.emit('permission-error', permissionError);
+        setError(serverError.message);
+        toast({
+          title: 'Error Submitting Feedback',
+          description: serverError.message,
+          variant: 'destructive',
+        });
       });
-    }
   };
 
   return (
@@ -284,5 +294,3 @@ export default function FeedbackPage() {
     </div>
   );
 }
-
-    

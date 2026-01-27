@@ -18,6 +18,8 @@ import { doc, setDoc } from 'firebase/firestore';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { errorEmitter } from '@/firebase/error-emitter';
+import { FirestorePermissionError } from '@/firebase/errors';
 
 export default function SignupPage() {
   const [displayName, setDisplayName] = useState('');
@@ -41,10 +43,24 @@ export default function SignupPage() {
       
       await updateProfile(user, { displayName });
 
-      await setDoc(doc(firestore, 'users', user.uid), {
+      const userDocRef = doc(firestore, 'users', user.uid);
+      const userData = {
         displayName: displayName,
         email: user.email,
         photoURL: user.photoURL,
+      };
+
+      // Set doc without awaiting and chain catch for error handling
+      setDoc(userDocRef, userData).catch(serverError => {
+        const permissionError = new FirestorePermissionError({
+            path: userDocRef.path,
+            operation: 'create',
+            requestResourceData: userData
+        });
+        errorEmitter.emit('permission-error', permissionError);
+        // We can still try to redirect, but log the error for dev.
+        // The auth user was created, just not the firestore doc.
+        console.error("Failed to create user profile in Firestore, but user was authenticated.", serverError);
       });
 
       router.push('/account');
