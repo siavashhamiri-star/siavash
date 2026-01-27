@@ -124,8 +124,8 @@ const chapters: {
                 en: "3. Wealth and Meaning: A world that offers wealth but destroys meaning will inevitably lead to poverty. The most powerful people on Earth are those who have a message to gift to the world. In 'Tavana City', every individual, from the 'lowest' to the 'highest', feels themselves to be a 'pole', a 'symbol', and a decisive force in the collective creation of wealth and meaning. Here, effort precedes wealth; if you have the determination and talent, we will lead you to capability and fortune. Yes, the tools and the ladder are ready, but determination is not for sale."
             },
             {
-                fa: "همانطور که بشریت دموکراسی را برای عادلانه کردن قدرت ایجاد کرد، ما در آستانه‌ی خلق یک 'دموکراسی ثروت' در دنیای مجازی هستیم. باور داشته باشید که امروز، دیگر غیرممکن، غیرممکن نیست. یک آرمان بزرگ، اگر برای امروز بلند به نظر برسد، برای فردا کوچک خواهد بود.",
-                en: "Just as humanity created democracy to make power equitable, we are on the verge of creating a 'democracy of wealth' in the virtual world. Believe that today, the impossible is no longer impossible. A great ideal, if it seems lofty for today, will be small for tomorrow."
+                fa: "همانطور که بشریت دموکراسی را برای عادلانه کردن قدرت ایجاد کرد، ما در آستانه‌ی خلق یک 'دموکراسی ثروت' در دنیای مجازی هستیم. ما به تخیل، نقش حقیقت می‌بخشیم و باور داریم که در دنیای ما، دیگر محال برای انسان متصور نیست. یک آرمان بزرگ، اگر برای امروز بلند به نظر برسد، برای فردا کوچک خواهد بود.",
+                en: "Just as humanity created democracy to make power equitable, we are on the verge of creating a 'democracy of wealth' in the virtual world. We give imagination the role of reality and believe that in our world, the impossible is no longer conceivable for humanity. A great ideal, if it seems lofty for today, will be small for tomorrow."
             },
             {
                 fa: "این پروژه، قبل از آنکه یک کسب و کار باشد، فلسفه یک زندگی است. سفری برای یافتن معنا. ثروت حقیقی، در دلارهای به دست آمده نیست، بلکه در ارزشی است که خلق می‌شود و در رسالتی است که به سرانجام می‌رسد. این دنیا، تضمین یک زندگی است؛ نه با انباشت پول، بلکه با به جا گذاشتن یک میراث معنادار که حتی پس از ما، به حیات خود ادامه دهد و به دیگران فرصت شکوفایی بدهد.",
@@ -151,6 +151,10 @@ const chapters: {
             {
                 fa: "پس بگذارید این دنیا، نماد امیدی باشد برای همه‌ی کسانی که احساس می‌کنند در دام افتاده‌اند، محدود شده‌اند یا فراموش شده‌اند. روح شما نیز مهارنشدنی است. رویاهای شما نیز می‌توانند دنیاهایی نو بسازند.",
                 en: "So let this world be a symbol of hope for all those who feel trapped, limited, or forgotten. Your spirit, too, is uncontainable. Your dreams, too, can build new worlds."
+            },
+            {
+                fa: "آری، بازی در «توانا» خواهیم ساخت. بانک خواهیم ساخت. پول و آرزو خواهیم ساخت. نردبانی تا عرش کبریا و تا آخر زمین و زمان برپا خواهیم کرد. اما نه در تخیل، بلکه در واقعیت زندگی حقیقی و ارتباط آن با «حقیقت در مجاز».",
+                en: "Yes, we will build games in 'Tavana'. We will build banks. We will build money and dreams. We will erect a ladder to the highest heavens and to the end of time. But not in imagination, but in the reality of true life and its connection with 'truth in the virtual'."
             }
         ]
     }
