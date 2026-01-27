@@ -129,6 +129,12 @@ export default function Home() {
                 <p className="mt-4 text-base text-muted-foreground">
                 Our vision extends beyond the confines of Earth. Instead of war over limited resources, we dream of uniting humanity to reach for the cosmos. FB New Meta is not merely a metaverse; it is a pact for co-creation and a ladder to the stars.
                 </p>
+                 <blockquote className="mt-8 p-6 border-l-4 border-accent bg-accent/10 text-left">
+                    <p className="text-lg font-semibold text-foreground/90 italic">
+                    "ثروت هستی، در همت انسان است. در باور به رشد و در شهامت تلاش برای رسیدن به آرزوها. ثروت، نگاه مثبت به آینده است و تلاش برای رسیدن به اهداف، تا آخرین نفس."
+                    </p>
+                    <footer className="mt-2 text-sm text-muted-foreground">- The Founder</footer>
+                </blockquote>
                 <div className="mt-8">
                     <Button asChild variant="outline">
                         <Link href="/manifesto">Read Our Book of Creation</Link>
