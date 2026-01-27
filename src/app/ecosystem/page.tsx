@@ -128,11 +128,16 @@ export default function EcosystemPage() {
                         ))}
                     </div>
 
-                    <div className="text-center mt-16">
+                    <div className="text-center mt-16 space-y-6">
                         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
                         This roadmap represents our commitment to building a complete, interconnected world. Each application is a vital organ, working in harmony to create a society where capability and collaboration are the cornerstones of progress.
                         <br/>
                         <span className="text-base">(این نقشه راه، تعهد ما به ساختن یک دنیای کامل و به‌هم‌پیوسته را نشان می‌دهد. هر اپلیکیشن، یک عضو حیاتی است که در هماهنگی با دیگران کار می‌کند تا جامعه‌ای را خلق کند که در آن، توانایی و همکاری، سنگ‌بنای پیشرفت است.)</span>
+                        </p>
+                        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                        Our reward systems are also designed for universal inspiration. Beyond celebrating our top contributors, we believe in creating moments of magic for everyone. Across our apps, we will offer dream prizes, even to guest users, fostering a culture of broad participation and the thrilling belief that in Tavana City, the extraordinary is always within reach.
+                        <br/>
+                        <span className="text-base">(سیستم‌های پاداش ما نیز برای الهام‌بخشی جهانی طراحی شده‌اند. فراتر از تجلیل از مشارکت‌کنندگان برتر، ما به خلق لحظات جادویی برای همه باور داریم. در سراسر اپلیکیشن‌هایمان، جوایز رویایی را حتی برای کاربران مهمان ارائه خواهیم داد تا فرهنگ مشارکت گسترده و این باور هیجان‌انگیز را تقویت کنیم که در شهر توانا، هر امر فوق‌العاده‌ای همواره در دسترس است.)</span>
                         </p>
                     </div>
                 </div>
