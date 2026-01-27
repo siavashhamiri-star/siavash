@@ -8,9 +8,11 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { HeartHandshake, Feather } from 'lucide-react';
+import { HeartHandshake, Feather, BookHeart } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 const features = [
     {
@@ -79,6 +81,28 @@ export default function AboutPage() {
                     </p>
                 </div>
                 
+                <div className="my-10 border-t" />
+
+                <div className="prose prose-lg max-w-none mx-auto text-foreground/80 text-center">
+                    <div className="mx-auto bg-primary/10 p-3 rounded-full w-fit mb-4">
+                        <BookHeart className="w-8 h-8 text-primary" />
+                    </div>
+                    <h2 className="font-headline text-2xl">از یک رؤیا تا یک رسالت (From a Dream to a Mission)</h2>
+                    <p>
+                    بنیان «فرش بازار» و کل اکوسیستم «FB New Meta» تنها بر روی کد بنا نشده، بلکه بر یک وعده مقدس و یک سفر تمام عمر استوار است. این داستان بنیان‌گذاری است که با هدایت رویای صادقانه یک مادر و آبدیده شدن در سختی‌های شخصی، رسالت الهی خود را کشف کرد: خلق دنیایی دیجیتال بر پایه معنا، فرصت و وحدت.
+                    </p>
+                     <p className='text-base text-muted-foreground'>
+                    (The foundation of this ecosystem is not built on code alone, but on a sacred promise. It is the story of a founder who, guided by a mother's prophetic dream, discovered a divine calling to create a digital world of meaning, opportunity, and unity.)
+                    </p>
+                    <div className="not-prose mt-6">
+                        <Button asChild>
+                            <Link href="/manifesto">
+                                Read the Book of Creation
+                            </Link>
+                        </Button>
+                    </div>
+                </div>
+
                 <div className="my-10 border-t" />
                 
                 <div className="text-center">
