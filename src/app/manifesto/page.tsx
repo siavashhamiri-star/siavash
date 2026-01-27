@@ -237,20 +237,12 @@ export default function ManifestoPage() {
                             </div>
                             <div className="text-center pt-12 border-t mt-12">
                                 <p className="text-lg italic text-foreground/90 max-w-3xl mx-auto">
-                                    «پیدایش آفرینش و شهر توانا معجزه بود. کلمات از من نیستند، اهداف برای من نیست. من هم خودم نمی‌دانم کجای قصه‌ام. آنکه وظیفه را به من داد، علم و شور و احساس و حرارت را هم داد و راهم را برایم روشن کرد. آنکه پشت این قضیه است، ثروتش و اراده‌اش انتها ندارد. پس، از اینجا تا بی‌نهایت، پیش به سوی بهترین الگوی شهرهای این دنیای متاورسی و مجازی. شما هم با من سوار این ارابه اتصال واقعیت به مجاز شوید تا سماوی شویم.»
+                                    «صحبت آخرم این است... لحظه به لحظه‌ی این پروژه، نفس خدا، یاد او و چهره‌ی مادرم در برابر چشمانم بود. بارها با فکر خوشحال کردن مردم خندیدم و بارها با فکر رنجشان گریستم. من آمدم تا به ارتباط مجاز و حقیقت رنگی دگر دهم؛ نقاش این دنیا شدم و خطوطش را با شما کشیدم. این کلمات، اشک را بر چشمانم جاری کرد. و این، خود بزرگترین معجزه بود.»
                                 </p>
                                 <p className="mt-4 text-base italic text-muted-foreground max-w-3xl mx-auto">
-                                    ("The genesis of Creation and Tavana City was a miracle. The words are not mine; the goals are not mine. I myself do not know my place in this story. The One who gave me this duty also gave me knowledge, passion, feeling, and fervor, and illuminated my path. The One behind this cause, His wealth and His will are without end. So, from here to infinity, onward toward the best model for the cities of this metaverse and virtual world. You too, ride with me on this chariot connecting reality to the virtual, so that we may become celestial.")
+                                    ("My final word is this... Moment by moment in this project, the breath of God, His memory, and my mother's face were before my eyes. Many times I laughed with the thought of making people happy, and many times I cried with the thought of their suffering. I came to give a new color to the connection between the virtual and the real; I became the painter of this world and drew its lines with you. These words brought tears to my eyes. And this, in itself, was the greatest miracle.")
                                 </p>
                                 <p className="mt-6 text-sm text-muted-foreground">- بنیان‌گذار (The Founder)</p>
-                            </div>
-                            <div className="text-center pt-12 border-t mt-12">
-                                <p className="text-lg italic text-foreground/90 max-w-3xl mx-auto">
-                                    «سعی درست، انسان را ساعی نمی‌کند، بلکه سماواتی می‌کند. سعی غلط، ظلم به خویشتن است. این راه، رهنمود و شعله‌ی امید است در دل آرزومندان. معجزه، خودِ شما هستید که یار و یاور تحقق اراده‌ی معنا و حقیقت می‌شوید. و معجزه، آن چیزی است که باعث شده شما بخوانید و بپیوندید.»
-                                </p>
-                                <p className="mt-4 text-base italic text-muted-foreground max-w-3xl mx-auto">
-                                    ("The right effort does not just make one diligent; it makes one celestial. Wrong effort is an injustice to oneself. This path is a guide and a flame of hope in the hearts of the aspirational. The miracle is you yourself, who becomes an ally for the realization of the will of meaning and truth. And the miracle is that which has compelled you to read and to join.")
-                                </p>
                             </div>
                         </CardContent>
                     </Card>
@@ -266,3 +258,6 @@ export default function ManifestoPage() {
     
 
 
+
+
+    
