@@ -274,6 +274,20 @@ export default function ManifestoPage() {
                                 </p>
                                 <p className="mt-6 text-sm text-muted-foreground">- بنیان‌گذار (The Founder)</p>
                             </div>
+                            <div className="text-center pt-12 border-t mt-12">
+                                <p className="text-xl font-headline font-bold text-primary">
+                                    رقص سماوی
+                                    <br/>
+                                    <span className="text-base font-sans font-normal text-muted-foreground">(The Celestial Dance)</span>
+                                </p>
+                                <p className="mt-4 text-lg italic text-foreground/90 max-w-3xl mx-auto">
+                                "زندگی سرشار از پستی و بلندی‌هاست؛ نباید ناامید شد. نگاهی گاه به زمین و نگاهی دائم به آسمان باید داشت. زندگی در جریان است و در ما نوری است که باید بتابد. اگر سماعی به سوی آسمان می‌خواهی، ابتدا ساقی شو."
+                                </p>
+                                <p className="mt-4 text-base italic text-muted-foreground max-w-3xl mx-auto">
+                                ("Life is full of ups and downs; one must not despair. We must sometimes look to the earth, but always keep our gaze on the sky. Life is in flow, and within us is a light that must shine. If you desire a celestial dance towards the heavens, first become the one who serves.")
+                                </p>
+                                <p className="mt-6 text-sm text-muted-foreground">- بنیان‌گذار (The Founder)</p>
+                            </div>
                         </CardContent>
                     </Card>
                 </div>
