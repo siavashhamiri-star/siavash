@@ -14,10 +14,10 @@ import { UserNav } from '@/components/user-nav';
 import { useUser } from '@/firebase';
 
 const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/vendors', label: 'Vendors' },
-  { href: '/about', label: 'About Us' },
-  { href: '/manifesto', label: 'Our Vision' },
+  { href: '/', label: 'Home / خانه' },
+  { href: '/vendors', label: 'Vendors / فروشندگان' },
+  { href: '/about', label: 'About Us / درباره ما' },
+  { href: '/manifesto', label: 'Our Vision / چشم‌انداز' },
   { href: '/#story-generator', label: 'AI Storyteller' },
 ];
 
@@ -101,5 +101,3 @@ export function Header() {
     </header>
   );
 }
-
-    

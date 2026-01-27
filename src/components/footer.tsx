@@ -17,25 +17,25 @@ export function Footer() {
             </p>
             <nav className="flex justify-center md:justify-end flex-wrap gap-x-4 mt-2">
               <Link href="/about" className="text-sm text-muted-foreground hover:text-primary">
-                About Us
+                About Us / درباره ما
               </Link>
               <Link href="/manifesto" className="text-sm text-muted-foreground hover:text-primary">
-                Our Vision
+                Our Vision / چشم‌انداز
               </Link>
               <Link href="/feedback" className="text-sm text-muted-foreground hover:text-primary">
-                Feedback
+                Feedback / بازخورد
               </Link>
               <Link href="/teach" className="text-sm text-muted-foreground hover:text-primary">
-                Teach with Us
+                Teach with Us / آموزش
               </Link>
               <Link href="/collaboration" className="text-sm text-muted-foreground hover:text-primary">
-                Collaborate
+                Collaborate / همکاری
               </Link>
               <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary">
-                Privacy Policy
+                Privacy / حریم خصوصی
               </Link>
               <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary">
-                Terms of Service
+                Terms / شرایط خدمات
               </Link>
             </nav>
           </div>
@@ -44,5 +44,3 @@ export function Footer() {
     </footer>
   );
 }
-
-    

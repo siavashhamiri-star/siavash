@@ -1,3 +1,4 @@
+
 'use client';
 import { useState } from 'react';
 import { useFirestore, useUser } from '@/firebase';
@@ -261,10 +262,13 @@ export default function FeedbackPage() {
 
                   {error && <p className="text-destructive text-sm">{error}</p>}
 
-                  <Button type="submit" className="w-full" disabled={!user || isLoading}>
+                  <Button type="submit" className="w-full" disabled={!user && !isLoading}>
                     <Send className="mr-2 h-4 w-4" />
                     Submit Suggestion
                   </Button>
+                  {!user && !isLoading && (
+                     <p className="text-center text-sm text-muted-foreground">Please <Link href="/login" className="underline text-primary">log in</Link> to submit feedback.</p>
+                  )}
                 </form>
               </CardContent>
             </Card>

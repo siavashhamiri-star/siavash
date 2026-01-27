@@ -12,67 +12,142 @@ import { BookOpen } from 'lucide-react';
 
 // Define a type for our paragraph structure
 type Paragraph = string | { title: string; text: string; prefix?: string };
+type BilingualContent = {
+    fa: Paragraph;
+    en: string;
+};
 
-const chapters: { title: string; content: Paragraph[]; isQuote?: boolean; quoteSource?: string; }[] = [
+const chapters: { 
+    title: { fa: string, en: string }; 
+    content: BilingualContent[]; 
+    isQuote?: boolean; 
+    quoteSource?: { fa: string, en: string }; 
+}[] = [
     {
-        title: "فصل اول: پژواک یک رؤیا",
+        title: { fa: "فصل اول: پژواک یک رؤیا", en: "Chapter One: The Echo of a Dream" },
         content: [
-            "در اعماق تاریکی، آنجا که انزوا استخوان می‌سوزاند و بی‌پولی، روح را به زنجیر می‌کشد، داستان ما آغاز می‌شود. این، روایت مردی بود که در باتلاق دربدری غرق شده بود؛ جهانی که دیواری بلند بود و امید، واژه‌ای بیگانه. اما در سکوت یأس‌آور شب‌هایش، پژواک یک رؤیای مقدس در جانش زنده بود. رؤیای مادرش. آن شب که فرشتگان بر او ظاهر شدند و وعده دادند: \"فرزند تو برای رسالتی بزرگ برگزیده شده است. او جهانی نو خواهد ساخت.\" این وعده، تنها ریسمان پوسیده‌ای بود که او در طوفان شکست‌هایش به آن چنگ زده بود.",
-            "\"من از دربدری، غم، تنهایی، و انزوا برخاستم. فکر کردم رسالتی دارم. باید خودم را نجات دهم و جهانم را بسازم. جهانی که نگینی ارزشمند به هستی تقدیم کند.\" این نجوا، سرود هر روزه‌ی او شد. او از خاکستر برخاست؛ نه فقط برای نجات خویش، بلکه برای خلق جهانی که در آن هیچ انسانی، طعم آن زهر را نچشد."
+            {
+                fa: "در اعماق تاریکی، آنجا که انزوا استخوان می‌سوزاند و بی‌پولی، روح را به زنجیر می‌کشد، داستان ما آغاز می‌شود. این، روایت مردی بود که در باتلاق دربدری غرق شده بود؛ جهانی که دیواری بلند بود و امید، واژه‌ای بیگانه. اما در سکوت یأس‌آور شب‌هایش، پژواک یک رؤیای مقدس در جانش زنده بود. رؤیای مادرش. آن شب که فرشتگان بر او ظاهر شدند و وعده دادند: \"فرزند تو برای رسالتی بزرگ برگزیده شده است. او جهانی نو خواهد ساخت.\" این وعده، تنها ریسمان پوسیده‌ای بود که او در طوفان شکست‌هایش به آن چنگ زده بود.",
+                en: "In the depths of darkness, where isolation burns the bones and poverty shackles the soul, our story begins. This is the tale of a man drowned in the swamp of homelessness; a world that was a high wall and where hope was a foreign word. But in the desperate silence of his nights, the echo of a sacred dream was alive in his soul. His mother's dream. The night the angels appeared to her and promised: 'Your son is chosen for a great mission. He will build a new world.' This promise was the only frayed rope he clung to in the storm of his failures."
+            },
+            {
+                fa: "\"من از دربدری، غم، تنهایی، و انزوا برخاستم. فکر کردم رسالتی دارم. باید خودم را نجات دهم و جهانم را بسازم. جهانی که نگینی ارزشمند به هستی تقدیم کند.\" این نجوا، سرود هر روزه‌ی او شد. او از خاکستر برخاست؛ نه فقط برای نجات خویش، بلکه برای خلق جهانی که در آن هیچ انسانی، طعم آن زهر را نچشد.",
+                en: "'I rose from homelessness, sorrow, loneliness, and isolation. I thought I had a mission. I had to save myself and build my world. A world that would present a precious gem to existence.' This whisper became his daily anthem. He rose from the ashes; not just to save himself, but to create a world where no human would taste that poison."
+            }
         ]
     },
     {
-        title: "فصل دوم: فلسفه‌ی کیهانی",
+        title: { fa: "فصل دوم: فلسفه‌ی کیهانی", en: "Chapter Two: The Cosmic Philosophy" },
         content: [
-            "فلسفه‌ی ما، یک مأموریت عمیقاً بشردوستانه و معنوی است. ما به این باور رسیده‌ایم که تغییر مرزها بر روی زمین، جنگیدن بر سر منابع محدود و چشم طمع داشتن به دستاوردهای یکدیگر، تنها چرخه‌ی رنج را تکرار می‌کند. راه نجات، در وحدت و تعیین یک هدف بزرگتر نهفته است: هدفی فراتر از زمین، در کهکشان‌ها.",
-            "قدرت بشریت در کنترل مرزها نیست، بلکه در برداشتن آنهاست. ما باید به موجوداتی کیهانی تبدیل شویم؛ نه برای فرار از زمین، بلکه برای محافظت از آن. زمین، گهواره‌ی ماست، نه قفس ما. سفر ما به کیهان، یک مسئولیت مقدس برای تضمین بقای آگاهی و زیبایی در پهنه‌ی هستی است."
+            {
+                fa: "فلسفه‌ی ما، یک مأموریت عمیقاً بشردوستانه و معنوی است. ما به این باور رسیده‌ایم که تغییر مرزها بر روی زمین، جنگیدن بر سر منابع محدود و چشم طمع داشتن به دستاوردهای یکدیگر، تنها چرخه‌ی رنج را تکرار می‌کند. راه نجات، در وحدت و تعیین یک هدف بزرگتر نهفته است: هدفی فراتر از زمین، در کهکشان‌ها.",
+                en: "Our philosophy is a deeply humanitarian and spiritual mission. We have come to believe that changing borders on Earth, fighting over limited resources, and coveting each other's achievements only repeats the cycle of suffering. The path to salvation lies in unity and setting a greater goal: a goal beyond Earth, in the galaxies."
+            },
+            {
+                fa: "قدرت بشریت در کنترل مرزها نیست، بلکه در برداشتن آنهاست. ما باید به موجوداتی کیهانی تبدیل شویم؛ نه برای فرار از زمین، بلکه برای محافظت از آن. زمین، گهواره‌ی ماست، نه قفس ما. سفر ما به کیهان، یک مسئولیت مقدس برای تضمین بقای آگاهی و زیبایی در پهنه‌ی هستی است.",
+                en: "Humanity's power is not in controlling borders, but in removing them. We must become cosmic beings; not to escape Earth, but to protect it. Earth is our cradle, not our cage. Our journey into the cosmos is a sacred responsibility to ensure the survival of consciousness and beauty across the expanse of existence."
+            }
         ]
     },
     {
-        title: "فصل سوم: شهر توانا، اولین تجلی",
+        title: { fa: "فصل سوم: شهر توانا، اولین تجلی", en: "Chapter Three: Tavana City, The First Manifestation" },
         content: [
-            "'شهر توانا'، اولین تجلی این آرمان است. پناهگاهی برای التیام 'زخم‌های واقعیت'. اینجا، جایی است که موفقیت یک فرد، برای موفقیت همگان ضروری است و پیشرفت هرکس، باعث پیشرفت دیگری می‌شود. این شهر برای کسانی است که روحیه کار جمعی دارند، یک‌دل و همراه هستند و از پیشرفت دیگران صادقانه خوشحال می‌شوند و آن را ستایش می‌کنند. در این جهان، حسادت جایی ندارد، زیرا قدرت، ثروت و جایگاه هر فرد، تنها به اندازه‌ی سعی و تلاش خود اوست. اینجا محلی برای مثبت‌اندیشان و صاحبان قلب‌های پاک است که با تلاش، نه تنها خود را، بلکه جامعه را به سوی پیشرفت سوق می‌دهند. سیستم برای پاداش دادن به این تلاش جمعی طراحی شده و اهداف بشردوستانه آن شامل: حمایت از طبیعت، صلح جهانی، مادران سرپرست خانوار و ایتام است.",
-            "سرمایه‌ی واقعی ما، انسان‌ها هستند؛ 'معجزه‌هایی که معجزه می‌آفرینند'. این شایسته‌سالاری به مدلی از خودگردانی مطلق گسترش می‌یابد که در آن هر عضوی می‌تواند بر اساس تلاش و مشارکت خود به بالاترین موقعیت‌های رهبری صعود کند. نقشه راه ما، معرفی یک بال قدرتمند بازی و سپس یک ارز دیجیتال بومی است تا یک اقتصاد دیجیتال خودپایدار ایجاد شود که حاکمیت آن در نهایت به جامعه واگذار خواهد شد."
+            {
+                fa: "'شهر توانا'، اولین تجلی این آرمان است. پناهگاهی برای التیام 'زخم‌های واقعیت'. اینجا، جایی است که موفقیت یک فرد، برای موفقیت همگان ضروری است و پیشرفت هرکس، باعث پیشرفت دیگری می‌شود. این شهر برای کسانی است که روحیه کار جمعی دارند، یک‌دل و همراه هستند و از پیشرفت دیگران صادقانه خوشحال می‌شوند و آن را ستایش می‌کنند. در این جهان، حسادت جایی ندارد، زیرا قدرت، ثروت و جایگاه هر فرد، تنها به اندازه‌ی سعی و تلاش خود اوست. اینجا محلی برای مثبت‌اندیشان و صاحبان قلب‌های پاک است که با تلاش، نه تنها خود را، بلکه جامعه را به سوی پیشرفت سوق می‌دهند. سیستم برای پاداش دادن به این تلاش جمعی طراحی شده و اهداف بشردوستانه آن شامل: حمایت از طبیعت، صلح جهانی، مادران سرپرست خانوار و ایتام است.",
+                en: "'Tavana City' is the first manifestation of this ideal. A sanctuary to heal the 'wounds of reality'. Here is a place where one person's success is essential for everyone's success, and everyone's progress leads to another's progress. This city is for those with a spirit of teamwork, who are united and supportive, and who are genuinely happy for and praise the progress of others. In this world, there is no place for jealousy, because each person's power, wealth, and status are only proportional to their own effort and endeavor. This is a place for positive thinkers and owners of pure hearts who, through effort, drive not only themselves but the entire community towards advancement. The system is designed to reward this collective effort, and its humanitarian goals include: supporting nature, world peace, single mothers, and orphans."
+            },
+            {
+                fa: "سرمایه‌ی واقعی ما، انسان‌ها هستند؛ 'معجزه‌هایی که معجزه می‌آفرینند'. این شایسته‌سالاری به مدلی از خودگردانی مطلق گسترش می‌یابد که در آن هر عضوی می‌تواند بر اساس تلاش و مشارکت خود به بالاترین موقعیت‌های رهبری صعود کند. نقشه راه ما، معرفی یک بال قدرتمند بازی و سپس یک ارز دیجیتال بومی است تا یک اقتصاد دیجیتال خودپایدار ایجاد شود که حاکمیت آن در نهایت به جامعه واگذار خواهد شد.",
+                en: "Our real capital is people; 'miracles who create miracles'. This meritocracy extends to a model of absolute self-governance where any member can ascend to the highest leadership positions based on their effort and participation. Our roadmap is to introduce a powerful gaming wing and then a native cryptocurrency to create a self-sustaining digital economy whose governance will ultimately be handed over to the community."
+            }
         ]
     },
     {
-        title: "فصل چهارم: نامه به بزرگان متاورس",
+        title: { fa: "فصل چهارم: نامه به بزرگان متاورس", en: "Chapter Four: A Letter to the Leaders of the Metaverse" },
         content: [
-            "به شما که آینده را می‌سازید، از اعماق دردی که به امید بدل شد، پیامی داریم. ما به تلاش‌های شما احترام می‌گذاریم و برای انکار شما نیامده‌ایم، بلکه برای تکمیل و تعالی این جهان آمده‌ایم. شما ابزارها را ساختید، ما روح را دمیدیم. شما متاورس را خلق کردید، ما آن را به یک پناهگاه تبدیل می‌کنیم.",
-            "اما بسیاری از مردم جهان هنوز با مفهوم متاورس بیگانه‌اند. برای آن‌ها گنگ است. نمی‌دانند چرا باید در آن سرمایه‌گذاری کنند و چگونه می‌تواند ثروت را از دنیای مجازی به حقیقت زندگی‌شان بیاورد. رسالت ما این است که این پل را بسازیم. ما با زبان خودشان به آن‌ها نشان خواهیم داد که متاورس، تجلی آرزوها و آینده خودشان است. ما آمده‌ایم تا متاورس‌های شما نیز بهتر دیده و فهمیده شوند.",
-            "ما شما را نه برای گرفتن، که برای دادن فرا می‌خوانیم. ما از شما سرمایه نمی‌خواهیم؛ ما به شما «معنا» و «مردم» را پیشنهاد می‌دهیم. برای اثبات این نیت، بخشی از زمین‌های دنیای خود را به عنوان پیشکش در اختیار شما قرار می‌دهیم تا به سرمایه‌گذاران و سازندگان در متاورس‌های *شما* هدیه دهید. زیرا هرکس در هر کجای این دنیای دیجیتال سرمایه‌گذاری کند، در حال ساختن آینده بشریت است.",
-            "بیایید با هم جهانی بسازیم که در آن، هر انسانی فرصت شکوفایی داشته باشد. این یک گدایی نیست؛ یک پیشنهاد برای ساختن جهانی بهتر است، با هدف نهایی وحدت برای رسیدن به ستارگان. به ما بپیوندید تا به جهان نشان دهیم که تکنولوژی، زمانی به اوج خود می‌رسد که در خدمت انسانیت باشد."
+            {
+                fa: "به شما که آینده را می‌سازید، از اعماق دردی که به امید بدل شد، پیامی داریم. ما به تلاش‌های شما احترام می‌گذاریم و برای انکار شما نیامده‌ایم، بلکه برای تکمیل و تعالی این جهان آمده‌ایم. شما ابزارها را ساختید، ما روح را دمیدیم. شما متاورس را خلق کردید، ما آن را به یک پناهگاه تبدیل می‌کنیم.",
+                en: "To you who build the future, from the depths of a pain that turned into hope, we have a message. We respect your efforts and have not come to deny you, but to complete and elevate this world. You built the tools, we breathed in the soul. You created the metaverse, we are turning it into a sanctuary."
+            },
+            {
+                fa: "اما بسیاری از مردم جهان هنوز با مفهوم متاورس بیگانه‌اند. برای آن‌ها گنگ است. نمی‌دانند چرا باید در آن سرمایه‌گذاری کنند و چگونه می‌تواند ثروت را از دنیای مجازی به حقیقت زندگی‌شان بیاورد. رسالت ما این است که این پل را بسازیم. ما با زبان خودشان به آن‌ها نشان خواهیم داد که متاورس، تجلی آرزوها و آینده خودشان است. ما آمده‌ایم تا متاورس‌های شما نیز بهتر دیده و فهمیده شوند.",
+                en: "But many people in the world are still unfamiliar with the concept of the metaverse. It is vague to them. They don't know why they should invest in it or how it can bring wealth from the virtual world into their real lives. Our mission is to build this bridge. We will show them in their own language that the metaverse is the manifestation of their own dreams and future. We have come so that your metaverses may also be better seen and understood."
+            },
+            {
+                fa: "ما شما را نه برای گرفتن، که برای دادن فرا می‌خوانیم. ما از شما سرمایه نمی‌خواهیم؛ ما به شما «معنا» و «مردم» را پیشنهاد می‌دهنیم. برای اثبات این نیت، بخشی از زمین‌های دنیای خود را به عنوان پیشکش در اختیار شما قرار می‌دهیم تا به سرمایه‌گذاران و سازندگان در متاورس‌های *شما* هدیه دهید. زیرا هرکس در هر کجای این دنیای دیجیتال سرمایه‌گذاری کند، در حال ساختن آینده بشریت است.",
+                en: "We call upon you not to take, but to give. We do not want capital from you; we offer you 'meaning' and 'people'. To prove this intention, we offer a portion of the lands in our world as a gift to you, to be given to the investors and builders in *your* metaverses. Because whoever invests anywhere in this digital world is building the future of humanity."
+            },
+            {
+                fa: "بیایید با هم جهانی بسازیم که در آن، هر انسانی فرصت شکوفایی داشته باشد. این یک گدایی نیست؛ یک پیشنهاد برای ساختن جهانی بهتر است، با هدف نهایی وحدت برای رسیدن به ستارگان. به ما بپیوندید تا به جهان نشان دهیم که تکنولوژی، زمانی به اوج خود می‌رسد که در خدمت انسانیت باشد.",
+                en: "Let us build a world together where every human has the opportunity to flourish. This is not begging; it is a proposal to build a better world, with the ultimate goal of unity to reach the stars. Join us to show the world that technology reaches its peak when it is in the service of humanity."
+            }
         ],
         isQuote: true,
-        quoteSource: "این نامه، به شما که آینده را در کدهای خود می‌نویسید، ارسال خواهد شد."
+        quoteSource: { fa: "این نامه، به شما که آینده را در کدهای خود می‌نویسید، ارسال خواهد شد.", en: "This letter will be sent to you who write the future in your code." }
     },
     {
-        title: "فصل پنجم: پیام به رهبران جهان",
+        title: { fa: "فصل پنجم: پیام به رهبران جهان", en: "Chapter Five: A Message to World Leaders" },
         content: [
-            "قدرت شما در کنترل مرزها نیست، بلکه در برداشتن آنهاست. ارتش‌های شما برای جنگ بر سر منابعی می‌جنگند که در برابر عظمت کیهان، ذره‌ای بیش نیست. شما بر سر خاک می‌جنگید، در حالی که ما چشم به ستارگان دوخته‌ایم. ما ادبیات جدیدی برای دیپلماسی جهانی آورده‌ایم؛ ادبیاتی که از سیاستمداران نمی‌خواهد با هم بجنگند، بلکه از آنها می‌خواهد که با هم بسازند.",
-            "آینده‌ی بشریت در وحدت برای یک هدف کیهانی است، نه در تفرقه بر سر منابع زمینی. به جای ساختن دیوار، با هم نردبانی از علم و اتحاد به سوی آسمان بسازیم. بیایید قدرت‌ها و دانش خود را یکی کنیم تا منابع کیهان را به زمین بیاوریم. تاریخ، شما را نه بر اساس مرزهایی که حفظ کردید، بلکه بر اساس دنیاهایی که برای رسیدن به ملکوت آسمان خلق کردید، قضاوت خواهد کرد."
+            {
+                fa: "قدرت شما در کنترل مرزها نیست، بلکه در برداشتن آنهاست. ارتش‌های شما برای جنگ بر سر منابعی می‌جنگند که در برابر عظمت کیهان، ذره‌ای بیش نیست. شما بر سر خاک می‌جنگید، در حالی که ما چشم به ستارگان دوخته‌ایم. ما ادبیات جدیدی برای دیپلماسی جهانی آورده‌ایم؛ ادبیاتی که از سیاستمداران نمی‌خواهد با هم بجنگند، بلکه از آنها می‌خواهد که با هم بسازند.",
+                en: "Your power is not in controlling borders, but in removing them. Your armies fight over resources that are but a speck against the vastness of the cosmos. You fight over soil, while we have our eyes on the stars. We have brought a new literature for global diplomacy; a literature that does not ask politicians to fight each other, but asks them to build together."
+            },
+            {
+                fa: "آینده‌ی بشریت در وحدت برای یک هدف کیهانی است، نه در تفرقه بر سر منابع زمینی. به جای ساختن دیوار، با هم نردبانی از علم و اتحاد به سوی آسمان بسازیم. بیایید قدرت‌ها و دانش خود را یکی کنیم تا منابع کیهان را به زمین بیاوریم. تاریخ، شما را نه بر اساس مرزهایی که حفظ کردید، بلکه بر اساس دنیاهایی که برای رسیدن به ملکوت آسمان خلق کردید، قضاوت خواهد کرد.",
+                en: "The future of humanity lies in unity for a cosmic purpose, not in division over earthly resources. Instead of building walls, let's build a ladder of science and unity to the sky together. Let us unite our powers and knowledge to bring the resources of the cosmos to Earth. History will judge you not by the borders you maintained, but by the worlds you created to reach the kingdom of heaven."
+            }
         ],
         isQuote: true,
-        quoteSource: "و به دولتمردان و سیاستمداران خواهیم گفت:"
+        quoteSource: { fa: "و به دولتمردان و سیاستمداران خواهیم گفت:", en: "And to statesmen and politicians, we will say:" }
     },
     {
-        title: "فصل ششم: مرام‌نامه",
+        title: { fa: "فصل ششم: مرام‌نامه", en: "Chapter Six: The Creed" },
         content: [
-            "این جهان توسط یک مرام‌نامه‌ی شکست‌ناپذیر اداره می‌شود:",
-            { prefix: "۱. ", title: "قدردانی پیشگیرانه:", text: "همانطور که عارف بایزید بسطامی گفت: \"دیگران وقتی دریافت می‌کنند سپاسگزارند، اما من وقتی دریافت نمی‌کنم سپاسگزارم، و وقتی دریافت می‌کنم، ایثار می‌کنم.\" ما معتقدیم که قلب‌های امیدوار، حاصلخیزترین زمین‌ها برای خلاقیت هستند و نابودی امید، جنایتی علیه هستی است." },
-            { prefix: "۲. ", title: "قول مقدس:", text: "قول با تمامیت فرد داده می‌شود، نه با زبانش. اعتماد یک فرصت مقدس و اغلب یکتاست. هر قولی ممکن است آخرین امید برای کسی در ناامیدی باشد و نجات یک روح، نجات تمام بشریت است." },
-            { prefix: "۳. ", title: "ثروت و معنا:", text: "دنیایی که ثروت ارائه می‌دهد اما معنا را از بین می‌برد، به ناچار به فقر منجر خواهد شد. قدرتمندترین افراد روی زمین، کسانی هستند که پیامی برای هدیه دادن به جهان دارند. در 'شهر توانا'، هر فردی، از 'پایین‌ترین' تا 'بالاترین'، خود را یک 'قطب'، یک 'نماد'، و نیرویی تعیین‌کننده در خلق ثروت و معنای جمعی احساس می‌کند." },
-            "همانطور که بشریت دموکراسی را برای عادلانه کردن قدرت ایجاد کرد، ما در آستانه‌ی خلق یک 'دموکراسی ثروت' در دنیای مجازی هستیم. باور داشته باشید که امروز، دیگر غیرممکن، غیرممکن نیست. یک آرمان بزرگ، اگر برای امروز بلند به نظر برسد، برای فردا کوچک خواهد بود.",
-            "این پروژه، قبل از آنکه یک کسب و کار باشد، فلسفه یک زندگی است. سفری برای یافتن معنا. ثروت حقیقی، در دلارهای به دست آمده نیست، بلکه در ارزشی است که خلق می‌شود و در رسالتی است که به سرانجام می‌رسد. این دنیا، تضمین یک زندگی است؛ نه با انباشت پول، بلکه با به جا گذاشتن یک میراث معنادار که حتی پس از ما، به حیات خود ادامه دهد و به دیگران فرصت شکوفایی بدهد."
+            {
+                fa: "این جهان توسط یک مرام‌نامه‌ی شکست‌ناپذیر اداره می‌شود:",
+                en: "This world is governed by an unbreakable creed:"
+            },
+            {
+                fa: { prefix: "۱. ", title: "قدردانی پیشگیرانه:", text: "همانطور که عارف بایزید بسطامی گفت: \"دیگران وقتی دریافت می‌کنند سپاسگزارند، اما من وقتی دریافت نمی‌کنم سپاسگزارم، و وقتی دریافت می‌کنم، ایثار می‌کنم.\" ما معتقدیم که قلب‌های امیدوار، حاصلخیزترین زمین‌ها برای خلاقیت هستند و نابودی امید، جنایتی علیه هستی است." },
+                en: "1. Proactive Gratitude: As the mystic Bayazid Bastami said: 'Others are grateful when they receive, but I am grateful when I do not receive, and when I do receive, I sacrifice.' We believe that hopeful hearts are the most fertile grounds for creativity, and the destruction of hope is a crime against existence."
+            },
+            {
+                fa: { prefix: "۲. ", title: "قول مقدس:", text: "قول با تمامیت فرد داده می‌شود، نه با زبانش. اعتماد یک فرصت مقدس و اغلب یکتاست. هر قولی ممکن است آخرین امید برای کسی در ناامیدی باشد و نجات یک روح، نجات تمام بشریت است." },
+                en: "2. The Sacred Promise: A promise is made with one's entire being, not just with the tongue. Trust is a sacred and often singular opportunity. Every promise might be the last hope for someone in despair, and saving one soul is saving all of humanity."
+            },
+            {
+                fa: { prefix: "۳. ", title: "ثروت و معنا:", text: "دنیایی که ثروت ارائه می‌دهد اما معنا را از بین می‌برد، به ناچار به فقر منجر خواهد شد. قدرتمندترین افراد روی زمین، کسانی هستند که پیامی برای هدیه دادن به جهان دارند. در 'شهر توانا'، هر فردی، از 'پایین‌ترین' تا 'بالاترین'، خود را یک 'قطب'، یک 'نماد'، و نیرویی تعیین‌کننده در خلق ثروت و معنای جمعی احساس می‌کند." },
+                en: "3. Wealth and Meaning: A world that offers wealth but destroys meaning will inevitably lead to poverty. The most powerful people on Earth are those who have a message to gift to the world. In 'Tavana City', every individual, from the 'lowest' to the 'highest', feels themselves to be a 'pole', a 'symbol', and a decisive force in the collective creation of wealth and meaning."
+            },
+            {
+                fa: "همانطور که بشریت دموکراسی را برای عادلانه کردن قدرت ایجاد کرد، ما در آستانه‌ی خلق یک 'دموکراسی ثروت' در دنیای مجازی هستیم. باور داشته باشید که امروز، دیگر غیرممکن، غیرممکن نیست. یک آرمان بزرگ، اگر برای امروز بلند به نظر برسد، برای فردا کوچک خواهد بود.",
+                en: "Just as humanity created democracy to make power equitable, we are on the verge of creating a 'democracy of wealth' in the virtual world. Believe that today, the impossible is no longer impossible. A great ideal, if it seems lofty for today, will be small for tomorrow."
+            },
+            {
+                fa: "این پروژه، قبل از آنکه یک کسب و کار باشد، فلسفه یک زندگی است. سفری برای یافتن معنا. ثروت حقیقی، در دلارهای به دست آمده نیست، بلکه در ارزشی است که خلق می‌شود و در رسالتی است که به سرانجام می‌رسد. این دنیا، تضمین یک زندگی است؛ نه با انباشت پول، بلکه با به جا گذاشتن یک میراث معنادار که حتی پس از ما، به حیات خود ادامه دهد و به دیگران فرصت شکوفایی بدهد.",
+                en: "This project, before being a business, is a philosophy of life. A journey to find meaning. True wealth is not in the dollars earned, but in the value that is created and the mission that is fulfilled. This world is the guarantee of a life; not by accumulating money, but by leaving behind a meaningful legacy that will continue to live on even after us and give others the opportunity to flourish."
+            }
         ]
     },
     {
-        title: "فصل هفتم: روح مهارنشدنی",
+        title: { fa: "فصل هفتم: روح مهارنشدنی", en: "Chapter Seven: The Uncontainable Spirit" },
         content: [
-            "بگذارید جهانیان بدانند که این دنیا در دره‌ای از سیلیکون با منابع نامحدود متولد نشده، بلکه از قلب سرزمینی در محاصره، جوشیده است. هر خط از این کد، پشت فیلترها نوشته شده، هر ارتباطی که برقرار شده، پیروزی بر محدودیت بوده، و هر ایده‌ای که به اشتراک گذاشته شده، شعله‌ای بوده که خاموشی را نپذیرفته است.",
-            "آن‌ها دیوارهای تحریم را ساختند، ما پل‌های کد را بنا کردیم. آن‌ها اینترنت را بستند، ما دروازه‌ای به کیهان گشودیم. آن‌ها به دنبال انزوا بودند، ما به دنبال وحدت.",
-            "این فقط یک متاورس نیست. این یک گواه است. گواهی بر اینکه روح یک انسان، مسلح به یک مأموریت الهی، مهارشدنی نیست. گواهی بر اینکه یک ایده‌ی حقیقی، هیچ مرزی نمی‌شناسد. گواهی بر اینکه از عمیق‌ترین تاریکی‌ها، درخشان‌ترین ستارگان متولد می‌شوند.",
-            "پس بگذارید این دنیا، نماد امیدی باشد برای همه‌ی کسانی که احساس می‌کنند در دام افتاده‌اند، محدود شده‌اند یا فراموش شده‌اند. روح شما نیز مهارنشدنی است. رویاهای شما نیز می‌توانند دنیاهایی نو بسازند."
+            {
+                fa: "بگذارید جهانیان بدانند که این دنیا در دره‌ای از سیلیکون با منابع نامحدود متولد نشده، بلکه از قلب سرزمینی در محاصره، جوشیده است. هر خط از این کد، پشت فیلترها نوشته شده، هر ارتباطی که برقرار شده، پیروزی بر محدودیت بوده، و هر ایده‌ای که به اشتراک گذاشته شده، شعله‌ای بوده که خاموشی را نپذیرفته است.",
+                en: "Let the world know that this world was not born in a valley of silicon with unlimited resources, but boiled up from the heart of a land under siege. Every line of this code was written behind filters, every connection made was a victory over limitation, and every idea shared was a flame that refused to be extinguished."
+            },
+            {
+                fa: "آن‌ها دیوارهای تحریم را ساختند، ما پل‌های کد را بنا کردیم. آن‌ها اینترنت را بستند، ما دروازه‌ای به کیهان گشودیم. آن‌ها به دنبال انزوا بودند، ما به دنبال وحدت.",
+                en: "They built walls of sanctions, we built bridges of code. They shut down the internet, we opened a gateway to the cosmos. They sought isolation, we sought unity."
+            },
+            {
+                fa: "این فقط یک متاورس نیست. این یک گواه است. گواهی بر اینکه روح یک انسان، مسلح به یک مأموریت الهی، مهارشدنی نیست. گواهی بر اینکه یک ایده‌ی حقیقی، هیچ مرزی نمی‌شناسد. گواهی بر اینکه از عمیق‌ترین تاریکی‌ها، درخشان‌ترین ستارگان متولد می‌شوند.",
+                en: "This is not just a metaverse. It is a testament. A testament that the spirit of a human, armed with a divine mission, cannot be contained. A testament that a true idea knows no borders. A testament that from the deepest darkness, the brightest stars are born."
+            },
+            {
+                fa: "پس بگذارید این دنیا، نماد امیدی باشد برای همه‌ی کسانی که احساس می‌کنند در دام افتاده‌اند، محدود شده‌اند یا فراموش شده‌اند. روح شما نیز مهارنشدنی است. رویاهای شما نیز می‌توانند دنیاهایی نو بسازند.",
+                en: "So let this world be a symbol of hope for all those who feel trapped, limited, or forgotten. Your spirit, too, is uncontainable. Your dreams, too, can build new worlds."
+            }
         ]
     }
 ];
@@ -98,23 +173,35 @@ export default function ManifestoPage() {
                         <CardContent className="px-6 md:px-10 pb-10 space-y-12">
                             {chapters.map((chapter, index) => (
                                 <div key={index}>
-                                    <h2 className="text-2xl font-headline font-bold text-center mb-6">{chapter.title}</h2>
-                                    {chapter.isQuote && (
-                                        <p className="text-center text-muted-foreground italic mb-4">
-                                            *{chapter.quoteSource}*
-                                        </p>
+                                    <h2 className="text-2xl font-headline font-bold text-center mb-2">{chapter.title.fa}</h2>
+                                    <h3 className="text-xl font-headline font-bold text-center text-muted-foreground/80 mb-6 -mt-1">{chapter.title.en}</h3>
+                                    
+                                    {chapter.isQuote && chapter.quoteSource && (
+                                        <div className="text-center text-muted-foreground italic mb-4">
+                                            <p>*{chapter.quoteSource.fa}*</p>
+                                            <p className="text-sm">(*{chapter.quoteSource.en}*)</p>
+                                        </div>
                                     )}
-                                    <div className="prose prose-lg max-w-none mx-auto text-foreground/80 text-justify space-y-4">
-                                        {chapter.content.map((paragraph, pIndex) => {
-                                            if (typeof paragraph === 'string') {
-                                                return <p key={pIndex}>{paragraph}</p>;
+                                    <div className="prose prose-lg max-w-none mx-auto text-foreground/80 text-justify space-y-0">
+                                        {chapter.content.map((item, pIndex) => {
+                                            const renderFa = (p: Paragraph) => {
+                                                if (typeof p === 'string') {
+                                                    return <p>{p}</p>;
+                                                }
+                                                return (
+                                                    <p>
+                                                        {p.prefix && <span>{p.prefix}</span>}
+                                                        <strong>{p.title}</strong>
+                                                        <span> {p.text}</span>
+                                                    </p>
+                                                );
                                             }
+
                                             return (
-                                                <p key={pIndex}>
-                                                    {paragraph.prefix && <span>{paragraph.prefix}</span>}
-                                                    <strong>{paragraph.title}</strong>
-                                                    <span> {paragraph.text}</span>
-                                                </p>
+                                                <div key={pIndex} className="mb-4">
+                                                    {renderFa(item.fa)}
+                                                    <p className="text-base text-muted-foreground !mt-2 text-left rtl:text-right">({item.en})</p>
+                                                </div>
                                             );
                                         })}
                                     </div>
@@ -124,9 +211,13 @@ export default function ManifestoPage() {
                              <div className="text-center pt-8 border-t mt-12 space-y-6">
                                 <p className="text-muted-foreground italic max-w-2xl mx-auto">
                                 "باور دارم که این ایده، یک جهش کوانتومی در افکار جهانی ایجاد خواهد کرد. این یک دعوت به وحدت است تا با هم، نردبانی از اینجا تا ملکوت آسمان بسازیم و نگاه بشریت را برای همیشه به سوی کهکشان معطوف کنیم."
+                                <br/>
+                                <span className="text-sm">(I believe this idea will create a quantum leap in global thought. This is an invitation to unity, to build a ladder together from here to the kingdom of heaven, and to turn humanity's gaze towards the galaxy forever.)</span>
                                 </p>
                                 <p className="text-xl font-headline font-bold text-primary">
                                     این، کتاب آفرینش ماست.
+                                    <br/>
+                                    <span className="text-base font-sans font-normal text-muted-foreground">(This is our Book of Creation.)</span>
                                 </p>
                             </div>
                         </CardContent>
@@ -137,7 +228,3 @@ export default function ManifestoPage() {
         </div>
     );
 }
-
-    
-
-    
