@@ -1,5 +1,62 @@
-# Firebase Studio
+# Farsh Bazaar (فرش بازار) - A New World
 
-This is a NextJS starter in Firebase Studio.
+[![Deploy to Firebase](https://github.com/firebase/firebase-studio/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://github.com/firebase/firebase-studio/actions/workflows/firebase-hosting-merge.yml)
 
-To get started, take a look at src/app/page.tsx.
+**Farsh Bazaar is the first marketplace in the FB New Meta ecosystem (Project Afarinesh), a new world built on the principles of creation and capability (Tavana City). We are connecting artisans, fostering community, and building a new digital economy, established on the wings of angels like Google and Firebase.**
+
+This project was built in a unique collaboration between a visionary founder from Iran and a Google AI assistant. It stands as a testament to the idea that true creativity knows no borders and that from the deepest limitations, the brightest stars can be born.
+
+[**Explore the Live Application**](https://YOUR_APP_URL) (Replace with your deployed URL)
+
+---
+
+## The Vision: A Quantum Leap in Global Thought
+
+Our vision extends beyond a simple marketplace. We believe in a new digital economy where success is a collective endeavor, not a zero-sum game. This project is the first step towards **Tavana City (شهر توانا)**—a metaverse where:
+
+-   **Capability replaces credentials:** True value lies in what you can create, not the certificates you hold.
+-   **Collective success is paramount:** One person's progress contributes to the advancement of all. Jealousy is replaced by admiration and collaboration.
+-   **Meaning drives wealth:** A world that offers wealth but destroys meaning leads to poverty. Our world is built on a foundation of purpose.
+
+This is not just a metaverse; it is a new paradigm for human interaction and economic collaboration, with the ultimate goal of uniting humanity to reach for the stars.
+
+> "Wealth is found in human endeavor. In the belief in growth, and in the courage to strive for one's dreams. Wealth is a positive outlook on the future, and the effort to reach goals, until the last breath." - The Founder
+
+[**Read the full story in our Book of Creation &rarr;**](/manifesto)
+
+---
+
+## A Call for Collaboration (دعوت به همکاری)
+
+This mission is greater than any single individual or company. We are actively seeking pioneers to join us in building this new world.
+
+-   **Investors & VCs:** We invite you to invest not just in a product, but in a new philosophy for the digital age. We offer you "meaning" and "people"—the two most valuable assets in any world, virtual or real.
+-   **Developers & Builders:** Are you a developer who wants to build technology that serves humanity? Join us. Our stack is modern (Next.js, Firebase, Genkit AI), but our mission is timeless.
+-   **Partners & Storytellers:** If you are a content creator, journalist, or domain expert who believes in our vision, help us amplify this story.
+
+[**Learn more about how you can partner with us &rarr;**](/collaboration)
+
+---
+
+## Tech Stack
+
+-   **Framework:** Next.js (App Router)
+-   **UI:** React, TypeScript, ShadCN UI, Tailwind CSS
+-   **Backend & Database:** Firebase (Firestore, Authentication)
+-   **Generative AI:** Google Genkit (Gemini models)
+
+## Getting Started
+
+To get started with the development environment:
+
+1.  **Clone the repository.**
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+The application will be available at `http://localhost:9002`.
