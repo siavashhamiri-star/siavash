@@ -128,9 +128,11 @@ Sanatınız gelişsin ve hikayeleriniz tüm dünyaya yayılsın.
         },
     };
 
+    const sortedTranslations = Object.entries(translations).sort((a, b) => a[0].localeCompare(b[0]));
+
     return (
         <Accordion type="single" collapsible className="w-full">
-            {Object.entries(translations).map(([key, { title, content }]) => (
+            {sortedTranslations.map(([key, { title, content }]) => (
                 <AccordionItem value={key} key={key}>
                     <AccordionTrigger>{title}</AccordionTrigger>
                     <AccordionContent>
