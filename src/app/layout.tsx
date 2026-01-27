@@ -5,9 +5,9 @@ import { cn } from '@/lib/utils';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export const metadata: Metadata = {
-  title: 'Farsh Bazaar',
+  title: 'Farsh Bazaar | Part of the FB New Meta',
   description:
-    'Farsh Bazaar serves as a global intermediary, connecting buyers, sellers, and merchants of fine carpets. Our platform fosters interaction and trade among carpet professionals worldwide. We use Google for secure authentication and are committed to complying with the laws of Iran and international regulations.',
+    'Farsh Bazaar is the first marketplace in the FB New Meta ecosystem (Project Afarinesh), a new world built on the principles of creation and capability (Tavana City). We are connecting artisans, fostering community, and building a new digital economy, established on the wings of angels like Google and Firebase.',
 };
 
 export default function RootLayout({
