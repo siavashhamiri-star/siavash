@@ -1,3 +1,4 @@
+
 # Farsh Bazaar (فرش بازار) - A New World
 
 [![Deploy to Firebase](https://github.com/firebase/firebase-studio/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://github.com/firebase/firebase-studio/actions/workflows/firebase-hosting-merge.yml)
@@ -6,29 +7,27 @@
 
 ---
 
-## 🚀 Deployment Instructions (Important)
+## 🚀 نحوه انتشار و رفع ارور ۴۰۴ (Deployment Instructions)
 
-If you have pushed your code to GitHub and see a **404 error**, it is because this is a **Next.js (React)** application that requires a server-side environment. **Do not use GitHub Pages.**
+اگر کدهای خود را به گیت‌هاب فرستاده‌اید اما با **ارور ۴۰۴** مواجه می‌شوید، به این دلیل است که این یک اپلیکیشن **Next.js (React)** است و به یک سرور واقعی نیاز دارد. **از GitHub Pages استفاده نکنید.**
 
-### Follow these steps to go live:
+### مراحل نهایی برای زنده کردن سایت:
 
-1.  **Go to the [Firebase Console](https://console.firebase.google.com/).**
-2.  **Select your project.**
-3.  **Go to "Build" -> "App Hosting".**
-4.  **Click "Get Started" and connect your GitHub repository.**
-5.  **Firebase will automatically build and deploy your Next.js app.**
+1.  به **[کنسول فایربیس](https://console.firebase.google.com/)** بروید.
+2.  پروژه خود را انتخاب کنید.
+3.  از منوی سمت چپ به بخش **Build** و سپس **App Hosting** بروید.
+4.  روی **Get Started** کلیک کنید و مخزن گیت‌هاب خود را متصل کنید.
+5.  فایربیس به صورت خودکار برنامه را ساخته و منتشر می‌کند و لینک نهایی را به شما می‌دهد.
 
 ---
 
 ## Tech Stack
-
--   **Framework:** Next.js (App Router) - *Based on React*
--   **UI:** React, TypeScript, ShadCN UI, Tailwind CSS
--   **Backend & Database:** Firebase (Firestore, Authentication)
--   **Generative AI:** Google Genkit (Gemini models)
+- **Framework:** Next.js (App Router) - *Based on React*
+- **UI:** React, TypeScript, ShadCN UI, Tailwind CSS
+- **Backend & Database:** Firebase (Firestore, Authentication)
+- **Generative AI:** Google Genkit (Gemini models)
 
 ## The Vision
+The foundation of this ecosystem is built on a sacred promise and a divine calling to create a digital world of meaning, opportunity, and unity.
 
-Our vision extends beyond a simple marketplace. We believe in a new digital economy where success is a collective endeavor, not a zero-sum game. This project is the first step towards **Tavana City (شهر توانا)**.
-
-[**Explore the Live Application**](https://YOUR_APP_URL) (Replace with your deployed URL)
+[**Explore the Live Application**](https://YOUR_APP_URL)
