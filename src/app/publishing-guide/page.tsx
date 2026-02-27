@@ -8,65 +8,38 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { UploadCloud, Github } from 'lucide-react';
-import Link from 'next/link';
+import { UploadCloud, Github, Terminal as TerminalIcon, Copy, CheckCircle2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const steps = [
     {
         step: 1,
-        title: "قدم اول: ساخت خانه پروژه در گیت‌هاب",
-        en_title: "Step 1: Create the Project's Home on GitHub",
-        description: "شما این مرحله را با موفقیت انجام داده‌اید! با ساختن یک ریپازیتوری «Public» به نام farsh-bazaar، اولین قدم بزرگ را برداشته‌اید. اگر هنوز این کار را نکرده‌اید، به <a href='https://github.com/new' target='_blank' rel='noopener noreferrer' class='text-primary underline'>github.com/new</a> بروید.",
-        en_description: "You have already completed this step successfully! By creating a 'Public' repository named farsh-bazaar, you've taken the first big step. If you haven't, go to <a href='https://github.com/new' target='_blank' rel='noopener noreferrer' class='text-primary underline'>github.com/new</a>.",
+        title: "گام اول: ساخت فضا در گیت‌هاب",
+        en_title: "Step 1: Create Repository on GitHub",
+        description: "شما این مرحله را با موفقیت انجام داده‌اید! ریپازیتوری شما در گیت‌هاب آماده است.",
+        en_description: "You've successfully created the repository on GitHub.",
     },
     {
         step: 2,
-        title: "قدم دوم: باز کردن ترمینال (خط فرمان)",
-        en_title: "Step 2: Open the Terminal (Command Line)",
-        description: "ترمینال یک برنامه در لپ‌تاپ شماست که به ما اجازه می‌دهد دستورات را مستقیماً اجرا کنیم. این ابزار اصلی ما برای ارسال کدها به گیت‌هاب است. <br/>- <strong>در ویندوز:</strong> در منوی استارت، 'Command Prompt' یا 'PowerShell' را جستجو و باز کنید.<br/>- <strong>در مک:</strong> در 'Applications' و سپس 'Utilities'، برنامه‌ای به نام 'Terminal' را پیدا و باز کنید.",
-        en_description: "The terminal is a program on your laptop that lets us run commands directly. It's our main tool for sending code to GitHub. <br/>- <strong>On Windows:</strong> Search for 'Command Prompt' or 'PowerShell' in the Start Menu and open it.<br/>- <strong>On Mac:</strong> In 'Applications' then 'Utilities', find and open the program called 'Terminal'.",
-        code_description: "سپس، باید به پوشه پروژه خود بروید. دستور 'cd' (مخفف change directory) به شما اجازه می‌دهد این کار را انجام دهید. شما باید 'path/to/your/project/farsh-bazaar' را با مسیر واقعی پوشه پروژه در سیستم خود جایگزین کنید.",
-        code: "cd path/to/your/project/farsh-bazaar"
+        title: "گام دوم: باز کردن ترمینال",
+        en_title: "Step 2: Open the Terminal",
+        description: "در لپ‌تاپ خود، برنامه <strong>Command Prompt</strong> (در ویندوز) یا <strong>Terminal</strong> (در مک) را باز کنید. این همان صفحه سیاهی است که فرمان‌های ما را اجرا می‌کند.",
+        en_description: "Open Command Prompt (Windows) or Terminal (Mac) on your laptop.",
     },
     {
         step: 3,
-        title: "قدم سوم: اتصال و ارسال کدها به گیت‌هاب",
-        en_title: "Step 3: Connect and Push Your Code to GitHub",
-        description: "اکنون که در پوشه پروژه خود در ترمینال هستید، دستورات زیر را **به ترتیب و یک به یک** کپی و اجرا کنید. این دستورات کد شما را آماده، به ریپازیتوری گیت‌هاب متصل و در نهایت ارسال می‌کنند.",
-        en_description: "Now that you are in your project folder in the terminal, copy and run the following commands **in order, one by one**. These commands will prepare your code, connect it to the GitHub repository, and finally push it.",
-        code_block: [
-            {
-                command: "git init",
-                comment: "# (اگر با خطا مواجه شدید، این مرحله را نادیده بگیرید) - پوشه را به یک ریپازیتوری گیت تبدیل می‌کند"
-            },
-            {
-                command: "git add .",
-                comment: "# تمام فایل‌های پروژه را برای ارسال آماده می‌کند"
-            },
-            {
-                command: "git commit -m \"Initial commit for Farsh Bazaar\"",
-                comment: "# یک عکس فوری (کامیت) از کد شما با یک پیام ایجاد می‌کند"
-            },
-            {
-                command: "git remote add origin https://github.com/YOUR_USERNAME/farsh-bazaar.git",
-                comment: "# (مهم: YOUR_USERNAME را با نام کاربری گیت‌هاب خود جایگزین کنید) - پروژه شما را به گیت‌هاب متصل می‌کند"
-            },
-            {
-                command: "git branch -M main",
-                comment: "# شاخه اصلی پروژه را به 'main' تغییر نام می‌دهد"
-            },
-            {
-                command: "git push -u origin main",
-                comment: "# (ممکن است از شما نام کاربری و رمز عبور گیت‌هاب را بپرسد) - کد شما را به گیت‌هاب ارسال می‌کند"
-            }
+        title: "گام سوم: کپی و اجرای دستورات طلایی",
+        en_title: "Step 3: Copy and Run the Commands",
+        description: "حالا دستورات زیر را به ترتیب در آن صفحه سیاه (ترمینال) کپی و اجرا کنید. بعد از تایپ هر خط، دکمه <strong>Enter</strong> را بزنید.",
+        en_description: "Copy and run these commands in the terminal one by one, pressing Enter after each.",
+        commands: [
+            { cmd: "git init", desc: "آماده‌سازی پروژه" },
+            { cmd: "git add .", desc: "انتخاب تمام فایل‌ها برای ارسال" },
+            { cmd: "git commit -m \"Farsh Bazaar is ready\"", desc: "بسته‌بندی فایل‌ها" },
+            { cmd: "git remote add origin https://github.com/YOUR_USERNAME/farsh-bazaar.git", desc: "اتصال به گیت‌هاب (نام کاربری خود را جایگزین کنید)" },
+            { cmd: "git branch -M main", desc: "تنظیم شاخه اصلی" },
+            { cmd: "git push -u origin main", desc: "ارسال نهایی به گیت‌هاب" }
         ]
-    },
-    {
-        step: 4,
-        title: "قدم چهارم: پروژه شما منتشر شد!",
-        en_title: "Step 4: Your Project is Live!",
-        description: "تبریک! اگر تمام مراحل بدون خطا انجام شد، با بازخوانی صفحه ریپازیتوری خود در گیت‌هاب، باید تمام کدهای پروژه «فرش بازار» را ببینید. اکنون دنیا می‌تواند به آفرینش شما بپیوندد.",
-        en_description: "Congratulations! If all steps completed without error, upon refreshing your repository page on GitHub, you should see all the 'Farsh Bazaar' project code. Now the world can join your creation.",
     }
 ]
 
@@ -76,71 +49,65 @@ export default function PublishingGuidePage() {
         <Header />
         <main className="flex-1 bg-secondary/20">
           <div className="container mx-auto px-4 py-16">
-            <Card className="max-w-4xl mx-auto shadow-lg border-none">
-              <CardHeader className="text-center p-8 md:p-12">
-                <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4">
-                  <UploadCloud className="w-10 h-10 text-primary" />
+            <Card className="max-w-4xl mx-auto shadow-2xl border-none overflow-hidden">
+              <CardHeader className="text-center p-8 md:p-12 bg-primary text-primary-foreground">
+                <div className="mx-auto bg-white/20 p-4 rounded-full w-fit mb-4">
+                  <UploadCloud className="w-12 h-12 text-white" />
                 </div>
-                <CardTitle className="text-3xl md:text-4xl font-headline">
-                  راهنمای انتشار پروژه در گیت‌هاب
+                <CardTitle className="text-3xl md:text-5xl font-headline">
+                  گام به گام تا جهانی شدن
                 </CardTitle>
-                <CardDescription className="text-lg mt-2 max-w-2xl mx-auto">
-                    A Step-by-Step Guide to Publishing Your Project on GitHub
+                <CardDescription className="text-lg mt-2 text-white/80">
+                    راهنمای ساده برای انتشار «فرش بازار» در گیت‌هاب
                 </CardDescription>
               </CardHeader>
-              <CardContent className="px-6 md:px-10 pb-10 space-y-12">
-                {steps.map((step, index) => (
-                    <div key={step.step}>
-                        <div className="relative flex items-center">
-                            <div className="flex-shrink-0 bg-primary text-primary-foreground h-10 w-10 rounded-full flex items-center justify-center text-lg font-bold z-10">
+              <CardContent className="px-6 md:px-10 py-10 space-y-12">
+                
+                {steps.map((step) => (
+                    <div key={step.step} className="relative">
+                        <div className="flex items-start gap-6">
+                            <div className="flex-shrink-0 bg-accent text-accent-foreground h-12 w-12 rounded-full flex items-center justify-center text-xl font-bold shadow-lg">
                                 {step.step}
                             </div>
-                            <div className="ml-4">
-                                <h2 className="text-xl font-headline font-bold">{step.title}</h2>
-                                <h3 className="text-base font-sans text-muted-foreground">{step.en_title}</h3>
-                            </div>
-                        </div>
-
-                         <div className="mt-4 pl-5 border-l-2 border-primary/20 ml-5">
-                             <div className="pl-8 space-y-4">
-                                <p className="text-foreground/80" dangerouslySetInnerHTML={{ __html: step.description }}></p>
-                                <p className="text-sm text-muted-foreground mt-1" dangerouslySetInnerHTML={{ __html: `(${step.en_description})` }}></p>
+                            <div className="flex-1">
+                                <h2 className="text-2xl font-headline font-bold text-primary">{step.title}</h2>
+                                <p className="text-muted-foreground text-sm mb-4">({step.en_title})</p>
+                                <p className="text-foreground/80 leading-relaxed" dangerouslySetInnerHTML={{ __html: step.description }}></p>
                                 
-                                {step.code_description && (
-                                    <p className="text-foreground/80 mt-4" dangerouslySetInnerHTML={{ __html: step.code_description }}></p>
-                                )}
-
-                                {step.code && (
-                                    <pre className="bg-gray-800 text-white p-4 rounded-lg text-sm overflow-x-auto">
-                                        <code>{step.code}</code>
-                                    </pre>
-                                )}
-
-                                {step.code_block && (
-                                    <div className="mt-6 space-y-2">
-                                        {step.code_block.map((block, i) => (
-                                            <div key={i}>
-                                                <pre className="bg-gray-800 text-white p-4 rounded-lg text-sm overflow-x-auto font-mono">
-                                                    <code>{block.command}</code>
-                                                </pre>
-                                                <p className="text-xs text-muted-foreground mt-1 pl-1">{block.comment}</p>
+                                {step.commands && (
+                                    <div className="mt-8 space-y-4">
+                                        {step.commands.map((c, i) => (
+                                            <div key={i} className="group relative">
+                                                <div className="bg-slate-900 text-slate-100 p-4 rounded-lg font-mono text-sm flex justify-between items-center shadow-inner">
+                                                    <code>{c.cmd}</code>
+                                                    <TerminalIcon className="w-4 h-4 text-slate-500" />
+                                                </div>
+                                                <p className="text-xs text-muted-foreground mt-1 mr-2 text-right">← {c.desc}</p>
                                             </div>
                                         ))}
                                     </div>
                                 )}
-                             </div>
+                            </div>
                         </div>
+                        {step.step < 3 && <div className="absolute top-12 left-6 w-0.5 h-full bg-slate-200 -z-10" />}
                     </div>
                 ))}
-                
-                <div className="text-center pt-8 border-t mt-12 space-y-4">
-                    <Github className="w-12 h-12 mx-auto text-muted-foreground" />
-                    <p className="text-xl font-headline font-bold text-primary">
-                        اکنون دنیا می‌تواند به آفرینش شما بپیوندد
+
+                <div className="bg-accent/10 p-8 rounded-2xl border border-accent/20 text-center space-y-4">
+                    <CheckCircle2 className="w-12 h-12 mx-auto text-accent" />
+                    <h3 className="text-2xl font-headline font-bold">تبریک! پروژه شما منتشر شد.</h3>
+                    <p className="text-muted-foreground">
+                        حالا هر کسی در دنیا می‌تواند با رفتن به آدرس گیت‌هاب شما، این آفرینش را ببیند.
                     </p>
-                     <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-                        (Now the world can join your creation. By publishing on GitHub, you open the doors to collaboration and investment.)
-                    </p>
+                </div>
+
+                <div className="flex justify-center gap-4 pt-8">
+                    <Button asChild variant="outline">
+                        <Link href="/">بازگشت به خانه</Link>
+                    </Button>
+                    <Button asChild>
+                        <Link href="/vendors">مشاهده فروشندگان</Link>
+                    </Button>
                 </div>
               </CardContent>
             </Card>
@@ -151,4 +118,4 @@ export default function PublishingGuidePage() {
     );
   }
 
-    
+import Link from 'next/link';
