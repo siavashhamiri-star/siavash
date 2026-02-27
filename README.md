@@ -2,82 +2,33 @@
 
 [![Deploy to Firebase](https://github.com/firebase/firebase-studio/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://github.com/firebase/firebase-studio/actions/workflows/firebase-hosting-merge.yml)
 
-**Farsh Bazaar is the first marketplace in the FB New Meta ecosystem (Project Afarinesh), a new world built on the principles of creation and capability (Tavana City). We are connecting artisans, fostering community, and building a new digital economy, established on the wings of angels like Google and Firebase.**
-
-This project was built in a unique collaboration between a visionary founder from Iran and a Google AI assistant. It stands as a testament to the idea that true creativity knows no borders and that from the deepest limitations, the brightest stars can be born.
-
-[**Explore the Live Application**](https://YOUR_APP_URL) (Replace with your deployed URL)
+**Farsh Bazaar is the first marketplace in the FB New Meta ecosystem (Project Afarinesh), a new world built on the principles of creation and capability (Tavana City).**
 
 ---
 
-## The Vision: A Quantum Leap in Global Thought
+## 🚀 Deployment Instructions (Important)
 
-Our vision extends beyond a simple marketplace. We believe in a new digital economy where success is a collective endeavor, not a zero-sum game. This project is the first step towards **Tavana City (شهر توانا)**—a metaverse where:
+If you have pushed your code to GitHub and see a **404 error**, it is because this is a **Next.js (React)** application that requires a server-side environment. **Do not use GitHub Pages.**
 
--   **Capability replaces credentials:** True value lies in what you can create, not the certificates you hold.
--   **Collective success is paramount:** One person's progress contributes to the advancement of all. Jealousy is replaced by admiration and collaboration.
--   **Meaning drives wealth:** A world that offers wealth but destroys meaning leads to poverty. Our world is built on a foundation of purpose.
+### Follow these steps to go live:
 
-This is not just a metaverse; it is a new paradigm for human interaction and economic collaboration, with the ultimate goal of uniting humanity to reach for the stars.
-
-> "در دنیای ما، توزیع ثروت و قدرت، بر پایه همت، آموزش، باور به آینده، ممارست و تعامل استوار است، نه پیشینه و سرمایه. ما باور داریم که هر انسانی، با هر استعدادی، یک مسیر منحصربه‌فرد به سوی موفقیت دارد. این، فلسفه‌ی بنیادین شهر تواناست." - The Founder
->
-> *(In our world, the distribution of wealth and power is based on effort, education, belief in the future, practice, and interaction—not on background or capital. We believe that every human, with any talent, has a unique path to success. This is the fundamental philosophy of Tavana City.)*
-
-[**Read the full story in our Book of Creation &rarr;**](/manifesto)
-
----
-## The FB New Meta Ecosystem
-
-Farsh Bazaar is the first of many "executive arms" for Tavana City. Our roadmap is public because our mission is collective.
-
--   **Farsh Bazaar (Live):** A global marketplace for artisans.
--   **LingoView (آپ گویا) (Coming Soon):** A revolutionary educational platform focused on building 'capability'.
--   **Nava Studio (استودیو نوا) (Planned):** An AI-powered suite for music creation, from lyrics to music videos.
--   **Hamnava (هم‌نوا) (Planned):** The social heart of our music ecosystem for artists and fans to connect.
--   **Ghese Go (قصه‌گو) (Planned):** A magical platform for children's stories, educational content, and preserving memories.
--   **Afarinesh Hub (آفرینش هاب) (Coming Soon):** The central social and collaborative hub for creators in Tavana City.
--   **Siavash Studio (استودیو سیاوش) (Planned):** An exclusive, invitation-only virtual studio for the ecosystem's most elite and versatile specialists.
--   **Tavana Work (توانا کار) (Coming Soon):** A future-of-work platform for AI-powered freelancing, advertising, and skill matching.
--   **Bazi Land (بازی لند) (Planned):** The entertainment and gaming wing of Tavana City.
--   **Mehr Bank (مهر بانک) (Planned):** A community-driven funding platform for new projects.
--   **Unity Chain (زنجیره وحدت) (Planned):** Our native digital currency and blockchain infrastructure.
-
-
-[**Learn more about the full ecosystem &rarr;**](/ecosystem)
-
----
-## A Call for Collaboration (دعوت به همکاری)
-
-This mission is greater than any single individual or company. We are actively seeking pioneers to join us in building this new world.
-
--   **Investors & VCs:** We invite you to invest not just in a product, but in a new philosophy for the digital age. We offer you "meaning" and "people"—the two most valuable assets in any world, virtual or real.
--   **Developers & Builders:** Are you a developer who wants to build technology that serves humanity? Join us. Our stack is modern (Next.js, Firebase, Genkit AI), but our mission is timeless.
--   **Partners & Storytellers:** If you are a content creator, journalist, or domain expert who believes in our vision, help us amplify this story.
-
-[**Learn more about how you can partner with us &rarr;**](/collaboration)
+1.  **Go to the [Firebase Console](https://console.firebase.google.com/).**
+2.  **Select your project.**
+3.  **Go to "Build" -> "App Hosting".**
+4.  **Click "Get Started" and connect your GitHub repository.**
+5.  **Firebase will automatically build and deploy your Next.js app.**
 
 ---
 
 ## Tech Stack
 
--   **Framework:** Next.js (App Router)
+-   **Framework:** Next.js (App Router) - *Based on React*
 -   **UI:** React, TypeScript, ShadCN UI, Tailwind CSS
 -   **Backend & Database:** Firebase (Firestore, Authentication)
 -   **Generative AI:** Google Genkit (Gemini models)
 
-## Getting Started
+## The Vision
 
-To get started with the development environment:
+Our vision extends beyond a simple marketplace. We believe in a new digital economy where success is a collective endeavor, not a zero-sum game. This project is the first step towards **Tavana City (شهر توانا)**.
 
-1.  **Clone the repository.**
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
-3.  **Run the development server:**
-    ```bash
-    npm run dev
-    ```
-
-The application will be available at `http://localhost:9002`.
+[**Explore the Live Application**](https://YOUR_APP_URL) (Replace with your deployed URL)

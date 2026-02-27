@@ -1,4 +1,5 @@
 
+'use client';
 import {
     Card,
     CardContent,
@@ -8,37 +9,34 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { UploadCloud, Github, Terminal as TerminalIcon, Copy, CheckCircle2 } from 'lucide-react';
+import { UploadCloud, Github, Terminal as TerminalIcon, Globe, CheckCircle2, Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const steps = [
     {
         step: 1,
-        title: "گام اول: ساخت فضا در گیت‌هاب",
-        en_title: "Step 1: Create Repository on GitHub",
-        description: "شما این مرحله را با موفقیت انجام داده‌اید! ریپازیتوری شما در گیت‌هاب آماده است.",
-        en_description: "You've successfully created the repository on GitHub.",
+        title: "گام اول: ارسال کدها به گیت‌هاب",
+        en_title: "Step 1: Push to GitHub",
+        description: "شما این مرحله را با موفقیت انجام داده‌اید! کدهای شما اکنون در گیت‌هاب هستند.",
+        en_description: "Your code is now on GitHub.",
     },
     {
         step: 2,
-        title: "گام دوم: باز کردن ترمینال",
-        en_title: "Step 2: Open the Terminal",
-        description: "در لپ‌تاپ خود، برنامه <strong>Command Prompt</strong> (در ویندوز) یا <strong>Terminal</strong> (در مک) را باز کنید. این همان صفحه سیاهی است که فرمان‌های ما را اجرا می‌کند.",
-        en_description: "Open Command Prompt (Windows) or Terminal (Mac) on your laptop.",
+        title: "گام دوم: چرا ارور ۴۰۴ می‌بینید؟",
+        en_title: "Step 2: Why the 404 Error?",
+        description: "اپلیکیشن شما با تکنولوژی <strong>Next.js (React)</strong> ساخته شده است. این برنامه برای اجرا نیاز به یک سرور هوشمند دارد و سرویس ساده GitHub Pages نمی‌تواند آن را اجرا کند.",
+        en_description: "This is a Next.js (React) app. GitHub Pages cannot run it because it needs a server.",
     },
     {
         step: 3,
-        title: "گام سوم: کپی و اجرای دستورات طلایی",
-        en_title: "Step 3: Copy and Run the Commands",
-        description: "حالا دستورات زیر را به ترتیب در آن صفحه سیاه (ترمینال) کپی و اجرا کنید. بعد از تایپ هر خط، دکمه <strong>Enter</strong> را بزنید.",
-        en_description: "Copy and run these commands in the terminal one by one, pressing Enter after each.",
-        commands: [
-            { cmd: "git init", desc: "آماده‌سازی پروژه" },
-            { cmd: "git add .", desc: "انتخاب تمام فایل‌ها برای ارسال" },
-            { cmd: "git commit -m \"Farsh Bazaar is ready\"", desc: "بسته‌بندی فایل‌ها" },
-            { cmd: "git remote add origin https://github.com/YOUR_USERNAME/farsh-bazaar.git", desc: "اتصال به گیت‌هاب (نام کاربری خود را جایگزین کنید)" },
-            { cmd: "git branch -M main", desc: "تنظیم شاخه اصلی" },
-            { cmd: "git push -u origin main", desc: "ارسال نهایی به گیت‌هاب" }
+        title: "گام سوم: راه حل نهایی (اتصال به فایربیس)",
+        en_title: "Step 3: The Solution (Firebase App Hosting)",
+        description: "برای اینکه برنامه شما به درستی کار کند، باید از سرویس <strong>App Hosting</strong> در پنل فایربیس استفاده کنید. این سرویس مستقیماً به گیت‌هاب شما وصل می‌شود و سایت را منتشر می‌کند.",
+        en_description: "Use Firebase App Hosting to connect your GitHub and go live.",
+        actions: [
+            { label: "ورود به پنل فایربیس", url: "https://console.firebase.google.com/" },
+            { label: "آموزش گام به گام فایربیس", url: "https://firebase.google.com/docs/app-hosting/get-started" }
         ]
     }
 ]
@@ -52,13 +50,13 @@ export default function PublishingGuidePage() {
             <Card className="max-w-4xl mx-auto shadow-2xl border-none overflow-hidden">
               <CardHeader className="text-center p-8 md:p-12 bg-primary text-primary-foreground">
                 <div className="mx-auto bg-white/20 p-4 rounded-full w-fit mb-4">
-                  <UploadCloud className="w-12 h-12 text-white" />
+                  <Rocket className="w-12 h-12 text-white" />
                 </div>
                 <CardTitle className="text-3xl md:text-5xl font-headline">
-                  گام به گام تا جهانی شدن
+                  رفع ارور ۴۰۴ و انتشار نهایی
                 </CardTitle>
                 <CardDescription className="text-lg mt-2 text-white/80">
-                    راهنمای ساده برای انتشار «فرش بازار» در گیت‌هاب
+                    تبدیل کدهای گیت‌هاب به یک وب‌سایت زنده و فعال
                 </CardDescription>
               </CardHeader>
               <CardContent className="px-6 md:px-10 py-10 space-y-12">
@@ -74,16 +72,12 @@ export default function PublishingGuidePage() {
                                 <p className="text-muted-foreground text-sm mb-4">({step.en_title})</p>
                                 <p className="text-foreground/80 leading-relaxed" dangerouslySetInnerHTML={{ __html: step.description }}></p>
                                 
-                                {step.commands && (
-                                    <div className="mt-8 space-y-4">
-                                        {step.commands.map((c, i) => (
-                                            <div key={i} className="group relative">
-                                                <div className="bg-slate-900 text-slate-100 p-4 rounded-lg font-mono text-sm flex justify-between items-center shadow-inner">
-                                                    <code>{c.cmd}</code>
-                                                    <TerminalIcon className="w-4 h-4 text-slate-500" />
-                                                </div>
-                                                <p className="text-xs text-muted-foreground mt-1 mr-2 text-right">← {c.desc}</p>
-                                            </div>
+                                {step.actions && (
+                                    <div className="mt-6 flex flex-wrap gap-4">
+                                        {step.actions.map((action, i) => (
+                                            <Button key={i} asChild variant={i === 0 ? "default" : "outline"}>
+                                                <a href={action.url} target="_blank" rel="noopener noreferrer">{action.label}</a>
+                                            </Button>
                                         ))}
                                     </div>
                                 )}
@@ -93,11 +87,12 @@ export default function PublishingGuidePage() {
                     </div>
                 ))}
 
-                <div className="bg-accent/10 p-8 rounded-2xl border border-accent/20 text-center space-y-4">
-                    <CheckCircle2 className="w-12 h-12 mx-auto text-accent" />
-                    <h3 className="text-2xl font-headline font-bold">تبریک! پروژه شما منتشر شد.</h3>
-                    <p className="text-muted-foreground">
-                        حالا هر کسی در دنیا می‌تواند با رفتن به آدرس گیت‌هاب شما، این آفرینش را ببیند.
+                <div className="bg-blue-500/10 p-8 rounded-2xl border border-blue-500/20 text-center space-y-4">
+                    <Globe className="w-12 h-12 mx-auto text-blue-500" />
+                    <h3 className="text-2xl font-headline font-bold">پاسخ به سوال شما (ریاکت یا جیسون؟)</h3>
+                    <p className="text-foreground/80">
+                        برنامه شما یک اپلیکیشن <strong>Next.js</strong> است که بر پایه <strong>React</strong> ساخته شده. 
+                        ارور ۴۰۴ به این دلیل است که گیت‌هاب به تنهایی نمی‌تواند بخش‌های هوش مصنوعی و سروری آن را اجرا کند.
                     </p>
                 </div>
 
@@ -117,5 +112,3 @@ export default function PublishingGuidePage() {
       </div>
     );
   }
-
-import Link from 'next/link';
