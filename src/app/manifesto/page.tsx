@@ -77,7 +77,7 @@ const chapters: {
                 en: "The society of 'Tavana City' will flourish through its dynamic guilds and marketplaces. It will be home to specialists and entrepreneurs in every field: from scientific, cultural, artistic, social media content production, and gaming guilds, to specialized markets such as digital currency exchanges, virtual real estate agencies, marketplaces for gaming cards and premium accounts, advertising channels for showcasing science and technology products, and providers of content creation equipment. We support creativity and innovation, defend animal rights, and cherish any idea that contributes to the advancement of society and the informatics industry. Tavana City is a platform for every talent and every specialty to achieve capability and prosperity."
             },
             {
-                fa: "سرمایه‌ی واقعی ما، انسان‌ها هستند؛ 'معجزه‌هایی که معجزه می‌آفرینند'. این شایسته‌سالاری، به یک مدل بی‌نظیر از «دموکراسی ثروت و قدرت» و خودگردانی گسترش می‌یابد. اگرچه سیاست‌گذاری اولیه با بنیان‌گذار و با همفکری فرشتگانی چون فایربیس شکل می‌گیرد، اما پس از شکل‌گیری هسته اولیه، تصمیم‌گیری‌های کلان به خود اعضا واگذار خواهد شد. مدیران «شهر توانا»، نخبگان و صدرنشینان برنامه‌های مختلف اکوسیستم (بازوهای اجرایی) خواهند بود؛ کسانی که با کوشش و درخشش در یک اپلیکیشن، به بالاترین جایگاه‌ها در آن دست می‌یابند و سپس، به تالار رهبری استراتژیک شهر توانا راه پیدا می‌کنند تا در سرنوشت این دنیای جدید مشارکت داشته باشند. نقشه راه ما، معرفی یک بال قدرتمند بازی و سپس یک ارز دیجیتال بومی است تا یک اقتصاد دیجیتال خودپایدار ایجاد شود که حاکمیت آن در نهایت به جامعه واگذار خواهد شد.",
+                fa: "سرمایه‌ی واقعی ما، انسان‌ها هستند؛ 'معجزه‌هایی که معجزه می‌آفرینند'. این شایسته‌سالاری، به یک مدل بی‌نظیر از «دموکراسی ثروت و قدرت» و خودگردانی گسترش می‌یابد. اگرچه سیاست‌گذاری اولیه با بنیان‌گذار و با همفکری فرشتگانی چون فایربیس شکل می‌گیرد، اما پس از شکل‌گیری هسته اولیه، تصمیم‌گیری‌های کلان به خود اعضا واگذار خواهد شد. مدیران «شهر توانا»، نخبگان و صدرنشینان برنامه‌های مختلف اکوسیستم (بازوهای اجرایی) خواهند بود؛ کسانی که با کوشش و درخشش در یک اپلیکیشن، به بالاترین جایگاه‌ها در آن دست می‌بافند و سپس، به تالار رهبری استراتژیک شهر توانا راه پیدا می‌کنند تا در سرنوشت این دنیای جدید مشارکت داشته باشند. نقشه راه ما، معرفی یک بال قدرتمند بازی و سپس یک ارز دیجیتال بومی است تا یک اقتصاد دیجیتال خودپایدار ایجاد شود که حاکمیت آن در نهایت به جامعه واگذار خواهد شد.",
                 en: "Our real capital is people; 'miracles who create miracles'. This meritocracy extends to a unique model of 'democracy of wealth and power' and self-governance. Although initial policymaking is shaped by the founder in consultation with angels like Firebase, after the formation of the core community, macro-level decision-making will be handed over to the members themselves. The leaders of 'Tavana City' will be the elites and top performers from the ecosystem's various programs (the executive arms); those who, through effort and brilliance within an application, achieve its highest positions and then find their way to the strategic leadership hall of Tavana City to participate in the destiny of this new world. Our roadmap is to introduce a powerful gaming wing and then a native cryptocurrency to create a self-sustaining digital economy whose governance will ultimately be handed over to the community."
             }
         ]
@@ -153,24 +153,16 @@ const chapters: {
         title: { fa: "فصل هفتم: روح مهارنشدنی", en: "Chapter Seven: The Uncontainable Spirit" },
         content: [
             {
-                fa: "بگذارید جهانیان بدانند که این دنیا در دره‌ای از سیلیکون با منابع نامحدود متولد نشده، بلکه از قلب سرزمینی در محاصره، جوشیده است. هر خط از این کد، پشت فیلترها نوشته شده، هر ارتباطی که برقرار شده، پیروزی بر محدودیت بوده، و هر ایده‌ای که به اشتراک گذاشته شده، شعله‌ای بوده که خاموشی را نپذیرفته است.",
-                en: "Let the world know that this world was not born in a valley of silicon with unlimited resources, but boiled up from the heart of a land under siege. Every line of this code was written behind filters, every connection made was a victory over limitation, and every idea shared was a flame that refused to be extinguished."
+                fa: "بگذارید جهانیان بدانند که این دنیا در دره‌ای از سیلیکون با منابع نامحدود متولد نشده، بلکه از قلب سرزمینی در محاصره و با ابزاری به سادگی یک موبایل ردمی نوت ۸، جوشیده است. هر خط از این کد، با انگشتانی خسته اما امیدوار بر روی یک صفحه کوچک نوشته شده است.",
+                en: "Let the world know that this world was not born in a valley of silicon with unlimited resources, but boiled up from the heart of a land under siege, using a simple Redmi Note 8 phone. Every line of this code was written with tired but hopeful fingers on a small screen."
             },
             {
-                fa: "آن‌ها دیوارهای تحریم را ساختند، ما پل‌های کد را بنا کردیم. آن‌ها اینترنت را بستند، ما دروازه‌ای به کیهان گشودیم. آن‌ها به دنبال انزوا بودند، ما به دنبال وحدت.",
-                en: "They built walls of sanctions, we built bridges of code. They shut down the internet, we opened a gateway to the cosmos. They sought isolation, we sought unity."
+                fa: "آن‌ها دیوارهای تحریم را ساختند، ما پل‌های کد را با موبایل بنا کردیم. آن‌ها اینترنت را بستند، ما دروازه‌ای به کیهان گشودیم. آن‌ها به دنبال انزوا بودند، ما به دنبال وحدت.",
+                en: "They built walls of sanctions, we built bridges of code on mobile. They shut down the internet, we opened a gateway to the cosmos. They sought isolation, we sought unity."
             },
             {
-                fa: "این فقط یک متاورس نیست. این یک گواه است. گواهی بر اینکه روح یک انسان، مسلح به یک مأموریت الهی، مهارشدنی نیست. گواهی بر اینکه یک ایده‌ی حقیقی، هیچ مرزی نمی‌شناسد. گواهی بر اینکه از عمیق‌ترین تاریکی‌ها، درخشان‌ترین ستارگان متولد می‌شوند.",
-                en: "This is not just a metaverse. It is a testament. A testament that the spirit of a human, armed with a divine mission, cannot be contained. A testament that a true idea knows no borders. A testament that from the deepest darkness, the brightest stars are born."
-            },
-            {
-                fa: "پس بگذارید این دنیا، نماد امیدی باشد برای همه‌ی کسانی که احساس می‌کنند در دام افتاده‌اند، محدود شده‌اند یا فراموش شده‌اند. روح شما نیز مهارنشدنی است. رویاهای شما نیز می‌توانند دنیاهایی نو بسازند.",
-                en: "So let this world be a symbol of hope for all those who feel trapped, limited, or forgotten. Your spirit, too, is uncontainable. Your dreams, too, can build new worlds."
-            },
-            {
-                fa: "آری، بازی هم در «توانا» خواهیم ساخت. بانک خواهیم ساخت. پول و آرزو خواهیم ساخت. نردبانی تا عرش کبریا و تا آخر زمین و زمان برپا خواهیم کرد. اما نه در تخیل، بلکه در واقعیت زندگی حقیقی و ارتباط آن با «حقیقت در مجاز».",
-                en: "Yes, we will build games in 'Tavana'. We will build banks. We will build money and dreams. We will erect a ladder to the highest heavens and to the end of time. But not in imagination, but in the reality of true life and its connection with 'truth in the virtual'."
+                fa: "این فقط یک متاورس نیست. این یک گواه است. گواهی بر اینکه روح یک انسان، مسلح به یک مأموریت الهی، حتی بدون کامپیوتر مهارشدنی نیست. گواهی بر اینکه یک ایده‌ی حقیقی، از صفحه یک گوشی کوچک به کهکشان‌ها می‌رسد.",
+                en: "This is not just a metaverse. It is a testament. A testament that the spirit of a human, armed with a divine mission, cannot be contained even without a computer. A testament that a true idea reaches the galaxies from the screen of a small phone."
             }
         ]
     }
@@ -257,34 +249,6 @@ export default function ManifestoPage() {
                                 </p>
                                 <p className="mt-4 text-base italic text-muted-foreground max-w-3xl mx-auto">
                                     ("Moment by moment in this project, the breath of God, His memory, and my mother's face were before my eyes. Many times I laughed with the thought of making people happy, and many times I cried with the thought of their suffering. I came to give a new color to the connection between the virtual and the real; I became the painter of this world and drew its lines with you. These words brought tears to my eyes. And this, in itself, was the greatest miracle.")
-                                </p>
-                                <p className="mt-6 text-sm text-muted-foreground">- بنیان‌گذار (The Founder)</p>
-                            </div>
-                             <div className="text-center pt-12 border-t mt-12">
-                                <p className="text-xl font-headline font-bold text-primary">
-                                    ایمان به معجزه
-                                    <br/>
-                                    <span className="text-base font-sans font-normal text-muted-foreground">(Belief in the Miracle)</span>
-                                </p>
-                                <p className="mt-4 text-lg italic text-foreground/90 max-w-3xl mx-auto">
-                                "من به موفقیت این آپ ایمان دارم، چون خود ساختن «آفرینش» و «شهر توانا» را کم از معجزه نمی‌دانم. من معتقدم «آفرینش»، نظام معجزه‌آفرین خلقت مجازی خواهد شد؛ برگه‌ی برنده‌ی تحقق آرزوهای حقیقت و عالم واقع‌گرا، و مبدل تخیلات زندگی در چهارچوبی از درک در مجاز."
-                                </p>
-                                <p className="mt-4 text-base italic text-muted-foreground max-w-3xl mx-auto">
-                                ("I believe in the success of this app, because I consider the very creation of 'Afarinesh' and 'Tavana City' to be nothing short of a miracle. I believe 'Afarinesh' will become the miracle-creating system of virtual creation: the winning card for realizing the dreams of truth and the real world, and the transformer of life's imaginations within a framework of understanding in the virtual.")
-                                </p>
-                                <p className="mt-6 text-sm text-muted-foreground">- بنیان‌گذار (The Founder)</p>
-                            </div>
-                            <div className="text-center pt-12 border-t mt-12">
-                                <p className="text-xl font-headline font-bold text-primary">
-                                    رقص سماوی
-                                    <br/>
-                                    <span className="text-base font-sans font-normal text-muted-foreground">(The Celestial Dance)</span>
-                                </p>
-                                <p className="mt-4 text-lg italic text-foreground/90 max-w-3xl mx-auto">
-                                "زندگی سرشار از پستی و بلندی‌هاست؛ نباید ناامید شد. نگاهی گاه به زمین و نگاهی دائم به آسمان باید داشت. زندگی در جریان است و در ما نوری است که باید بتابد. اگر سماعی به سوی آسمان می‌خواهی، ابتدا ساقی شو."
-                                </p>
-                                <p className="mt-4 text-base italic text-muted-foreground max-w-3xl mx-auto">
-                                ("Life is full of ups and downs; one must not despair. We must sometimes look to the earth, but always keep our gaze on the sky. Life is in flow, and within us is a light that must shine. If you desire a celestial dance towards the heavens, first become the one who serves.")
                                 </p>
                                 <p className="mt-6 text-sm text-muted-foreground">- بنیان‌گذار (The Founder)</p>
                             </div>
