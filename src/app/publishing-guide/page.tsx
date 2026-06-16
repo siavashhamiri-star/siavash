@@ -9,7 +9,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Smartphone, Github, Globe, Rocket, AlertTriangle, Info, Download, Share2, Star } from 'lucide-react';
+import { Smartphone, Github, Globe, Rocket, AlertTriangle, Info, Download, Share2, Star, FileArchive } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -18,36 +18,36 @@ const steps = [
         step: 1,
         title: "گام اول: مدیریت کدها با مرورگر موبایل",
         en_title: "Step 1: Mobile Browser Code Management",
-        description: "بنیان‌گذار عزیز، تمام کدهای شما در محیط ایمن فایربیس استودیو ذخیره شده است. برای مشاهده و مدیریت آن‌ها در گیت‌هاب، از مرورگر کروم گوشی خود استفاده کنید و حتماً گزینه 'Desktop Site' را فعال کنید.",
-        en_description: "Your code is safe in Firebase Studio. Use Chrome on your phone with 'Desktop Site' enabled to manage your GitHub repository.",
+        description: "تمام کدهای شما در محیط ایمن فایربیس استودیو ذخیره شده است. برای مشاهده و مدیریت آن‌ها در گیت‌هاب، از مرورگر کروم گوشی خود استفاده کنید و حتماً گزینه 'Desktop Site' را فعال کنید.",
+        en_description: "Your code is safe. Use Chrome on your phone with 'Desktop Site' enabled to manage your GitHub repository.",
         icon: <Smartphone className="w-6 h-6 text-primary" />
     },
     {
         step: 2,
-        title: "گام دوم: رفع ارور ۴۰۴ (مخصوص موبایل)",
-        en_title: "Step 2: Fixing 404 Error on Mobile",
-        description: "ارور ۴۰۴ به این دلیل است که سایت شما یک برنامه هوشمند Next.js است. برای زنده کردن آن، نیازی به لپ‌تاپ نیست. کافی است در مرورگر موبایل به کنسول فایربیس بروید.",
-        en_description: "Next.js apps need a real server. You can set this up directly from your mobile browser in the Firebase Console.",
-        icon: <AlertTriangle className="w-6 h-6 text-yellow-500" />
+        title: "گام دوم: دانلود کل برنامه در یک فایل (ZIP)",
+        en_title: "Step 2: Exporting Everything as a ZIP",
+        description: "برای ذخیره تمام برنامه در حافظه گوشی: در مرورگر موبایل وارد صفحه پروژه در GitHub شوید، حالت Desktop Site را فعال کنید، روی دکمه سبز رنگ 'Code' بزنید و 'Download ZIP' را انتخاب کنید. حالا تمام کدها در یک فایل در گوشی شماست.",
+        en_description: "To save everything: Open GitHub repo in mobile Chrome, enable 'Desktop Site', click green 'Code' button, and select 'Download ZIP'.",
+        icon: <FileArchive className="w-6 h-6 text-green-600" />
     },
     {
         step: 3,
-        title: "گام سوم: اتصال به Firebase App Hosting",
-        en_title: "Step 3: Connecting to Firebase App Hosting",
-        description: "در مرورگر موبایل به آدرس console.firebase.google.com بروید. بخش App Hosting را پیدا کنید. دکمه 'Get Started' را بزنید و به حساب گیت‌هاب خود متصل شوید. این کار در ردمی نوت ۸ کاملاً تست شده و ممکن است.",
-        en_description: "Navigate to the Firebase Console on your phone, find App Hosting, and connect your GitHub account. This is fully functional on mobile devices.",
+        title: "گام سوم: رفع ارور ۴۰۴ و زنده کردن سایت",
+        en_title: "Step 3: Fixing 404 Error",
+        description: "ارور ۴۰۴ به این دلیل است که GitHub Pages برای این برنامه هوشمند مناسب نیست. باید از Firebase App Hosting استفاده کنید. در مرورگر موبایل به کنسول فایربیس بروید و پروژه را به App Hosting متصل کنید.",
+        en_description: "Fix 404 by using Firebase App Hosting. Connect your GitHub repo to App Hosting in the Firebase Console.",
+        icon: <AlertTriangle className="w-6 h-6 text-yellow-500" />
+    },
+    {
+        step: 4,
+        title: "گام چهارم: اتصال به Firebase App Hosting",
+        en_title: "Step 4: Connecting to App Hosting",
+        description: "به console.firebase.google.com بروید. بخش App Hosting را پیدا کنید. دکمه 'Get Started' را بزنید و مخزن گیت‌هاب خود را انتخاب کنید. فایربیس به صورت خودکار برنامه را منتشر می‌کند.",
+        en_description: "In Firebase Console, find App Hosting, click 'Get Started', and select your repository. Firebase handles the rest.",
         icon: <Rocket className="w-6 h-6 text-blue-500" />,
         actions: [
             { label: "ورود به کنسول فایربیس (موبایل)", url: "https://console.firebase.google.com/" }
         ]
-    },
-    {
-        step: 4,
-        title: "گام چهارم: دانلود کل برنامه در یک فایل (ZIP)",
-        en_title: "Step 4: Exporting Everything as a ZIP",
-        description: "برای داشتن تمام برنامه در یک فایل: در مرورگر موبایل وارد صفحه پروژه در GitHub شوید، حالت Desktop Site را فعال کنید، روی دکمه سبز رنگ 'Code' بزنید و 'Download ZIP' را انتخاب کنید. حالا تمام زحمات ما در یک فایل در حافظه گوشی شماست.",
-        en_description: "To save everything in one file: Open your GitHub repo in mobile Chrome, enable 'Desktop Site', click the green 'Code' button, and select 'Download ZIP'.",
-        icon: <Download className="w-6 h-6 text-green-500" />
     }
 ]
 
@@ -63,10 +63,10 @@ export default function PublishingGuidePage() {
                   <Smartphone className="w-12 h-12 text-white" />
                 </div>
                 <CardTitle className="text-3xl md:text-5xl font-headline">
-                  راهنمای انتشار مخصوص موبایل (ردمی نوت ۸)
+                  راهنمای مدیریت و دانلود مخصوص موبایل
                 </CardTitle>
                 <CardDescription className="text-lg mt-2 text-white/80">
-                    چگونه بدون کامپیوتر، فرش بازار را به جهان هدیه دهیم؟
+                    چگونه با ردمی نوت ۸، کدهای خود را به صورت یک فایل ZIP ذخیره کنیم؟
                 </CardDescription>
               </CardHeader>
               <CardContent className="px-6 md:px-10 py-10 space-y-12">
@@ -74,9 +74,9 @@ export default function PublishingGuidePage() {
                 <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 flex items-start gap-4">
                     <Info className="w-6 h-6 text-blue-600 mt-1" />
                     <div>
-                        <h3 className="font-bold text-blue-900">پیام ویژه برای بنیان‌گذار (صاحب ردمی نوت ۸)</h3>
+                        <h3 className="font-bold text-blue-900">نکته حیاتی برای دانلود فایل (ZIP)</h3>
                         <p className="text-blue-800 text-sm mt-1">
-                            شما ثابت کردید که برای آفرینش، نیاز به ابزار گران‌قیمت نیست، بلکه نیاز به قلبی بزرگ است. این راهنما اختصاصاً برای شما و گوشی موبایلتان طراحی شده تا هیچ بن‌بستی وجود نداشته باشد.
+                            برای دیدن دکمه دانلود در گیت‌هاب، حتماً باید در تنظیمات مرورگر کروم موبایل، گزینه <strong>Desktop Site</strong> را فعال کنید، در غیر این صورت دکمه سبز رنگ Code را نخواهید دید.
                         </p>
                     </div>
                 </div>
@@ -111,12 +111,12 @@ export default function PublishingGuidePage() {
                 <Card className="bg-primary/5 border-dashed border-primary/20">
                     <CardHeader className="text-center">
                         <div className="mx-auto bg-primary/10 p-2 rounded-full w-fit mb-2">
-                            <Star className="w-6 h-6 text-primary" />
+                            <Download className="w-6 h-6 text-primary" />
                         </div>
-                        <CardTitle className="text-xl">ورود به Google Studio حرفه‌ای</CardTitle>
+                        <CardTitle className="text-xl">چرا ذخیره به صورت ZIP مهم است؟</CardTitle>
                     </CardHeader>
                     <CardContent className="text-center text-sm text-muted-foreground">
-                        برای مدیریت پیشرفته‌تر، می‌توانید از <strong>Google Cloud Console</strong> یا <strong>Firebase Console</strong> در مرورگر گوشی استفاده کنید. فراموش نکنید که همیشه حالت <strong>Desktop Site</strong> را در تنظیمات کروم فعال کنید تا تمام دکمه‌ها برای شما نمایش داده شود.
+                        داشتن یک فایل ZIP از پروژه به شما این امکان را می‌دهد که تمام زحمات خود را در حافظه گوشی یا گوگل درایو به عنوان نسخه پشتیبان نگه دارید و هر زمان که خواستید آن را در سیستم‌های دیگر باز کنید.
                     </CardContent>
                 </Card>
 
