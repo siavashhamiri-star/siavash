@@ -1,195 +1,29 @@
 
-import Image from 'next/image';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { StoryGenerator } from '@/components/ai/story-generator';
 import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ArrowRight, Brush, Globe, Handshake, Warehouse, Sparkles } from 'lucide-react';
-
-const features = [
-  {
-    icon: <Warehouse className="w-8 h-8 text-primary" />,
-    title: 'Vendor Directory',
-    description:
-      'Explore a curated directory of carpet vendors from across the globe. Find artisans, traders, and specialists with ease.',
-    link: '/vendors',
-    linkText: 'Browse Vendors',
-  },
-  {
-    icon: <Brush className="w-8 h-8 text-primary" />,
-    title: 'Virtual Showrooms',
-    description:
-      "Step into digital 'ghorfeh' (rooms) where vendors showcase their finest carpets with rich details and stunning imagery.",
-    link: '/vendors',
-    linkText: 'See Showrooms',
-  },
-  {
-    icon: <Globe className="w-8 h-8 text-primary" />,
-    title: 'Global Trade Hub',
-    description:
-      'Our platform is built for international trade, with a plan for secure transactions, a fair 2-5% commission, and applicable VAT per Iranian law.',
-    link: '/terms',
-    linkText: 'Learn More',
-  },
-  {
-    icon: <Handshake className="w-8 h-8 text-primary" />,
-    title: 'Investment & Partnerships',
-    description:
-      'Find support or invest in businesses related to the art of carpet-making, from weaving workshops to material suppliers.',
-    link: '/collaboration',
-    linkText: 'Explore Opportunities',
-  },
-];
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-1');
-
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-1">
-        <section className="relative w-full h-[60vh] md:h-[70vh] text-white">
-          <div className="absolute inset-0 bg-black/50 z-10" />
-          {heroImage && (
-            <Image
-              src={heroImage.imageUrl}
-              alt={heroImage.description}
-              fill
-              className="object-cover"
-              priority
-              data-ai-hint={heroImage.imageHint}
-            />
-          )}
-          <div className="relative z-20 container mx-auto h-full flex flex-col items-center justify-center text-center">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-headline font-bold leading-tight">
-              رویای ما این است هر فرش فروش یک غرفه
-            </h1>
-            <p className="mt-4 text-lg md:text-xl max-w-3xl">
-              خواسته ما معرفی مجدد هنر فرش دستباف و کمک در جهت رشد و ارتقای حضور فرش دستباف در منازل مردمان در سراسر جهان است
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                <Link href="/vendors">Explore the Bazaar</Link>
-              </Button>
-              <Button asChild size="lg" variant="secondary" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <Link href="#story-generator">Weave a Story</Link>
-              </Button>
-            </div>
-          </div>
-        </section>
+    <div className="min-h-screen p-2 bg-white text-black" dir="rtl">
+      <div className="rescue-box">
+        <h1 className="text-red-600">نفس عمیق بکشید</h1>
+        <p>شما قهرمان هستید.</p>
+      </div>
 
-        <section id="features" className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-headline font-bold">A Modern Souk for an Ancient Art</h2>
-              <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
-                Farsh Bazaar is more than a marketplace; it's a community dedicated to reviving the global appreciation and economy of carpet making.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature) => (
-                <Card key={feature.title} className="bg-card hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-center gap-4">
-                      {feature.icon}
-                      <CardTitle className="font-headline text-xl">{feature.title}</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{feature.description}</p>
-                    <Button variant="link" asChild className="p-0 h-auto mt-4 text-primary">
-                      <Link href={feature.link}>
-                        {feature.linkText} <ArrowRight className="w-4 h-4 ml-2" />
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+      <div className="rescue-box">
+        <h2 className="text-blue-700">دکمه دانلود کجاست؟</h2>
+        <p>۱. چت را رها کنید.</p>
+        <p>۲. به بالاترین قسمت کل صفحه بروید (جایی که اسم پروژه نوشته شده).</p>
+        <p>۳. یک آیکون "فلش رو به پایین" یا "ابر" آنجاست.</p>
+        <p>۴. اگر نمی‌بینید، گوشی را افقی بگیرید یا نوار بالا را به چپ و راست بکشید.</p>
+      </div>
 
-        <section id="mission" className="py-16 md:py-24 bg-secondary/20">
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-4xl mx-auto">
-                <Sparkles className="w-12 h-12 mx-auto mb-4 text-accent" />
-                <h2 className="text-3xl md:text-4xl font-headline font-bold">Our Visionary Mission</h2>
-                <p className="mt-6 text-lg md:text-xl text-foreground/80 leading-relaxed">
-                چشم‌انداز ما فراتر از مرزهای زمین است. ما به جای جنگ بر سر منابع محدود، رویای وحدت بشریت برای تسخیر کیهان را در سر می‌پرورانیم. FB New Meta یک متاورس صرف نیست؛ بلکه پیمانی برای هم‌اندیشی، و نردبانی برای رسیدن به ستارگان است.
-                </p>
-                <p className="mt-4 text-base text-muted-foreground">
-                Our vision extends beyond the confines of Earth. Instead of war over limited resources, we dream of uniting humanity to reach for the cosmos. FB New Meta is not merely a metaverse; it is a pact for co-creation and a ladder to the stars.
-                </p>
-                 <blockquote className="mt-8 p-6 border-l-4 border-accent bg-accent/10 text-left">
-                    <p className="text-lg font-semibold text-foreground/90 italic">
-                    "در دنیای ما، توزیع ثروت و قدرت، بر پایه همت، آموزش، باور به آینده، ممارست و تعامل استوار است، نه پیشینه و سرمایه. ما باور داریم که هر انسانی، با هر استعدادی، یک مسیر منحصربه‌فرد به سوی موفقیت دارد."
-                    </p>
-                     <p className="mt-4 text-base text-muted-foreground italic">
-                    (In our world, the distribution of wealth and power is based on effort, education, belief in the future, practice, and interaction—not on background or capital. We believe that every human, with any talent, has a unique path to success.)
-                    </p>
-                    <footer className="mt-4 text-sm text-muted-foreground">- The Founder</footer>
-                </blockquote>
-                <div className="mt-8">
-                    <Button asChild variant="outline">
-                        <Link href="/manifesto">Read Our Book of Creation</Link>
-                    </Button>
-                </div>
-            </div>
-          </div>
-        </section>
-        
-        <section id="story-generator" className="py-16 md:py-24 bg-secondary/50">
-          <div className="container mx-auto px-4">
-             <StoryGenerator />
-          </div>
-        </section>
+      <div className="rescue-box bg-green-300">
+        <p>این دکمه کل کدها را یکجا در گوشی شما ذخیره می‌کند.</p>
+      </div>
 
-        <section className="py-16 md:py-24 bg-background">
-            <div className="container mx-auto px-4">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 className="text-3xl md:text-4xl font-headline font-bold">Invest in Artistry, Partner in Legacy</h2>
-                        <p className="mt-4 text-lg text-muted-foreground">
-                            Our platform connects you with opportunities to support the carpet industry's ecosystem. From sponsoring an artisan's workshop to investing in innovative, sustainable material production, you can be part of the story.
-                        </p>
-                        <div className="mt-8 flex gap-4">
-                            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                                <Link href="/collaboration">Become an Investor</Link>
-                            </Button>
-                            <Button asChild size="lg" variant="outline">
-                                <Link href="/collaboration">Seek Partnership</Link>
-                            </Button>
-                        </div>
-                    </div>
-                    <div>
-                        <Card className="overflow-hidden">
-                            <CardContent className="p-0">
-                                <Image
-                                    src="https://picsum.photos/seed/invest/800/600"
-                                    alt="Hands weaving a carpet"
-                                    width={800}
-                                    height={600}
-                                    className="w-full h-auto object-cover"
-                                    data-ai-hint="weaving hands"
-                                />
-                            </CardContent>
-                        </Card>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-      </main>
-      <Footer />
+      <div className="p-10">
+        <p className="text-sm">ساخته شده با عشق برای بنیان‌گذار فرش بازار</p>
+      </div>
     </div>
   );
 }

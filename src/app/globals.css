@@ -8,34 +8,24 @@
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
     --primary: 0 100% 50%;
-    --border: 0 0% 0%;
   }
 }
 
 @layer base {
   body {
     @apply bg-white text-black;
-    font-size: 50px !important; /* فونت عظیم برای دیدن در نیم‌صفحه */
+    font-size: 60px !important; /* فونت فوق عظیم برای نیم‌صفحه */
     line-height: 1.1;
     font-weight: 900;
+    overflow-x: hidden;
   }
 }
 
-/* فقط نمایش در سمت چپ (اگر نیمه راست شکسته باشد) */
-.container {
-  @apply p-0 !important;
-  margin: 0 !important;
-  width: 100% !important;
+.rescue-box {
+  @apply border-[15px] border-red-600 p-5 mb-10 bg-yellow-300 text-black !important;
 }
 
 button, a {
-  @apply min-h-[150px] text-4xl font-black border-8 border-black bg-yellow-400 text-black !important;
-  display: flex !important;
-  margin-bottom: 20px !important;
-  padding: 10px !important;
-}
-
-h1 {
-  @apply text-6xl font-black text-red-600 bg-white !important;
-  padding: 10px !important;
+  @apply bg-black text-white p-5 block w-full text-center mb-5 !important;
+  font-size: 50px !important;
 }
