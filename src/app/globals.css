@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,11 +25,6 @@
     --input: 60 30% 85%;
     --ring: 0 100% 37%;
     --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
   }
 
   .dark {
@@ -51,11 +47,6 @@
     --border: 20 15% 20%;
     --input: 20 15% 20%;
     --ring: 0 80% 65%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
   }
 }
 
@@ -65,14 +56,16 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-size: 18px; /* Larger base font for small/broken screens */
   }
 }
 
-/* For Headless UI */
-[data-headlessui-state="open"] {
-  @apply bg-accent text-accent-foreground;
+/* Maximize use of space for half-screen users */
+.container {
+  @apply px-2 !important;
 }
 
-[data-headlessui-state="open"] > svg {
-  @apply text-accent-foreground;
+/* High contrast touch targets */
+button, a {
+  @apply min-h-[44px];
 }
