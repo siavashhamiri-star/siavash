@@ -7,45 +7,35 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
     --primary: 0 100% 50%;
-    --primary-foreground: 0 0% 100%;
     --border: 0 0% 0%;
-    --radius: 0rem;
   }
 }
 
 @layer base {
   body {
-    @apply bg-background text-foreground;
-    font-size: 40px !important; /* فونت فوق‌العاده بزرگ برای خوانایی در نیم‌صفحه */
-    line-height: 1.2;
+    @apply bg-white text-black;
+    font-size: 50px !important; /* فونت عظیم برای دیدن در نیم‌صفحه */
+    line-height: 1.1;
     font-weight: 900;
   }
 }
 
-/* بهینه‌سازی برای صفحه شکسته ردمی نوت ۸ */
+/* فقط نمایش در سمت چپ (اگر نیمه راست شکسته باشد) */
 .container {
-  @apply px-1 !important;
-  max-width: 100% !important;
+  @apply p-0 !important;
+  margin: 0 !important;
+  width: 100% !important;
 }
 
-/* دکمه‌های عظیم برای لمس راحت */
 button, a {
-  @apply min-h-[120px] text-3xl font-black border-4 border-black !important;
+  @apply min-h-[150px] text-4xl font-black border-8 border-black bg-yellow-400 text-black !important;
   display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin-bottom: 10px !important;
-}
-
-/* حذف فضا‌های هدر رفته */
-.p-2, .p-4, .p-6 {
-  @apply p-1 !important;
-}
-
-h1, h2, h3 {
-  @apply text-5xl font-black text-red-600 !important;
   margin-bottom: 20px !important;
+  padding: 10px !important;
+}
+
+h1 {
+  @apply text-6xl font-black text-red-600 bg-white !important;
+  padding: 10px !important;
 }

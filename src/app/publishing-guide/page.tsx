@@ -1,43 +1,32 @@
 
 'use client';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
-import { Download, Rocket, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
-export default function PublishingGuidePage() {
+export default function EmergencyGuide() {
     return (
-      <div className="flex flex-col min-h-screen bg-white" dir="rtl">
-        <main className="flex-1 p-0">
-          <div className="space-y-2">
-            <div className="bg-red-600 p-4 text-white text-center">
-              <h1 className="text-4xl">راهنمای نجات کد (فوری)</h1>
-            </div>
+      <div className="min-h-screen bg-white" dir="rtl">
+        <div className="p-2 space-y-10">
+            <h1 className="bg-red-600 text-white p-4">نجات کد (فوری)</h1>
             
-            <div className="p-4 space-y-8">
-                <div className="bg-yellow-300 p-6 border-8 border-black">
-                    <h2 className="text-4xl font-bold mb-4">۱. دکمه فلش رو به پایین</h2>
-                    <p className="text-3xl">دقیقاً همان دکمه‌ای که بالای چت می‌بینید را بزنید. این تنها راه دانلود ZIP در گوشی است.</p>
-                </div>
-
-                <div className="bg-green-300 p-6 border-8 border-black">
-                    <h2 className="text-4xl font-bold mb-4">۲. آپلود در گیت‌هاب جدید</h2>
-                    <p className="text-3xl">فایل را که دانلود کردید، در حساب جدید گیت‌هاب خود آپلود کنید.</p>
-                </div>
-
-                <div className="bg-blue-300 p-6 border-8 border-black">
-                    <h2 className="text-4xl font-bold mb-4">۳. گوشی را به شارژ بزنید</h2>
-                    <p className="text-3xl">قبل از خاموش شدن، فایل را بگیرید.</p>
-                </div>
-
-                <Button asChild className="w-full h-32 bg-black text-white text-4xl">
-                    <Link href="/">برگشت</Link>
-                </Button>
+            <div className="border-8 border-black p-4 bg-yellow-200">
+                <p className="text-4xl font-bold">۱. دکمه دانلود کجاست؟</p>
+                <p className="text-3xl">در بالاترین قسمت کل سایت (نه چت)، کنار اسم پروژه، یک علامت فلش رو به پایین است. آن را بزنید.</p>
             </div>
-          </div>
-        </main>
+
+            <div className="border-8 border-black p-4 bg-green-200">
+                <p className="text-4xl font-bold">۲. اگر دکمه را نمی‌بینید:</p>
+                <p className="text-3xl">صفحه را به چپ و راست بکشید (اسکرول افقی). ممکن است در نیمه شکسته باشد.</p>
+            </div>
+
+            <Button asChild className="w-full h-40">
+                <Link href="/">برگشت به صفحه اصلی</Link>
+            </Button>
+            
+            <div className="bg-black text-white p-4">
+                <p className="text-2xl">بنیان‌گذار عزیز، گوشی را به شارژ بزنید. کدها در امنیت هستند.</p>
+            </div>
+        </div>
       </div>
     );
 }
