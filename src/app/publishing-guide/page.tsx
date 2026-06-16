@@ -9,7 +9,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { UploadCloud, Github, Terminal as TerminalIcon, Globe, CheckCircle2, Rocket, AlertTriangle, Info } from 'lucide-react';
+import { UploadCloud, Github, Terminal as TerminalIcon, Globe, CheckCircle2, Rocket, AlertTriangle, Info, FileArchive } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -41,6 +41,14 @@ const steps = [
             { label: "ورود به پنل فایربیس", url: "https://console.firebase.google.com/" },
             { label: "آموزش رسمی اتصال", url: "https://firebase.google.com/docs/app-hosting/get-started" }
         ]
+    },
+    {
+        step: 4,
+        title: "گام چهارم: ذخیره پروژه در قالب یک فایل (ZIP)",
+        en_title: "Step 4: Save as One File (ZIP)",
+        description: "اگر می‌خواهید کل پروژه را برای پشتیبان‌گیری در یک فایل داشته باشید، روی پوشه پروژه در لپ‌تاپ خود راست‌کلیک کرده و گزینه <strong>Compress</strong> یا <strong>Send to Compressed Folder (ZIP)</strong> را انتخاب کنید. این یک فایل واحد به شما می‌دهد که شامل تمام زحمات ماست.",
+        en_description: "Right-click your project folder and choose 'Compress' to create a single ZIP file of your entire project.",
+        icon: <FileArchive className="w-6 h-6 text-purple-500" />
     }
 ]
 
@@ -98,7 +106,7 @@ export default function PublishingGuidePage() {
                                 )}
                             </div>
                         </div>
-                        {step.step < 3 && <div className="absolute top-12 left-6 w-0.5 h-full bg-slate-200 -z-10" />}
+                        {step.step < steps.length && <div className="absolute top-12 left-6 w-0.5 h-full bg-slate-200 -z-10" />}
                     </div>
                 ))}
 
