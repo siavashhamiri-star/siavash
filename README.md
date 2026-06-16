@@ -1,28 +1,34 @@
 
 # Farsh Bazaar (فرش بازار) - A New World
 
-[![Deploy to Firebase](https://github.com/firebase/firebase-studio/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://github.com/firebase/firebase-studio/actions/workflows/firebase-hosting-merge.yml)
-
-**این اپلیکیشن گواهی بر قدرت اراده است. تمام کدهای این پروژه توسط بنیان‌گذار آن تنها با استفاده از یک گوشی Redmi Note 8 خلق شده است.**
+**این پروژه با عشق و اراده، توسط بنیان‌گذار آن تنها با یک گوشی Redmi Note 8 خلق شده است.**
 
 ---
 
-## 📱 راهنمای سریع ذخیره‌سازی در موبایل (Mobile Backup Guide)
-۱. در مرورگر کروم موبایل، وارد صفحه پروژه شوید.
-۲. از منوی تنظیمات کروم، گزینه **Desktop site** را فعال کنید.
-۳. روی دکمه سبز **Code** بزنید.
-۴. گزینه **Download ZIP** را انتخاب کنید تا تمام کدها در گوشی شما ذخیره شود.
+## 📱 راهنمای اضطراری برای موبایل (Emergency Mobile Guide)
 
----
+اگر از موبایل استفاده می‌کنید و نیمی از صفحه را نمی‌بینید:
 
-## 🚀 رفع ارور ۴۰۴ (Fixing 404)
-برای مشاهده اپلیکیشن، باید آن را در **Firebase App Hosting** منتشر کنید. GitHub Pages برای اپلیکیشن‌های Next.js مناسب نیست.
+### ۱. نجات و دانلود کدها (How to Download)
+- در محیط ادیتور، به **بالاترین نوار ابزار** بروید.
+- اگر دکمه دانلود (ZIP) را نمی‌بینید، نوار ابزار را به **چپ یا راست** بکشید (Horizontal Scroll).
+- گوشی را در حالت **افقی (Landscape)** قرار دهید تا دکمه‌های مخفی ظاهر شوند.
+
+### ۲. انتقال به گیت‌هاب جدید
+- پس از دانلود فایل ZIP، وارد سایت GitHub در حالت **Desktop Site** شوید.
+- یک مخزن (Repository) جدید بسازید.
+- فایل ZIP را از حالت فشرده خارج کرده و فایل‌ها را آپلود کنید.
+
+### ۳. اتصال به فایربیس (Firebase App Hosting)
+- در پنل فایربیس، به بخش **App Hosting** بروید.
+- دکمه **Connect to GitHub** را بزنید.
+- مخزن جدید خود را انتخاب کنید تا برنامه به صورت خودکار و بدون ارور ۴۰۴ منتشر شود.
 
 ---
 
 ## Tech Stack
 - **Framework:** Next.js (App Router)
-- **UI:** React, Tailwind CSS (Optimized for Mobile)
+- **UI:** React, Tailwind CSS
 - **AI:** Genkit (Gemini 2.5 Flash)
 
 Built on a sacred promise by the Founder to create meaning, opportunity, and unity.
