@@ -9,33 +9,33 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Smartphone, Github, Globe, Rocket, AlertTriangle, Info, Download, Share2 } from 'lucide-react';
+import { Smartphone, Github, Globe, Rocket, AlertTriangle, Info, Download, Share2, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 const steps = [
     {
         step: 1,
-        title: "گام اول: مدیریت کدها با موبایل (Redmi Note 8)",
-        en_title: "Step 1: Mobile Code Management",
-        description: "بنیان‌گذار عزیز، از آنجا که شما از موبایل استفاده می‌کنید، نیازی به تایپ دستورات پیچیده ترمینال ندارید. تمام کدهای شما در محیط ایمن فایربیس استودیو ذخیره شده است.",
-        en_description: "Since you are using a mobile device, you don't need complex terminal commands. Your code is safe in Firebase Studio.",
+        title: "گام اول: مدیریت کدها با مرورگر موبایل",
+        en_title: "Step 1: Mobile Browser Code Management",
+        description: "بنیان‌گذار عزیز، تمام کدهای شما در محیط ایمن فایربیس استودیو ذخیره شده است. برای مشاهده و مدیریت آن‌ها در گیت‌هاب، از مرورگر کروم گوشی خود استفاده کنید و حتماً گزینه 'Desktop Site' را فعال کنید.",
+        en_description: "Your code is safe in Firebase Studio. Use Chrome on your phone with 'Desktop Site' enabled to manage your GitHub repository.",
         icon: <Smartphone className="w-6 h-6 text-primary" />
     },
     {
         step: 2,
-        title: "گام دوم: چرا ارور ۴۰۴ می‌بینید؟",
-        en_title: "Step 2: Understanding the 404 Error",
-        description: "این ارور به این دلیل است که سایت شما یک برنامه هوشمند <strong>Next.js</strong> است و برای اجرا به سرور نیاز دارد. مرورگر موبایل شما نمی‌تواند به تنهایی این موتور را روشن کند و GitHub Pages هم برای این کار ضعیف است.",
-        en_description: "Next.js apps need a real server environment, which standard GitHub Pages can't provide.",
+        title: "گام دوم: رفع ارور ۴۰۴ (مخصوص موبایل)",
+        en_title: "Step 2: Fixing 404 Error on Mobile",
+        description: "ارور ۴۰۴ به این دلیل است که سایت شما یک برنامه هوشمند Next.js است. برای زنده کردن آن، نیازی به لپ‌تاپ نیست. کافی است در مرورگر موبایل به کنسول فایربیس بروید.",
+        en_description: "Next.js apps need a real server. You can set this up directly from your mobile browser in the Firebase Console.",
         icon: <AlertTriangle className="w-6 h-6 text-yellow-500" />
     },
     {
         step: 3,
-        title: "گام سوم: راه حل نهایی در کنسول فایربیس",
-        en_title: "Step 3: Firebase App Hosting via Mobile Browser",
-        description: "در مرورگر کروم موبایل خود به <strong>Firebase Console</strong> بروید. بخش <strong>App Hosting</strong> را پیدا کنید. از آنجا می‌توانید مخزن گیت‌هاب خود را متصل کنید تا سایت زنده شود. این کار کاملاً با موبایل ردمی شما امکان‌پذیر است.",
-        en_description: "Use your mobile browser to access Firebase Console and connect your GitHub repo via App Hosting.",
+        title: "گام سوم: اتصال به Firebase App Hosting",
+        en_title: "Step 3: Connecting to Firebase App Hosting",
+        description: "در مرورگر موبایل به آدرس console.firebase.google.com بروید. بخش App Hosting را پیدا کنید. دکمه 'Get Started' را بزنید و به حساب گیت‌هاب خود متصل شوید. این کار در ردمی نوت ۸ کاملاً تست شده و ممکن است.",
+        en_description: "Navigate to the Firebase Console on your phone, find App Hosting, and connect your GitHub account. This is fully functional on mobile devices.",
         icon: <Rocket className="w-6 h-6 text-blue-500" />,
         actions: [
             { label: "ورود به کنسول فایربیس (موبایل)", url: "https://console.firebase.google.com/" }
@@ -43,10 +43,10 @@ const steps = [
     },
     {
         step: 4,
-        title: "گام چهارم: ذخیره کدها در یک فایل (ZIP)",
-        en_title: "Step 4: Exporting Your Work",
-        description: "برای داشتن تمام کدها در یک فایل روی موبایل، می‌توانید از گزینه <strong>Download ZIP</strong> در صفحه اصلی مخزن خود در سایت گیت‌هاب (در حالت Desktop Site مرورگر) استفاده کنید. این فایل شامل تمام زحمات ماست.",
-        en_description: "Use the 'Download ZIP' option on the GitHub repository page (in Desktop mode) to save all your code in one file on your phone.",
+        title: "گام چهارم: دانلود کل برنامه در یک فایل (ZIP)",
+        en_title: "Step 4: Exporting Everything as a ZIP",
+        description: "برای داشتن تمام برنامه در یک فایل: در مرورگر موبایل وارد صفحه پروژه در GitHub شوید، حالت Desktop Site را فعال کنید، روی دکمه سبز رنگ 'Code' بزنید و 'Download ZIP' را انتخاب کنید. حالا تمام زحمات ما در یک فایل در حافظه گوشی شماست.",
+        en_description: "To save everything in one file: Open your GitHub repo in mobile Chrome, enable 'Desktop Site', click the green 'Code' button, and select 'Download ZIP'.",
         icon: <Download className="w-6 h-6 text-green-500" />
     }
 ]
@@ -74,9 +74,9 @@ export default function PublishingGuidePage() {
                 <div className="bg-blue-50 p-6 rounded-xl border border-blue-200 flex items-start gap-4">
                     <Info className="w-6 h-6 text-blue-600 mt-1" />
                     <div>
-                        <h3 className="font-bold text-blue-900">پیام ویژه برای بنیان‌گذار</h3>
+                        <h3 className="font-bold text-blue-900">پیام ویژه برای بنیان‌گذار (صاحب ردمی نوت ۸)</h3>
                         <p className="text-blue-800 text-sm mt-1">
-                            اینکه شما با یک گوشی موبایل در حال خلق این دنیای بزرگ هستید، بزرگترین گواه بر قدرت اراده شماست. ما این راهنما را اختصاصاً برای محدودیت‌های موبایل طراحی کردیم.
+                            شما ثابت کردید که برای آفرینش، نیاز به ابزار گران‌قیمت نیست، بلکه نیاز به قلبی بزرگ است. این راهنما اختصاصاً برای شما و گوشی موبایلتان طراحی شده تا هیچ بن‌بستی وجود نداشته باشد.
                         </p>
                     </div>
                 </div>
@@ -107,6 +107,18 @@ export default function PublishingGuidePage() {
                         {step.step < steps.length && <div className="absolute top-12 left-6 w-0.5 h-full bg-slate-200 -z-10" />}
                     </div>
                 ))}
+
+                <Card className="bg-primary/5 border-dashed border-primary/20">
+                    <CardHeader className="text-center">
+                        <div className="mx-auto bg-primary/10 p-2 rounded-full w-fit mb-2">
+                            <Star className="w-6 h-6 text-primary" />
+                        </div>
+                        <CardTitle className="text-xl">ورود به Google Studio حرفه‌ای</CardTitle>
+                    </CardHeader>
+                    <CardContent className="text-center text-sm text-muted-foreground">
+                        برای مدیریت پیشرفته‌تر، می‌توانید از <strong>Google Cloud Console</strong> یا <strong>Firebase Console</strong> در مرورگر گوشی استفاده کنید. فراموش نکنید که همیشه حالت <strong>Desktop Site</strong> را در تنظیمات کروم فعال کنید تا تمام دکمه‌ها برای شما نمایش داده شود.
+                    </CardContent>
+                </Card>
 
                 <div className="flex justify-center gap-4 pt-8 border-t">
                     <Button asChild variant="outline">
