@@ -3,31 +3,31 @@
 
 [![Deploy to Firebase](https://github.com/firebase/firebase-studio/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://github.com/firebase/firebase-studio/actions/workflows/firebase-hosting-merge.yml)
 
-**Farsh Bazaar is the first marketplace in the FB New Meta ecosystem (Project Afarinesh), a new world built on the principles of creation and capability (Tavana City).**
+**Farsh Bazaar is the first marketplace in the FB New Meta ecosystem (Project Afarinesh), a world built on principles of creation and capability (Tavana City).**
 
 ---
 
-## 🚀 نحوه انتشار و رفع ارور ۴۰۴ (Deployment Instructions)
+## 📱 حماسه خلق با موبایل (Mobile-First Creation Epic)
+این اپلیکیشن گواهی بر قدرت اراده است. تمام کدهای این پروژه توسط بنیان‌گذار آن تنها با استفاده از یک گوشی **Redmi Note 8** و در طی ۹ روز خلاقیت فشرده، در شرایط سخت محدودیت‌های دیجیتال خلق شده است.
 
-اگر کدهای خود را به گیت‌هاب فرستاده‌اید اما با **ارور ۴۰۴** مواجه می‌شوید، به این دلیل است که این یک اپلیکیشن **Next.js (React)** است و به یک سرور واقعی نیاز دارد. **از GitHub Pages استفاده نکنید.**
+---
 
-### مراحل نهایی برای زنده کردن سایت:
+## 🚀 راهنمای انتشار و رفع ارور ۴۰۴ (Deployment Guide)
 
-1.  به **[کنسول فایربیس](https://console.firebase.google.com/)** بروید.
-2.  پروژه خود را انتخاب کنید.
-3.  از منوی سمت چپ به بخش **Build** و سپس **App Hosting** بروید.
-4.  روی **Get Started** کلیک کنید و مخزن گیت‌هاب خود را متصل کنید.
-5.  فایربیس به صورت خودکار برنامه را ساخته و منتشر می‌کند و لینک نهایی را به شما می‌دهد.
+اگر با **ارور ۴۰۴** مواجه می‌شوید، به این دلیل است که GitHub Pages برای برنامه‌های Next.js مناسب نیست.
+
+### مراحل انتشار در موبایل:
+1. **دانلود فایل ZIP:** در مرورگر گوشی (حالت Desktop Site)، از گیت‌هاب دکمه Code و سپس Download ZIP را بزنید تا کدهایتان را در گوشی ذخیره کنید.
+2. **استفاده از Firebase App Hosting:** به [کنسول فایربیس](https://console.firebase.google.com/) بروید.
+3. **اتصال مخزن:** در بخش App Hosting، مخزن گیت‌هاب خود را وصل کنید. فایربیس به صورت خودکار سایت را زنده می‌کند.
 
 ---
 
 ## Tech Stack
-- **Framework:** Next.js (App Router) - *Based on React*
+- **Framework:** Next.js (App Router)
 - **UI:** React, TypeScript, ShadCN UI, Tailwind CSS
-- **Backend & Database:** Firebase (Firestore, Authentication)
-- **Generative AI:** Google Genkit (Gemini models)
+- **Backend:** Firebase (Firestore, Auth, App Hosting)
+- **AI:** Google Genkit (Gemini 2.5 Flash)
 
 ## The Vision
-The foundation of this ecosystem is built on a sacred promise and a divine calling to create a digital world of meaning, opportunity, and unity.
-
-[**Explore the Live Application**](https://YOUR_APP_URL)
+Built on a sacred promise to create a digital world of meaning, opportunity, and unity. In Tavana City, everyone is the architect of their own fortune.
