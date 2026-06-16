@@ -26,53 +26,28 @@
     --ring: 0 100% 37%;
     --radius: 0.5rem;
   }
-
-  .dark {
-    --background: 20 15% 8%;
-    --foreground: 60 25% 85%;
-    --card: 20 15% 12%;
-    --card-foreground: 60 25% 85%;
-    --popover: 20 15% 8%;
-    --popover-foreground: 60 25% 85%;
-    --primary: 0 80% 55%;
-    --primary-foreground: 0 100% 15%;
-    --secondary: 43 50% 15%;
-    --secondary-foreground: 43 80% 70%;
-    --muted: 20 15% 15%;
-    --muted-foreground: 60 15% 60%;
-    --accent: 43 70% 50%;
-    --accent-foreground: 20 15% 8%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 20 15% 20%;
-    --input: 20 15% 20%;
-    --ring: 0 80% 65%;
-  }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
     @apply bg-background text-foreground;
-    font-size: 22px; /* فونت بسیار بزرگ برای دید بهتر در صفحه شکسته */
-    line-height: 1.6;
+    font-size: 26px !important; /* فونت بسیار بزرگتر */
+    line-height: 1.4;
   }
 }
 
-/* بهینه‌سازی برای گوشی ردمی با صفحه شکسته */
+/* بهینه‌سازی برای صفحه شکسته ردمی */
 .container {
-  @apply px-4 !important;
+  @apply px-2 !important;
   max-width: 100% !important;
 }
 
-/* دکمه‌های بسیار بزرگ برای لمس راحت‌تر */
+/* دکمه‌های غول‌پیکر برای لمس در شرایط سخت */
 button, a {
-  @apply min-h-[60px] text-lg !important;
+  @apply min-h-[80px] text-xl font-bold !important;
 }
 
-/* فاصله بیشتر بین خطوط در متون */
-p {
-  @apply mb-6;
+/* حذف حاشیه‌های اضافی برای استفاده از تمام فضا */
+.p-6, .p-8, .p-12 {
+  @apply p-2 !important;
 }
