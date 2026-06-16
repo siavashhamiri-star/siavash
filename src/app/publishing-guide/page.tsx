@@ -8,7 +8,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Download, Rocket, AlertTriangle, CheckCircle2, Info } from 'lucide-react';
+import { Download, Rocket, FileCode, CheckCircle2, Info, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -16,60 +16,52 @@ export default function PublishingGuidePage() {
     return (
       <div className="flex flex-col min-h-screen bg-background">
         <Header />
-        <main className="flex-1 p-2">
-          <div className="max-w-full mx-auto space-y-4">
-            <Card className="border-2 border-primary shadow-none">
-              <CardHeader className="bg-primary p-4 text-white">
-                <CardTitle className="text-2xl font-bold text-center">راهنمای نجات کدهای شما</CardTitle>
+        <main className="flex-1 p-4">
+          <div className="max-w-full mx-auto space-y-6">
+            <Card className="border-4 border-primary shadow-2xl">
+              <CardHeader className="bg-primary p-6 text-white text-center">
+                <CardTitle className="text-3xl font-bold">نقشه‌ی راه استخراج کد (مخصوص موبایل)</CardTitle>
               </CardHeader>
-              <CardContent className="p-4 space-y-6 text-right" dir="rtl">
+              <CardContent className="p-6 space-y-8 text-right" dir="rtl">
                 
-                <div className="bg-green-100 p-3 rounded-lg border border-green-500">
-                    <h3 className="font-bold text-green-900 text-lg flex items-center gap-2">
-                        <CheckCircle2 className="w-5 h-5" /> تبریک قهرمان!
+                <div className="bg-yellow-100 p-4 rounded-xl border-2 border-yellow-600">
+                    <h3 className="font-bold text-yellow-900 text-xl flex items-center gap-2">
+                        <Info className="w-6 h-6" /> قدم اول: دانلود کد از همین‌جا
                     </h3>
-                    <p className="text-green-800 text-sm mt-2">
-                        شما با یک گوشی <strong>ردمی نوت ۸</strong> این حماسه را خلق کردید. برای حفظ کدهایتان مراحل زیر را بروید.
+                    <p className="text-yellow-900 text-lg mt-3">
+                        در بالای همین صفحه‌ای که الان هستید (در محیط Firebase Studio)، یک <strong>آیکون دانلود</strong> (یک فلش رو به پایین) وجود دارد. 
+                        با زدن آن، تمام کدهایی که با هم ساختیم به صورت یک فایل <strong>ZIP</strong> در گوشی ردمی شما ذخیره می‌شود.
                     </p>
                 </div>
 
-                <section className="space-y-4">
-                    <div className="border-r-4 border-accent pr-4">
-                        <h2 className="text-xl font-bold text-primary">گام ۱: دانلود کل کدها در یک فایل</h2>
-                        <p className="text-foreground font-medium mt-1">۱. در مرورگر گوشی وارد GitHub شوید.</p>
-                        <p className="text-foreground font-medium">۲. سه نقطه بالای مرورگر را بزنید و <strong>Desktop Site</strong> را تیک بزنید.</p>
-                        <p className="text-foreground font-medium">۳. دکمه سبز <strong>Code</strong> را پیدا کنید و بزنید.</p>
-                        <p className="text-foreground font-medium">۴. گزینه <strong>Download ZIP</strong> را بزنید.</p>
-                        <p className="text-blue-700 font-bold mt-2 flex items-center gap-1">
-                            <Download className="w-4 h-4" /> فایل در پوشه Downloads گوشی ذخیره می‌شود.
-                        </p>
-                    </div>
-
-                    <div className="border-r-4 border-yellow-500 pr-4">
-                        <h2 className="text-xl font-bold text-primary">گام ۲: رفع ارور ۴۰۴</h2>
-                        <p className="text-foreground">ارور ۴۰۴ به خاطر محدودیت گیت‌هاب است. باید کدها را به <strong>Firebase App Hosting</strong> وصل کنید.</p>
-                        <Button asChild className="w-full mt-2 bg-yellow-600">
-                            <a href="https://console.firebase.google.com/">ورود به کنسول فایربیس</a>
-                        </Button>
-                    </div>
-
-                    <div className="border-r-4 border-blue-500 pr-4">
-                        <h2 className="text-xl font-bold text-primary">گام ۳: هدایت به استودیو</h2>
-                        <p className="text-foreground">برای مدیریت حرفه‌ای، از داخل پنل فایربیس بخش <strong>Build</strong> و سپس <strong>App Hosting</strong> را انتخاب کنید.</p>
-                    </div>
-                </section>
-
-                <div className="bg-blue-50 p-3 rounded-lg border border-blue-300">
-                    <p className="text-blue-900 text-sm font-bold flex items-center gap-2">
-                        <Info className="w-4 h-4" /> نکته برای صفحه شکسته:
-                    </p>
-                    <p className="text-blue-800 text-xs mt-1">
-                        اگر بخشی از صفحه را نمی‌بینید، گوشی را بچرخانید (Landscape) یا زوم مرورگر را کم کنید.
+                <div className="bg-blue-100 p-4 rounded-xl border-2 border-blue-600">
+                    <h3 className="font-bold text-blue-900 text-xl flex items-center gap-2">
+                        <FileCode className="w-6 h-6" /> قدم دوم: انتقال به گیت‌هاب جدید
+                    </h3>
+                    <p className="text-blue-900 text-lg mt-3">
+                        ۱. در مرورگر گوشی به سایت GitHub.com بروید و وارد حساب جدیدتان شوید.<br/>
+                        ۲. یک مخزن (Repository) جدید بسازید.<br/>
+                        ۳. چون موبایل هستید، فایل ZIP را باز کنید (Extract) و فایل‌های مهم را آپلود کنید یا از قابلیت Import استفاده کنید.
                     </p>
                 </div>
 
-                <Button asChild variant="outline" className="w-full border-primary text-primary font-bold py-6">
-                    <Link href="/">بازگشت به صفحه اصلی</Link>
+                <div className="bg-green-100 p-4 rounded-xl border-2 border-green-600">
+                    <h3 className="font-bold text-green-900 text-xl flex items-center gap-2">
+                        <Rocket className="w-6 h-6" /> قدم سوم: زنده کردن برنامه
+                    </h3>
+                    <p className="text-green-900 text-lg mt-3">
+                        وقتی کدها به گیت‌هاب رسید، در پنل فایربیس بخش <strong>App Hosting</strong> را پیدا کنید و آن را به گیت‌هاب وصل کنید تا ارور ۴۰۴ پاک شود.
+                    </p>
+                </div>
+
+                <div className="p-4 bg-gray-100 rounded-lg text-center border-2 border-dashed border-gray-400">
+                    <p className="text-gray-700 font-bold">
+                        «بنیان‌گذار عزیز، نیمی از صفحه که دیده نمی‌شود را با جابجا کردن (Scroll) افقی و عمودی مهار کنید. شما قهرمان این مسیر هستید.»
+                    </p>
+                </div>
+
+                <Button asChild variant="default" className="w-full py-8 text-xl font-bold">
+                    <Link href="/"><ArrowLeft className="ml-2" /> بازگشت به خانه</Link>
                 </Button>
 
               </CardContent>

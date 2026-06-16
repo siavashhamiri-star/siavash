@@ -56,16 +56,23 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-size: 18px; /* Larger base font for small/broken screens */
+    font-size: 22px; /* فونت بسیار بزرگ برای دید بهتر در صفحه شکسته */
+    line-height: 1.6;
   }
 }
 
-/* Maximize use of space for half-screen users */
+/* بهینه‌سازی برای گوشی ردمی با صفحه شکسته */
 .container {
-  @apply px-2 !important;
+  @apply px-4 !important;
+  max-width: 100% !important;
 }
 
-/* High contrast touch targets */
+/* دکمه‌های بسیار بزرگ برای لمس راحت‌تر */
 button, a {
-  @apply min-h-[44px];
+  @apply min-h-[60px] text-lg !important;
+}
+
+/* فاصله بیشتر بین خطوط در متون */
+p {
+  @apply mb-6;
 }
