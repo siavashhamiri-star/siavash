@@ -5,49 +5,47 @@
 
 @layer base {
   :root {
-    --background: 60 56% 91%;
-    --foreground: 20 15% 25%;
-    --card: 60 56% 96%;
-    --card-foreground: 20 15% 25%;
-    --popover: 60 56% 96%;
-    --popover-foreground: 20 15% 25%;
-    --primary: 0 100% 27%;
-    --primary-foreground: 60 30% 96%;
-    --secondary: 43 84% 85%;
-    --secondary-foreground: 43 90% 20%;
-    --muted: 60 30% 88%;
-    --muted-foreground: 20 10% 45%;
-    --accent: 43 90% 38%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 60 30% 80%;
-    --input: 60 30% 85%;
-    --ring: 0 100% 37%;
-    --radius: 0.5rem;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --primary: 0 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --border: 0 0% 0%;
+    --radius: 0rem;
   }
 }
 
 @layer base {
   body {
     @apply bg-background text-foreground;
-    font-size: 26px !important; /* فونت بسیار بزرگتر */
-    line-height: 1.4;
+    font-size: 40px !important; /* فونت فوق‌العاده بزرگ برای خوانایی در نیم‌صفحه */
+    line-height: 1.2;
+    font-weight: 900;
   }
 }
 
-/* بهینه‌سازی برای صفحه شکسته ردمی */
+/* بهینه‌سازی برای صفحه شکسته ردمی نوت ۸ */
 .container {
-  @apply px-2 !important;
+  @apply px-1 !important;
   max-width: 100% !important;
 }
 
-/* دکمه‌های غول‌پیکر برای لمس در شرایط سخت */
+/* دکمه‌های عظیم برای لمس راحت */
 button, a {
-  @apply min-h-[80px] text-xl font-bold !important;
+  @apply min-h-[120px] text-3xl font-black border-4 border-black !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 10px !important;
 }
 
-/* حذف حاشیه‌های اضافی برای استفاده از تمام فضا */
-.p-6, .p-8, .p-12 {
-  @apply p-2 !important;
+/* حذف فضا‌های هدر رفته */
+.p-2, .p-4, .p-6 {
+  @apply p-1 !important;
+}
+
+h1, h2, h3 {
+  @apply text-5xl font-black text-red-600 !important;
+  margin-bottom: 20px !important;
 }
