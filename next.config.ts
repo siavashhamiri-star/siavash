@@ -1,7 +1,8 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /* تنظیمات برای سازگاری با محیط‌های مختلف انتشار */
   typescript: {
     ignoreBuildErrors: true,
   },
