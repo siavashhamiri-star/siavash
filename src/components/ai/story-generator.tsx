@@ -1,6 +1,8 @@
+
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { createStory, StoryState } from '@/app/actions';
 import {
   Card,
@@ -35,12 +37,12 @@ function SubmitButton() {
       {pending ? (
         <>
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          Weaving your tale...
+          در حال بافتن رویا...
         </>
       ) : (
         <>
           <Wand2 className="mr-2 h-4 w-4" />
-          Generate Story
+          تولید داستان هوشمند
         </>
       )}
     </Button>
@@ -48,7 +50,7 @@ function SubmitButton() {
 }
 
 export function StoryGenerator() {
-  const [state, formAction] = useFormState(createStory, initialState);
+  const [state, formAction] = useActionState(createStory, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -57,7 +59,7 @@ export function StoryGenerator() {
   useEffect(() => {
     if (state.message) {
       toast({
-        title: 'Error',
+        title: 'خطا',
         description: state.message,
         variant: 'destructive',
       });
@@ -79,7 +81,8 @@ export function StoryGenerator() {
     }
   };
   
-  const handleRemoveImage = () => {
+  const handleRemoveImage = (e: React.MouseEvent) => {
+    e.preventDefault();
     setImageDataUri(null);
     if(fileInputRef.current) {
         fileInputRef.current.value = '';
@@ -89,36 +92,36 @@ export function StoryGenerator() {
   return (
     <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
       <div>
-        <h2 className="text-3xl md:text-4xl font-headline font-bold">The Magic Carpet's Tale</h2>
+        <h2 className="text-3xl md:text-4xl font-headline font-bold">افسانه‌ی فرش جادویی</h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          Every carpet has a story woven into its threads. Upload a photo or enter a type below to bring its history, artistry, and cultural relevance to life.
+          هر فرش داستانی دارد که در تار و پود آن بافته شده است. عکسی آپلود کنید یا نامی وارد کنید تا تاریخ، هنر و اصالت آن را زنده کنیم.
         </p>
 
         <Card className="mt-8">
           <form action={formAction} ref={formRef}>
             <CardHeader>
-              <CardTitle className="font-headline">Create a Carpet Story</CardTitle>
+              <CardTitle className="font-headline">تولید محتوای هوشمند</CardTitle>
               <CardDescription>
-                Upload a picture of a carpet, or enter a type and choose a style.
+                تصویر فرش را آپلود کنید یا نوع آن را بنویسید و سبک نگارش را انتخاب کنید.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
                <div className="space-y-2">
-                <Label htmlFor="image">Carpet Image (Optional)</Label>
+                <Label htmlFor="image">تصویر فرش (اختیاری)</Label>
                 {imageDataUri ? (
                     <div className="relative">
-                        <Image src={imageDataUri} alt="Carpet preview" width={200} height={150} className="rounded-md object-cover w-full h-48" />
+                        <Image src={imageDataUri} alt="Carpet preview" width={400} height={300} className="rounded-md object-cover w-full h-48" />
                         <Button variant="destructive" size="icon" className="absolute top-2 right-2 h-8 w-8" onClick={handleRemoveImage}>
                             <X className="h-4 w-4" />
-                            <span className="sr-only">Remove image</span>
+                            <span className="sr-only">حذف تصویر</span>
                         </Button>
                     </div>
                 ) : (
                     <label htmlFor="file-upload" className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed rounded-lg cursor-pointer bg-card hover:bg-muted transition-colors">
                         <div className="flex flex-col items-center justify-center pt-5 pb-6">
                             <ImageIcon className="w-8 h-8 mb-3 text-muted-foreground" />
-                            <p className="mb-2 text-sm text-muted-foreground"><span className="font-semibold">Click to upload</span> or drag and drop</p>
-                            <p className="text-xs text-muted-foreground">PNG, JPG, or WEBP</p>
+                            <p className="mb-2 text-sm text-muted-foreground"><span className="font-semibold">برای آپلود کلیک کنید</span></p>
+                            <p className="text-xs text-muted-foreground">PNG, JPG یا WEBP</p>
                         </div>
                         <Input id="file-upload" type="file" className="hidden" accept="image/*" onChange={handleFileChange} ref={fileInputRef} />
                     </label>
@@ -131,16 +134,16 @@ export function StoryGenerator() {
                     <span className="w-full border-t" />
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
-                    <span className="bg-card px-2 text-muted-foreground">Or</span>
+                    <span className="bg-card px-2 text-muted-foreground">یا</span>
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="carpetType">Carpet Type</Label>
+                <Label htmlFor="carpetType">نوع یا منطقه فرش</Label>
                 <Input
                   id="carpetType"
                   name="carpetType"
-                  placeholder="e.g., 'Persian Tabriz', 'Turkish Oushak'"
+                  placeholder="مثال: تبریز ریزبافت، نائین ابریشم"
                   disabled={!!imageDataUri}
                 />
                 {state.errors?.carpetType && (
@@ -148,16 +151,16 @@ export function StoryGenerator() {
                 )}
               </div>
               <div className="space-y-2">
-                <Label htmlFor="style">Writing Style</Label>
+                <Label htmlFor="style">سبک روایت</Label>
                 <Select name="style" defaultValue="Narrative">
                   <SelectTrigger id="style">
-                    <SelectValue placeholder="Select a style" />
+                    <SelectValue placeholder="انتخاب سبک..." />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Narrative">Narrative</SelectItem>
-                    <SelectItem value="Historical">Historical</SelectItem>
-                    <SelectItem value="Poetic">Poetic</SelectItem>
-                    <SelectItem value="Mystical">Mystical</SelectItem>
+                    <SelectItem value="Narrative">روایی (Narrative)</SelectItem>
+                    <SelectItem value="Historical">تاریخی (Historical)</SelectItem>
+                    <SelectItem value="Poetic">شاعرانه (Poetic)</SelectItem>
+                    <SelectItem value="Mystical">عرفانی (Mystical)</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -172,18 +175,18 @@ export function StoryGenerator() {
       <div className="mt-8 md:mt-0">
          <Card className="h-full min-h-[400px]">
            <CardHeader>
-            <CardTitle className="font-headline">Your Generated Story</CardTitle>
-            <CardDescription>The AI-woven tale will appear below.</CardDescription>
+            <CardTitle className="font-headline">داستان بافته شده</CardTitle>
+            <CardDescription>روایت هوشمند شما در اینجا ظاهر می‌شود.</CardDescription>
            </CardHeader>
            <CardContent>
              {state.story ? (
-                <div className="prose prose-sm max-w-none text-foreground whitespace-pre-wrap">
+                <div className="prose prose-sm max-w-none text-foreground whitespace-pre-wrap leading-relaxed">
                     {state.story}
                 </div>
              ) : (
                 <div className="flex flex-col items-center justify-center text-center text-muted-foreground h-64">
-                    <Wand2 className="w-12 h-12 mb-4"/>
-                    <p>Your story awaits...</p>
+                    <Wand2 className="w-12 h-12 mb-4 animate-pulse text-primary/30"/>
+                    <p>در انتظار خلق یک شاهکار...</p>
                 </div>
              )}
            </CardContent>

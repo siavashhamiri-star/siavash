@@ -6,13 +6,12 @@ import { z } from 'zod';
 
 const StorySchema = z.object({
   carpetType: z.string().optional(),
-  style: z.string(),
+  style: z.string().min(1, "Style is required"),
   imageDataUri: z.string().optional(),
-}).refine(data => !!data.carpetType || !!data.imageDataUri, {
-    message: "Please enter a carpet type or upload an image.",
+}).refine(data => (data.carpetType && data.carpetType.trim().length > 0) || (data.imageDataUri && data.imageDataUri.length > 0), {
+    message: "لطفاً نوع فرش را وارد کنید یا یک تصویر آپلود نمایید.",
     path: ["carpetType"],
 });
-
 
 export type StoryState = {
   message?: string | null;
@@ -28,16 +27,20 @@ export async function createStory(
   prevState: StoryState,
   formData: FormData
 ): Promise<StoryState> {
+  const carpetType = formData.get('carpetType')?.toString();
+  const style = formData.get('style')?.toString() || 'Narrative';
+  const imageDataUri = formData.get('imageDataUri')?.toString();
+
   const validatedFields = StorySchema.safeParse({
-    carpetType: formData.get('carpetType'),
-    style: formData.get('style'),
-    imageDataUri: formData.get('imageDataUri'),
+    carpetType: carpetType || undefined,
+    style,
+    imageDataUri: imageDataUri || undefined,
   });
 
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
-      message: 'Invalid input. Please check the fields.',
+      message: 'ورودی نامعتبر است. لطفاً فیلدها را بررسی کنید.',
     };
   }
 
@@ -46,10 +49,10 @@ export async function createStory(
     if (result.story) {
         return { story: result.story, message: null, errors: {} };
     } else {
-        return { message: 'The generated story was empty. Please try a different prompt.', story: null, errors: {} };
+        return { message: 'داستان تولید شده خالی بود. لطفاً ورودی دیگری را امتحان کنید.', story: null, errors: {} };
     }
   } catch (e) {
     console.error('Error in createStory server action:', e);
-    return { message: 'An error occurred while generating the story. Please try again later.', story: null, errors: {} };
+    return { message: 'خطایی در تولید داستان رخ داد. لطفاً بعداً دوباره تلاش کنید.', story: null, errors: {} };
   }
 }

@@ -1,3 +1,4 @@
+
 'use client';
 import { Button } from '@/components/ui/button';
 import {
@@ -13,13 +14,14 @@ import { Textarea } from '@/components/ui/textarea';
 import { useFirestore, useUser, useDoc } from '@/firebase';
 import { doc, updateDoc } from 'firebase/firestore';
 import { useRouter, useParams } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { toast } from '@/hooks/use-toast';
 import type { Vendor } from '@/lib/types';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
+import { Loader2 } from 'lucide-react';
 
 export default function EditVendorPage() {
   const [name, setName] = useState('');
@@ -27,6 +29,7 @@ export default function EditVendorPage() {
   const [bio, setBio] = useState('');
   const [specialties, setSpecialties] = useState('');
   const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const router = useRouter();
   const params = useParams();
@@ -35,7 +38,10 @@ export default function EditVendorPage() {
   const firestore = useFirestore();
   const { data: user, isLoading: userLoading } = useUser();
   
-  const vendorRef = vendorId ? doc(firestore, 'vendors', vendorId) : undefined;
+  const vendorRef = useMemo(() => 
+    vendorId ? doc(firestore, 'vendors', vendorId) : undefined
+  , [firestore, vendorId]);
+
   const { data: vendor, loading: vendorLoading } = useDoc(vendorRef);
 
   useEffect(() => {
@@ -52,22 +58,29 @@ export default function EditVendorPage() {
     if (!userLoading && !user) {
       router.push('/login');
     }
-  }, [user, userLoading, router]);
+    if (!userLoading && user && !vendorLoading && vendor) {
+        if(vendor.userId !== user.uid) {
+            toast({ title: "عدم دسترسی", variant: "destructive"});
+            router.push('/account');
+        }
+    }
+  }, [user, userLoading, vendor, vendorLoading, router]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
     if (!user || !vendorId || !vendorRef) {
-      setError('An error occurred. Please try again.');
+      setError('خطایی رخ داد. لطفا دوباره تلاش کنید.');
       return;
     }
     
     if (vendor?.userId !== user.uid) {
-        toast({ title: "Unauthorized", description: "You cannot edit this showroom.", variant: "destructive" });
+        toast({ title: "عدم دسترسی", description: "شما اجازه ویرایش این نمایشگاه را ندارید.", variant: "destructive" });
         return;
     }
 
+    setIsSubmitting(true);
     const vendorUpdateData = {
         name,
         location,
@@ -76,15 +89,14 @@ export default function EditVendorPage() {
         avatarUrl: user.photoURL || `https://ui-avatars.com/api/?name=${name.replace(' ', '+')}&background=random`,
     };
 
-    updateDoc(vendorRef, vendorUpdateData)
-      .then(() => {
+    try {
+        await updateDoc(vendorRef, vendorUpdateData);
         toast({
-          title: "Showroom Updated!",
-          description: "Your vendor profile has been successfully updated.",
+          title: "ویرایش موفق!",
+          description: "اطلاعات نمایشگاه شما با موفقیت به‌روزرسانی شد.",
         });
         router.push(`/vendors/${vendorId}`);
-      })
-      .catch((serverError) => {
+    } catch (serverError: any) {
         console.error('Error updating vendor profile in Firestore:', serverError);
         const permissionError = new FirestorePermissionError({
             path: vendorRef.path,
@@ -94,11 +106,13 @@ export default function EditVendorPage() {
         errorEmitter.emit('permission-error', permissionError);
         setError(serverError.message);
         toast({
-          title: "Error updating profile",
+          title: "خطا در به‌روزرسانی",
           description: serverError.message,
           variant: "destructive",
         });
-      });
+    } finally {
+        setIsSubmitting(false);
+    }
   };
 
   if (userLoading || vendorLoading) {
@@ -106,21 +120,9 @@ export default function EditVendorPage() {
         <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-1 flex items-center justify-center">
-          <p>Loading Editor...</p>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
-  if (!vendor || vendor.userId !== user?.uid) {
-     return (
-        <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-1 flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold">Unauthorized</h1>
-            <p className="text-muted-foreground">You do not have permission to edit this page.</p>
+          <div className="flex flex-col items-center gap-4">
+            <Loader2 className="w-10 h-10 animate-spin text-primary" />
+            <p>در حال بارگذاری ویرایشگر نمایشگاه...</p>
           </div>
         </main>
         <Footer />
@@ -128,68 +130,72 @@ export default function EditVendorPage() {
     );
   }
 
+  if (!vendor || vendor.userId !== user?.uid) {
+     return null; // Handle via redirect
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1 bg-secondary/20">
         <div className="container mx-auto px-4 py-16">
-          <Card className="max-w-2xl mx-auto">
+          <Card className="max-w-2xl mx-auto shadow-xl">
             <CardHeader>
-              <CardTitle className="text-2xl font-headline">Edit Your Showroom</CardTitle>
+              <CardTitle className="text-2xl font-headline">مدیریت نمایشگاه مجازی</CardTitle>
               <CardDescription>
-                Update your vendor profile details below.
+                اطلاعات نمایشگاه و برند خود را در اینجا به‌روز کنید.
               </CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="grid gap-6">
                 <div className="grid gap-2">
-                  <Label htmlFor="name">Vendor Name</Label>
+                  <Label htmlFor="name">نام نمایشگاه یا گالری</Label>
                   <Input
                     id="name"
                     type="text"
-                    placeholder="e.g., Isfahan Carpet Masters"
+                    placeholder="مثال: فرش علیمیری و پسران"
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="location">Location</Label>
+                  <Label htmlFor="location">موقعیت مکانی (شهر/منطقه)</Label>
                   <Input
                     id="location"
                     type="text"
-                    placeholder="e.g., Isfahan, Iran"
+                    placeholder="مثال: بازار تهران، سرای بوعلی"
                     required
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="specialties">Specialties</Label>
+                  <Label htmlFor="specialties">تخصص‌ها (با کاما جدا کنید)</Label>
                   <Input
                     id="specialties"
                     type="text"
-                    placeholder="e.g., Classic Isfahan, Nain, Fine Silk (comma-separated)"
+                    placeholder="مثال: فرش کلاسیک، ابریشم، گبه"
                     value={specialties}
                     onChange={(e) => setSpecialties(e.target.value)}
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="bio">Bio</Label>
+                  <Label htmlFor="bio">درباره فروشگاه و سوابق</Label>
                   <Textarea
                     id="bio"
-                    placeholder="Tell us about your history, your passion, and what makes your collection unique."
+                    placeholder="شرح مختصری از اصالت و سوابق هنری خود بنویسید."
                     required
                     value={bio}
                     onChange={(e) => setBio(e.target.value)}
-                    rows={4}
+                    rows={6}
                   />
                 </div>
                 
-                {error && <p className="text-destructive text-sm">{error}</p>}
+                {error && <p className="text-destructive text-sm font-bold">{error}</p>}
                 
-                <Button type="submit" className="w-full">
-                  Save Changes
+                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? <Loader2 className="animate-spin" /> : 'ذخیره تغییرات نمایشگاه'}
                 </Button>
               </form>
             </CardContent>

@@ -1,3 +1,4 @@
+
 'use client';
 import { Button } from '@/components/ui/button';
 import {
@@ -14,13 +15,14 @@ import { Textarea } from '@/components/ui/textarea';
 import { useFirestore, useUser, useDoc } from '@/firebase';
 import { doc, updateDoc } from 'firebase/firestore';
 import { useRouter, useParams, useSearchParams, notFound } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { toast } from '@/hooks/use-toast';
 import type { Carpet } from '@/lib/types';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
+import { Loader2 } from 'lucide-react';
 
 export default function EditCarpetPage() {
   const [name, setName] = useState('');
@@ -29,12 +31,13 @@ export default function EditCarpetPage() {
   const [imageUrl, setImageUrl] = useState('');
   const [consignment, setConsignment] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const router = useRouter();
   const params = useParams();
   const searchParams = useSearchParams();
 
-  const carpetId = params.vendorId as string; // Note: In this route, the carpet ID is the dynamic part
+  const carpetId = params.vendorId as string; 
   const vendorId = searchParams.get('vendorId');
   
   if (!vendorId) {
@@ -44,15 +47,17 @@ export default function EditCarpetPage() {
   const firestore = useFirestore();
   const { data: user, isLoading: userLoading } = useUser();
 
-  const carpetRef =
-    vendorId && carpetId
-      ? doc(firestore, 'vendors', vendorId, 'carpets', carpetId)
-      : undefined;
+  const carpetRef = useMemo(() => 
+    vendorId && carpetId ? doc(firestore, 'vendors', vendorId, 'carpets', carpetId) : undefined
+  , [firestore, vendorId, carpetId]);
+
   const { data: carpet, loading: carpetLoading } = useDoc(carpetRef);
   
-  const vendorRef = vendorId ? doc(firestore, 'vendors', vendorId) : undefined;
-  const { data: vendor, loading: vendorLoading } = useDoc(vendorRef);
+  const vendorRef = useMemo(() => 
+    vendorId ? doc(firestore, 'vendors', vendorId) : undefined
+  , [firestore, vendorId]);
 
+  const { data: vendor, loading: vendorLoading } = useDoc(vendorRef);
 
   useEffect(() => {
     if (carpet) {
@@ -65,28 +70,29 @@ export default function EditCarpetPage() {
     }
   }, [carpet]);
 
+  const isOwner = user && vendor && user.uid === vendor.userId;
+
   useEffect(() => {
-    if (!userLoading && !vendorLoading) {
-      if (!user) {
-        router.push('/login');
-        return;
-      }
-      if (vendor?.userId !== user.uid) {
-        toast({ title: "Unauthorized", description: "You cannot edit this carpet.", variant: "destructive" });
+    if (!userLoading && !vendorLoading && user && vendor) {
+      if (vendor.userId !== user.uid) {
+        toast({ title: "عدم دسترسی", description: "شما اجازه ویرایش این مورد را ندارید.", variant: "destructive" });
         router.push(`/vendors/${vendorId}`);
       }
+    } else if (!userLoading && !user) {
+        router.push('/login');
     }
   }, [user, userLoading, vendor, vendorLoading, router, vendorId]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
     if (!isOwner || !carpetRef) {
-      setError('An error occurred. Please try again.');
+      setError('خطایی رخ داد. لطفا دوباره تلاش کنید.');
       return;
     }
 
+    setIsSubmitting(true);
     const carpetUpdateData = {
         name,
         description,
@@ -95,15 +101,14 @@ export default function EditCarpetPage() {
         consignment,
     };
 
-    updateDoc(carpetRef, carpetUpdateData)
-      .then(() => {
+    try {
+        await updateDoc(carpetRef, carpetUpdateData);
         toast({
-          title: 'Carpet Updated!',
-          description: 'Your carpet details have been successfully updated.',
+          title: 'به‌روزرسانی موفق!',
+          description: 'جزئیات فرش با موفقیت ذخیره شد.',
         });
         router.push(`/carpets/${carpetId}?vendorId=${vendorId}`);
-      })
-      .catch((serverError) => {
+    } catch (serverError: any) {
         console.error('Error updating carpet in Firestore:', serverError);
         const permissionError = new FirestorePermissionError({
             path: carpetRef.path,
@@ -113,37 +118,23 @@ export default function EditCarpetPage() {
         errorEmitter.emit('permission-error', permissionError);
         setError(serverError.message);
         toast({
-          title: 'Error updating carpet',
+          title: 'خطا در به‌روزرسانی',
           description: serverError.message,
           variant: 'destructive',
         });
-      });
+    } finally {
+        setIsSubmitting(false);
+    }
   };
-
-  const isOwner = user && vendor && user.uid === vendor.userId;
 
   if (userLoading || carpetLoading || vendorLoading) {
     return (
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-1 flex items-center justify-center">
-          <p>Loading Editor...</p>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
-  if (!isOwner) {
-    return (
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-1 flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-2xl font-bold">Unauthorized</h1>
-            <p className="text-muted-foreground">
-              You do not have permission to edit this page.
-            </p>
+          <div className="flex flex-col items-center gap-4">
+            <Loader2 className="w-10 h-10 animate-spin text-primary" />
+            <p>در حال بارگذاری ویرایشگر...</p>
           </div>
         </main>
         <Footer />
@@ -151,22 +142,26 @@ export default function EditCarpetPage() {
     );
   }
 
+  if (!isOwner) {
+    return null; // Redirect logic will handle this
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1 bg-secondary/20">
         <div className="container mx-auto px-4 py-16">
-          <Card className="max-w-2xl mx-auto">
+          <Card className="max-w-2xl mx-auto shadow-xl">
             <CardHeader>
-              <CardTitle className="text-2xl font-headline">Edit Carpet</CardTitle>
+              <CardTitle className="text-2xl font-headline">ویرایش جزئیات فرش</CardTitle>
               <CardDescription>
-                Update the details for your carpet below.
+                تغییرات مورد نظر خود را در فرم زیر وارد نمایید.
               </CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="grid gap-6">
                 <div className="grid gap-2">
-                  <Label htmlFor="name">Carpet Name / Title</Label>
+                  <Label htmlFor="name">نام یا عنوان فرش</Label>
                   <Input
                     id="name"
                     type="text"
@@ -176,7 +171,7 @@ export default function EditCarpetPage() {
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="price">Price</Label>
+                  <Label htmlFor="price">قیمت</Label>
                   <Input
                     id="price"
                     type="text"
@@ -186,7 +181,7 @@ export default function EditCarpetPage() {
                   />
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="imageUrl">Image URL</Label>
+                  <Label htmlFor="imageUrl">آدرس تصویر</Label>
                   <Input
                     id="imageUrl"
                     type="text"
@@ -194,20 +189,20 @@ export default function EditCarpetPage() {
                     value={imageUrl}
                     onChange={(e) => setImageUrl(e.target.value)}
                   />
-                  {imageUrl && <img src={imageUrl} alt="Carpet preview" className="mt-2 rounded-md object-cover w-full h-48" />}
+                  {imageUrl && <img src={imageUrl} alt="Carpet preview" className="mt-2 rounded-md object-cover w-full h-48 border" />}
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="description">Description</Label>
+                  <Label htmlFor="description">توضیحات و شناسنامه</Label>
                   <Textarea
                     id="description"
                     required
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
-                    rows={4}
+                    rows={6}
                   />
                 </div>
 
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 gap-2">
                   <Checkbox
                     id="consignment"
                     checked={consignment}
@@ -215,16 +210,16 @@ export default function EditCarpetPage() {
                   />
                   <Label
                     htmlFor="consignment"
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    className="text-sm font-medium leading-none"
                   >
-                    Request to sell this carpet in the Farsh Bazaar Specialty Catalog (Consignment)
+                    درخواست فروش در کاتالوگ تخصصی فرش بازار (امانی)
                   </Label>
                 </div>
 
-                {error && <p className="text-destructive text-sm">{error}</p>}
+                {error && <p className="text-destructive text-sm font-bold">{error}</p>}
 
-                <Button type="submit" className="w-full">
-                  Save Changes
+                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? <Loader2 className="animate-spin" /> : 'ذخیره تغییرات نهایی'}
                 </Button>
               </form>
             </CardContent>
