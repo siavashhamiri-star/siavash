@@ -7,8 +7,9 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Blocks, CheckCircle, Clock, Music, Mic, Users, BookOpen, ToyBrick, Briefcase, BrainCircuit, Diamond, Banknote, Link as LinkIcon } from 'lucide-react';
+import { Blocks, CheckCircle, Clock, Music, Mic, Users, BookOpen, ToyBrick, Briefcase, BrainCircuit, Diamond, Banknote, Link as LinkIcon, ExternalLink, Sparkles } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import Link from 'next/link';
 
 const ecosystemApps = [
     {
@@ -16,14 +17,25 @@ const ecosystemApps = [
         description: "A global marketplace for artisans, connecting creators directly with a worldwide audience. The first pillar of our new economy.",
         fa_description: "یک بازار جهانی برای صنعتگران که خالقان را مستقیماً به مخاطبان جهانی متصل می‌کند. اولین ستون اقتصاد جدید ما.",
         status: "Live",
-        icon: <Blocks className="w-8 h-8 text-primary" />
+        icon: <Blocks className="w-8 h-8 text-primary" />,
+        link: "/"
+    },
+    {
+        name: "OpenMind Nexus",
+        description: "An advanced AI-powered platform for cognitive expansion and collective intelligence within the Afarinesh ecosystem.",
+        fa_description: "یک پلتفرم پیشرفته مجهز به هوش مصنوعی برای گسترش شناختی و هوش جمعی در اکوسیستم آفرینش.",
+        status: "Live",
+        icon: <Sparkles className="w-8 h-8 text-primary" />,
+        link: "https://openmind-nexuse-dbbbbb.netlify.app/",
+        isExternal: true
     },
     {
         name: "LingoView (آپ گویا)",
         description: "A revolutionary educational platform focused on building 'capability', not just providing knowledge. Starting with language, expanding to all skills.",
         fa_description: "یک پلتفرم آموزشی انقلابی که بر ساختن «توانایی» تمرکز دارد، نه فقط ارائه دانش. شروع با زبان، و گسترش به تمام مهارت‌ها.",
         status: "Coming Soon",
-        icon: <Blocks className="w-8 h-8 text-muted-foreground" />
+        icon: <Blocks className="w-8 h-8 text-muted-foreground" />,
+        link: "/lingoview"
     },
     {
         name: "Nava Studio (استودیو نوا)",
@@ -106,7 +118,7 @@ export default function EcosystemPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {ecosystemApps.map((app) => (
-                            <Card key={app.name} className="flex flex-col">
+                            <Card key={app.name} className="flex flex-col group hover:shadow-lg transition-all duration-300 border-primary/5 hover:border-primary/20">
                                 <CardHeader>
                                     <div className="flex justify-between items-start">
                                         <div className="flex items-center gap-4">
@@ -122,27 +134,43 @@ export default function EcosystemPage() {
                                 <CardContent className="flex-grow">
                                     <p className="text-foreground/80">{app.description}</p>
                                     <p className="text-sm text-muted-foreground mt-2">({app.fa_description})</p>
+                                    
+                                    {app.link && (
+                                        <div className="mt-4 pt-4 border-t border-primary/5">
+                                            {app.isExternal ? (
+                                                <a 
+                                                    href={app.link} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    className="text-primary font-bold text-sm flex items-center gap-2 hover:underline"
+                                                >
+                                                    ورود به برنامه <ExternalLink className="w-4 h-4" />
+                                                </a>
+                                            ) : (
+                                                <Link 
+                                                    href={app.link}
+                                                    className="text-primary font-bold text-sm flex items-center gap-2 hover:underline"
+                                                >
+                                                    مشاهده جزئیات <ExternalLink className="w-4 h-4" />
+                                                </Link>
+                                            )}
+                                        </div>
+                                    )}
                                 </CardContent>
                             </Card>
                         ))}
                     </div>
 
                     <div className="text-center mt-16 space-y-6">
-                        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                        This roadmap represents our commitment to building a complete, interconnected world. Each application is a vital organ, working in harmony to create a society where capability and collaboration are the cornerstones of progress.
-                        <br/>
-                        <span className="text-base">(این نقشه راه، تعهد ما به ساختن یک دنیای کامل و به‌هم‌پیوسته را نشان می‌دهد. هر اپلیکیشن، یک عضو حیاتی است که در هماهنگی با دیگران کار می‌کند تا جامعه‌ای را خلق کند که در آن، توانایی و همکاری، سنگ‌بنای پیشرفت است.)</span>
-                        </p>
-                        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                        Our reward systems are also designed for universal inspiration. Beyond celebrating our top contributors, we believe in creating moments of magic for everyone. Across our apps, we will offer dream prizes, even to guest users, to foster a culture of broad participation. And this is our sacred promise: these dream prizes will be awarded through a random draw, because we believe the ultimate miracle is a touch of destiny, a gift from a higher power. This fosters the thrilling belief that in Tavana City, the extraordinary is always within reach for anyone.
-                        <br/>
-                        <span className="text-base">(سیستم‌های پاداش ما نیز برای الهام‌بخشی جهانی طراحی شده‌اند. فراتر از تجلیل از مشارکت‌کنندگان برتر، ما به خلق لحظات جادویی برای همه باور داریم. در سراسر اپلیکیشن‌هایمان، جوایز رویایی را حتی برای کاربران مهمان ارائه خواهیم داد تا فرهنگ مشارکت گسترده را تقویت کنیم. و این قول مقدس ماست: این جوایز رویایی از طریق قرعه‌کشی تصادفی اهدا خواهند شد، زیرا ما باور داریم که معجزه نهایی، لمس سرنوشت و هدیه‌ای از قدرتی برتر است. این، آن باور هیجان‌انگیز را تقویت می‌کند که در شهر توانا، هر امر فوق‌العاده‌ای برای هر کسی همواره در دسترس است.)</span>
-                        </p>
-                        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                        Furthermore, membership in our world is unified. A single account grants you access to every platform in the FB New Meta ecosystem. As a member of our community, you are automatically eligible for every prize draw across all our applications, amplifying your chances to experience the magic of Tavana City.
-                        <br/>
-                        <span className="text-base">(علاوه بر این، عضویت در دنیای ما یکپارچه است. با یک حساب کاربری واحد، شما به تمام پلتفرم‌های اکوسیستم FB New Meta دسترسی خواهید داشت. به عنوان عضوی از جامعه ما، شما به طور خودکار واجد شرایط شرکت در تمام قرعه‌کشی‌های جوایز در سراسر اپلیکیشن‌های ما خواهید بود و این شانس شما را برای تجربه جادوی شهر توانا افزایش می‌دهد.)</span>
-                        </p>
+                        <div className="p-8 bg-primary/5 rounded-3xl border border-primary/10 max-w-4xl mx-auto shadow-inner">
+                            <p className="text-xl font-headline font-bold text-primary mb-4">سوگند به همت و اصالت</p>
+                            <p className="text-lg text-foreground/80 leading-relaxed">
+                                تمام این منظومه، از «فرش بازار» تا «OpenMind Nexus»، گواهی بر یک حقیقت است: برای کسی که بر سر سفره‌ی پربرکت هنر ایران بزرگ شده و همت عالی را از اسطوره‌ای چون <span className="font-bold text-foreground">حاج حسین علیمیری</span> آموخته، محدودیت معنا ندارد. حتی با یک گوشی کوچک، می‌توان دنیاهایی بزرگ آفرید.
+                            </p>
+                            <p className="text-sm text-muted-foreground mt-4 italic">
+                                "In the memory of Haj Hossein Alimiri and the family legacy of Alimiri Carpets & Sons. Knotted with capability, built on a dream."
+                            </p>
+                        </div>
                     </div>
                 </div>
             </main>

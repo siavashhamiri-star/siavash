@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Logo } from './logo';
-import { Sparkles, Smartphone, Heart } from 'lucide-react';
+import { Sparkles, Smartphone, Heart, ExternalLink } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -23,22 +23,26 @@ export function Footer() {
             </div>
           </div>
 
-          {/* AI Projects Section - Placeholder for user's link */}
+          {/* AI Projects Section */}
           <div className="space-y-4">
             <h4 className="font-headline font-bold text-lg flex items-center gap-2">
               <Sparkles className="w-4 h-4 text-primary" />
               هوش مصنوعی آفرینش
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-3 text-sm">
               <li>
-                <Link href="/lingoview" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="/lingoview" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
                   آپ گویا (LingoView)
                 </Link>
               </li>
               <li>
-                {/* لینک برنامه جدید شما اینجا قرار می‌گیرد */}
-                <a href="#" className="text-primary font-bold hover:underline">
-                  برنامه هوش مصنوعی جدید (بزودی)
+                <a 
+                  href="https://openmind-nexuse-dbbbbb.netlify.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary font-bold hover:underline flex items-center gap-2"
+                >
+                  OpenMind Nexus <ExternalLink className="w-3 h-3" />
                 </a>
               </li>
             </ul>
