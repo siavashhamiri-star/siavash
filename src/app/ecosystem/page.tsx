@@ -34,7 +34,7 @@ const ecosystemApps = [
         description: "A revolutionary educational platform focused on building 'capability', not just providing knowledge. Starting with language, expanding to all skills.",
         fa_description: "یک پلتفرم آموزشی انقلابی که بر ساختن «توانایی» تمرکز دارد، نه فقط ارائه دانش. شروع با زبان، و گسترش به تمام مهارت‌ها.",
         status: "Coming Soon",
-        icon: <Blocks className="w-8 h-8 text-muted-foreground" />,
+        icon: <BrainCircuit className="w-8 h-8 text-muted-foreground" />,
         link: "/lingoview"
     },
     {
@@ -63,7 +63,7 @@ const ecosystemApps = [
         description: "The central hub for creators. Leverage AI tools for content creation, connect with other visionaries, and bring your ideas to life within Tavana City.",
         fa_description: "هاب مرکزی برای آفرینش‌گران. از ابزارهای هوش مصنوعی برای تولید محتوا استفاده کنید، با دیگر ایده‌پردازان متصل شوید و ایده‌های خود را در شهر توانا به واقعیت تبدیل کنید.",
         status: "Coming Soon",
-        icon: <BrainCircuit className="w-8 h-8 text-muted-foreground" />
+        icon: <Sparkles className="w-8 h-8 text-muted-foreground" />
     },
     {
         name: "Siavash Studio (استودیو سیاوش)",
