@@ -1,3 +1,4 @@
+
 'use client';
 import { Button } from '@/components/ui/button';
 import {
@@ -50,7 +51,6 @@ export default function SignupPage() {
         photoURL: user.photoURL,
       };
 
-      // Set doc without awaiting and chain catch for error handling
       setDoc(userDocRef, userData).catch(serverError => {
         console.error('Failed to create user profile in Firestore:', serverError);
         const permissionError = new FirestorePermissionError({
@@ -63,7 +63,7 @@ export default function SignupPage() {
 
       router.push('/account');
     } catch (err: any) {
-      console.error('Signup error:', err);
+      console.error('Signup error caught in UI:', err);
       setError(err.message);
     }
   };

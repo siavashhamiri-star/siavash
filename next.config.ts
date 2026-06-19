@@ -1,8 +1,8 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   output: 'standalone',
-  /* تنظیمات برای سازگاری با محیط‌های مختلف انتشار و نادیده گرفتن خطاها برای حفظ کردیت */
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -31,7 +31,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // غیرفعال کردن هدرهای غیرضروری برای سبک‌تر شدن پاسخ‌ها
   poweredByHeader: false,
 };
 

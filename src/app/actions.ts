@@ -49,7 +49,7 @@ export async function createStory(
         return { message: 'The generated story was empty. Please try a different prompt.', story: null, errors: {} };
     }
   } catch (e) {
-    console.error(e);
+    console.error('Error in createStory server action:', e);
     return { message: 'An error occurred while generating the story. Please try again later.', story: null, errors: {} };
   }
 }
