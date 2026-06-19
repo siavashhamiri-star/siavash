@@ -5,30 +5,33 @@
 
 ---
 
-## 📱 راهنمای اضطراری برای موبایل (Emergency Mobile Guide)
+## 📱 راهنمای مخصوص موبایل (Mobile Deployment Guide)
 
-اگر از موبایل استفاده می‌کنید و نیمی از صفحه را نمی‌بینید:
+بنیان‌گذار گرامی، برای انتشار این برنامه بدون نیاز به لپ‌تاپ:
 
-### ۱. نجات و دانلود کدها (How to Download)
-- در محیط ادیتور، به **بالاترین نوار ابزار** بروید.
-- اگر دکمه دانلود (ZIP) را نمی‌بینید، نوار ابزار را به **چپ یا راست** بکشید (Horizontal Scroll).
-- گوشی را در حالت **افقی (Landscape)** قرار دهید تا دکمه‌های مخفی ظاهر شوند.
+### ۱. دریافت کلید هوش مصنوعی
+- به سایت [Google AI Studio](https://aistudio.google.com/) بروید.
+- یک کلید API رایگان بسازید. این کلید برای کارکرد بخش "داستان‌سرای فرش" ضروری است.
 
-### ۲. انتقال به گیت‌هاب جدید
-- پس از دانلود فایل ZIP، وارد سایت GitHub در حالت **Desktop Site** شوید.
-- یک مخزن (Repository) جدید بسازید.
-- فایل ZIP را از حالت فشرده خارج کرده و فایل‌ها را آپلود کنید.
+### ۲. اتصال به GitHub جدید
+- فایل ZIP کدهایی که از اینجا دانلود کردید را باز کنید.
+- در حساب جدید گیت‌هاب خود، یک مخزن (Repository) بسازید.
+- فایل‌ها را در آن آپلود کنید (از حالت Desktop Site در موبایل استفاده کنید).
 
-### ۳. اتصال به فایربیس (Firebase App Hosting)
-- در پنل فایربیس، به بخش **App Hosting** بروید.
-- دکمه **Connect to GitHub** را بزنید.
-- مخزن جدید خود را انتخاب کنید تا برنامه به صورت خودکار و بدون ارور ۴۰۴ منتشر شود.
+### ۳. انتشار در Firebase App Hosting (پیشنهادی)
+- به جای Netlify، از **Firebase App Hosting** استفاده کنید.
+- در پنل فایربیس، به بخش App Hosting بروید و دکمه **Connect to GitHub** را بزنید.
+- این سرویس به طور خودکار Next.js را تشخیص داده و برنامه را منتشر می‌کند.
+
+### ۴. تنظیمات محیطی (Environment Variables)
+- در پنل میزبانی (Hosting)، حتماً متغیر `GEMINI_API_KEY` را تعریف کنید و مقداری که از مرحله ۱ گرفتید را در آن قرار دهید.
 
 ---
 
-## Tech Stack
-- **Framework:** Next.js (App Router)
-- **UI:** React, Tailwind CSS
+## تکنولوژی‌های استفاده شده
+- **Framework:** Next.js 15 (App Router)
+- **UI:** React, Tailwind CSS, ShadCN
 - **AI:** Genkit (Gemini 2.5 Flash)
+- **Backend:** Firebase (Auth, Firestore)
 
-Built on a sacred promise by the Founder to create meaning, opportunity, and unity.
+این مسیر، سفر حماسی کسی است که با یک گوشی کوچک، دنیایی بزرگ ساخت.
