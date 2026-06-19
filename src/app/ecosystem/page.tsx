@@ -21,9 +21,9 @@ const ecosystemApps = [
         link: "/"
     },
     {
-        name: "OpenMind Nexus",
-        description: "An advanced AI-powered platform for cognitive expansion and collective intelligence within the Afarinesh ecosystem.",
-        fa_description: "یک پلتفرم پیشرفته مجهز به هوش مصنوعی برای گسترش شناختی و هوش جمعی در اکوسیستم آفرینش.",
+        name: "OpenMind Nexus (هوش مصنوعی احساس‌محور)",
+        description: "An advanced emotion-based AI platform for cognitive expansion and collective intelligence within the Afarinesh ecosystem.",
+        fa_description: "یک پلتفرم پیشرفته هوش مصنوعی احساس‌محور برای گسترش شناختی و هوش جمعی در اکوسیستم آفرینش.",
         status: "Live",
         icon: <Sparkles className="w-8 h-8 text-primary" />,
         link: "https://openmind-nexuse-dbbbbb.netlify.app/",

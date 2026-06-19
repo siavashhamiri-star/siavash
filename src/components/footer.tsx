@@ -42,7 +42,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="text-primary font-bold hover:underline flex items-center gap-2"
                 >
-                  OpenMind Nexus <ExternalLink className="w-3 h-3" />
+                  OpenMind Nexus (هوش مصنوعی احساس‌محور) <ExternalLink className="w-3 h-3" />
                 </a>
               </li>
             </ul>
