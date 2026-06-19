@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Logo } from './logo';
-import { Sparkles, Smartphone, Heart, ExternalLink } from 'lucide-react';
+import { Sparkles, Smartphone, Heart, ExternalLink, HeartPulse } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -40,8 +40,9 @@ export function Footer() {
                   href="https://openmind-nexuse-dbbbbb.netlify.app/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-primary font-bold hover:underline flex items-center gap-2"
+                  className="text-rose-600 font-bold hover:underline flex items-center gap-2"
                 >
+                  <HeartPulse className="w-4 h-4" />
                   OpenMind Nexus (هوش مصنوعی احساس‌محور) <ExternalLink className="w-3 h-3" />
                 </a>
               </li>

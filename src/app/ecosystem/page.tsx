@@ -7,7 +7,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Blocks, CheckCircle, Clock, Music, Mic, Users, BookOpen, ToyBrick, Briefcase, BrainCircuit, Diamond, Banknote, Link as LinkIcon, ExternalLink, Sparkles } from 'lucide-react';
+import { Blocks, CheckCircle, Clock, Music, Mic, Users, BookOpen, ToyBrick, Briefcase, BrainCircuit, Diamond, Banknote, Link as LinkIcon, ExternalLink, Sparkles, HeartPulse } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 
@@ -22,10 +22,10 @@ const ecosystemApps = [
     },
     {
         name: "OpenMind Nexus (هوش مصنوعی احساس‌محور)",
-        description: "An advanced emotion-based AI platform for cognitive expansion and collective intelligence within the Afarinesh ecosystem.",
-        fa_description: "یک پلتفرم پیشرفته هوش مصنوعی احساس‌محور برای گسترش شناختی و هوش جمعی در اکوسیستم آفرینش.",
+        description: "A revolutionary emotion-based AI platform. It bridges the gap between digital intelligence and human soul, designed for cognitive expansion.",
+        fa_description: "یک پلتفرم انقلابی هوش مصنوعی احساس‌محور. این پروژه پلی میان هوش دیجیتال و روح انسانی است که برای گسترش شناختی طراحی شده است.",
         status: "Live",
-        icon: <Sparkles className="w-8 h-8 text-primary" />,
+        icon: <HeartPulse className="w-8 h-8 text-rose-500" />,
         link: "https://openmind-nexuse-dbbbbb.netlify.app/",
         isExternal: true
     },
