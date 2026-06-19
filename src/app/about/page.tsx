@@ -1,4 +1,3 @@
-
 import {
     Card,
     CardContent,
@@ -8,7 +7,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { HeartHandshake, Feather, BookHeart } from 'lucide-react';
+import { HeartHandshake, Feather, BookHeart, Landmark, Smartphone } from 'lucide-react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
@@ -38,32 +37,57 @@ const features = [
 ]
 
 export default function AboutPage() {
-    const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-1');
     return (
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-1 bg-secondary/20">
           <div className="container mx-auto px-4 py-16">
-            <Card className="max-w-4xl mx-auto shadow-lg">
+            <Card className="max-w-4xl mx-auto shadow-lg border-none overflow-hidden">
+              <div className="bg-primary h-2" />
               <CardHeader className="text-center p-8 md:p-12">
                 <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4">
-                  <Feather className="w-10 h-10 text-primary" />
+                  <Landmark className="w-10 h-10 text-primary" />
                 </div>
-                <CardTitle className="text-3xl md:text-4xl font-headline">
-                    بال‌های دوباره برای فرش دستباف ایران
+                <CardTitle className="text-3xl md:text-5xl font-headline font-bold">
+                    فرش حسین علیمیری و پسران
                 </CardTitle>
-                <CardDescription className="text-lg mt-2">
-                    Wings Again for the Iranian Handwoven Carpet
+                <CardDescription className="text-xl mt-2 font-headline">
+                    Legacy of Haj Hossein Alimiri & Sons
                 </CardDescription>
               </CardHeader>
-              <CardContent className="px-6 md:px-10 pb-10">
-                <div className="prose prose-lg max-w-none mx-auto text-foreground/80 text-center">
+              <CardContent className="px-6 md:px-12 pb-12">
+                
+                <div className="prose prose-lg max-w-none mx-auto text-foreground/80 text-center mb-12">
+                    <p className="font-bold text-primary">بال‌های دوباره برای فرش دستباف ایران در نیو متاورس</p>
                     <p>
-                    این پلتفرم با همراهی بزرگان اتحادیه و اساتید گران‌قدر طراحی شده تا هنر فاخر فرش ایران را زنده نگه دارد، اعتبار صنفی را تقویت کند و مسیر جهانی شدن آن را هموار سازد.
+                    این پلتفرم، برآمده از خاندانی است که نامشان با اعتبار فرش ایران در بازارهای جهانی گره خورده است. آفرینش «فرش بازار» تلاشی است برای زنده نگه داشتن مسیری که اساتید بزرگی چون حاج حسین علیمیری با عشق و همت خود بنا نهادند.
                     </p>
-                    <p className='text-base text-muted-foreground'>
-                    (This platform has been designed with the support of the union's elders and esteemed masters to keep the magnificent art of Iranian carpet alive, strengthen guild credibility, and smooth its path to globalization.)
+                    <p className='text-base text-muted-foreground italic'>
+                    (This platform is born from a family whose name is tied to the credibility of Iranian carpets in global markets. The creation of Farsh Bazaar is an effort to keep alive the path built by great masters like Haj Hossein Alimiri.)
                     </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8 my-12">
+                    <div className="p-6 bg-primary/5 rounded-2xl border border-primary/10 flex flex-col items-center text-center">
+                        <Smartphone className="w-10 h-10 text-primary mb-4" />
+                        <h3 className="font-headline font-bold text-lg mb-2">خلق در محدودیت (Creation in Limitation)</h3>
+                        <p className="text-sm text-foreground/70">
+                            این اپلیکیشن نه در استودیوهای بزرگ، بلکه تنها با یک گوشی ردمی نوت ۸ و در طی ۹ روز خلق شده است؛ گواهی بر قدرت اراده.
+                        </p>
+                        <p className="text-[10px] text-muted-foreground mt-2">
+                            Built using only a small Redmi Note 8 phone, proving that will power knows no bounds.
+                        </p>
+                    </div>
+                    <div className="p-6 bg-accent/5 rounded-2xl border border-accent/10 flex flex-col items-center text-center">
+                        <BookHeart className="w-10 h-10 text-accent mb-4" />
+                        <h3 className="font-headline font-bold text-lg mb-2">اصالت و سفره فرش (Heritage Table)</h3>
+                        <p className="text-sm text-foreground/70">
+                            ما بر سر سفره‌ی پربرکت فرش زاده شدیم و این پلتفرم ادای دینی است به تمام کسانی که گره بر گره هنر ایران زدند.
+                        </p>
+                        <p className="text-[10px] text-muted-foreground mt-2">
+                            Born from the blessed carpet industry, this platform is a tribute to the artisans who knotted Iran's history.
+                        </p>
+                    </div>
                 </div>
 
                 <div className="my-10 border-t" />
@@ -72,57 +96,43 @@ export default function AboutPage() {
                     <div className="mx-auto bg-accent/10 p-3 rounded-full w-fit mb-4">
                         <HeartHandshake className="w-8 h-8 text-accent" />
                     </div>
-                    <h2 className="font-headline text-2xl">ادای احترام (A Tribute)</h2>
+                    <h2 className="font-headline text-2xl font-bold">ادای احترام (A Eternal Tribute)</h2>
                     <p>
-                    این پروژه، ادای دِینی است به نسلی که عشق خود را وقف این هنر کرد و ادای احترام به پدری که روحش در این مسیر جاری است، انگیزه ما برای ساخت این بستر است.
+                    نام حاج حسین علیمیری به عنوان یکی از ستون‌های تجارت فرش ایران، انگیزه و راهنمای ما در ساخت این دنیای جدید (نیو متاورس) بوده است. روحی که در این کدها جاری است، میراث‌دار آن صداقت و اعتباری است که دهه‌ها در بازار فرش طنین‌انداز بود.
                     </p>
-                     <p className='text-base text-muted-foreground'>
-                    (This project is a tribute to the generation that dedicated their love to this art, and a tribute to a father whose spirit flows in this path is our motivation for building this platform.)
+                     <p className='text-base text-muted-foreground italic'>
+                    (The name of Haj Hossein Alimiri, as a pillar of the Iranian carpet trade, has been our motivation in building this New Metavers. The spirit flowing in this code inherits the honesty and credibility that resonated in the market for decades.)
                     </p>
                 </div>
                 
                 <div className="my-10 border-t" />
 
-                <div className="prose prose-lg max-w-none mx-auto text-foreground/80 text-center">
-                    <div className="mx-auto bg-primary/10 p-3 rounded-full w-fit mb-4">
-                        <BookHeart className="w-8 h-8 text-primary" />
-                    </div>
-                    <h2 className="font-headline text-2xl">از یک رؤیا تا یک رسالت (From a Dream to a Mission)</h2>
-                    <p>
-                    بنیان «فرش بازار» و کل اکوسیستم «FB New Meta» تنها بر روی کد بنا نشده، بلکه بر یک وعده مقدس و یک سفر تمام عمر استوار است. این داستان بنیان‌گذاری است که با هدایت رویای صادقانه یک مادر و آبدیده شدن در سختی‌های شخصی، رسالت الهی خود را کشف کرد: خلق دنیایی دیجیتال بر پایه معنا، فرصت و وحدت.
-                    </p>
-                     <p className='text-base text-muted-foreground'>
-                    (The foundation of this ecosystem is not built on code alone, but on a sacred promise. It is the story of a founder who, guided by a mother's prophetic dream, discovered a divine calling to create a digital world of meaning, opportunity, and unity.)
-                    </p>
-                    <div className="not-prose mt-6">
-                        <Button asChild>
-                            <Link href="/manifesto">
-                                Read the Book of Creation
-                            </Link>
-                        </Button>
-                    </div>
-                </div>
-
-                <div className="my-10 border-t" />
-                
-                <div className="text-center">
-                    <h2 className="text-2xl font-headline font-bold">Our Pillars</h2>
+                <div className="text-center mb-8">
+                    <h2 className="text-2xl font-headline font-bold">پایه‌های اکوسیستم آفرینش</h2>
                     <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">
-                        These are the principles that guide our mission.
+                        ارکان اصلی ما برای حمایت از صنف فرش و هنرمندان در شهر مجازی توانا.
                     </p>
                 </div>
-                <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {features.map((feature) => (
-                        <Card key={feature.title} className="bg-background">
+                        <Card key={feature.title} className="bg-background border-primary/10">
                             <CardHeader>
-                                <CardTitle className="text-lg font-semibold">{feature.title}</CardTitle>
+                                <CardTitle className="text-lg font-semibold text-primary">{feature.title}</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <p className='text-foreground/80'>{feature.description}</p>
-                                <p className='text-sm text-muted-foreground mt-2'>({feature.en_description})</p>
+                                <p className='text-sm text-muted-foreground mt-2 italic'>({feature.en_description})</p>
                             </CardContent>
                         </Card>
                     ))}
+                </div>
+
+                <div className="mt-12 text-center">
+                    <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white">
+                        <Link href="/manifesto">
+                            Read the Book of Creation / کتاب آفرینش
+                        </Link>
+                    </Button>
                 </div>
 
 
