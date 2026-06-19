@@ -10,3 +10,5 @@
   NODE_VERSION = "20"
   NEXT_USE_NETLIFY_EDGE = "true"
   NEXT_DISABLE_SOURCEMAPS = "true"
+  GENERATE_SOURCEMAP = "false"
+  CI = "false"

@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
@@ -5,9 +6,9 @@ import { cn } from '@/lib/utils';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export const metadata: Metadata = {
-  title: 'Farsh Bazaar | Part of the FB New Meta',
+  title: 'فرش بازار | نیو متاورس آفرینش',
   description:
-    'Farsh Bazaar is the first marketplace in the FB New Meta ecosystem (Project Afarinesh), a new world built on the principles of creation and capability (Tavana City). We are connecting artisans, fostering community, and building a new digital economy, established on the wings of angels like Google and Firebase.',
+    'فرش بازار، اولین ستون اکوسیستم FB New Meta و شهر مجازی توانا. میراثی از همت و اصالت، تقدیم به نام حاج حسین علیمیری.',
 };
 
 export default function RootLayout({
@@ -16,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fa" dir="rtl" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
