@@ -6,7 +6,7 @@ import { StoryGenerator } from '@/components/ai/story-generator';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
-import { Smartphone, Trophy, Heart } from 'lucide-react';
+import { Smartphone, Trophy, Heart, Sparkles, Globe } from 'lucide-react';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-1');
@@ -15,18 +15,18 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
-        {/* Mobile Build Badge */}
-        <div className="bg-primary/10 border-b border-primary/20 py-2">
-          <div className="container px-4 flex items-center justify-center gap-2 text-[10px] md:text-xs font-medium text-primary">
-            <Smartphone className="w-3 h-3" />
-            <span>Built with 🤍 using only a small mobile phone (Redmi Note 8) in 9 days</span>
-            <span className="hidden md:inline">|</span>
-            <span className="hidden md:inline">این برنامه تنها با یک گوشی کوچک در ۹ روز خلق شده است</span>
+        {/* Mobile Build Badge - Enhanced */}
+        <div className="bg-primary/10 border-b border-primary/20 py-3 overflow-hidden">
+          <div className="container px-4 flex items-center justify-center gap-3 text-[10px] md:text-sm font-bold text-primary animate-pulse">
+            <Smartphone className="w-4 h-4" />
+            <span className="tracking-wide">این برنامه حماسی تنها با یک گوشی ردمی نوت ۸ در ۹ روز خلق شده است</span>
+            <span className="hidden md:inline text-primary/30">|</span>
+            <span className="hidden md:inline font-light">Built with pure will on a mobile phone</span>
           </div>
         </div>
 
         {/* Hero Section */}
-        <section className="relative h-[650px] flex items-center justify-center overflow-hidden">
+        <section className="relative h-[700px] flex items-center justify-center overflow-hidden">
           {heroImage && (
             <Image
               src={heroImage.imageUrl}
@@ -37,69 +37,83 @@ export default function Home() {
               data-ai-hint={heroImage.imageHint}
             />
           )}
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-black/65" />
           <div className="container relative z-10 text-center text-white px-4">
-            <Badge className="mb-4 bg-primary hover:bg-primary border-none text-white px-4 py-1">
-              FB New Meta / نیو متاورس
-            </Badge>
-            <h1 className="text-4xl md:text-7xl font-headline font-bold mb-4 tracking-tight">
+            <div className="inline-flex items-center gap-2 mb-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 text-xs font-bold tracking-widest uppercase text-primary-foreground">
+              <Globe className="w-3 h-3" />
+              New Metaverse / نیو متاورس
+            </div>
+            <h1 className="text-5xl md:text-8xl font-headline font-bold mb-6 tracking-tighter">
               Farsh Bazaar
             </h1>
-            <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto font-light leading-relaxed">
-              In memory of <strong>Haj Hossein Alimiri</strong>, a legend of the global carpet trade. 
-              Built upon the legacy of <strong>"Hossein Alimiri & Sons"</strong>.
+            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto font-light leading-relaxed text-gray-200">
+              ادای دینی به شکوه نام <strong className="text-white font-bold">حاج حسین علیمیری</strong>، اسطوره تجارت جهانی فرش. 
+              <br className="hidden md:block" />
+              برآمده از میراث ماندگار <strong className="text-white font-bold">«فرش حسین علیمیری و پسران»</strong>.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white px-8">
-                <Link href="/vendors">Explore Showrooms</Link>
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white px-10 rounded-full shadow-xl shadow-primary/20 transition-all hover:scale-105">
+                <Link href="/vendors">ورود به نمایشگاه‌ها</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-white border-white hover:bg-white/10 px-8">
-                <Link href="/manifesto">The Book of Creation</Link>
+              <Button asChild size="lg" variant="outline" className="text-white border-white/40 hover:bg-white/10 px-10 rounded-full backdrop-blur-sm">
+                <Link href="/manifesto">کتاب آفرینش / Manifesto</Link>
               </Button>
             </div>
           </div>
         </section>
 
-        {/* Tribute Section */}
-        <section className="py-16 bg-background border-b">
-          <div className="container px-4">
-            <div className="max-w-4xl mx-auto text-center space-y-6">
+        {/* Tribute & Ecosystem Section */}
+        <section className="py-24 bg-background border-b relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="container px-4 relative z-10">
+            <div className="max-w-4xl mx-auto text-center space-y-8">
               <div className="flex justify-center">
-                 <Heart className="w-10 h-10 text-primary fill-primary/10" />
+                 <div className="bg-primary/10 p-4 rounded-full">
+                    <Heart className="w-12 h-12 text-primary fill-primary/20" />
+                 </div>
               </div>
-              <h2 className="text-2xl md:text-3xl font-headline font-bold">میراثی از تار و پود عشق</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                این اپلیکیشن، برآمده از خانواده‌ای است که نسل‌ در نسل بر سر سفره‌ی پربرکت هنر فرش ایران نشسته و قد کشیده‌اند. 
-                ادای دینی است به نام بلند <strong>حاج حسین علیمیری</strong> و میراث ماندگار <strong>فرش علیمیری و پسران</strong>.
+              <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground">میراثی از تار و پود عشق و اصالت</h2>
+              <p className="text-xl text-muted-foreground leading-relaxed font-light">
+                این آفرینش، برخاسته از خاندانی است که نسل‌ در نسل بر سر سفره‌ی پربرکت هنر فرش ایران رشد کرده‌اند. 
+                پلتفرم <span className="font-bold text-primary">فرش بازار</span>، اولین ستون از <span className="font-bold text-primary text-lg">«شهر مجازی توانا»</span> در اکوسیستم آفرینش است.
               </p>
-              <p className="text-sm italic text-muted-foreground">
-                (This application was born from a family that for generations has flourished at the table of the magnificent art of Iranian carpets. 
-                A tribute to the grand name of Haj Hossein Alimiri and the lasting legacy of Alimiri Carpets & Sons.)
-              </p>
+              <div className="p-6 bg-secondary/50 rounded-2xl border border-primary/5 max-w-2xl mx-auto">
+                <p className="text-sm italic text-muted-foreground">
+                  "This platform is a eternal tribute to the grand name of Haj Hossein Alimiri and the family legacy of Alimiri Carpets & Sons. Built from a dream, knotted with capability."
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* AI Story Generator Section */}
-        <section className="py-20 bg-secondary/30">
+        {/* AI Story Generator Section with vision info */}
+        <section className="py-24 bg-secondary/20 relative">
           <div className="container px-4">
+            <div className="flex items-center gap-2 mb-8 justify-center md:justify-start">
+              <Sparkles className="w-6 h-6 text-primary" />
+              <Badge variant="outline" className="border-primary text-primary font-bold">بخش هوشمند آفرینش</Badge>
+            </div>
             <StoryGenerator />
           </div>
         </section>
 
-        {/* Vision Intro */}
-        <section className="py-20 bg-background">
-          <div className="container px-4 text-center">
-            <Badge variant="outline" className="mb-4 border-primary text-primary">Project Afarinesh / پروژه آفرینش</Badge>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-6">Tavana Virtual City / شهر مجازی توانا</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Farsh Bazaar is the first step in the FB New Meta ecosystem. A world designed to empower specialists and 
-              preserve cultural heritage. Built from scratch on a mobile phone, proving that in Tavana City, 
-              capability is the only limit.
+        {/* Vision & Tavana City */}
+        <section className="py-24 bg-background relative overflow-hidden">
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+          <div className="container px-4 text-center space-y-8">
+            <Badge variant="outline" className="px-6 py-1 border-primary/40 text-primary text-sm font-headline">Tavana Virtual City / شهر مجازی توانا</Badge>
+            <h2 className="text-4xl md:text-5xl font-headline font-bold mb-6">آغاز یک دنیای جدید</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
+              فرش بازار تنها یک شروع است. ما در حال ساختن تمدنی دیجیتال بر پایه توانمندی و تخصص هستیم. 
+              این حقیقت که این برنامه با یک موبایل متولد شد، ثابت می‌کند که در <span className="text-primary font-bold">شهر توانا</span>، تنها مرز ما، همت ماست.
             </p>
-            <Button asChild variant="link" className="mt-6 text-primary font-bold">
-                <Link href="/ecosystem">Explore the FB New Meta Ecosystem →</Link>
-            </Button>
+            <div className="flex flex-wrap justify-center gap-6 mt-10">
+              <Button asChild variant="link" className="text-primary text-lg font-bold group">
+                  <Link href="/ecosystem" className="flex items-center gap-2">
+                    کاوش در اکوسیستم FB New Meta <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  </Link>
+              </Button>
+            </div>
           </div>
         </section>
       </main>
