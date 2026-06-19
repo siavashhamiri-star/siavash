@@ -1,4 +1,3 @@
-
 import {
     Card,
     CardContent,
@@ -88,7 +87,7 @@ export default function ManifestoPage() {
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="px-6 md:px-10 pb-10 space-y-12">
-                            <div className="bg-primary/5 p-6 rounded-xl border border-primary/20 text-center mb-8">
+                            <div className="not-prose bg-primary/5 p-6 rounded-xl border border-primary/20 text-center mb-8">
                                 <p className="italic text-primary font-bold">
                                     «این اثر حماسی با یک گوشی ردمی نوت ۸ و در طی ۹ روز خلاقیت خالص متولد شده است.»
                                 </p>

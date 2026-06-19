@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { Logo } from './logo';
 
@@ -28,14 +27,8 @@ export function Footer() {
               <Link href="/feedback" className="text-sm text-muted-foreground hover:text-primary">
                 Feedback / بازخورد
               </Link>
-              <Link href="/lingoview" className="text-sm text-muted-foreground hover:text-primary">
-                LingoView / گویا
-              </Link>
               <Link href="/collaboration" className="text-sm text-muted-foreground hover:text-primary">
                 Partnership / مشارکت
-              </Link>
-              <Link href="/publishing-guide" className="text-sm text-muted-foreground hover:text-primary">
-                Publishing Guide / راهنمای انتشار
               </Link>
               <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary">
                 Privacy / حریم خصوصی
