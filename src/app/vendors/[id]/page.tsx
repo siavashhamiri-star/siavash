@@ -1,4 +1,3 @@
-
 'use client';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -22,18 +21,20 @@ import type { Vendor, Carpet } from '@/lib/types';
 import Link from 'next/link';
 import { ReviewsSection } from '@/components/reviews';
 import { Separator } from '@/components/ui/separator';
+import * as React from 'react';
 
 export default function VendorShowroomPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
+  const { id } = React.use(params);
   const firestore = useFirestore();
   const { data: user } = useUser();
-  const vendorRef = doc(firestore, 'vendors', params.id);
+  const vendorRef = doc(firestore, 'vendors', id);
   const { data: vendor, loading: vendorLoading } = useDoc(vendorRef);
 
-  const carpetsRef = collection(firestore, 'vendors', params.id, 'carpets');
+  const carpetsRef = collection(firestore, 'vendors', id, 'carpets');
   const { data: vendorCarpets, loading: carpetsLoading } =
     useCollection(carpetsRef);
 
@@ -106,7 +107,7 @@ export default function VendorShowroomPage({
                 </div>
                 {isOwner ? (
                    <Button asChild className="w-full md:w-auto mt-4 md:mt-0">
-                      <Link href={`/account/edit-vendor/${params.id}`}>
+                      <Link href={`/account/edit-vendor/${id}`}>
                         <Pencil className="mr-2 h-4 w-4" />
                         Edit Showroom
                       </Link>
@@ -126,7 +127,7 @@ export default function VendorShowroomPage({
             </h2>
             {isOwner && (
                 <Button asChild>
-                    <Link href={`/account/add-carpet/${params.id}`}>Add a Carpet</Link>
+                    <Link href={`/account/add-carpet/${id}`}>Add a Carpet</Link>
                 </Button>
             )}
           </div>
@@ -138,7 +139,7 @@ export default function VendorShowroomPage({
                 key={carpet.id}
                 className="overflow-hidden group flex flex-col"
               >
-                <Link href={`/carpets/${carpet.id}?vendorId=${params.id}`} className="flex flex-col flex-grow">
+                <Link href={`/carpets/${carpet.id}?vendorId=${id}`} className="flex flex-col flex-grow">
                   <CardHeader className="p-0 relative">
                     <Image
                       src={carpet.imageUrl}
@@ -177,7 +178,7 @@ export default function VendorShowroomPage({
 
           <Separator className="my-16" />
 
-          <ReviewsSection vendorId={params.id} vendorUserId={typedVendor.userId} />
+          <ReviewsSection vendorId={id} vendorUserId={typedVendor.userId} />
 
         </div>
       </main>

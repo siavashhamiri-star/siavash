@@ -1,4 +1,4 @@
-
+'use client';
 import {
     Card,
     CardContent,
@@ -9,8 +9,15 @@ import {
   import { Header } from '@/components/header';
   import { Footer } from '@/components/footer';
   import { FileText } from 'lucide-react';
+  import { useState, useEffect } from 'react';
   
   export default function TermsOfServicePage() {
+    const [currentDate, setCurrentDate] = useState<string>('');
+
+    useEffect(() => {
+        setCurrentDate(new Date().toLocaleDateString());
+    }, []);
+
     return (
       <div className="flex flex-col min-h-screen">
         <Header />
@@ -25,7 +32,7 @@ import {
                   Terms of Service
                 </CardTitle>
                 <CardDescription className="text-lg">
-                  Last Updated: {new Date().toLocaleDateString()}
+                  Last Updated: {currentDate || '...'}
                 </CardDescription>
               </CardHeader>
               <CardContent className="prose prose-lg max-w-none mx-auto text-foreground/80">
@@ -75,4 +82,3 @@ import {
       </div>
     );
   }
-  

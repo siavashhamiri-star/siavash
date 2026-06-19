@@ -22,18 +22,22 @@ import { deleteDoc, doc } from 'firebase/firestore';
 import { MapPin, Pencil, Store, Trash2 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound, useParams, useRouter, useSearchParams } from 'next/navigation';
+import { notFound, useRouter } from 'next/navigation';
 import { toast } from '@/hooks/use-toast';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
+import * as React from 'react';
 
-export default function CarpetDetailsPage() {
+export default function CarpetDetailsPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ vendorId?: string }>;
+}) {
+  const { id: carpetId } = React.use(params);
+  const { vendorId } = React.use(searchParams);
   const router = useRouter();
-  const params = useParams();
-  const searchParams = useSearchParams();
-
-  const carpetId = params.id as string;
-  const vendorId = searchParams.get('vendorId');
 
   const firestore = useFirestore();
   const { data: user } = useUser();
@@ -61,7 +65,7 @@ export default function CarpetDetailsPage() {
     );
   }
 
-  if (!carpet || !vendor) {
+  if (!carpet || !vendor || !vendorId) {
     notFound();
   }
 
