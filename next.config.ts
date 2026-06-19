@@ -31,6 +31,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // فعال کردن خروجی بهینه برای پلتفرم‌های ابری
+  poweredByHeader: false,
 };
 
 export default nextConfig;
