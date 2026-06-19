@@ -2,7 +2,7 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  /* تنظیمات برای سازگاری با محیط‌های مختلف انتشار */
+  /* تنظیمات برای سازگاری با محیط‌های مختلف انتشار و نادیده گرفتن خطاها برای حفظ کردیت */
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -31,7 +31,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // فعال کردن خروجی بهینه برای پلتفرم‌های ابری
+  // غیرفعال کردن هدرهای غیرضروری برای سبک‌تر شدن پاسخ‌ها
   poweredByHeader: false,
 };
 
