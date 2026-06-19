@@ -1,7 +1,7 @@
-
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
+  output: 'standalone',
   /* تنظیمات برای سازگاری با محیط‌های مختلف انتشار و نادیده گرفتن خطاها برای حفظ کردیت */
   typescript: {
     ignoreBuildErrors: true,

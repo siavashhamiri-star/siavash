@@ -88,6 +88,7 @@ export default function AddCarpetPage() {
         router.push(`/vendors/${vendorId}`);
       })
       .catch(serverError => {
+        console.error('Error adding carpet to Firestore:', serverError);
         const permissionError = new FirestorePermissionError({
             path: carpetsCollection.path,
             operation: 'create',

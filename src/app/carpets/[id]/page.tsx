@@ -1,4 +1,3 @@
-
 'use client';
 
 import {
@@ -13,7 +12,6 @@ import {
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Footer } from '@/components/footer';
@@ -89,6 +87,7 @@ export default function CarpetDetailsPage() {
             router.push(`/vendors/${vendorId}`);
         })
         .catch(serverError => {
+            console.error('Error deleting carpet from Firestore:', serverError);
             const permissionError = new FirestorePermissionError({
                 path: carpetRef.path,
                 operation: 'delete',

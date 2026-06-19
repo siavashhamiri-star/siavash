@@ -1,4 +1,3 @@
-
 'use client';
 import { useState } from 'react';
 import { useCollection, useFirestore, useUser } from '@/firebase';
@@ -72,6 +71,7 @@ function ReviewForm({ vendorId, vendorUserId }: { vendorId: string; vendorUserId
             setComment('');
         })
         .catch(serverError => {
+            console.error('Error submitting review to Firestore:', serverError);
             const permissionError = new FirestorePermissionError({
                 path: reviewsCollection.path,
                 operation: 'create',

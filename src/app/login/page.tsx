@@ -21,7 +21,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { ChromeIcon, GithubIcon } from 'lucide-react';
-import { Separator } from '@/components/ui/separator';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -37,6 +36,7 @@ export default function LoginPage() {
       await signInWithEmailAndPassword(auth, email, password);
       router.push('/account');
     } catch (err: any) {
+      console.error('Login error:', err);
       setError(err.message);
     }
   };
@@ -47,6 +47,7 @@ export default function LoginPage() {
       await signInWithPopup(auth, provider);
       router.push('/account');
     } catch (err: any) {
+      console.error('Google Sign-in error:', err);
       setError(err.message);
     }
   };
@@ -57,6 +58,7 @@ export default function LoginPage() {
       await signInWithPopup(auth, provider);
       router.push('/account');
     } catch (err: any) {
+      console.error('Github Sign-in error:', err);
       setError(err.message);
     }
   };

@@ -16,15 +16,9 @@ import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Metadata } from 'next';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
 import { toast } from '@/hooks/use-toast';
-
-export const metadata: Metadata = {
-    title: 'Become a Vendor | Farsh Bazaar',
-    description: 'Join our global marketplace and set up your own virtual showroom. Connect with carpet enthusiasts and buyers from around the world.',
-};
 
 export default function BecomeVendorPage() {
   const [name, setName] = useState('');
@@ -76,6 +70,7 @@ export default function BecomeVendorPage() {
                 router.push(`/vendors/${vendorRef.id}`);
             })
             .catch(serverError => {
+                 console.error('Error updating user profile to vendor:', serverError);
                  const permissionError = new FirestorePermissionError({
                     path: userDocRef.path,
                     operation: 'update',
@@ -87,6 +82,7 @@ export default function BecomeVendorPage() {
             });
       })
       .catch(serverError => {
+        console.error('Error creating vendor profile:', serverError);
         const permissionError = new FirestorePermissionError({
             path: vendorsCollection.path,
             operation: 'create',

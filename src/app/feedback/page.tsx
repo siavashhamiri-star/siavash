@@ -68,6 +68,7 @@ export default function FeedbackPage() {
         setUserType('');
       })
       .catch((err) => {
+        console.error('Error submitting feedback to Firestore:', err);
         setError(err.message);
         toast({
           title: 'Error Submitting Feedback',

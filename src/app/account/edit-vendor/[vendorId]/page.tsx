@@ -85,6 +85,7 @@ export default function EditVendorPage() {
         router.push(`/vendors/${vendorId}`);
       })
       .catch((serverError) => {
+        console.error('Error updating vendor profile in Firestore:', serverError);
         const permissionError = new FirestorePermissionError({
             path: vendorRef.path,
             operation: 'update',

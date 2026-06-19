@@ -52,19 +52,18 @@ export default function SignupPage() {
 
       // Set doc without awaiting and chain catch for error handling
       setDoc(userDocRef, userData).catch(serverError => {
+        console.error('Failed to create user profile in Firestore:', serverError);
         const permissionError = new FirestorePermissionError({
             path: userDocRef.path,
             operation: 'create',
             requestResourceData: userData
         });
         errorEmitter.emit('permission-error', permissionError);
-        // We can still try to redirect, but log the error for dev.
-        // The auth user was created, just not the firestore doc.
-        console.error("Failed to create user profile in Firestore, but user was authenticated.", serverError);
       });
 
       router.push('/account');
     } catch (err: any) {
+      console.error('Signup error:', err);
       setError(err.message);
     }
   };

@@ -1,4 +1,3 @@
-
 'use client';
 import { Button } from '@/components/ui/button';
 import {
@@ -105,6 +104,7 @@ export default function EditCarpetPage() {
         router.push(`/carpets/${carpetId}?vendorId=${vendorId}`);
       })
       .catch((serverError) => {
+        console.error('Error updating carpet in Firestore:', serverError);
         const permissionError = new FirestorePermissionError({
             path: carpetRef.path,
             operation: 'update',
