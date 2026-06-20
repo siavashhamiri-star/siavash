@@ -1,6 +1,21 @@
-import { EventEmitter } from 'events';
+// A simple, lightweight event emitter for client-side usage that doesn't depend on Node.js built-ins.
+type ErrorHandler = (error: any) => void;
 
-// Use a global event emitter to propagate errors to a listener component.
-// This allows central handling of specific errors, like Firestore permission errors,
-// to provide a better development experience.
-export const errorEmitter = new EventEmitter();
+class SimpleEventEmitter {
+  private listeners: { [event: string]: ErrorHandler[] } = {};
+
+  on(event: string, handler: ErrorHandler) {
+    if (!this.listeners[event]) {
+      this.listeners[event] = [];
+    }
+    this.listeners[event].push(handler);
+  }
+
+  emit(event: string, data: any) {
+    if (this.listeners[event]) {
+      this.listeners[event].forEach((handler) => handler(data));
+    }
+  }
+}
+
+export const errorEmitter = new SimpleEventEmitter();
