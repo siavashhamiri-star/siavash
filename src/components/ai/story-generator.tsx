@@ -1,7 +1,6 @@
-
 'use client';
 
-import { useActionState } from 'react';
+import { useActionState, useState, useEffect, useRef } from 'react';
 import { useFormStatus } from 'react-dom';
 import { createStory, StoryState } from '@/app/actions';
 import {
@@ -22,7 +21,6 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
-import { useEffect, useRef, useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2, Wand2, Image as ImageIcon, X } from 'lucide-react';
 import Image from 'next/image';
@@ -57,14 +55,14 @@ export function StoryGenerator() {
   const [imageDataUri, setImageDataUri] = useState<string | null>(null);
 
   useEffect(() => {
-    if (state.message) {
+    if (state?.message) {
       toast({
         title: 'خطا',
         description: state.message,
         variant: 'destructive',
       });
     }
-    if (state.story) {
+    if (state?.story) {
       formRef.current?.reset();
       setImageDataUri(null);
     }
@@ -146,7 +144,7 @@ export function StoryGenerator() {
                   placeholder="مثال: تبریز ریزبافت، نائین ابریشم"
                   disabled={!!imageDataUri}
                 />
-                {state.errors?.carpetType && (
+                {state?.errors?.carpetType && (
                   <p className="text-sm text-destructive">{state.errors.carpetType[0]}</p>
                 )}
               </div>
@@ -179,7 +177,7 @@ export function StoryGenerator() {
             <CardDescription>روایت هوشمند شما در اینجا ظاهر می‌شود.</CardDescription>
            </CardHeader>
            <CardContent>
-             {state.story ? (
+             {state?.story ? (
                 <div className="prose prose-sm max-w-none text-foreground whitespace-pre-wrap leading-relaxed">
                     {state.story}
                 </div>
