@@ -1,7 +1,9 @@
+
 'use server';
 
 import { generateCarpetStory } from '@/ai/flows/generate-carpet-story';
 import { decodeRugSymbols } from '@/ai/flows/decode-rug-symbols';
+import { textToSpeech } from '@/ai/flows/text-to-speech-flow';
 import { z } from 'zod';
 
 const StorySchema = z.object({
@@ -16,6 +18,7 @@ const StorySchema = z.object({
 export type StoryState = {
   message?: string | null;
   story?: string | null;
+  audioDataUri?: string | null;
   errors?: {
     carpetType?: string[];
     style?: string[];
@@ -63,5 +66,14 @@ export async function decodeSymbolsAction(imageDataUri: string, lang: string = '
   } catch (e) {
     console.error(e);
     throw new Error('Failed to decode symbols');
+  }
+}
+
+export async function getAudioAction(text: string, language: string = 'fa') {
+  try {
+    return await textToSpeech({ text, language });
+  } catch (e) {
+    console.error(e);
+    throw new Error('Failed to generate audio');
   }
 }

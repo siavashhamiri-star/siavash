@@ -7,8 +7,8 @@ import { Footer } from '@/components/footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import { decodeSymbolsAction } from '@/app/actions';
-import { Sparkles, Image as ImageIcon, Loader2, BookOpen, ShieldCheck, X } from 'lucide-react';
+import { decodeSymbolsAction, getAudioAction } from '@/app/actions';
+import { Sparkles, Image as ImageIcon, Loader2, BookOpen, ShieldCheck, X, Volume2 } from 'lucide-react';
 import Image from 'next/image';
 import { toast } from '@/hooks/use-toast';
 
@@ -16,6 +16,8 @@ export default function DecodeSymbolsPage() {
   const [imageDataUri, setImageDataUri] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
+  const [audioUri, setAudioUri] = useState<string | null>(null);
+  const [audioLoading, setAudioLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,6 +32,7 @@ export default function DecodeSymbolsPage() {
   const handleDecode = async () => {
     if (!imageDataUri) return;
     setLoading(true);
+    setAudioUri(null);
     try {
       const data = await decodeSymbolsAction(imageDataUri);
       setResult(data);
@@ -38,6 +41,19 @@ export default function DecodeSymbolsPage() {
       toast({ title: "خطا در تحلیل تصویر", variant: "destructive" });
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleListen = async () => {
+    if (!result?.overallStory) return;
+    setAudioLoading(true);
+    try {
+      const res = await getAudioAction(result.overallStory, 'fa');
+      setAudioUri(res.audioDataUri);
+    } catch (e) {
+      toast({ title: "خطا در تولید صدا", variant: "destructive" });
+    } finally {
+      setAudioLoading(false);
     }
   };
 
@@ -90,14 +106,32 @@ export default function DecodeSymbolsPage() {
             <div className="space-y-8">
               {result ? (
                 <Card className="border-none shadow-2xl rounded-[2.5rem] bg-white animate-in fade-in slide-in-from-bottom-10">
-                  <CardHeader className="p-8 border-b border-primary/5">
-                    <div className="flex items-center gap-2 text-primary font-bold text-lg mb-2">
-                      <BookOpen className="w-5 h-5" />
-                      شناسنامه و تفسیر نمادین
+                  <CardHeader className="p-8 border-b border-primary/5 flex flex-row items-center justify-between">
+                    <div>
+                      <div className="flex items-center gap-2 text-primary font-bold text-lg mb-2">
+                        <BookOpen className="w-5 h-5" />
+                        شناسنامه و تفسیر نمادین
+                      </div>
+                      <CardTitle className="text-3xl font-headline">آنچه این اثر می‌گوید</CardTitle>
                     </div>
-                    <CardTitle className="text-3xl font-headline">آنچه این اثر می‌گوید</CardTitle>
+                    <Button 
+                      variant="outline" 
+                      size="icon" 
+                      className="rounded-full h-12 w-12 border-primary text-primary"
+                      onClick={handleListen}
+                      disabled={audioLoading}
+                    >
+                      {audioLoading ? <Loader2 className="animate-spin" /> : <Volume2 />}
+                    </Button>
                   </CardHeader>
                   <CardContent className="p-8 space-y-8">
+                    {audioUri && (
+                      <div className="bg-primary/5 p-4 rounded-2xl border border-primary/10">
+                        <audio controls className="w-full h-10">
+                          <source src={audioUri} type="audio/wav" />
+                        </audio>
+                      </div>
+                    )}
                     <div className="prose prose-lg text-foreground/80 leading-relaxed italic">
                       "{result.overallStory}"
                     </div>

@@ -3,7 +3,7 @@
 
 import { useActionState, useState, useEffect, useRef } from 'react';
 import { useFormStatus } from 'react-dom';
-import { createStory, StoryState } from '@/app/actions';
+import { createStory, StoryState, getAudioAction } from '@/app/actions';
 import {
   Card,
   CardContent,
@@ -23,7 +23,7 @@ import {
 } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, Wand2, Image as ImageIcon, X } from 'lucide-react';
+import { Loader2, Wand2, Image as ImageIcon, X, Volume2 } from 'lucide-react';
 import Image from 'next/image';
 
 const initialState: StoryState = { message: null, story: null, errors: {} };
@@ -54,6 +54,8 @@ export function StoryGenerator() {
   const formRef = useRef<HTMLFormElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [imageDataUri, setImageDataUri] = useState<string | null>(null);
+  const [audioUri, setAudioUri] = useState<string | null>(null);
+  const [audioLoading, setAudioLoading] = useState(false);
 
   useEffect(() => {
     if (state?.message) {
@@ -64,8 +66,8 @@ export function StoryGenerator() {
       });
     }
     if (state?.story) {
-      formRef.current?.reset();
-      setImageDataUri(null);
+      // Clear audio when new story is generated
+      setAudioUri(null);
     }
   }, [state, toast]);
 
@@ -87,6 +89,19 @@ export function StoryGenerator() {
         fileInputRef.current.value = '';
     }
   }
+
+  const handleListen = async () => {
+    if (!state?.story) return;
+    setAudioLoading(true);
+    try {
+      const result = await getAudioAction(state.story, 'fa');
+      setAudioUri(result.audioDataUri);
+    } catch (e) {
+      toast({ title: "خطا در تولید صدا", variant: "destructive" });
+    } finally {
+      setAudioLoading(false);
+    }
+  };
 
   return (
     <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
@@ -172,15 +187,38 @@ export function StoryGenerator() {
       </div>
 
       <div className="mt-8 md:mt-0">
-         <Card className="h-full min-h-[400px]">
-           <CardHeader>
-            <CardTitle className="font-headline">داستان بافته شده</CardTitle>
-            <CardDescription>روایت هوشمند شما در اینجا ظاهر می‌شود.</CardDescription>
+         <Card className="h-full min-h-[400px] flex flex-col">
+           <CardHeader className="flex flex-row items-center justify-between">
+            <div>
+              <CardTitle className="font-headline">داستان بافته شده</CardTitle>
+              <CardDescription>روایت هوشمند شما در اینجا ظاهر می‌شود.</CardDescription>
+            </div>
+            {state?.story && (
+              <Button 
+                variant="outline" 
+                size="icon" 
+                className="rounded-full h-12 w-12 border-primary text-primary" 
+                onClick={handleListen}
+                disabled={audioLoading}
+              >
+                {audioLoading ? <Loader2 className="animate-spin" /> : <Volume2 />}
+              </Button>
+            )}
            </CardHeader>
-           <CardContent>
+           <CardContent className="flex-grow">
              {state?.story ? (
-                <div className="prose prose-sm max-w-none text-foreground whitespace-pre-wrap leading-relaxed">
-                    {state.story}
+                <div className="space-y-6">
+                  {audioUri && (
+                    <div className="bg-primary/5 p-4 rounded-2xl border border-primary/10">
+                      <audio controls className="w-full h-10">
+                        <source src={audioUri} type="audio/wav" />
+                      </audio>
+                      <p className="text-[10px] text-center text-primary font-bold mt-2 tracking-widest uppercase">صدای جادویی آفرینش / Voice of Creation</p>
+                    </div>
+                  )}
+                  <div className="prose prose-sm max-w-none text-foreground whitespace-pre-wrap leading-relaxed italic">
+                      {state.story}
+                  </div>
                 </div>
              ) : (
                 <div className="flex flex-col items-center justify-center text-center text-muted-foreground h-64">
