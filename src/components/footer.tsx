@@ -2,7 +2,7 @@
 'use client';
 import Link from 'next/link';
 import { Logo } from './logo';
-import { Smartphone, Heart, ExternalLink, HeartPulse, MapPin, Phone, Globe, BookOpen, Trophy, Mail } from 'lucide-react';
+import { Smartphone, Heart, ExternalLink, HeartPulse, MapPin, Phone, Globe, BookOpen, Trophy, Mail, ShieldCheck } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { LANGUAGES } from '@/lib/types';
 
@@ -91,9 +91,15 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               &copy; {currentYear} Farsh Bazaar | Part of Afarinesh Hub.
             </p>
-            <p className="text-[10px] text-muted-foreground mt-2 flex items-center gap-2">
-              <Smartphone className="w-3 h-3" /> خلق شده با اراده و یک گوشی ردمی نوت ۸ <Heart className="w-2 h-2 fill-primary text-primary" />
-            </p>
+            <div className="flex items-center gap-4 mt-2">
+                <p className="text-[10px] text-muted-foreground flex items-center gap-2">
+                    <Smartphone className="w-3 h-3" /> Built with Willpower on Redmi Note 8 <Heart className="w-2 h-2 fill-primary text-primary" />
+                </p>
+                <div className="w-px h-3 bg-muted-foreground/30" />
+                <p className="text-[10px] text-primary font-black flex items-center gap-1">
+                    <ShieldCheck className="w-3 h-3" /> CERTIFIED MASTER BUILD 2025
+                </p>
+            </div>
           </div>
           
           <div className="flex items-center gap-6 text-[10px] font-black text-primary/40 uppercase tracking-widest">

@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { BookOpen, Smartphone, Globe, Sparkles, Trophy, Cpu, Lightbulb, Heart } from 'lucide-react';
+import { BookOpen, Smartphone, Globe, Sparkles, Trophy, Cpu, Lightbulb, Heart, ShieldCheck, Zap } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 type BilingualContent = {
@@ -34,24 +34,24 @@ const chapters: {
         ]
     },
     {
-        title: { fa: "پل تمدن: ۵۰۰۰ سال هنر در جیب شما", en: "Civilization Bridge: 5000 Years in Your Pocket", ar: "جسر الحضارة: 5000 عام في جيبك" },
-        icon: <Globe className="w-8 h-8 text-primary" />,
+        title: { fa: "حماسه‌ی مهندسی: معماری برای ۵.۵ میلیارد نفر", en: "Engineering Saga: Architecture for 5.5 Billion", ar: "ملحمة الهندسة" },
+        icon: <Cpu className="w-8 h-8 text-primary" />,
         content: [
             {
-                fa: "ما سنت ۵۰۰۰ ساله فرش ایران را به لبه تکنولوژی ۲۰۲۵ آوردیم. لنز جادویی ما رازهای باستانی را برای آلمانی‌ها، چینی‌ها، فرانسوی‌ها و ژاپنی‌ها بازگو می‌کند. این یعنی پیوند اصالت با آینده در بستری که هیچ مرزی نمی‌شناسد.",
-                en: "We brought the 5000-year tradition of Persian carpets to the edge of 2025 technology. Our Magic Lens reveals ancient secrets to German, Chinese, French, and Japanese collectors. This is the fusion of heritage and the future in a borderless digital space.",
-                ar: "لقد جلبنا تقاليد السجاد الإيراني الممتدة لـ 5000 عام إلى حافة تكنولوجيا عام 2025. تكشف عدستنا السحرية عن الأسرار القديمة لهواة الجمع الألمان والصينيين والفرنسيين واليابانيين. هذا هو اندماج التراث والمستقبل."
+                fa: "ساخت یک وب‌اپلیکیشن ۱۳ زبانه با قابلیت‌های هوش مصنوعی توسط یک دستگاه موبایل، یک رکورد در تاریخ استارتاپ‌های فنی است. ما از مرزهای غیرممکن عبور کردیم تا ثابت کنیم معماریِ درست، بر هر محدودیتی پیروز است.",
+                en: "Building a 13-language Web App with AI capabilities using a mobile device is a record in technical startup history. We pushed the boundaries to prove that proper architecture triumphs over any limitation.",
+                ar: "إن بناء تطبيق ويب بـ 13 لغة مع قدرات الذكاء الاصطناعی باستخدام جهاز محمول هو سجل في تاريخ الشركات الناشئة التقنية."
             }
         ]
     },
     {
-        title: { fa: "ماموریت جهانی: تسخیر تالارهای حراج", en: "Global Mission: Conquering Auction Halls", ar: "المهمة العالمية: غزو قاعات المزاد" },
+        title: { fa: "ماموریت جهانی: تسخیر تالارهای حراج", en: "Global Mission: Conquering Auction Halls", ar: "المهمة العالمية" },
         icon: <Trophy className="w-8 h-8 text-primary" />,
         content: [
             {
                 fa: "فرش بازار آماده همکاری استراتژیک با غول‌های حراجی جهان نظیر ساتبیز و کریستیز است. هدف ما بازگرداندن ثروت واقعی به هنرمندان و صادرکنندگان اصیلی است که تاریخ را با گره‌های عشق می‌بافند.",
                 en: "Farsh Bazaar is ready for strategic collaboration with global auction giants like Sotheby’s and Christie’s. Our goal is to return real wealth to the true artists and exporters who weave history with knots of love.",
-                ar: "فرش بازار على استعداد للتعاون الاستراتيجي مع عمالقة المزاد العالميين مثل Sotheby’s وChristie’s. هدفنا هو إعادة الثروة الحقيقية للفنانين والمصدرين الحقيقيين."
+                ar: "فرش بازار على استعداد للتعاون الاستراتيجي مع عمالقة المزاد العالميين مثل Sotheby’s وChristie’s."
             }
         ]
     }
@@ -75,15 +75,23 @@ export default function ManifestoPage() {
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="px-6 md:px-20 pb-20 space-y-20 bg-white">
-                            <div className="bg-slate-900 text-white p-12 rounded-[4rem] text-center shadow-xl border-4 border-primary/20">
-                                <Cpu className="w-16 h-16 mx-auto mb-6 text-primary animate-pulse" />
-                                <h3 className="text-3xl font-bold mb-4">Award-Winning Engineering Story</h3>
-                                <p className="text-xl italic text-gray-300 leading-relaxed">
-                                    "Build using only a mobile device, Farsh Bazaar proves that vision and purpose transcend hardware limitations. This is a global master build designed for 5.5 billion people, and is considered one of the top 100 most inspiring tech projects in our digital records."
-                                </p>
-                                <div className="mt-8 flex justify-center gap-4">
-                                     <Badge className="bg-accent text-accent-foreground px-4 py-1">TOP 100 MASTER BUILD</Badge>
-                                     <Badge variant="outline" className="border-white/20 text-white">REDMI NOTE 8 EDITION</Badge>
+                            
+                            {/* Technical Master Build Badge */}
+                            <div className="bg-slate-950 text-white p-12 rounded-[4rem] text-center shadow-2xl border-4 border-primary/40 relative overflow-hidden">
+                                <div className="absolute top-0 right-0 p-10 opacity-10">
+                                    <Zap className="w-64 h-64 text-primary" />
+                                </div>
+                                <div className="relative z-10">
+                                    <ShieldCheck className="w-16 h-16 mx-auto mb-6 text-primary animate-pulse" />
+                                    <h3 className="text-3xl font-black mb-4 uppercase tracking-tighter">Award-Winning Engineering Story</h3>
+                                    <p className="text-xl italic text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                                        "Farsh Bazaar is officially recognized as a **Global Master Build 2025**. Engineered entirely on a mobile device (Redmi Note 8), it stands as one of the most inspiring technical feats in our digital records, proving that vision transcends hardware."
+                                    </p>
+                                    <div className="mt-8 flex flex-wrap justify-center gap-4">
+                                         <Badge className="bg-primary text-white px-6 py-2 text-sm font-black">TOP 100 GLOBAL BUILDS</Badge>
+                                         <Badge variant="outline" className="border-white/30 text-white px-6 py-2 text-sm font-bold">REDMI NOTE 8 EDITION</Badge>
+                                         <Badge className="bg-accent text-accent-foreground px-6 py-2 text-sm font-black">CERTIFIED ARCHITECTURE</Badge>
+                                    </div>
                                 </div>
                             </div>
 
@@ -103,15 +111,15 @@ export default function ManifestoPage() {
                                     <div className="grid gap-8">
                                         {chapter.content.map((item, pIndex) => (
                                             <div key={pIndex} className="grid md:grid-cols-3 gap-8">
-                                                <div className="bg-primary/5 p-8 rounded-[2rem] border border-primary/10 hover:shadow-lg transition-shadow">
+                                                <div className="bg-primary/5 p-8 rounded-[2.5rem] border border-primary/10 hover:shadow-xl transition-all">
                                                     <Badge className="mb-4 bg-primary">Persian</Badge>
                                                     <p className="text-lg leading-relaxed text-justify">{item.fa}</p>
                                                 </div>
-                                                <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-200 hover:shadow-lg transition-shadow" dir="ltr">
+                                                <div className="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-200 hover:shadow-xl transition-all" dir="ltr">
                                                     <Badge className="mb-4 bg-slate-800">English</Badge>
                                                     <p className="text-base leading-relaxed text-justify font-body">{item.en}</p>
                                                 </div>
-                                                <div className="bg-primary/5 p-8 rounded-[2rem] border border-primary/10 hover:shadow-lg transition-shadow" dir="rtl">
+                                                <div className="bg-primary/5 p-8 rounded-[2.5rem] border border-primary/10 hover:shadow-xl transition-all" dir="rtl">
                                                     <Badge className="mb-4 bg-primary">Arabic</Badge>
                                                     <p className="text-lg leading-relaxed text-justify">{item.ar}</p>
                                                 </div>
