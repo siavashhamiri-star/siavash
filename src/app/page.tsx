@@ -7,7 +7,7 @@ import { StoryGenerator } from '@/components/ai/story-generator';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
-import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, Scale, ShieldCheck, Factory, Landmark } from 'lucide-react';
+import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, Scale, ShieldCheck, Factory, Landmark, Sword } from 'lucide-react';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-1');
@@ -39,14 +39,14 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/70" />
           <div className="container relative z-10 text-center text-white px-4">
             <div className="inline-flex items-center gap-2 mb-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 text-xs font-bold tracking-widest uppercase text-primary-foreground">
-              <Globe className="w-3 h-3" />
-              Global Heritage & Digital Weapon / میراث جهانی و سلاح دیجیتال
+              <Sword className="w-3 h-3 text-accent" />
+              Digital Weapon for Heritage / سلاح دیجیتال برای احیای اصالت
             </div>
             <h1 className="text-5xl md:text-9xl font-headline font-bold mb-6 tracking-tighter">
               Farsh Bazaar
             </h1>
             <p className="text-xl md:text-3xl mb-10 max-w-4xl mx-auto font-light leading-relaxed text-gray-200">
-                بازگرداندن شکوه و رونق گذشته فرش در عصر دیجیتال با سلاح تکنولوژی. 
+                بازگرداندن شکوه و رونق گذشته فرش در عصر دیجیتال. 
                 <br />
                 ادای دینی به نام <strong className="text-white font-bold">حاج حسین علیمیری</strong>.
                 <br className="hidden md:block" />
@@ -75,49 +75,15 @@ export default function Home() {
                     <Card className="p-8 border-none shadow-xl bg-secondary/30 rounded-[3rem] group hover:bg-primary transition-all duration-500">
                         <Factory className="w-12 h-12 text-primary mb-6 group-hover:text-white" />
                         <h3 className="text-2xl font-bold mb-4 group-hover:text-white">فرش ماشینی مدرن</h3>
-                        <p className="text-muted-foreground group-hover:text-white/80">تکنولوژی روز دنیا در خدمت صنعت فرش؛ ۱۲۰۰ شانه، تراکم ۳۶۰۰ و بالاتر.</p>
+                        <p className="text-muted-foreground group-hover:text-white/80">تکنولوژی روز دنیا در خدمت صنعت فرش؛ از برندهای برتر ایران و جهان.</p>
                     </Card>
                     <Card className="p-8 border-none shadow-xl bg-secondary/30 rounded-[3rem] group hover:bg-primary transition-all duration-500">
                         <Globe className="w-12 h-12 text-primary mb-6 group-hover:text-white" />
                         <h3 className="text-2xl font-bold mb-4 group-hover:text-white">فرش و هنرهای ملل</h3>
-                        <p className="text-muted-foreground group-hover:text-white/80">پذیرای هنرمندان و تجار از تمامی ممالک جهان در یک پلتفرم واحد.</p>
+                        <p className="text-muted-foreground group-hover:text-white/80">پذیرای هنرمندان و تجار از سراسر جهان (هند، ترکیه، پاکستان و ...).</p>
                     </Card>
                 </div>
             </div>
-        </section>
-
-        {/* Monetization Engine: Appraisal Section */}
-        <section className="py-24 bg-primary text-white overflow-hidden relative">
-          <div className="absolute top-0 right-0 p-20 opacity-10">
-              <Scale className="w-64 h-64" />
-          </div>
-          <div className="container px-4 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="space-y-6 text-right">
-                <Badge variant="outline" className="border-white text-white px-4 py-1 rounded-full font-bold">سلاح درآمدزای آفرینش</Badge>
-                <h2 className="text-4xl md:text-6xl font-headline font-bold">ارزش‌گذاری علمی فرش</h2>
-                <p className="text-xl opacity-80 leading-relaxed">
-                  آیا فرشی دارید که ارزش آن را نمی‌دانید؟ از دستباف‌های آنتیک تا ماشینی‌های برند؛ تیم کارشناسی «فرش علیمیری» مرجع نهایی قیمت‌گذاری شماست.
-                </p>
-                <div className="flex flex-wrap gap-4 justify-start">
-                   <div className="flex items-center gap-2 bg-white/10 p-3 rounded-xl border border-white/10">
-                      <ShieldCheck className="w-5 h-5 text-accent" />
-                      <span>صدور شناسنامه دیجیتال</span>
-                   </div>
-                   <div className="flex items-center gap-2 bg-white/10 p-3 rounded-xl border border-white/10">
-                      <Trophy className="w-5 h-5 text-accent" />
-                      <span>تاییدیه میراث علیمیری</span>
-                   </div>
-                </div>
-                <Button asChild size="lg" variant="secondary" className="rounded-full px-12 h-16 text-xl mt-4">
-                  <Link href="/appraisal">پرداخت و ثبت درخواست ارزیابی <ArrowRight className="mr-2 w-5 h-5" /></Link>
-                </Button>
-              </div>
-              <div className="relative aspect-video rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white/10">
-                 <Image src="https://picsum.photos/seed/appraisal-2/800/600" alt="Carpet Appraisal" fill className="object-cover" />
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* AI Story Generator */}
@@ -138,12 +104,12 @@ export default function Home() {
             <Badge variant="outline" className="px-6 py-1 border-primary/40 text-primary text-sm font-headline">Tavana Virtual City / شهر مجازی توانا</Badge>
             <h2 className="text-4xl md:text-7xl font-headline font-bold mb-6">احیای رونق در عصر پیکسل</h2>
             <p className="text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light italic">
-              «ما سلاح‌هایمان را از تار و پود ساختیم. این اپلیکیشن نه برای فروش، بلکه برای بازگرداندنِ شکوهِ از دست رفته‌ای است که با یک گوشی ساده ردمی نوت ۸ دوباره جوانه زد.»
+              «ما سلاح‌هایمان را از تار و پود ساختیم. این اپلیکیشن با یک گوشی ساده ردمی نوت ۸ زاده شد تا ثابت کند اراده، هیچ مرزی نمی‌شناسد.»
             </p>
             <div className="flex flex-wrap justify-center gap-6 mt-10">
-              <Button asChild className="rounded-full px-10 h-14 text-lg">
+              <Button asChild className="rounded-full px-10 h-14 text-lg shadow-xl shadow-primary/20">
                   <Link href="/ecosystem" className="flex items-center gap-2">
-                    کاوش در کل اکوسیستم آفرینش <ArrowRight className="mr-2 h-4 w-4" />
+                    کاوش در منظومه آفرینش <ArrowRight className="mr-2 h-4 w-4" />
                   </Link>
               </Button>
               <div className="flex flex-col text-right border-r-4 border-primary pr-6">

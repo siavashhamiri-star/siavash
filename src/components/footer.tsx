@@ -32,7 +32,7 @@ export function Footer() {
             <div className="space-y-3 bg-white/50 p-4 rounded-2xl border border-primary/5 backdrop-blur-sm">
                 <div className="flex items-center gap-3 text-sm font-bold text-foreground/80">
                     <MapPin className="w-4 h-4 text-primary" />
-                    <span>خیابان خیام شمالی، پلاک ۴۸</span>
+                    <span>بازار تهران، خیابان خیام شمالی، پلاک ۴۸</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm font-bold text-primary">
                     <Phone className="w-4 h-4" />
@@ -41,7 +41,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Languages - UI/System focus */}
+          {/* Languages */}
           <div className="space-y-4">
             <h4 className="font-headline font-bold text-lg flex items-center gap-2">
               <Globe className="w-4 h-4 text-primary" />
@@ -56,7 +56,7 @@ export function Footer() {
               <span className="flex items-center gap-1">🇦🇿 Azərbaycan</span>
               <span className="flex items-center gap-1">☀️ Kurdî</span>
             </div>
-            <div className="pt-4">
+            <div className="pt-4 border-t border-primary/5">
                 <a 
                   href="https://openmind-nexuse-dbbbbb.netlify.app/" 
                   target="_blank" 
@@ -75,10 +75,10 @@ export function Footer() {
             <ul className="grid grid-cols-1 gap-2 text-sm font-medium">
               <li><Link href="/magazine" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2"><BookOpen className="w-4 h-4" /> مجله و وبلاگ تخصصی</Link></li>
               <li><Link href="/legends" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2"><Trophy className="w-4 h-4" /> مشاهیر و مصاحبه‌ها</Link></li>
+              <li><Link href="/appraisal" className="text-muted-foreground hover:text-primary transition-colors">کارشناسی و ارزیابی آنلاین</Link></li>
               <li><Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">درباره ما و میراث علیمیری</Link></li>
               <li><Link href="/manifesto" className="text-muted-foreground hover:text-primary transition-colors">کتاب آفرینش (Manifesto)</Link></li>
               <li><Link href="/ecosystem" className="text-muted-foreground hover:text-primary transition-colors">اکوسیستم شهر توانا</Link></li>
-              <li><Link href="/feedback" className="text-muted-foreground hover:text-primary transition-colors">ارسال بازخورد و همیاری</Link></li>
             </ul>
           </div>
         </div>
