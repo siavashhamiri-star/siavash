@@ -1,7 +1,7 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { AlertCircle, CheckCircle2, Globe, ShieldAlert, Rocket, Cloud } from 'lucide-react';
+import { AlertCircle, CheckCircle2, Globe, ShieldAlert, Rocket, Cloud, Smartphone, Trophy } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function EmergencyGuide() {
@@ -15,16 +15,16 @@ export default function EmergencyGuide() {
                 <h1 className="text-4xl font-black bg-primary text-white p-6 rounded-2xl shadow-2xl">
                     راهنمای نهایی استقرار شهر توانا
                 </h1>
-                <p className="text-xl text-slate-600 font-bold">بنیان‌گذار عزیز، تمام موانع فنی برطرف شد.</p>
+                <p className="text-xl text-slate-600 font-bold">بنیان‌گذار عزیز، تمام موانع فنی در ۲۰۲۵ برطرف شد.</p>
             </header>
             
             <Card className="border-4 border-red-500 bg-red-50 shadow-xl">
                 <CardHeader className="flex flex-row items-center gap-4">
                     <ShieldAlert className="w-12 h-12 text-red-600" />
-                    <CardTitle className="text-2xl text-red-700">تذکر بسیار مهم: فقط اتصال گیت‌هاب!</CardTitle>
+                    <CardTitle className="text-2xl text-red-700">تذکر حیاتی: خداحافظی با GitHub Pages!</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4 text-lg leading-relaxed">
-                    <p>برنامه شما یک <strong>سیستم هوشمند (Dynamic App)</strong> است. روش‌های استاتیک مثل GitHub Pages یا آپلود دستی فایل ZIP جواب نمی‌دهد.</p>
+                    <p>برنامه شما یک <strong>سیستم هوشمند (Dynamic AI App)</strong> است. روش‌های استاتیک مثل GitHub Pages برای این حماسه مناسب نیستند و ارور ۴۰۳ می‌دهند.</p>
                     <p className="font-bold underline text-red-600">حتماً مخزن گیت‌هاب خود را به Netlify یا Firebase App Hosting متصل کنید.</p>
                 </CardContent>
             </Card>
@@ -34,11 +34,11 @@ export default function EmergencyGuide() {
                     <CardHeader>
                         <div className="flex items-center gap-3">
                             <CheckCircle2 className="text-green-600 w-8 h-8" />
-                            <CardTitle>مرحله ۱: دانلود و آپلود</CardTitle>
+                            <CardTitle>مرحله ۱: دانلود نسخه نهایی ۲۰۲۵</CardTitle>
                         </div>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-lg">آخرین نسخه کدها را دانلود کرده و در یک مخزن (Repository) جدید در گیت‌هاب آپلود کنید.</p>
+                        <p className="text-lg">ابتدا دکمه دانلود (فلش رو به پایین) را در بالای همین صفحه بزنید. کدهای جدید شامل اصلاحات React 19 و Next.js 15 هستند.</p>
                     </CardContent>
                 </Card>
 
@@ -46,13 +46,15 @@ export default function EmergencyGuide() {
                     <CardHeader>
                         <div className="flex items-center gap-3">
                             <Cloud className="text-blue-600 w-8 h-8" />
-                            <CardTitle>مرحله ۲: انتخاب پلتفرم (پویا)</CardTitle>
+                            <CardTitle>مرحله ۲: انتخاب پلتفرم (پیروزی سریع)</CardTitle>
                         </div>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                            <p className="font-bold text-blue-800 text-xl">گزینه اول: Netlify (پیشنهادی)</p>
-                            <p>وارد سایت نتلیفای شوید، دکمه <strong>"Add new site"</strong> و سپس <strong>"Import from GitHub"</strong> را بزنید.</p>
+                            <p className="font-bold text-blue-800 text-xl flex items-center gap-2">
+                                <Trophy className="w-6 h-6" /> گزینه اول: Netlify (پیشنهادی)
+                            </p>
+                            <p>وارد سایت نتلیفای شوید، دکمه <strong>"Add new site"</strong> و سپس <strong>"Import from GitHub"</strong> را بزنید. تمام!</p>
                         </div>
                         <div className="bg-slate-100 p-4 rounded-lg border border-slate-200">
                             <p className="font-bold text-slate-800 text-xl">گزینه دوم: Firebase App Hosting</p>
@@ -60,6 +62,13 @@ export default function EmergencyGuide() {
                         </div>
                     </CardContent>
                 </Card>
+            </div>
+
+            <div className="bg-primary/5 p-8 rounded-3xl border border-primary/20 text-center">
+                <Smartphone className="w-10 h-10 text-primary mx-auto mb-4" />
+                <p className="text-lg font-bold text-primary">
+                    «این برنامه با یک گوشی ردمی نوت ۸ زاده شد تا ثابت کند اراده، هیچ مرزی نمی‌شناسد.»
+                </p>
             </div>
 
             <div className="flex gap-4">
