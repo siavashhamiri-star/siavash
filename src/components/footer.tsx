@@ -1,9 +1,17 @@
 
+'use client';
 import Link from 'next/link';
 import { Logo } from './logo';
 import { Smartphone, Heart, ExternalLink, HeartPulse, MapPin, Phone, Globe } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export function Footer() {
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="bg-secondary/30 border-t border-primary/10">
       <div className="container mx-auto px-4 py-16">
@@ -76,7 +84,7 @@ export function Footer() {
         <div className="border-t border-primary/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start">
             <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} Farsh Bazaar | Part of Afarinesh Hub.
+              &copy; {currentYear} Farsh Bazaar | Part of Afarinesh Hub.
             </p>
             <p className="text-[10px] text-muted-foreground mt-2 flex items-center gap-2">
               <Smartphone className="w-3 h-3" /> خلق شده با اراده و یک گوشی ردمی نوت ۸ <Heart className="w-2 h-2 fill-primary text-primary" />

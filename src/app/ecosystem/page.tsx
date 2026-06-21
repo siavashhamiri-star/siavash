@@ -8,7 +8,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Landmark, HeartPulse, BrainCircuit, Mic, BookOpen, Briefcase, Sparkles, Globe, ShieldCheck, Smartphone, Quote, ArrowRight } from 'lucide-react';
+import { Landmark, HeartPulse, BrainCircuit, Mic, BookOpen, Briefcase, Sparkles, Globe, ShieldCheck, Smartphone, Quote, ArrowRight, Phone, MapPin } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
