@@ -1,7 +1,7 @@
-
 'use server';
 
 import { generateCarpetStory } from '@/ai/flows/generate-carpet-story';
+import { decodeRugSymbols } from '@/ai/flows/decode-rug-symbols';
 import { z } from 'zod';
 
 const StorySchema = z.object({
@@ -49,10 +49,19 @@ export async function createStory(
     if (result && result.story) {
         return { story: result.story, message: null, errors: {} };
     } else {
-        return { message: 'داستان تولید شده خالی بود. لطفاً ورودی دیگری را امتحان کنید.', story: null, errors: {} };
+        return { message: 'داستان تولید شده خالی بود.', story: null, errors: {} };
     }
   } catch (e: any) {
-    console.error('Error in createStory server action:', e);
-    return { message: `خطایی در تولید داستان رخ داد: ${e.message}`, story: null, errors: {} };
+    console.error(e);
+    return { message: `خطایی رخ داد: ${e.message}`, story: null, errors: {} };
+  }
+}
+
+export async function decodeSymbolsAction(imageDataUri: string, lang: string = 'fa') {
+  try {
+    return await decodeRugSymbols({ imageDataUri, language: lang });
+  } catch (e) {
+    console.error(e);
+    throw new Error('Failed to decode symbols');
   }
 }

@@ -1,10 +1,9 @@
-
 'use client';
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
-import { Menu, ShoppingCart, Sparkles, Globe, ChevronDown } from 'lucide-react';
+import { Menu, ShoppingCart, Sparkles, Globe, ChevronDown, Wand2 } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -61,6 +60,13 @@ export function Header() {
         </div>
         
         <div className="flex items-center space-x-2">
+            <Button asChild variant="ghost" size="sm" className="hidden lg:flex text-primary font-bold gap-2 hover:bg-primary/5 rounded-full px-4">
+               <Link href="/decode">
+                  <Wand2 className="w-4 h-4" />
+                  لنز جادویی (AI)
+               </Link>
+            </Button>
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm" className="gap-2 px-2 hover:bg-primary/5">
@@ -128,7 +134,11 @@ export function Header() {
                             {item.label}
                         </Link>
                         ))}
-                        <Link href="/ads/new" className="text-accent font-bold flex items-center gap-2 border-t pt-4">
+                        <Link href="/decode" className="text-primary font-bold flex items-center gap-2 border-t pt-4">
+                           <Wand2 className="w-4 h-4" />
+                           لنز جادویی (رمزگشای نمادها)
+                        </Link>
+                        <Link href="/ads/new" className="text-accent font-bold flex items-center gap-2">
                            <Sparkles className="w-4 h-4" />
                            ثبت آگهی صنایع دستی
                         </Link>
