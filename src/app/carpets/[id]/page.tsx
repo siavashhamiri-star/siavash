@@ -19,7 +19,7 @@ import { Header } from '@/components/header';
 import { useDoc, useFirestore, useUser } from '@/firebase';
 import type { Carpet, Vendor } from '@/lib/types';
 import { deleteDoc, doc } from 'firebase/firestore';
-import { MapPin, Pencil, Store, Trash2 } from 'lucide-react';
+import { MapPin, Pencil, Store, Trash2, Loader2 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound, useRouter } from 'next/navigation';
@@ -42,15 +42,16 @@ export default function CarpetDetailsPage({
   const firestore = useFirestore();
   const { data: user } = useUser();
 
-  const carpetRef =
-    vendorId && carpetId
-      ? doc(firestore, 'vendors', vendorId, 'carpets', carpetId)
-      : undefined;
+  const carpetRef = React.useMemo(() => 
+    vendorId && carpetId ? doc(firestore, 'vendors', vendorId, 'carpets', carpetId) : undefined
+  , [firestore, vendorId, carpetId]);
+  
   const { data: carpet, loading: carpetLoading } = useDoc(carpetRef);
 
-  const vendorRef = vendorId
-    ? doc(firestore, 'vendors', vendorId)
-    : undefined;
+  const vendorRef = React.useMemo(() => 
+    vendorId ? doc(firestore, 'vendors', vendorId) : undefined
+  , [firestore, vendorId]);
+  
   const { data: vendor, loading: vendorLoading } = useDoc(vendorRef);
 
   if (carpetLoading || vendorLoading) {
@@ -58,7 +59,7 @@ export default function CarpetDetailsPage({
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-1 flex items-center justify-center">
-          <p>Loading Carpet Details...</p>
+          <Loader2 className="w-10 h-10 animate-spin text-primary" />
         </main>
         <Footer />
       </div>

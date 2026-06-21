@@ -39,36 +39,36 @@ const ecosystemApps = [
     },
     {
         name: "Nava Studio (استودیو نوا)",
-        description: "An AI-powered suite for music creation. Generate melodies, write lyrics, produce songs, and create stunning music videos and karaoke tracks.",
-        fa_description: "یک مجموعه ابزار مجهز به هوش مصنوعی برای خلق موسیقی. ملودی بسازید، شعر بنویسید، آهنگ تولید کنید و موزیک ویدیوها و ترک‌های کارائوکه خیره‌کننده بسازید.",
+        description: "An AI-powered suite for music creation. Generate melodies, write lyrics, produce songs, and create stunning music videos.",
+        fa_description: "یک مجموعه ابزار مجهز به هوش مصنوعی برای خلق موسیقی. ملودی بسازید، شعر بنویسید، آهنگ تولید کنید و موزیک ویدیوهای خیره‌کننده بسازید.",
         status: "Planned",
         icon: <Mic className="w-8 h-8 text-muted-foreground" />
     },
     {
         name: "Hamnava (هم‌نوا)",
-        description: "The social heart of our music ecosystem. Connect with artists, share your creations, collaborate on new projects, and discover emerging talent.",
-        fa_description: "قلب اجتماعی اکوسیستم موسیقی ما. با هنرمندان ارتباط برقرار کنید، آثار خود را به اشتراک بگذارید، در پروژه‌های جدید همکاری کنید و استعدادهای نوظهور را کشف نمایید.",
+        description: "The social heart of our music ecosystem. Connect with artists, share your creations, and discover emerging talent.",
+        fa_description: "قلب اجتماعی اکوسیستم موسیقی ما. با هنرمندان ارتباط برقرار کنید، آثار خود را به اشتراک بگذارید و استعدادهای نوظهور را کشف نمایید.",
         status: "Planned",
         icon: <Users className="w-8 h-8 text-muted-foreground" />
     },
      {
         name: "Ghese Go (قصه‌گو)",
-        description: "A magical space for children's stories, educational content, and a digital vault for capturing precious childhood moments like birthdays and milestones.",
-        fa_description: "یک فضای جادویی برای قصه‌های کودکان، محتوای آموزشی و یک صندوقچه دیجیتال برای ثبت لحظات ارزشمند کودکی مانند تولدها و دستاوردهای شیرین.",
+        description: "A magical space for children's stories and a digital vault for capturing precious childhood moments.",
+        fa_description: "یک فضای جادویی برای قصه‌های کودکان و یک صندوقچه دیجیتال برای ثبت لحظات ارزشمند کودکی.",
         status: "Planned",
         icon: <BookOpen className="w-8 h-8 text-muted-foreground" />
     },
     {
         name: "Afarinesh Hub (آفرینش هاب)",
-        description: "The central hub for creators. Leverage AI tools for content creation, connect with other visionaries, and bring your ideas to life within Tavana City.",
-        fa_description: "هاب مرکزی برای آفرینش‌گران. از ابزارهای هوش مصنوعی برای تولید محتوا استفاده کنید، با دیگر ایده‌پردازان متصل شوید و ایده‌های خود را در شهر توانا به واقعیت تبدیل کنید.",
+        description: "The central hub for creators. Leverage AI tools for content creation and bring your ideas to life.",
+        fa_description: "هاب مرکزی برای آفرینش‌گران. از ابزارهای هوش مصنوعی برای تولید محتوا استفاده کنید و ایده‌های خود را به واقعیت تبدیل کنید.",
         status: "Coming Soon",
         icon: <Sparkles className="w-8 h-8 text-muted-foreground" />
     },
     {
         name: "Tavana Work (توانا کار)",
-        description: "The future-of-work platform. Find freelance opportunities, advertise your skills, and leverage AI to enhance your capabilities. Merit over resumes.",
-        fa_description: "پلتفرم آینده‌ی کار. فرصت‌های فریلنسری پیدا کنید، مهارت‌های خود را تبلیغ کنید و از هوش مصنوعی برای افزایش توانایی‌هایتان بهره ببرید. شایستگی فراتر از رزومه.",
+        description: "The future-of-work platform. Find freelance opportunities and leverage AI to enhance your capabilities.",
+        fa_description: "پلتفرم آینده‌ی کار. فرصت‌های فریلنسری پیدا کنید و از هوش مصنوعی برای افزایش توانایی‌هایتان بهره ببرید.",
         status: "Coming Soon",
         icon: <Briefcase className="w-8 h-8 text-muted-foreground" />
     }

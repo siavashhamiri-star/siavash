@@ -14,7 +14,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { MapPin, Phone, Pencil, ShieldCheck } from 'lucide-react';
+import { MapPin, Phone, Pencil, ShieldCheck, Loader2 } from 'lucide-react';
 import { useCollection, useDoc, useFirestore, useUser } from '@/firebase';
 import { collection, doc } from 'firebase/firestore';
 import type { Vendor, Carpet } from '@/lib/types';
@@ -43,7 +43,7 @@ export default function VendorShowroomPage({
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-1 flex items-center justify-center">
-          <p>Loading showroom...</p>
+           <Loader2 className="w-10 h-10 animate-spin text-primary" />
         </main>
         <Footer />
       </div>

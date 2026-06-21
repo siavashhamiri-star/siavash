@@ -24,7 +24,7 @@ export default function EmergencyGuide() {
                     <CardTitle className="text-2xl text-red-700">تذکر بسیار مهم: فقط اتصال گیت‌هاب!</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4 text-lg leading-relaxed">
-                    <p>برنامه شما یک <strong>سیستم هوشمند (Dynamic App)</strong> است. روش‌های استاتیک مثل GitHub Pages جواب نمی‌دهد.</p>
+                    <p>برنامه شما یک <strong>سیستم هوشمند (Dynamic App)</strong> است. روش‌های استاتیک مثل GitHub Pages یا آپلود دستی فایل ZIP جواب نمی‌دهد.</p>
                     <p className="font-bold underline text-red-600">حتماً مخزن گیت‌هاب خود را به Netlify یا Firebase App Hosting متصل کنید.</p>
                 </CardContent>
             </Card>
@@ -51,7 +51,7 @@ export default function EmergencyGuide() {
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                            <p className="font-bold text-blue-800 text-xl">گزینه اول: Netlify</p>
+                            <p className="font-bold text-blue-800 text-xl">گزینه اول: Netlify (پیشنهادی)</p>
                             <p>وارد سایت نتلیفای شوید، دکمه <strong>"Add new site"</strong> و سپس <strong>"Import from GitHub"</strong> را بزنید.</p>
                         </div>
                         <div className="bg-slate-100 p-4 rounded-lg border border-slate-200">
