@@ -58,13 +58,17 @@ export type Review = {
     createdAt: any;
 };
 
-export type Language = 'fa' | 'en' | 'de' | 'ar' | 'tr' | 'az' | 'ku';
+export type Language = 'fa' | 'en' | 'de' | 'ar' | 'tr' | 'az' | 'ku' | 'ru' | 'hi' | 'es' | 'zh';
 
 export const LANGUAGES: { code: Language; label: string; flag: string }[] = [
   { code: 'fa', label: 'فارسی', flag: '🇮🇷' },
   { code: 'en', label: 'English', flag: '🇺🇸' },
-  { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
   { code: 'ar', label: 'العربية', flag: '🇸🇦' },
+  { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
+  { code: 'es', label: 'Español', flag: '🇪🇸' },
+  { code: 'ru', label: 'Русский', flag: '🇷🇺' },
+  { code: 'zh', label: '中文', flag: '🇨🇳' },
+  { code: 'hi', label: 'हिन्दी', flag: '🇮🇳' },
   { code: 'tr', label: 'Türkçe', flag: '🇹🇷' },
   { code: 'az', label: 'Azərbaycan', flag: '🇦🇿' },
   { code: 'ku', label: 'Kurdî', flag: '☀️' },

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Logo } from './logo';
 import { Smartphone, Heart, ExternalLink, HeartPulse, MapPin, Phone, Globe, BookOpen, Trophy, Mail } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { LANGUAGES } from '@/lib/types';
 
 export function Footer() {
   const [currentYear, setCurrentYear] = useState<number | null>(null);
@@ -51,14 +52,12 @@ export function Footer() {
               <Globe className="w-4 h-4 text-primary" />
               دسترسی جهانی (Global)
             </h4>
-            <div className="grid grid-cols-2 gap-2 text-xs font-bold text-muted-foreground">
-              <span className="flex items-center gap-1">🇮🇷 فارسی</span>
-              <span className="flex items-center gap-1">🇺🇸 English</span>
-              <span className="flex items-center gap-1">🇩🇪 Deutsch</span>
-              <span className="flex items-center gap-1">🇸🇦 العربية</span>
-              <span className="flex items-center gap-1">🇹🇷 Türkçe</span>
-              <span className="flex items-center gap-1">🇦🇿 Azərbaycan</span>
-              <span className="flex items-center gap-1">☀️ Kurdî</span>
+            <div className="grid grid-cols-2 gap-2 text-[10px] font-bold text-muted-foreground">
+              {LANGUAGES.map((lang) => (
+                <span key={lang.code} className="flex items-center gap-1">
+                  {lang.flag} {lang.label}
+                </span>
+              ))}
             </div>
             <div className="pt-4 border-t border-primary/5">
                 <a 
