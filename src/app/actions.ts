@@ -46,13 +46,13 @@ export async function createStory(
 
   try {
     const result = await generateCarpetStory(validatedFields.data);
-    if (result.story) {
+    if (result && result.story) {
         return { story: result.story, message: null, errors: {} };
     } else {
         return { message: 'داستان تولید شده خالی بود. لطفاً ورودی دیگری را امتحان کنید.', story: null, errors: {} };
     }
-  } catch (e) {
+  } catch (e: any) {
     console.error('Error in createStory server action:', e);
-    return { message: 'خطایی در تولید داستان رخ داد. لطفاً بعداً دوباره تلاش کنید.', story: null, errors: {} };
+    return { message: `خطایی در تولید داستان رخ داد: ${e.message}`, story: null, errors: {} };
   }
 }
