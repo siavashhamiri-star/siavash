@@ -1,3 +1,4 @@
+
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Button } from '@/components/ui/button';
@@ -6,7 +7,7 @@ import { StoryGenerator } from '@/components/ai/story-generator';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
-import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, Scale, ShieldCheck, Factory, Landmark, Sword, Palette, Frame, Flag, UserCircle } from 'lucide-react';
+import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, Scale, ShieldCheck, Factory, Landmark, Sword, Palette, Frame, Flag, Users } from 'lucide-react';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-1');
@@ -45,7 +46,7 @@ export default function Home() {
               Farsh Bazaar
             </h1>
             <p className="text-xl md:text-3xl mb-10 max-w-4xl mx-auto font-light leading-relaxed text-gray-200">
-                بازگرداندن شکوه و رونق گذشته فرش در عصر دیجیتال. 
+                بازگرداندن شکوه و رونق گذشته فرش در عصر دیجیتال با ۱۳ زبان زنده. 
                 <br />
                 ادای دینی به نام <strong className="text-white font-bold">حاج حسین علیمیری</strong>.
                 <br className="hidden md:block" />
@@ -56,7 +57,7 @@ export default function Home() {
                 <Link href="/vendors">ورود به بازار جهانی (۱۳ زبان)</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-white border-white/40 hover:bg-white/10 px-12 rounded-full backdrop-blur-sm h-16 text-xl">
-                <Link href="/services">سفارش پرچم و تابلوفرش نفیس</Link>
+                <Link href="/services">بافت پرتره و پرچم‌های اشرافی</Link>
               </Button>
             </div>
           </div>
@@ -67,29 +68,33 @@ export default function Home() {
             <div className="container px-4 text-center">
                 <Badge className="bg-primary mb-8 px-6 py-1.5 rounded-full text-sm font-bold">Elite Services / خدمات VIP</Badge>
                 <h2 className="text-4xl md:text-6xl font-headline font-bold mb-16">تجربه‌ای فراتر از یک خرید ساده</h2>
-                <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+                <div className="grid md:grid-cols-4 gap-8 max-w-7xl mx-auto">
                     <Link href="/services" className="group">
-                        <div className="bg-white/5 p-10 rounded-[3rem] border border-white/10 group-hover:bg-primary transition-all duration-500 h-full">
-                            <Palette className="w-16 h-16 text-primary mb-6 group-hover:text-white mx-auto" />
-                            <h3 className="text-3xl font-bold mb-4">مشاوره دکوراسیون</h3>
-                            <p className="text-gray-400 group-hover:text-white/80">هارمونی فرش با مبلمان منزل شما توسط کارشناسان طراحی داخلی.</p>
+                        <div className="bg-white/5 p-8 rounded-[3rem] border border-white/10 group-hover:bg-primary transition-all duration-500 h-full">
+                            <Users className="w-12 h-12 text-primary mb-6 group-hover:text-white mx-auto" />
+                            <h3 className="text-2xl font-bold mb-4">پرتره در پرچم</h3>
+                            <p className="text-xs text-gray-400 group-hover:text-white/80">بافت تصویر شخصی شما در میان پرچم ملی کشورتان.</p>
                         </div>
                     </Link>
                     <Link href="/services" className="group">
-                        <div className="bg-white/5 p-10 rounded-[3rem] border border-white/10 group-hover:bg-primary transition-all duration-500 h-full">
-                            <Frame className="w-16 h-16 text-primary mb-6 group-hover:text-white mx-auto" />
-                            <h3 className="text-3xl font-bold mb-4">تابلوفرش شخصی</h3>
-                            <p className="text-gray-400 group-hover:text-white/80">تبدیل عکس‌های خانوادگی به شاهکارهای دستباف ابریشم تبریز.</p>
+                        <div className="bg-white/5 p-8 rounded-[3rem] border border-white/10 group-hover:bg-primary transition-all duration-500 h-full">
+                            <Flag className="w-12 h-12 text-primary mb-6 group-hover:text-white mx-auto" />
+                            <h3 className="text-2xl font-bold mb-4">پرچم‌های نفیس</h3>
+                            <p className="text-xs text-gray-400 group-hover:text-white/80">بافت پرچم کشورها با ابریشم خالص و ارسال جهانی.</p>
                         </div>
                     </Link>
                     <Link href="/services" className="group">
-                        <div className="bg-white/5 p-10 rounded-[3rem] border border-white/10 group-hover:bg-primary transition-all duration-500 h-full">
-                            <div className="relative mx-auto mb-6 w-16 h-16">
-                                <Flag className="w-16 h-16 text-primary group-hover:text-white" />
-                                <UserCircle className="w-6 h-6 absolute -bottom-1 -right-1 bg-slate-950 rounded-full text-accent group-hover:text-white" />
-                            </div>
-                            <h3 className="text-3xl font-bold mb-4">پرچم و پرتره</h3>
-                            <p className="text-gray-400 group-hover:text-white/80">بافت تصویر شما در قلب پرچم ملی‌تان با ابریشم خالص تبریز.</p>
+                        <div className="bg-white/5 p-8 rounded-[3rem] border border-white/10 group-hover:bg-primary transition-all duration-500 h-full">
+                            <Frame className="w-12 h-12 text-primary mb-6 group-hover:text-white mx-auto" />
+                            <h3 className="text-2xl font-bold mb-4">تابلوفرش ابریشم</h3>
+                            <p className="text-xs text-gray-400 group-hover:text-white/80">تبدیل عکس‌های شما به شاهکارهای دستباف تبریز.</p>
+                        </div>
+                    </Link>
+                    <Link href="/services" className="group">
+                        <div className="bg-white/5 p-8 rounded-[3rem] border border-white/10 group-hover:bg-primary transition-all duration-500 h-full">
+                            <Palette className="w-12 h-12 text-primary mb-6 group-hover:text-white mx-auto" />
+                            <h3 className="text-2xl font-bold mb-4">مشاوره دکور</h3>
+                            <p className="text-xs text-gray-400 group-hover:text-white/80">هارمونی فرش با مبلمان منزل توسط کارشناسان طراحی.</p>
                         </div>
                     </Link>
                 </div>
