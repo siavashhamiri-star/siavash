@@ -8,7 +8,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Landmark, HeartPulse, BrainCircuit, Mail, Phone, Globe, ArrowRight, Gavel, Building2, ShieldCheck } from 'lucide-react';
+import { Landmark, HeartPulse, BrainCircuit, Mail, Phone, Globe, ArrowRight, Gavel, Building2, ShieldCheck, Rocket, Sparkles } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -41,11 +41,11 @@ const ecosystemApps = [
     },
     {
         name: "LingoView (Gooya)",
-        description: "Capability-based education for the global workforce in 13 languages.",
-        fa_description: "آموزش توانمندمحور برای نیروی کار جهانی به ۱۳ زبان.",
-        status: "Coming Soon",
+        description: "Capability-based education for the global workforce in 13 languages. Exporting our methodology to all industries.",
+        fa_description: "آموزش توانمندمحور و صدور متدولوژی ساخت پلتفرم‌های پیروز به تمام صنایع جهان در ۱۳ زبان.",
+        status: "Pioneer",
         icon: <BrainCircuit className="w-8 h-8 text-blue-500" />,
-        link: "/lingoview"
+        link: "/teach"
     }
 ];
 
@@ -61,11 +61,11 @@ export default function EcosystemPage() {
                         <h1 className="text-6xl md:text-9xl font-headline font-bold mb-10 leading-tight">منظومه‌ی آفرینش</h1>
                         <div className="grid gap-8 max-w-5xl mx-auto mb-16">
                             <p className="text-2xl md:text-4xl font-light leading-relaxed">
-                                تمدنی دیجیتال با ۱۳ زبان زنده برای تسخیر تالارهای حراج پاریس، توکیو و نیویورک. ما با سلاح تکنولوژی، اصالت را جهانی می‌کنیم.
+                                تمدنی دیجیتال با ۱۳ زبان زنده برای تسخیر تالارهای حراج پاریس، توکیو و نیویورک. ما نه‌تنها فرش، بلکه «توانمندی» را به کل جهان صادر می‌کنیم.
                             </p>
                         </div>
                         <Button asChild size="lg" className="rounded-full px-16 h-20 text-2xl shadow-2xl shadow-primary/40">
-                            <Link href="/manifesto">مطالعه منشور آفرینش <ArrowRight className="mr-3 w-6 h-6" /></Link>
+                            <Link href="/teach">مشاهده متدولوژی پیروزی (Afarinesh Build) <Rocket className="mr-3 w-6 h-6" /></Link>
                         </Button>
                     </div>
                 </section>
@@ -73,23 +73,23 @@ export default function EcosystemPage() {
                 <div className="container mx-auto px-4 py-32">
                     <Card className="mb-32 bg-white shadow-2xl border-none p-12 md:p-24 text-center rounded-[5rem] relative overflow-hidden border-4 border-accent/20">
                         <div className="absolute top-0 right-0 p-16 opacity-5">
-                             <Gavel className="w-80 h-80 text-accent" />
+                             <Sparkles className="w-80 h-80 text-accent" />
                         </div>
-                        <Badge className="bg-accent text-accent-foreground mb-4 px-6 py-1 rounded-full font-black">STRATEGIC ALLIANCE</Badge>
-                        <h2 className="text-5xl md:text-7xl font-headline font-bold text-primary mb-12">فراخوان همکاری: ساتبیز و کریستیز</h2>
+                        <Badge className="bg-accent text-accent-foreground mb-4 px-6 py-1 rounded-full font-black">GLOBAL ARCHITECT</Badge>
+                        <h2 className="text-5xl md:text-7xl font-headline font-bold text-primary mb-12">ما برای شما «امپراتوری» می‌سازیم</h2>
                         <div className="max-w-4xl mx-auto text-lg leading-relaxed space-y-6 text-justify">
                             <p className="font-bold text-2xl text-center text-slate-800">
-                                «فرش بازار رسماً آماده همکاری با خانه‌های حراج ممتاز جهان نظیر Sotheby's و Christie's است.»
+                                «فرمت بی‌بدیل فرش بازار اکنون برای سایر صنایع دستی و برندهای لوکس جهان قابل سفارش است.»
                             </p>
                             <div className="p-6 bg-secondary/50 rounded-3xl border border-primary/10 flex items-start gap-4">
-                                <ShieldCheck className="w-8 h-8 text-primary shrink-0" />
+                                <Rocket className="w-8 h-8 text-primary shrink-0" />
                                 <p className="text-sm italic">
-                                    ما با بهره‌گیری از هوش مصنوعی آفرینش و سوابق میراث علیمیری در بازار تهران، آمادگی داریم تا به عنوان بازوی تامین و تایید اصالت (Sourcing & Authentication)، نفیس‌ترین آثار ایران و ملل را به حراجی‌های تراز اول جهان معرفی کنیم.
+                                    داستان ردمی نوت ۸ ثابت کرد که مهندسی ما، مرزهای غیرممکن را شکسته است. اگر می‌خواهید هنر یا صنعت شما به ۱۳ زبان زنده و با هوش مصنوعی در جهان بدرخشد، ما معمار شما خواهیم بود.
                                 </p>
                             </div>
                         </div>
                         <Button asChild variant="outline" size="lg" className="mt-12 rounded-full border-primary text-primary px-12 h-14">
-                            <Link href="/collaboration">درخواست همکاری استراتژیک / Global Inquiry</Link>
+                            <Link href="/teach">درخواست ساخت پلتفرم مشابه / Global Build Inquiry</Link>
                         </Button>
                     </Card>
 
