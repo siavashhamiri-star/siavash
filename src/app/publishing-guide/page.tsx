@@ -65,7 +65,7 @@ export default function EmergencyGuide() {
                     <CardContent className="space-y-4">
                         <p className="text-lg">به بخش App Hosting در کنسول فایربیس بروید. مخزن گیت‌هاب را وصل کنید. گوگل تمام مراحل بیلد را برای دسترسی جهانی انجام می‌دهد.</p>
                     </CardContent>
-                </Card>
+                </div>
             </div>
 
             <div className="bg-slate-900 text-white p-12 rounded-[5rem] text-center shadow-2xl relative overflow-hidden">

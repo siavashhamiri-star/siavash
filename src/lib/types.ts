@@ -64,7 +64,7 @@ export type Review = {
 
 export type SpecialRequest = {
     id: string;
-    serviceType: 'decor' | 'tableau' | 'flag';
+    serviceType: 'decor' | 'tableau' | 'flag' | 'portrait-flag';
     description: string;
     imageDataUri: string;
     userId: string;
