@@ -54,7 +54,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white px-12 rounded-full shadow-2xl transition-all hover:scale-105 h-16 text-xl">
-                <Link href="/vendors">ورود به بازار جهانی (۱۱ زبان)</Link>
+                <Link href="/vendors">ورود به بازار جهانی (۱۳ زبان)</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-white border-white/40 hover:bg-white/10 px-12 rounded-full backdrop-blur-sm h-16 text-xl">
                 <Link href="/appraisal">کارشناسی و ارزیابی آنلاین</Link>

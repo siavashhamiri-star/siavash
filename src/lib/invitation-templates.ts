@@ -9,8 +9,10 @@ export const INVITATION_MESSAGES: Record<Language, string> = {
   zh: "你好！我邀请你加入 Farsh Bazaar 和 Afarinesh 生态系统。使用我的推荐码注册，我们都能获得 50 XP。奖励包括“Tavana City”的虚拟土地和名誉董事会成员身份。我的代码：",
   ru: "Привет! Я приглашаю вас присоединиться к Farsh Bazaar и экосистеме Afarinesh. Зарегистрируйтесь с моим кодом, чтобы мы оба получили 50 XP. Награды включают землю в «Tavana City». Мой код: ",
   es: "¡Hola! Te invito a unirte a Farsh Bazaar y al ecosistema Afarinesh. Regístrate con mi código de referencia para que ambos ganemos 50 XP. Los premios incluyen terrenos en 'Tavana City'. Mi código: ",
-  hi: "नमस्ते! मैं आपको فرش बाज़ार और आफरीनश इकोसिस्टम में शामिल होने के लिए आमंत्रित करता हूँ। मेरे रेफरल कोड का उपयोग करके साइन अप करें ताकि हम दोनों 50 XP कमा सकें। मेरा कोड: ",
-  tr: "Merhaba! Sizi Farsh Bazaar ve Afarinesh ekosistemine katılmaya davet ediyorum. Referans kodumu kullanarak kayıt olun, ikimiz de 50 XP kazanalım. Ödüller arasında 'Tavana City'de sanal arazi bulunmaktadır. Kodum: ",
+  hi: "नमस्ते! मैं आपको فرش बाज़ार और आफरीनश इकोसिستم में शामिल होने के लिए आमंत्रित करता हूँ। मेरे रेफरल कोड का उपयोग करके साइन अप करें ताकि हम दोनों 50 XP कमा सकें। मेरा कोड: ",
+  tr: "Merhaba! Sizi Farsh Bazaar ve Afarinesh ekosistemine katılmaya davet ediyorum. Referans kodumu kullanarak kayıt olun, ikimiz de 50 XP kazanalım. Öدüller arasında 'Tavana City'de sanal arazi bulunmaktadır. Kodum: ",
   az: "Salam! Sizi Fərş Bazar və Afarinesh ekosisteminə dəvət edirəm. Mənim referal kodumla qeydiyyatdan keçin, hər ikimiz 50 XP qazanaq. Mükafatlara 'Tavana City'də virtual torpaq daxildir. Kodum: ",
   ku: "Silav! Ez we vedixwînim Farsh Bazaar û ekosîstema Afarinesh. Bi koda min qeyd bibin da ku em her du 50 XP qezenc bikin. Xelat erdên li 'Tavana City' vedihewîne. Koda min: ",
+  fr: "Bonjour ! Je vous invite à rejoindre Farsh Bazaar et l'écosystème Afarinesh. Inscrivez-vous avec mon code de parrainage pour gagner 50 XP. Les récompenses incluent des terrains virtuels à 'Tavana City'. Mon code : ",
+  ja: "こんにちは！Farsh BazaarとAfarineshエコシステムへの招待です。私の招待コードを使って登録すると、両方に50 XPが付与されます。「Tavana City」の仮想土地などの特典があります。コード：",
 };

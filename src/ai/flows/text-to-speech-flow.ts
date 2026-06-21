@@ -32,13 +32,21 @@ const textToSpeechFlow = ai.defineFlow(
     outputSchema: TTSOutputSchema,
   },
   async (input) => {
-    // Map languages to available voices (Algenib, Charon, etc. are English-optimized but Gemini handles multilingual text well)
+    // Map languages to available voices
     const voiceMap: Record<string, string> = {
       fa: 'Algenib',
       en: 'Charon',
       ar: 'Puck',
       zh: 'Fenrir',
       ru: 'Aoede',
+      fr: 'Cassiopeia',
+      ja: 'Achernar',
+      de: 'Algenib',
+      es: 'Charon',
+      hi: 'Puck',
+      tr: 'Fenrir',
+      az: 'Aoede',
+      ku: 'Algenib'
     };
 
     const voiceName = voiceMap[input.language] || 'Algenib';

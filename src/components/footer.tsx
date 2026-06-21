@@ -50,7 +50,7 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-headline font-bold text-lg flex items-center gap-2">
               <Globe className="w-4 h-4 text-primary" />
-              دسترسی ۱۱ زبانه (Global)
+              دسترسی ۱۳ زبانه (Global)
             </h4>
             <div className="grid grid-cols-2 gap-2 text-[10px] font-bold text-muted-foreground">
               {LANGUAGES.map((lang) => (
