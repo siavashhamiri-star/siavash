@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
-import { Menu, ShoppingCart, Sparkles, Globe, ChevronDown, Wand2, Scale, Trophy } from 'lucide-react';
+import { Menu, ShoppingCart, Sparkles, Globe, ChevronDown, Wand2, Scale, Trophy, Palette } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -26,8 +26,8 @@ const navItems = [
   { href: '/vendors', label: 'Showrooms / نمایشگاه‌ها' },
   { href: '/handicrafts', label: 'Handicrafts / صنایع دستی' },
   { href: '/appraisal', label: 'Appraisal / کارشناسی' },
+  { href: '/services', label: 'VIP Services / سرویس‌های ویژه' },
   { href: '/leagues', label: 'Leagues / لیگ‌ها' },
-  { href: '/magazine', label: 'Magazine / مجله' },
 ];
 
 export function Header() {
@@ -62,9 +62,9 @@ export function Header() {
         
         <div className="flex items-center space-x-2">
             <Button asChild variant="ghost" size="sm" className="hidden lg:flex text-primary font-bold gap-2 hover:bg-primary/5 rounded-full px-4">
-               <Link href="/decode">
-                  <Wand2 className="w-4 h-4" />
-                  لنز جادویی (AI)
+               <Link href="/services">
+                  <Palette className="w-4 h-4" />
+                  VIP Services
                </Link>
             </Button>
 
@@ -135,9 +135,9 @@ export function Header() {
                             {item.label}
                         </Link>
                         ))}
-                        <Link href="/leagues" className="text-primary font-bold flex items-center gap-2 border-t pt-4">
-                           <Trophy className="w-4 h-4" />
-                           لیگ‌های افتخار و XP
+                        <Link href="/services" className="text-primary font-bold flex items-center gap-2 border-t pt-4">
+                           <Palette className="w-4 h-4" />
+                           سرویس‌های ویژه (VIP)
                         </Link>
                         <Link href="/appraisal" className="text-primary font-bold flex items-center gap-2">
                            <Scale className="w-4 h-4" />

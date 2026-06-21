@@ -7,7 +7,7 @@ import { StoryGenerator } from '@/components/ai/story-generator';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
-import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, Scale, ShieldCheck, Factory, Landmark, Sword } from 'lucide-react';
+import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, Scale, ShieldCheck, Factory, Landmark, Sword, Palette, Frame } from 'lucide-react';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-1');
@@ -57,10 +57,34 @@ export default function Home() {
                 <Link href="/vendors">ورود به بازار جهانی (۱۳ زبان)</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-white border-white/40 hover:bg-white/10 px-12 rounded-full backdrop-blur-sm h-16 text-xl">
-                <Link href="/appraisal">کارشناسی و ارزیابی آنلاین</Link>
+                <Link href="/services">سفارش تابلوفرش و مشاوره دکوراسیون</Link>
               </Button>
             </div>
           </div>
+        </section>
+
+        {/* Elite Services Quick Access */}
+        <section className="py-24 bg-slate-950 text-white">
+            <div className="container px-4 text-center">
+                <Badge className="bg-primary mb-8 px-6 py-1.5 rounded-full text-sm font-bold">Elite Services / خدمات VIP</Badge>
+                <h2 className="text-4xl md:text-6xl font-headline font-bold mb-16">تجربه‌ای فراتر از یک خرید ساده</h2>
+                <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <Link href="/services" className="group">
+                        <div className="bg-white/5 p-10 rounded-[3rem] border border-white/10 group-hover:bg-primary transition-all duration-500 h-full">
+                            <Palette className="w-16 h-16 text-primary mb-6 group-hover:text-white mx-auto" />
+                            <h3 className="text-3xl font-bold mb-4">مشاوره دکوراسیون</h3>
+                            <p className="text-gray-400 group-hover:text-white/80">هارمونی فرش با مبلمان و چیدمان منزل شما توسط کارشناسان ارشد طراحی داخلی.</p>
+                        </div>
+                    </Link>
+                    <Link href="/services" className="group">
+                        <div className="bg-white/5 p-10 rounded-[3rem] border border-white/10 group-hover:bg-primary transition-all duration-500 h-full">
+                            <Frame className="w-16 h-16 text-primary mb-6 group-hover:text-white mx-auto" />
+                            <h3 className="text-3xl font-bold mb-4">تابلوفرش سفارشی</h3>
+                            <p className="text-gray-400 group-hover:text-white/80">عکس‌های شخصی شما را به شاهکارهای دستباف ابریشم تبریز تبدیل می‌کنیم.</p>
+                        </div>
+                    </Link>
+                </div>
+            </div>
         </section>
 
         {/* Categories Section */}

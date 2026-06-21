@@ -62,6 +62,17 @@ export type Review = {
     createdAt: any;
 };
 
+export type SpecialRequest = {
+    id: string;
+    serviceType: 'decor' | 'tableau';
+    description: string;
+    imageDataUri: string;
+    userId: string;
+    userName: string;
+    status: 'pending' | 'reviewed' | 'completed';
+    createdAt: any;
+}
+
 export type Language = 'fa' | 'en' | 'de' | 'ar' | 'tr' | 'az' | 'ku' | 'ru' | 'hi' | 'es' | 'zh' | 'fr' | 'ja';
 
 export const LANGUAGES: { code: Language; label: string; flag: string }[] = [
