@@ -7,7 +7,7 @@ import { StoryGenerator } from '@/components/ai/story-generator';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
-import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, Scale, ShieldCheck, Factory, Landmark, Sword, Palette, Frame, Flag, Users, Gavel, Crown, Star } from 'lucide-react';
+import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, Scale, ShieldCheck, Factory, Landmark, Sword, Palette, Frame, Flag, Users, Gavel, Crown, Star, HeartPulse } from 'lucide-react';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-1');
@@ -26,7 +26,7 @@ export default function Home() {
             <div className="hidden md:block w-px h-4 bg-white/20" />
             <div className="flex items-center gap-2 text-accent">
                 <Smartphone className="w-4 h-4" />
-                <span>The Epic Master Build on Redmi Note 8</span>
+                <span>The Epic of Resourceful Innovation</span>
             </div>
             <div className="hidden md:block w-px h-4 bg-white/20" />
             <div className="flex items-center gap-2">
@@ -60,7 +60,7 @@ export default function Home() {
             <p className="text-xl md:text-4xl mb-14 max-w-6xl mx-auto font-light leading-relaxed text-gray-300 italic">
                 احیای شکوه ۵۰۰۰ ساله هنر ایران با سلاح هوش مصنوعی ۲۰۲۵. 
                 <br />
-                تنها استارتاپ جهان که در ۹ روز با یک گوشی موبایل، ۱۳ زبان زنده را تسخیر کرد.
+                تنها استارتاپ جهان که با قدرت اراده و تکیه بر اصالت، ۱۳ زبان زنده را تسخیر کرد.
                 <br className="hidden md:block" />
                 ادای دینی به نام <strong className="text-white font-bold underline decoration-primary underline-offset-8">حاج حسین علیمیری</strong>.
             </p>
@@ -88,7 +88,7 @@ export default function Home() {
               <Badge className="bg-accent text-accent-foreground mb-10 px-12 py-3 rounded-full text-2xl font-black tracking-[0.2em]">ANNUAL GLOBAL AUCTION</Badge>
               <h2 className="text-5xl md:text-9xl font-headline font-bold mb-12">اولین حراج سالانه جهانی</h2>
               <p className="text-2xl md:text-5xl font-light leading-relaxed mb-20 text-gray-300 italic max-w-5xl mx-auto">
-                «ما با افتخار اعلام می‌کنیم که آماده همکاری با حراجی‌های سطح اول جهان نظیر <span className="text-white font-bold">Sotheby's</span> و <span className="text-white font-bold">Christie's</span> برای معرفی شاهکارهای تایید شده هستیم.»
+                «آماده همکاری استراتژیک با حراجی‌های مطرح جهان نظیر <span className="text-white font-bold">Sotheby's</span> و <span className="text-white font-bold">Christie's</span> برای معرفی شاهکارهای تایید شده ایران و ملل.»
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
                  <div className="p-10 bg-white/5 rounded-[3rem] border border-white/10 group hover:bg-primary transition-all duration-500">
@@ -171,7 +171,7 @@ export default function Home() {
             <Badge variant="outline" className="px-12 py-3 border-primary/40 text-primary text-2xl font-headline rounded-full">Tavana Virtual City / شهر مجازی توانا</Badge>
             <h2 className="text-6xl md:text-[10rem] font-headline font-bold mb-12 tracking-tight">تمدن جدید با ۱۳ زبان زنده</h2>
             <p className="text-3xl text-muted-foreground max-w-6xl mx-auto leading-relaxed font-light italic bg-white/50 backdrop-blur p-12 rounded-[4rem] border-2 border-dashed border-primary/10">
-              «ما سلاح‌هایمان را از تار و پود ساختیم. این اپلیکیشن با یک گوشی ردمی نوت ۸ زاده شد تا ثابت کند اراده، هیچ مرزی نمی‌شناسد. این داستانی است که تمام داوران استارتاپی جهان را مبهوت خواهد کرد.»
+              «ما سلاح‌هایمان را از تار و پود ساختیم. این اپلیکیشن شاهدی بر پیروزی هدف و اندیشه بر ابزار است؛ حماسه‌ای که ثابت می‌کند اراده هیچ مرزی نمی‌شناسد.»
             </p>
             <div className="flex flex-wrap justify-center gap-14 mt-24">
               <Button asChild className="rounded-full px-20 h-24 text-3xl shadow-3xl shadow-primary/30 group">

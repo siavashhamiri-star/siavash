@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { BookOpen, Smartphone, Globe, Sparkles, Trophy, Cpu } from 'lucide-react';
+import { BookOpen, Smartphone, Globe, Sparkles, Trophy, Cpu, Lightbulb } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 type BilingualContent = {
@@ -23,13 +23,13 @@ const chapters: {
     content: BilingualContent[]; 
 }[] = [
     {
-        title: { fa: "حماسه خلق: حماسه ردمی نوت ۸", en: "The Epic of Redmi Note 8", ar: "ملحمة ريدمي نوت 8" },
-        icon: <Smartphone className="w-8 h-8 text-primary" />,
+        title: { fa: "حماسه خلق: نوآوری در محدودیت", en: "Resourceful Innovation", ar: "الابتکار في الموارد" },
+        icon: <Lightbulb className="w-8 h-8 text-primary" />,
         content: [
             {
-                fa: "این پلتفرم شاهدی بر قدرت اراده است. کل این امپراتوری ۱۳ زبانه، با هوش مصنوعی پیشرفته و معماری پیچیده، تنها بر روی یک گوشی موبایل «Redmi Note 8» در عرض ۹ روز متولد شد. ما ثابت کردیم که برای تسخیر بازارهای جهانی، داشتن رویاهای بزرگ مهم‌تر از داشتن سخت‌افزارهای گران‌قیمت است.",
-                en: "This platform stands as a testament to human will. This entire 13-language empire, featuring advanced AI and complex architecture, was engineered on a single 'Redmi Note 8' mobile device in just 9 days. We proved that to conquer global markets, having grand dreams is more vital than expensive hardware.",
-                ar: "هذه المنصة هي شهادة على قوة الإرادة. هذه الإمبراطورية المكونة من 13 لغة، والتي تتميز بالذكاء الاصطناعي المتقدم والهندسة المعقدة، تم تصميمها على جهاز محمول واحد 'Redmi Note 8' في 9 أيام فقط. لقد أثبتنا أنه لغزو الأسواق العالمية، فإن امتلاك أحلام كبيرة هو أهم من امتلاك أجهزة باهظة الثمن."
+                fa: "این پلتفرم شاهدی بر قدرت اراده است. ما ثابت کردیم که وسیله مهم نیست، بلکه هدف و اندیشه است که جهان را می‌سازد. کل این امپراتوری ۱۳ زبانه، تنها بر روی یک گوشی موبایل «Redmi Note 8» متولد شد تا پیامی به جهانیان باشد: برای تسخیر بازارهای جهانی، داشتن رویاهای بزرگ مهم‌تر از سخت‌افزارهای گران‌قیمت است.",
+                en: "This platform is a testament to the power of will. We proved that the tool doesn't matter; it's the goal and the vision that build the world. This entire 13-language empire was born on a single 'Redmi Note 8' to send a message to the world: grand dreams are more vital than expensive hardware.",
+                ar: "هذه المنصة هي شهادة على قوة الإرادة. لقد أثبتنا أن الأداة لا تهم؛ الهدف والرؤية هما اللذان يبنيان العالم. ولدت هذه الإمبراطورية المكونة من 13 لغة على جهاز 'Redmi Note 8' واحد لترسل رسالة إلى العالم: الأحلام الكبيرة أهم من الأجهزة باهظة الثمن."
             }
         ]
     },
@@ -38,9 +38,9 @@ const chapters: {
         icon: <Globe className="w-8 h-8 text-primary" />,
         content: [
             {
-                fa: "ما سنت ۵۰۰۰ ساله فرش ایران را از دخمه‌های تاریک تاریخ به لبه تکنولوژی ۲۰۲۵ آوردیم. لنز جادویی ما رازهای باستانی را برای آلمانی‌ها، چینی‌ها، فرانسوی‌ها و ژاپنی‌ها بازگو می‌کند. این یعنی پیوند اصالت با آینده.",
-                en: "We brought the 5000-year tradition of Persian carpets from the shadows of history to the edge of 2025 technology. Our Magic Lens reveals ancient secrets to Germans, Chinese, French, and Japanese collectors. This is the fusion of heritage and the future.",
-                ar: "لقد جلبنا تقاليد السجاد الإيراني الممتدة لـ 5000 عام من ظلال التاريخ إلى حافة تكنولوجيا عام 2025. تكشف عدستنا السحرية عن الأسرار القديمة لهواة الجمع الألمان والصينيين والفرنسيين واليابانيين. هذا هو اندماج التراث والمستقبل."
+                fa: "ما سنت ۵۰۰۰ ساله فرش ایران را به لبه تکنولوژی ۲۰۲۵ آوردیم. لنز جادویی ما رازهای باستانی را برای آلمانی‌ها، چینی‌ها، فرانسوی‌ها و ژاپنی‌ها بازگو می‌کند. این یعنی پیوند اصالت با آینده در بستری که هیچ مرزی نمی‌شناسد.",
+                en: "We brought the 5000-year tradition of Persian carpets to the edge of 2025 technology. Our Magic Lens reveals ancient secrets to German, Chinese, French, and Japanese collectors. This is the fusion of heritage and the future in a borderless digital space.",
+                ar: "لقد جلبنا تقاليد السجاد الإيراني الممتدة لـ 5000 عام إلى حافة تكنولوجيا عام 2025. تكشف عدستنا السحرية عن الأسرار القديمة لهواة الجمع الألمان والصينيين والفرنسيين واليابانيين. هذا هو اندماج التراث والمستقبل."
             }
         ]
     },
@@ -49,9 +49,9 @@ const chapters: {
         icon: <Trophy className="w-8 h-8 text-primary" />,
         content: [
             {
-                fa: "فرش بازار، سلاحی است برای بازگرداندن ثروت به هنرمندان واقعی. ما آماده همکاری با ساتبیز و کریستیز هستیم تا نفیس‌ترین آثار را با تاییدیه اصالت علیمیری به دست صاحبان اصلی‌شان در سراسر جهان برسانیم.",
-                en: "Farsh Bazaar is a weapon to return wealth to true artisans. We are ready to collaborate with Sotheby’s and Christie’s to bring the most exquisite masterpieces, verified by Alimiri authentication, to collectors worldwide.",
-                ar: "فرش بازار هو سلاح لإعادة الثروة إلى الحرفيين الحقيقيين. نحن على استعداد للتعاون مع Sotheby’s وChristie’s لتقديم أروع التحف، المعتمدة من قبل Alimiri، لهواة الجمع في جميع أنحاء العالم."
+                fa: "فرش بازار آماده همکاری استراتژیک با غول‌های حراجی جهان نظیر ساتبیز و کریستیز است. هدف ما بازگرداندن ثروت واقعی به هنرمندان و صادرکنندگان اصیلی است که تاریخ را با گره‌های عشق می‌بافند.",
+                en: "Farsh Bazaar is ready for strategic collaboration with global auction giants like Sotheby’s and Christie’s. Our goal is to return real wealth to the true artists and exporters who weave history with knots of love.",
+                ar: "فرش بازار على استعداد للتعاون الاستراتيجي مع عمالقة المزاد العالميين مثل Sotheby’s وChristie’s. هدفنا هو إعادة الثروة الحقيقية للفنانين والمصدرين الحقيقيين."
             }
         ]
     }
@@ -71,15 +71,15 @@ export default function ManifestoPage() {
                                 منشور آفرینش
                             </CardTitle>
                             <CardDescription className="text-2xl font-light text-muted-foreground">
-                                The Book of Creation | کتابی که با ردمی نوت ۸ نوشته شد
+                                The Book of Creation | پیروزی اندیشه بر ابزار
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="px-6 md:px-20 pb-20 space-y-20 bg-white">
                             <div className="bg-slate-900 text-white p-12 rounded-[4rem] text-center shadow-xl border-4 border-primary/20">
                                 <Cpu className="w-16 h-16 mx-auto mb-6 text-primary animate-pulse" />
-                                <h3 className="text-3xl font-bold mb-4">Master Build 2025: Award Candidate</h3>
+                                <h3 className="text-3xl font-bold mb-4">Award-Winning Engineering Story</h3>
                                 <p className="text-xl italic text-gray-300 leading-relaxed">
-                                    "This software is officially nominated for the Global Startup Awards for its revolutionary 'Resourceful Innovation'—built entirely on a Redmi Note 8 in 9 days to serve 5.5 billion people in 13 languages."
+                                    "Build in 9 days using only a mobile device (Redmi Note 8), Farsh Bazaar proves that vision and purpose transcend hardware limitations. This is a global master build designed for 5.5 billion people."
                                 </p>
                             </div>
 
