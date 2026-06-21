@@ -33,7 +33,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Languages - Core 3 for Ads, others for UI */}
+          {/* Languages - UI/System focus */}
           <div className="space-y-4">
             <h4 className="font-headline font-bold text-lg flex items-center gap-2">
               <Globe className="w-4 h-4 text-primary" />
@@ -45,8 +45,8 @@ export function Footer() {
               <span className="flex items-center gap-1">🇩🇪 Deutsch</span>
               <span className="flex items-center gap-1">🇸🇦 العربية</span>
               <span className="flex items-center gap-1">🇹🇷 Türkçe</span>
-              <span className="flex items-center gap-1">🇦🇿 آذری</span>
-              <span className="flex items-center gap-1">☀️ کردی</span>
+              <span className="flex items-center gap-1">🇦🇿 Azərbaycan</span>
+              <span className="flex items-center gap-1">☀️ Kurdî</span>
             </div>
             <div className="pt-4">
                 <a 

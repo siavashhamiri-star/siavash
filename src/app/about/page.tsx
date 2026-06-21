@@ -57,14 +57,20 @@ export default function AboutPage() {
                     </p>
                     <div className="bg-primary/5 p-8 rounded-3xl border border-primary/10 mt-12">
                         <h4 className="text-primary font-bold text-xl mb-4">International Gateway</h4>
-                        <p className="text-sm italic" dir="ltr">
-                          Our mission bridges the gap between traditional Iranian artistry and the global market. 
-                          Whether in Tehran, Berlin, or Dubai, Farsh Bazaar is your trusted partner.
-                        </p>
-                        <p className="text-sm font-bold mt-4" dir="rtl">
-                          رسالت ما پل زدن میان هنر سنتی ایران و بازارهای جهانی است. 
-                          فرش بازار شریک مورد اعتماد شما در تهران، برلین یا دبی است.
-                        </p>
+                        <div className="grid gap-4">
+                          <p className="text-sm italic" dir="ltr">
+                            Our mission bridges the gap between traditional Iranian artistry and the global market. 
+                            Whether in Tehran, Berlin, or Dubai, Farsh Bazaar is your trusted partner.
+                          </p>
+                          <p className="text-sm font-bold" dir="rtl">
+                            رسالت ما پل زدن میان هنر سنتی ایران و بازارهای جهانی است. 
+                            فرش بازار شریک مورد اعتماد شما در تهران، برلین یا دبی است.
+                          </p>
+                          <p className="text-sm font-bold" dir="rtl">
+                            مهمتنا هي جسر الفجوة بين الفن الإيراني التقليدي والسوق العالمية.
+                            فرش بازار هو شريكك الموثوق به في طهران أو برلين أو دبي.
+                          </p>
+                        </div>
                     </div>
                 </div>
 

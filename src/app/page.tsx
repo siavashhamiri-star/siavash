@@ -1,3 +1,4 @@
+
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Button } from '@/components/ui/button';
@@ -6,7 +7,7 @@ import { StoryGenerator } from '@/components/ai/story-generator';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
-import { Smartphone, Trophy, Heart, Sparkles, Globe } from 'lucide-react';
+import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight } from 'lucide-react';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-1');
@@ -62,31 +63,53 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Tribute & Ecosystem Section */}
-        <section className="py-24 bg-background border-b relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-          <div className="container px-4 relative z-10">
-            <div className="max-w-4xl mx-auto text-center space-y-8">
-              <div className="flex justify-center">
-                 <div className="bg-primary/10 p-4 rounded-full">
-                    <Heart className="w-12 h-12 text-primary fill-primary/20" />
-                 </div>
+        {/* The Vision Section - The Advertisement */}
+        <section className="py-32 bg-white relative overflow-hidden">
+          <div className="container px-4">
+            <div className="grid lg:grid-cols-2 gap-20 items-center">
+              <div className="space-y-8">
+                <Badge variant="outline" className="border-primary text-primary px-4 py-1 rounded-full font-bold">
+                  منظومه‌ی آفرینش (Afarinesh)
+                </Badge>
+                <h2 className="text-4xl md:text-6xl font-headline font-bold text-foreground leading-tight">
+                  از قلب بازار تهران تا مرزهای هوش مصنوعی
+                </h2>
+                <div className="prose prose-lg text-muted-foreground leading-relaxed">
+                  <p>
+                    این یک اپلیکیشن نیست؛ این حماسه‌ای است که ثابت کرد اراده، هیچ مرزی نمی‌شناسد. 
+                    ما با تکیه بر اصالت <span className="font-bold text-primary">فرش علیمیری</span> و قدرت <span className="font-bold text-primary">هوش مصنوعی</span>، 
+                    بازاری جهانی برای تمام صنایع دستی ایران ساخته‌ایم.
+                  </p>
+                  <p className="font-bold text-foreground">
+                    گلیم، جاجیم، ظروف نقره، تابلوهای نقاشی و هنرهای اصیل، اکنون خانه‌ای جهانی دارند.
+                  </p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-6">
+                   <Button asChild size="lg" className="rounded-full px-8">
+                      <Link href="/ecosystem">کاوش در اکوسیستم <ArrowRight className="mr-2 h-4 w-4" /></Link>
+                   </Button>
+                   <div className="flex flex-col text-sm">
+                      <span className="font-bold">خیابان خیام شمالی، پلاک ۴۸</span>
+                      <span className="text-muted-foreground" dir="ltr">۰۲۱ - ۵۵۸۱۴۵۵۵</span>
+                   </div>
+                </div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground">میراثی از تار و پود عشق و اصالت</h2>
-              <p className="text-xl text-muted-foreground leading-relaxed font-light">
-                این آفرینش، برخاسته از خاندانی است که نسل‌ در نسل بر سر سفره‌ی پربرکت هنر فرش ایران رشد کرده‌اند. 
-                پلتفرم <span className="font-bold text-primary">فرش بازار</span>، اولین ستون از <span className="font-bold text-primary text-lg">«شهر مجازی توانا»</span> در اکوسیستم آفرینش است.
-              </p>
-              <div className="p-6 bg-secondary/50 rounded-2xl border border-primary/5 max-w-2xl mx-auto">
-                <p className="text-sm italic text-muted-foreground">
-                  "This platform is a eternal tribute to the grand name of Haj Hossein Alimiri and the family legacy of Alimiri Carpets & Sons. Built from a dream, knotted with capability."
-                </p>
+              <div className="relative aspect-square">
+                <div className="absolute inset-0 bg-primary/5 rounded-[4rem] -rotate-6" />
+                <Image 
+                  src="https://picsum.photos/seed/creation/800/800" 
+                  alt="Afarinesh Creation" 
+                  width={800} 
+                  height={800} 
+                  className="rounded-[4rem] shadow-2xl relative z-10 object-cover rotate-3 hover:rotate-0 transition-transform duration-500"
+                  data-ai-hint="artistic workshop"
+                />
               </div>
             </div>
           </div>
         </section>
 
-        {/* AI Story Generator Section with vision info */}
+        {/* AI Story Generator Section */}
         <section className="py-24 bg-secondary/20 relative">
           <div className="container px-4">
             <div className="flex items-center gap-2 mb-8 justify-center md:justify-start">
@@ -97,7 +120,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Vision & Tavana City */}
+        {/* Legacy & Tavana City */}
         <section className="py-24 bg-background relative overflow-hidden">
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
           <div className="container px-4 text-center space-y-8">
