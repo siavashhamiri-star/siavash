@@ -15,7 +15,7 @@ export type Handicraft = {
     title: string;
     description: string;
     price: string;
-    category: 'kilim' | 'jajim' | 'silver' | 'antique' | 'painting' | 'calligraphy' | 'machine-made' | 'other';
+    category: 'hand-woven' | 'machine-made' | 'kilim' | 'jajim' | 'silver' | 'antique' | 'painting' | 'calligraphy' | 'other';
     imageUrl: string;
     userId: string;
     userName: string;
