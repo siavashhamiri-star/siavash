@@ -13,7 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useUser, useFirestore } from '@/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { toast } from '@/hooks/use-toast';
-import { ShieldCheck, Scale, DollarSign, Image as ImageIcon, Loader2, Factory, MapPin, Gavel, Sparkles, Globe } from 'lucide-react';
+import { ShieldCheck, Scale, DollarSign, Image as ImageIcon, Loader2, Globe, Gavel, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
@@ -97,15 +97,15 @@ export default function AppraisalPage() {
                     <CardHeader className="bg-white/5 border-b border-white/10">
                         <CardTitle className="flex items-center gap-2 text-xl text-accent">
                             <Globe className="w-6 h-6" />
-                            Sotheby's & Christie's Standard
+                            Road to Sotheby's
                         </CardTitle>
                     </CardHeader>
                     <CardContent className="p-8 space-y-4">
                         <p className="text-xs leading-relaxed text-gray-400 italic">
-                            آثار نفیسی که در این پلتفرم تاییدیه «گرید A» دریافت کنند، با افتخار جهت شرکت در حراجی‌های بین‌المللی نظیر ساتبیز و کریستیز معرفی خواهند شد.
+                            آثار نفیسی که در این پلتفرم تاییدیه «گرید A» دریافت کنند، مستقیماً جهت شرکت در حراجی‌های بین‌المللی نظیر ساتبیز و کریستیز معرفی خواهند شد.
                         </p>
                         <div className="pt-4 border-t border-white/10">
-                            <Badge variant="outline" className="text-accent border-accent/40">International Gateway</Badge>
+                            <Badge variant="outline" className="text-accent border-accent/40 font-bold uppercase tracking-widest">Auction Gateway</Badge>
                         </div>
                     </CardContent>
                 </Card>
@@ -131,12 +131,12 @@ export default function AppraisalPage() {
                             <span className="font-black text-xl text-accent">۱,۵۰۰,۰۰۰+</span>
                         </div>
                         <p className="text-[10px] text-white/70 italic mt-6 leading-relaxed">
-                            * هزینه شامل تحلیل فنی، شناسنامه دیجیتال و در صورت تمایل، درج در کاتالوگ حراج سالانه است.
+                            * هزینه شامل تحلیل فنی، شناسنامه دیجیتال و در صورت تمایل، ورود به لیست انتظار حراج سالانه است.
                         </p>
                     </CardContent>
                     <CardFooter className="bg-black/10 p-6 flex items-center gap-3">
-                         <MapPin className="w-5 h-5 text-accent" />
-                         <span className="text-[10px] font-bold">خیابان خیام شمالی، پلاک ۴۸ - مرکزیت ارزیابی</span>
+                         <Gavel className="w-5 h-5 text-accent" />
+                         <span className="text-[10px] font-bold">آماده‌سازی برای حراج سالانه جهانی</span>
                     </CardFooter>
                 </Card>
             </div>
@@ -144,7 +144,10 @@ export default function AppraisalPage() {
             <div className="lg:col-span-2">
                 <Card className="border-none shadow-2xl rounded-[3rem]">
                     <CardHeader className="p-10">
-                        <CardTitle className="text-3xl font-headline">فرم درخواست کارشناسی هوشمند</CardTitle>
+                        <CardTitle className="text-3xl font-headline flex items-center gap-3">
+                            <Sparkles className="text-primary" />
+                            فرم درخواست کارشناسی هوشمند
+                        </CardTitle>
                         <CardDescription className="text-lg">جزئیات اثر خود را وارد کنید. ما پذیرای فرش‌های دستباف، ماشینی و ملل هستیم.</CardDescription>
                     </CardHeader>
                     <CardContent className="p-10 pt-0">
