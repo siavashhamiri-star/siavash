@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -17,7 +16,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 import { LANGUAGES, type Language } from '@/lib/types';
 import { useState } from 'react';
 
@@ -42,7 +41,7 @@ export function Header() {
           <Link href="/" className="flex items-center space-x-2">
             <Logo className="w-10 h-10" />
             <div className="flex flex-col">
-              <span className="font-bold font-headline text-xl leading-none">Farsh Bazaar</span>
+              <span className="font-bold font-headline text-xl leading-none text-primary">Farsh Bazaar</span>
               <span className="text-[10px] text-primary font-medium tracking-widest uppercase">FB New Meta</span>
             </div>
           </Link>
@@ -51,7 +50,7 @@ export function Header() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="transition-colors hover:text-foreground/80 text-foreground/60"
+                className="transition-colors hover:text-primary text-foreground/70"
               >
                 {item.label}
               </Link>
@@ -62,27 +61,27 @@ export function Header() {
         <div className="flex items-center space-x-2">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="gap-2 px-2">
-                  <Globe className="w-4 h-4 text-muted-foreground" />
-                  <span className="hidden sm:inline text-xs">{selectedLang?.label}</span>
+                <Button variant="ghost" size="sm" className="gap-2 px-2 hover:bg-primary/5">
+                  <Globe className="w-4 h-4 text-primary" />
+                  <span className="hidden sm:inline text-xs font-bold">{selectedLang?.label}</span>
                   <ChevronDown className="w-3 h-3 opacity-50" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-40">
+              <DropdownMenuContent align="end" className="w-48">
                 {LANGUAGES.map((lang) => (
                   <DropdownMenuItem 
                     key={lang.code} 
                     onClick={() => setCurrentLang(lang.code)}
-                    className="gap-2 cursor-pointer"
+                    className="gap-2 cursor-pointer p-3"
                   >
-                    <span>{lang.flag}</span>
-                    <span className="text-sm">{lang.label}</span>
+                    <span className="text-xl">{lang.flag}</span>
+                    <span className="text-sm font-medium">{lang.label}</span>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button asChild variant="outline" size="sm" className="hidden sm:flex border-accent text-accent hover:bg-accent/5">
+            <Button asChild variant="outline" size="sm" className="hidden sm:flex border-primary text-primary hover:bg-primary/5 rounded-full">
                 <Link href="/handicrafts">
                    <ShoppingCart className="w-4 h-4 ml-2" />
                    بازار آنلاین
@@ -96,14 +95,14 @@ export function Header() {
                 <Button variant="ghost" asChild size="sm">
                   <Link href="/login">Login</Link>
                 </Button>
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild size="sm">
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full" asChild size="sm">
                   <Link href="/signup">Sign Up</Link>
                 </Button>
               </div>
             )}
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="lg:hidden">
+                <Button variant="ghost" size="icon" className="lg:hidden text-primary">
                   <Menu />
                   <span className="sr-only">Open Menu</span>
                 </Button>
@@ -111,23 +110,23 @@ export function Header() {
               <SheetContent side="left" className="w-[300px]">
                 <div className="flex flex-col h-full p-6">
                     <Link href="/" className="flex items-center space-x-2 mb-8 border-b pb-4">
-                        <Logo />
+                        <Logo className="w-10 h-10" />
                         <div className="flex flex-col">
-                          <span className="font-bold font-headline text-lg">Farsh Bazaar</span>
+                          <span className="font-bold font-headline text-lg text-primary">Farsh Bazaar</span>
                           <span className="text-[10px] text-primary uppercase">FB New Meta</span>
                         </div>
                     </Link>
-                    <nav className="flex flex-col space-y-4">
+                    <nav className="flex flex-col space-y-6">
                         {navItems.map((item) => (
                         <Link
                             key={item.label}
                             href={item.href}
-                            className="text-base transition-colors hover:text-primary"
+                            className="text-lg font-medium transition-colors hover:text-primary"
                         >
                             {item.label}
                         </Link>
                         ))}
-                        <Link href="/ads/new" className="text-accent font-bold flex items-center gap-2">
+                        <Link href="/ads/new" className="text-accent font-bold flex items-center gap-2 border-t pt-4">
                            <Sparkles className="w-4 h-4" />
                            ثبت آگهی صنایع دستی
                         </Link>

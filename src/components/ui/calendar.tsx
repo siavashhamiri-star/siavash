@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -42,10 +41,10 @@ function Calendar({
           buttonVariants({ variant: "ghost" }),
           "h-9 w-9 p-0 font-normal aria-selected:opacity-100"
         ),
-        day_button: "h-9 w-9 p-0 font-normal",
+        day_button: "h-9 w-9 p-0 font-normal hover:bg-primary hover:text-white transition-colors rounded-full",
         range_end: "day-range-end",
-        selected: "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
-        today: "bg-accent text-accent-foreground",
+        selected: "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground rounded-full",
+        today: "bg-accent text-accent-foreground font-bold",
         outside: "day-outside text-muted-foreground aria-selected:bg-accent/50 aria-selected:text-muted-foreground",
         disabled: "text-muted-foreground opacity-50",
         range_middle: "aria-selected:bg-accent aria-selected:text-accent-foreground",
@@ -53,8 +52,8 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        Chevron: ({ ...props }) => {
-          if (props.orientation === "left") {
+        Chevron: ({ orientation }) => {
+          if (orientation === "left") {
             return <ChevronLeft className="h-4 w-4" />
           }
           return <ChevronRight className="h-4 w-4" />
