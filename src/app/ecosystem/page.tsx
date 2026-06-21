@@ -65,11 +65,11 @@ export default function EcosystemPage() {
                         <h1 className="text-6xl md:text-9xl font-headline font-bold mb-10 leading-tight">منظومه‌ی آفرینش</h1>
                         <div className="grid gap-8 max-w-5xl mx-auto mb-16">
                             <p className="text-2xl md:text-4xl font-light leading-relaxed">
-                                تمدنی دیجیتال برای بازگرداندن شکوه و رونق گذشته فرش. ما با سلاح تکنولوژی، اصالت را جهانی می‌کنیم.
+                                تمدنی دیجیتال با ۱۱ زبان زنده برای بازگرداندن شکوه فرش ایران. ما با سلاح تکنولوژی، اصالت را جهانی می‌کنیم.
                             </p>
                             <div className="flex flex-col md:flex-row justify-center gap-10 text-xl font-headline italic opacity-80">
-                                <span dir="ltr">"Restoring glory through digital mastery."</span>
-                                <span dir="rtl">"استعادة المجد من خلال السيادة الرقمية."</span>
+                                <span dir="ltr">"Global reach, ancestral roots."</span>
+                                <span dir="rtl">"تأثير عالمي، جذور عريقة."</span>
                             </div>
                         </div>
                         <Button asChild size="lg" className="rounded-full px-16 h-20 text-2xl shadow-2xl shadow-primary/40">
@@ -83,7 +83,7 @@ export default function EcosystemPage() {
                         <div className="absolute top-0 right-0 p-16 opacity-5">
                              <Sword className="w-80 h-80 text-primary" />
                         </div>
-                        <h2 className="text-5xl md:text-7xl font-headline font-bold text-primary mb-16">بیانیه‌ی سلاح دیجیتال</h2>
+                        <h2 className="text-5xl md:text-7xl font-headline font-bold text-primary mb-16">سلاح دیجیتال در ۱۱ زبان</h2>
                         <div className="grid md:grid-cols-3 gap-12 text-justify relative z-10 text-lg leading-relaxed">
                             <div className="space-y-6 bg-primary/5 p-10 rounded-[3rem] border border-primary/10">
                                 <h3 className="font-bold text-3xl border-b border-primary/20 pb-6 text-center">فارسی</h3>
