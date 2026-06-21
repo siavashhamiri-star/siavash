@@ -6,68 +6,45 @@
             "description": "Represents a user's profile in the system.",
             "type": "object",
             "properties": {
-                "displayName": {
-                    "type": "string",
-                    "description": "The user's display name."
-                },
-                "email": {
-                    "type": "string",
-                    "format": "email",
-                    "description": "The user's email address."
-                },
-                "photoURL": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "URL of the user's profile picture."
-                },
-                "isVendor": {
-                    "type": "boolean",
-                    "description": "Whether the user is a vendor."
-                },
-                "vendorId": {
-                    "type": "string",
-                    "description": "The ID of the vendor profile associated with this user."
-                }
+                "displayName": { "type": "string" },
+                "email": { "type": "string", "format": "email" },
+                "photoURL": { "type": "string", "format": "uri" },
+                "isVendor": { "type": "boolean" },
+                "vendorId": { "type": "string" },
+                "adCount": { "type": "number", "description": "Number of free ads used this month." }
             },
             "required": ["displayName", "email"]
+        },
+        "Handicraft": {
+            "title": "Handicraft",
+            "description": "An advertisement for an Iranian handicraft.",
+            "type": "object",
+            "properties": {
+                "title": { "type": "string" },
+                "description": { "type": "string" },
+                "price": { "type": "string" },
+                "category": { "type": "string", "enum": ["kilim", "jajim", "silver", "antique", "painting", "other"] },
+                "imageUrl": { "type": "string", "format": "uri" },
+                "userId": { "type": "string" },
+                "userName": { "type": "string" },
+                "nationalCode": { "type": "string" },
+                "createdAt": { "type": "object" },
+                "isPremiumDesign": { "type": "boolean" }
+            },
+            "required": ["title", "description", "price", "category", "userId", "userName", "createdAt"]
         },
         "Vendor": {
             "title": "Vendor",
             "description": "Represents a vendor in the system.",
             "type": "object",
             "properties": {
-                "name": {
-                    "type": "string",
-                    "description": "The vendor's name."
-                },
-                "location": {
-                    "type": "string",
-                    "description": "The vendor's location."
-                },
-                "bio": {
-                    "type": "string",
-                    "description": "A short biography of the vendor."
-                },
-                "specialties": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    },
-                    "description": "A list of the vendor's specialties."
-                },
-                "avatarUrl": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "URL of the vendor's avatar."
-                },
-                "userId": {
-                    "type": "string",
-                    "description": "The ID of the user associated with this vendor profile."
-                },
-                "isVerified": {
-                    "type": "boolean",
-                    "description": "Indicates if the vendor has been verified by the platform administrators."
-                }
+                "name": { "type": "string" },
+                "location": { "type": "string" },
+                "bio": { "type": "string" },
+                "specialties": { "type": "array", "items": { "type": "string" } },
+                "avatarUrl": { "type": "string", "format": "uri" },
+                "userId": { "type": "string" },
+                "isVerified": { "type": "boolean" }
             },
             "required": ["name", "location", "bio", "userId"]
         },
@@ -76,94 +53,14 @@
             "description": "Represents a carpet in the system.",
             "type": "object",
             "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "price": {
-                    "type": "string"
-                },
-                "imageUrl": {
-                    "type": "string",
-                    "format": "uri"
-                },
-                "vendorId": {
-                    "type": "string"
-                },
-                "consignment": {
-                    "type": "boolean",
-                    "description": "Indicates if the carpet is for sale via consignment through Farsh Bazaar."
-                }
+                "name": { "type": "string" },
+                "description": { "type": "string" },
+                "price": { "type": "string" },
+                "imageUrl": { "type": "string", "format": "uri" },
+                "vendorId": { "type": "string" },
+                "consignment": { "type": "boolean" }
             },
             "required": ["name", "description", "price", "imageUrl", "vendorId"]
-        },
-        "Review": {
-            "title": "Review",
-            "description": "Represents a buyer's review of a vendor.",
-            "type": "object",
-            "properties": {
-                "reviewerName": {
-                    "type": "string",
-                    "description": "The name of the user who wrote the review."
-                },
-                "reviewerImage": {
-                    "type": "string",
-                    "format": "uri",
-                    "description": "URL of the reviewer's profile picture."
-                },
-                "rating": {
-                    "type": "number",
-                    "description": "A rating from 1 to 5."
-                },
-                "comment": {
-                    "type": "string",
-                    "description": "The text content of the review."
-                },
-                "vendorId": {
-                    "type": "string",
-                    "description": "The ID of the vendor being reviewed."
-                },
-                "userId": {
-                    "type": "string",
-                    "description": "The ID of the user who wrote the review."
-                },
-                 "createdAt": {
-                    "type": "object",
-                    "description": "The timestamp when the review was created."
-                }
-            },
-            "required": ["reviewerName", "rating", "comment", "vendorId", "userId", "createdAt"]
-        },
-        "Suggestion": {
-            "title": "Suggestion",
-            "description": "Represents a user's suggestion for improving the app.",
-            "type": "object",
-            "properties": {
-                "suggestionText": {
-                    "type": "string",
-                    "description": "The text of the suggestion."
-                },
-                "userType": {
-                    "type": "string",
-                    "enum": ["buyer", "vendor"],
-                    "description": "The type of user submitting the suggestion."
-                },
-                "userId": {
-                    "type": "string",
-                    "description": "The ID of the user who submitted the suggestion."
-                },
-                "userName": {
-                    "type": "string",
-                    "description": "The name of the user who submitted the suggestion."
-                },
-                "createdAt": {
-                    "type": "object",
-                    "description": "The timestamp when the suggestion was created."
-                }
-            },
-            "required": ["suggestionText", "userType", "userId", "userName", "createdAt"]
         }
     },
     "auth": {
@@ -171,40 +68,20 @@
     },
     "firestore": {
         "/users/{userId}": {
-            "schema": {
-                "$ref": "#/backend/entities/UserProfile"
-            },
-            "description": "Stores public information about a user."
+            "schema": { "$ref": "#/backend/entities/UserProfile" },
+            "description": "Stores user profiles."
+        },
+        "/handicrafts/{id}": {
+            "schema": { "$ref": "#/backend/entities/Handicraft" },
+            "description": "Stores handicraft advertisements."
         },
         "/vendors/{vendorId}": {
-            "schema": {
-                "$ref": "#/backend/entities/Vendor"
-            },
-            "description": "Stores information about a vendor."
+            "schema": { "$ref": "#/backend/entities/Vendor" },
+            "description": "Stores vendor information."
         },
         "/vendors/{vendorId}/carpets/{carpetId}": {
-            "schema": {
-                "$ref": "#/backend/entities/Carpet"
-            },
-            "description": "Stores the carpets for a specific vendor."
-        },
-        "/vendors/{vendorId}/reviews/{reviewId}": {
-            "schema": {
-                "$ref": "#/backend/entities/Review"
-            },
-            "description": "Stores the reviews for a specific vendor."
-        },
-        "/suggestions/{suggestionId}": {
-            "schema": {
-                "$ref": "#/backend/entities/Suggestion"
-            },
-            "description": "Stores user suggestions for improving the app."
-        },
-        "/catalog/{carpetId}": {
-            "schema": {
-                "$ref": "#/backend/entities/Carpet"
-            },
-            "description": "A curated collection of carpets sold directly by Farsh Bazaar."
+            "schema": { "$ref": "#/backend/entities/Carpet" },
+            "description": "Stores carpets for a vendor."
         }
     }
 }

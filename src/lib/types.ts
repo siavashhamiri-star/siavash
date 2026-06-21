@@ -8,6 +8,20 @@ export type Carpet = {
     vendorId: string;
     consignment?: boolean;
 };
+
+export type Handicraft = {
+    id: string;
+    title: string;
+    description: string;
+    price: string;
+    category: 'kilim' | 'jajim' | 'silver' | 'antique' | 'painting' | 'other';
+    imageUrl: string;
+    userId: string;
+    userName: string;
+    nationalCode?: string;
+    createdAt: any;
+    isPremiumDesign?: boolean;
+};
   
 export type Vendor = {
     id: string;
@@ -26,6 +40,7 @@ export type UserProfile = {
     email: string;
     isVendor?: boolean;
     vendorId?: string;
+    adCount?: number;
 };
 
 export type Review = {
@@ -36,5 +51,14 @@ export type Review = {
     comment: string;
     vendorId: string;
     userId: string;
+    createdAt: any;
+};
+
+export type Suggestion = {
+    id: string;
+    suggestionText: string;
+    userType: 'buyer' | 'vendor';
+    userId: string;
+    userName: string;
     createdAt: any;
 };

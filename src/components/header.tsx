@@ -1,9 +1,10 @@
+
 'use client';
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
-import { Menu } from 'lucide-react';
+import { Menu, ShoppingCart, Sparkles } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -14,10 +15,10 @@ import { useUser } from '@/firebase';
 
 const navItems = [
   { href: '/', label: 'Home / خانه' },
-  { href: '/vendors', label: 'Vendors / فروشندگان' },
+  { href: '/vendors', label: 'Showrooms / نمایشگاه‌ها' },
+  { href: '/handicrafts', label: 'Handicrafts / صنایع دستی' },
   { href: '/ecosystem', label: 'Ecosystem / اکوسیستم' },
   { href: '/manifesto', label: 'Our Vision / چشم‌انداز' },
-  { href: '/collaboration', label: 'Partnership / مشارکت' },
 ];
 
 export function Header() {
@@ -48,10 +49,13 @@ export function Header() {
         </div>
         
         <div className="flex items-center space-x-2">
-            <div className="hidden xl:flex flex-col items-end mr-4 text-[10px] text-muted-foreground border-r pr-4 border-primary/20">
-              <span className="font-bold text-primary">پروژه آفرینش</span>
-              <span>شهر مجازی توانا (Tavana City)</span>
-            </div>
+            <Button asChild variant="outline" size="sm" className="hidden sm:flex border-accent text-accent hover:bg-accent/5">
+                <Link href="/handicrafts">
+                   <ShoppingCart className="w-4 h-4 ml-2" />
+                   بازار آنلاین
+                </Link>
+            </Button>
+            
             {isLoading ? null : user ? (
               <UserNav />
             ) : (
@@ -80,10 +84,6 @@ export function Header() {
                           <span className="text-[10px] text-primary uppercase">FB New Meta</span>
                         </div>
                     </Link>
-                    <div className="mb-6 p-3 bg-primary/5 rounded-lg">
-                      <p className="text-xs font-bold text-primary">پروژه آفرینش</p>
-                      <p className="text-[10px] text-muted-foreground">شهر مجازی توانا (Tavana City)</p>
-                    </div>
                     <nav className="flex flex-col space-y-4">
                         {navItems.map((item) => (
                         <Link
@@ -94,6 +94,10 @@ export function Header() {
                             {item.label}
                         </Link>
                         ))}
+                        <Link href="/ads/new" className="text-accent font-bold flex items-center gap-2">
+                           <Sparkles className="w-4 h-4" />
+                           ثبت آگهی صنایع دستی
+                        </Link>
                     </nav>
                     {!user && (
                        <div className="mt-auto flex flex-col space-y-2">
