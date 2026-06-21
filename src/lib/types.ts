@@ -14,7 +14,7 @@ export type Handicraft = {
     title: string;
     description: string;
     price: string;
-    category: 'kilim' | 'jajim' | 'silver' | 'antique' | 'painting' | 'other';
+    category: 'kilim' | 'jajim' | 'silver' | 'antique' | 'painting' | 'calligraphy' | 'other';
     imageUrl: string;
     userId: string;
     userName: string;
@@ -54,11 +54,14 @@ export type Review = {
     createdAt: any;
 };
 
-export type Suggestion = {
-    id: string;
-    suggestionText: string;
-    userType: 'buyer' | 'vendor';
-    userId: string;
-    userName: string;
-    createdAt: any;
-};
+export type Language = 'fa' | 'en' | 'de' | 'ar' | 'tr' | 'az' | 'ku';
+
+export const LANGUAGES: { code: Language; label: string; flag: string }[] = [
+  { code: 'fa', label: 'فارسی', flag: '🇮🇷' },
+  { code: 'en', label: 'English', flag: '🇺🇸' },
+  { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
+  { code: 'ar', label: 'العربية', flag: '🇸🇦' },
+  { code: 'tr', label: 'Türkçe', flag: '🇹🇷' },
+  { code: 'az', label: 'Azərbaycan', flag: '🇦🇿' },
+  { code: 'ku', label: 'Kurdî', flag: '☀️' },
+];

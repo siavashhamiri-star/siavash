@@ -13,7 +13,7 @@ import { Shield } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function PrivacyPolicyPage() {
-  const [currentDate, setCurrentDate] = useState<string>('');
+  const [currentDate, setCurrentDate] = useState<string | null>(null);
 
   useEffect(() => {
     setCurrentDate(new Date().toLocaleDateString());
@@ -30,10 +30,10 @@ export default function PrivacyPolicyPage() {
                 <Shield className="w-10 h-10 text-primary" />
               </div>
               <CardTitle className="text-3xl font-headline">
-                Privacy Policy
+                Privacy Policy / حریم خصوصی
               </CardTitle>
               <CardDescription className="text-lg">
-                Last Updated: {currentDate || 'Loading...'}
+                Last Updated: {currentDate || '...'}
               </CardDescription>
             </CardHeader>
             <CardContent className="prose prose-lg max-w-none mx-auto text-foreground/80">

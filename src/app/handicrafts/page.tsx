@@ -13,12 +13,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Sparkles, ShoppingBag, PlusCircle, Loader2 } from 'lucide-react';
 import type { Handicraft } from '@/lib/types';
+import { cn } from '@/lib/utils';
 
 export default function HandicraftsPage() {
   const firestore = useFirestore();
   const handicraftsRef = collection(firestore, 'handicrafts');
   const handicraftsQuery = query(handicraftsRef, orderBy('createdAt', 'desc'));
-  const { data: crafts, loading } = useCollection(handicraftsRef); // Simplified for now
+  const { data: crafts, loading } = useCollection(handicraftsRef);
 
   const typedCrafts = (crafts as Handicraft[]) || [];
 
@@ -30,7 +31,7 @@ export default function HandicraftsPage() {
           <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
             <div className="text-center md:text-right">
               <h1 className="text-4xl font-headline font-bold">بازار صنایع دستی ایران</h1>
-              <p className="text-muted-foreground mt-2">گلیم، جاجیم، ظروف قدیمی و هنرهای اصیل ایرانی</p>
+              <p className="text-muted-foreground mt-2">گلیم، جاجیم، ظروف قدیمی، تابلو نقاشی و هنرهای اصیل ایرانی</p>
             </div>
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full">
               <Link href="/ads/new">
@@ -48,7 +49,7 @@ export default function HandicraftsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {typedCrafts.map((craft) => (
                 <Card key={craft.id} className={cn(
-                  "overflow-hidden group border-none shadow-md hover:shadow-xl transition-all duration-300",
+                  "overflow-hidden group border-none shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full",
                   craft.isPremiumDesign ? "ring-2 ring-accent bg-accent/5" : "bg-card"
                 )}>
                   <div className="relative aspect-square overflow-hidden">
@@ -59,7 +60,7 @@ export default function HandicraftsPage() {
                       className="object-cover transition-transform group-hover:scale-110"
                     />
                     {craft.isPremiumDesign && (
-                      <Badge className="absolute top-2 right-2 bg-accent text-accent-foreground font-bold">
+                      <Badge className="absolute top-2 right-2 bg-accent text-accent-foreground font-bold border-none">
                         <Sparkles className="w-3 h-3 ml-1" />
                         ویترین جادویی
                       </Badge>
@@ -70,8 +71,9 @@ export default function HandicraftsPage() {
                     <CardTitle className="font-headline text-xl">{craft.title}</CardTitle>
                     <CardDescription className="line-clamp-2">{craft.description}</CardDescription>
                   </CardHeader>
-                  <CardContent className="px-4 pb-2">
+                  <CardContent className="px-4 pb-2 flex-grow">
                     <p className="text-2xl font-bold text-primary">{craft.price}</p>
+                    <p className="text-[10px] text-muted-foreground mt-2">توسط: {craft.userName}</p>
                   </CardContent>
                   <CardFooter className="p-4 pt-0">
                     <Button variant="ghost" className="w-full justify-between group-hover:text-primary">

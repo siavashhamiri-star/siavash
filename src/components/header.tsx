@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
-import { Menu, ShoppingCart, Sparkles } from 'lucide-react';
+import { Menu, ShoppingCart, Sparkles, Globe, ChevronDown } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -12,6 +12,14 @@ import {
 } from "@/components/ui/sheet";
 import { UserNav } from '@/components/user-nav';
 import { useUser } from '@/firebase';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { LANGUAGES, type Language } from '@/lib/types';
+import { useState } from 'react';
 
 const navItems = [
   { href: '/', label: 'Home / خانه' },
@@ -23,6 +31,9 @@ const navItems = [
 
 export function Header() {
   const { data: user, isLoading } = useUser();
+  const [currentLang, setCurrentLang] = useState<Language>('fa');
+
+  const selectedLang = LANGUAGES.find(l => l.code === currentLang);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -49,6 +60,29 @@ export function Header() {
         </div>
         
         <div className="flex items-center space-x-2">
+            {/* Language Selector */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="gap-2 px-2">
+                  <Globe className="w-4 h-4 text-muted-foreground" />
+                  <span className="hidden sm:inline text-xs">{selectedLang?.label}</span>
+                  <ChevronDown className="w-3 h-3 opacity-50" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-40">
+                {LANGUAGES.map((lang) => (
+                  <DropdownMenuItem 
+                    key={lang.code} 
+                    onClick={() => setCurrentLang(lang.code)}
+                    className="gap-2 cursor-pointer"
+                  >
+                    <span>{lang.flag}</span>
+                    <span className="text-sm">{lang.label}</span>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Button asChild variant="outline" size="sm" className="hidden sm:flex border-accent text-accent hover:bg-accent/5">
                 <Link href="/handicrafts">
                    <ShoppingCart className="w-4 h-4 ml-2" />

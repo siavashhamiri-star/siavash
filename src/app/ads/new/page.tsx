@@ -62,7 +62,7 @@ export default function NewAdPage() {
       userId: user.uid,
       userName: user.displayName,
       createdAt: serverTimestamp(),
-      imageUrl: 'https://picsum.photos/seed/craft/600/600' // Placeholder
+      imageUrl: 'https://picsum.photos/seed/' + Math.floor(Math.random() * 1000) + '/600/600'
     };
 
     const handicraftsCollection = collection(firestore, 'handicrafts');
@@ -125,7 +125,7 @@ export default function NewAdPage() {
                         <SelectItem value="jajim">جاجیم (Jajim)</SelectItem>
                         <SelectItem value="silver">ظروف نقره</SelectItem>
                         <SelectItem value="antique">آنتیک و قدیمی</SelectItem>
-                        <SelectItem value="painting">تابلو نقاشی</SelectItem>
+                        <SelectItem value="painting">تابلو نقاشی / خط</SelectItem>
                         <SelectItem value="other">سایر صنایع دستی</SelectItem>
                       </SelectContent>
                     </Select>
@@ -139,7 +139,7 @@ export default function NewAdPage() {
                   <Label>کد ملی (جهت احراز هویت در ایران)</Label>
                   <div className="flex gap-2">
                     <Input required placeholder="کد ۱۰ رقمی" value={nationalCode} onChange={e => setNationalCode(e.target.value)} />
-                    <ShieldCheck className="w-10 h-10 text-green-600 bg-green-50 p-2 rounded-lg" />
+                    <ShieldCheck className="w-10 h-10 text-green-600 bg-green-50 p-2 rounded-lg shrink-0" />
                   </div>
                 </div>
                 <div className="grid gap-2">
