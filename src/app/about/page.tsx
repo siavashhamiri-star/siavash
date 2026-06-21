@@ -8,7 +8,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Landmark, MapPin, Phone, ShieldCheck, Sparkles, Smartphone, Mail, ArrowLeftRight } from 'lucide-react';
+import { Landmark, MapPin, Phone, ShieldCheck, Sparkles, Smartphone, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -59,22 +59,18 @@ export default function AboutPage() {
                         «این یک اپلیکیشن نیست؛ این حماسه‌ای است که با دستان خالی و اراده‌ای پولادین آفریده شد.»
                     </p>
                     <p className="text-lg leading-relaxed text-justify">
-                        فرش بازار، اولین ستون از اکوسیستم بزرگ <span className="font-bold text-primary">آفرینش (Afarinesh)</span> و شهر مجازی تواناست. بنیان‌گذار این پروژه، با الهام از همت والای اسطوره‌ی بازار، <span className="font-bold">حاج حسین علیمیری</span>، ثابت کرد که حتی با یک گوشی کوچک (Redmi Note 8)، می‌توان دنیاهایی به وسعت ۷ زبان و مرزهای هوش مصنوعی خلق کرد.
+                        فرش بازار، اولین ستون از اکوسیستم بزرگ <span className="font-bold text-primary">آفرینش (Afarinesh)</span> و شهر مجازی تواناست. بنیان‌گذار این پروژه، با الهام از همت والای اسطوره‌ی بازار، <span className="font-bold">حاج حسین علیمیری</span>، ثابت کرد که حتی با یک گوشی کوچک (Redmi Note 8)، می‌توان دنیاهایی به وسعت ۱۳ زبان و مرزهای هوش مصنوعی خلق کرد.
                     </p>
                     <div className="bg-primary/5 p-10 rounded-[3rem] border border-primary/10 mt-12">
                         <h4 className="text-primary font-bold text-2xl mb-6">International Gateway</h4>
                         <div className="grid gap-6">
                           <p className="text-sm italic leading-relaxed" dir="ltr">
                             Our mission bridges the gap between traditional Iranian artistry and the global market. 
-                            Whether in Tehran, Berlin, or Dubai, Farsh Bazaar is your trusted partner.
+                            Whether in Tehran, Berlin, or Tokyo, Farsh Bazaar is your trusted partner.
                           </p>
                           <p className="text-sm font-bold" dir="rtl">
                             رسالت ما پل زدن میان هنر سنتی ایران و بازارهای جهانی است. 
-                            فرش بازار شریک مورد اعتماد شما در تهران، برلین یا دبی است.
-                          </p>
-                          <p className="text-sm font-bold" dir="rtl">
-                            مهمتنا هي جسر الفجوة بين الفن الإيراني التقليدي والسوق العالمية.
-                            فرش بازار هو شريكك الموثوق به في طهران أو برلين أو دبي.
+                            فرش بازار شریک مورد اعتماد شما در تهران، برلین، پاریس یا توکیو است.
                           </p>
                         </div>
                     </div>
@@ -89,7 +85,7 @@ export default function AboutPage() {
                     <div className="p-6 bg-blue-50 rounded-3xl text-center">
                         <ShieldCheck className="w-8 h-8 text-blue-600 mx-auto mb-3" />
                         <h4 className="font-bold mb-1">اعتبار جهانی</h4>
-                        <p className="text-xs text-muted-foreground">۷ زبان زنده برای ارتباط با دنیا</p>
+                        <p className="text-xs text-muted-foreground">۱۳ زبان زنده برای ارتباط با دنیا</p>
                     </div>
                     <div className="p-6 bg-accent/10 rounded-3xl text-center">
                         <Sparkles className="w-8 h-8 text-accent mx-auto mb-3" />

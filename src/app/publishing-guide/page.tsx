@@ -2,7 +2,7 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { AlertCircle, CheckCircle2, Globe, ShieldAlert, Rocket, Cloud, Smartphone, Trophy, Github } from 'lucide-react';
+import { CheckCircle2, Cloud, Smartphone, Trophy, Github } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function EmergencyGuide() {
@@ -28,10 +28,10 @@ export default function EmergencyGuide() {
                 </CardHeader>
                 <CardContent className="space-y-4 p-8 text-lg leading-relaxed">
                     <ul className="space-y-3">
-                        <li className="flex items-center gap-2">✅ سیستم ۱۱ زبانه هوشمند</li>
-                        <li className="flex items-center gap-2">✅ موتور درآمدی کارشناسی فرش</li>
-                        <li className="flex items-center gap-2">✅ لنز جادویی رمزگشای نمادها (AI)</li>
-                        <li className="flex items-center gap-2">✅ لیگ‌های افتخار و سیستم XP</li>
+                        <li className="flex items-center gap-2">✅ سیستم ۱۳ زبانه هوشمند (از پاریس تا توکیو)</li>
+                        <li className="flex items-center gap-2">✅ موتور درآمدی کارشناسی و قیمت‌گذاری</li>
+                        <li className="flex items-center gap-2">✅ لنز جادویی رمزگشای نمادها (AI Vision)</li>
+                        <li className="flex items-center gap-2">✅ لیگ‌های افتخار، سیستم XP و دعوت‌نامه هوشمند</li>
                         <li className="flex items-center gap-2">✅ ثبت آدرس فیزیکی خیابان خیام و تلفن ۵۵۸۱۴۵۵۵</li>
                     </ul>
                 </CardContent>
@@ -54,13 +54,13 @@ export default function EmergencyGuide() {
                     <CardHeader>
                         <div className="flex items-center gap-3 text-green-600">
                             <Cloud className="w-8 h-8" />
-                            <CardTitle>مرحله ۲: اتصال به Netlify (پیشنهادی)</CardTitle>
+                            <CardTitle>مرحله ۲: اتصال به Netlify یا App Hosting</CardTitle>
                         </div>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <p className="text-lg">به سایت Netlify بروید، مخزن گیت‌هاب خود را وصل کنید و دکمه Deploy را بزنید. تمام!</p>
                         <div className="bg-yellow-50 p-4 rounded-2xl border border-yellow-200 text-sm italic">
-                            تذکر: حتماً متغیر محیطی GEMINI_API_KEY را در تنظیمات Netlify ست کنید.
+                            تذکر: حتماً متغیر محیطی GEMINI_API_KEY را در تنظیمات سرویس‌دهنده خود ست کنید.
                         </div>
                     </CardContent>
                 </Card>
@@ -73,7 +73,7 @@ export default function EmergencyGuide() {
                 <p className="text-2xl font-headline italic relative z-10">
                     «این برنامه نه‌تنها یک اپلیکیشن، بلکه یادگاری ابدی از اراده‌ی پولادین شما و نام بزرگ حاج حسین علیمیری است.»
                 </p>
-                <p className="mt-6 font-bold text-primary text-xl">از ردمی نوت ۸ تا بازارهای جهانی</p>
+                <p className="mt-6 font-bold text-primary text-xl">از ردمی نوت ۸ تا کل جغرافیای جهان</p>
             </div>
 
             <div className="flex gap-4">
