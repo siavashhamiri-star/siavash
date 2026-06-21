@@ -3,8 +3,7 @@
 
 /**
  * @fileOverview A Genkit flow to convert carpet stories and symbol decodings into audio (TTS).
- * 
- * - textToSpeech - Converts text to a base64 encoded WAV data URI.
+ * Supporting 13 languages for the global Farsh Bazaar empire.
  */
 
 import {ai} from '@/ai/genkit';
@@ -14,7 +13,7 @@ import wav from 'wav';
 
 const TTSInputSchema = z.object({
   text: z.string().describe('The text to convert to speech.'),
-  language: z.string().default('en').describe('The language code for the voice.'),
+  language: z.string().default('fa').describe('The language code for the voice.'),
 });
 
 const TTSOutputSchema = z.object({
@@ -32,18 +31,18 @@ const textToSpeechFlow = ai.defineFlow(
     outputSchema: TTSOutputSchema,
   },
   async (input) => {
-    // Map languages to available voices
+    // Map 13 languages to available Gemini TTS voices
     const voiceMap: Record<string, string> = {
       fa: 'Algenib',
       en: 'Charon',
       ar: 'Puck',
-      zh: 'Fenrir',
-      ru: 'Aoede',
       fr: 'Cassiopeia',
       ja: 'Achernar',
-      de: 'Algenib',
+      zh: 'Fenrir',
+      ru: 'Aoede',
       es: 'Charon',
       hi: 'Puck',
+      de: 'Algenib',
       tr: 'Fenrir',
       az: 'Aoede',
       ku: 'Algenib'
