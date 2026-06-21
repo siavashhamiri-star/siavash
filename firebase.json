@@ -1,0 +1,15 @@
+
+{
+  "hosting": {
+    "source": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "frameworkPreview": true
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  }
+}
