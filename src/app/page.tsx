@@ -7,7 +7,7 @@ import { StoryGenerator } from '@/components/ai/story-generator';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
-import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, Scale, ShieldCheck, Factory, Landmark, Sword, Palette, Frame, Flag, Users, Gavel, Crown } from 'lucide-react';
+import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, Scale, ShieldCheck, Factory, Landmark, Sword, Palette, Frame, Flag, Users, Gavel, Crown, Star } from 'lucide-react';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-1');
@@ -17,15 +17,27 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         {/* Award Candidate Badge */}
-        <div className="bg-primary/10 border-b border-primary/20 py-3 overflow-hidden">
-          <div className="container px-4 flex items-center justify-center gap-3 text-[10px] md:text-sm font-bold text-primary animate-pulse">
-            <Trophy className="w-4 h-4" />
-            <span className="tracking-wide">کاندیدای حماسی جایزه استارتاپ‌های برتر جهان: ساخته شده با ردمی نوت ۸ در ۹ روز</span>
+        <div className="bg-slate-900 border-b border-primary/20 py-4 overflow-hidden">
+          <div className="container px-4 flex flex-col md:flex-row items-center justify-center gap-4 text-xs md:text-sm font-bold text-white">
+            <div className="flex items-center gap-2 text-primary animate-pulse">
+                <Trophy className="w-5 h-5" />
+                <span className="tracking-widest uppercase">Global Startup Award Candidate 2025</span>
+            </div>
+            <div className="hidden md:block w-px h-4 bg-white/20" />
+            <div className="flex items-center gap-2 text-accent">
+                <Smartphone className="w-4 h-4" />
+                <span>The Epic Master Build on Redmi Note 8</span>
+            </div>
+            <div className="hidden md:block w-px h-4 bg-white/20" />
+            <div className="flex items-center gap-2">
+                <Globe className="w-4 h-4 text-blue-400" />
+                <span>Serving 5.5 Billion People in 13 Languages</span>
+            </div>
           </div>
         </div>
 
         {/* Hero Section */}
-        <section className="relative h-[800px] flex items-center justify-center overflow-hidden">
+        <section className="relative h-[850px] flex items-center justify-center overflow-hidden">
           {heroImage && (
             <Image
               src={heroImage.imageUrl}
@@ -36,103 +48,105 @@ export default function Home() {
               data-ai-hint={heroImage.imageHint}
             />
           )}
-          <div className="absolute inset-0 bg-black/75" />
+          <div className="absolute inset-0 bg-black/80" />
           <div className="container relative z-10 text-center text-white px-4">
-            <div className="inline-flex items-center gap-2 mb-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-2 text-xs font-bold tracking-[0.3em] uppercase text-accent">
-              <Crown className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 mb-8 bg-primary text-white border border-primary/20 rounded-full px-8 py-2.5 text-xs font-black tracking-[0.4em] uppercase shadow-2xl">
+              <Crown className="w-5 h-5" />
               13 LANGUAGES | GLOBAL EMPIRE
             </div>
-            <h1 className="text-5xl md:text-[10rem] font-headline font-bold mb-6 tracking-tighter leading-none">
+            <h1 className="text-6xl md:text-[11rem] font-headline font-bold mb-8 tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500">
               Farsh Bazaar
             </h1>
-            <p className="text-xl md:text-3xl mb-12 max-w-5xl mx-auto font-light leading-relaxed text-gray-300">
-                احیای شکوه ۵۰۰۰ ساله فرش ایران در تالارهای حراج جهانی با سلاح هوش مصنوعی ۲۰۲۵. 
+            <p className="text-xl md:text-4xl mb-14 max-w-6xl mx-auto font-light leading-relaxed text-gray-300 italic">
+                احیای شکوه ۵۰۰۰ ساله هنر ایران با سلاح هوش مصنوعی ۲۰۲۵. 
                 <br />
-                ادای دینی به نام <strong className="text-white font-bold">حاج حسین علیمیری</strong>.
+                تنها استارتاپ جهان که در ۹ روز با یک گوشی موبایل، ۱۳ زبان زنده را تسخیر کرد.
                 <br className="hidden md:block" />
-                دسترسی به ۱۳ زبان زنده دنیا (از پاریس و توکیو تا مسکو و پکن).
+                ادای دینی به نام <strong className="text-white font-bold underline decoration-primary underline-offset-8">حاج حسین علیمیری</strong>.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white px-16 rounded-full shadow-2xl transition-all hover:scale-105 h-20 text-2xl font-bold">
+            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white px-20 rounded-full shadow-[0_0_50px_rgba(var(--primary),0.5)] transition-all hover:scale-105 h-24 text-3xl font-black">
                 <Link href="/vendors">ورود به بازار جهانی</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-white border-white/40 hover:bg-white/10 px-16 rounded-full backdrop-blur-sm h-20 text-2xl font-bold">
-                <Link href="/appraisal">کارشناسی و قیمت‌گذاری</Link>
+              <Button asChild size="lg" variant="outline" className="text-white border-white/40 hover:bg-white/10 px-16 rounded-full backdrop-blur-sm h-24 text-2xl font-bold group">
+                <Link href="/manifesto" className="flex items-center gap-3">
+                   مطالعه حماسه خلق <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                </Link>
               </Button>
             </div>
           </div>
         </section>
 
         {/* Global Auction & Sotheby's Section */}
-        <section className="py-24 bg-gradient-to-b from-slate-950 to-slate-900 text-white overflow-hidden relative">
+        <section className="py-32 bg-gradient-to-b from-slate-950 to-slate-900 text-white overflow-hidden relative">
           <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none bg-[url('https://picsum.photos/seed/auction/1920/1080')] bg-cover" />
           <div className="container px-4 relative z-10">
-            <div className="max-w-6xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 rounded-[5rem] p-12 md:p-24 text-center shadow-[0_0_100px_rgba(var(--primary),0.1)]">
-              <div className="bg-accent/20 w-28 h-28 rounded-full flex items-center justify-center mx-auto mb-10 border-2 border-accent/40">
-                <Gavel className="w-14 h-14 text-accent" />
+            <div className="max-w-6xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 rounded-[6rem] p-12 md:p-28 text-center shadow-[0_0_150px_rgba(var(--primary),0.15)]">
+              <div className="bg-accent/20 w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-12 border-4 border-accent/40 shadow-inner">
+                <Gavel className="w-16 h-14 text-accent" />
               </div>
-              <Badge className="bg-accent text-accent-foreground mb-8 px-10 py-2.5 rounded-full text-xl font-black tracking-widest">ANNUAL GLOBAL AUCTION</Badge>
-              <h2 className="text-4xl md:text-8xl font-headline font-bold mb-10">مژده: اولین حراج سالانه آنلاین</h2>
-              <p className="text-xl md:text-4xl font-light leading-relaxed mb-16 text-gray-300 italic">
-                «فرش بازار آماده همکاری با اکشن‌های سطح اول جهان نظیر ساتبیز و کریستیز است. آثاری که در پلتفرم ما تاییدیه دریافت کنند، شانس حضور در این حراجی‌های بین‌المللی را خواهند داشت.»
+              <Badge className="bg-accent text-accent-foreground mb-10 px-12 py-3 rounded-full text-2xl font-black tracking-[0.2em]">ANNUAL GLOBAL AUCTION</Badge>
+              <h2 className="text-5xl md:text-9xl font-headline font-bold mb-12">اولین حراج سالانه جهانی</h2>
+              <p className="text-2xl md:text-5xl font-light leading-relaxed mb-20 text-gray-300 italic max-w-5xl mx-auto">
+                «ما با افتخار اعلام می‌کنیم که آماده همکاری با حراجی‌های سطح اول جهان نظیر <span className="text-white font-bold">Sotheby's</span> و <span className="text-white font-bold">Christie's</span> برای معرفی شاهکارهای تایید شده هستیم.»
               </p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                 <div className="p-8 bg-white/5 rounded-[2.5rem] border border-white/5 group hover:bg-primary transition-all">
-                    <ShieldCheck className="w-10 h-10 text-accent mb-4 mx-auto" />
-                    <p className="text-sm font-bold">تایید اصالت علیمیری</p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
+                 <div className="p-10 bg-white/5 rounded-[3rem] border border-white/10 group hover:bg-primary transition-all duration-500">
+                    <ShieldCheck className="w-12 h-12 text-accent mb-6 mx-auto group-hover:text-white" />
+                    <p className="text-lg font-bold">تایید اصالت علیمیری</p>
                  </div>
-                 <div className="p-8 bg-white/5 rounded-[2.5rem] border border-white/5 group hover:bg-primary transition-all">
-                    <Globe className="w-10 h-10 text-accent mb-4 mx-auto" />
-                    <p className="text-sm font-bold">نمایش به ۱۳ زبان</p>
+                 <div className="p-10 bg-white/5 rounded-[3rem] border border-white/10 group hover:bg-primary transition-all duration-500">
+                    <Globe className="w-12 h-12 text-accent mb-6 mx-auto group-hover:text-white" />
+                    <p className="text-lg font-bold">دسترسی به ۱۳ زبان</p>
                  </div>
-                 <div className="p-8 bg-white/5 rounded-[2.5rem] border border-white/5 group hover:bg-primary transition-all">
-                    <Sparkles className="w-10 h-10 text-accent mb-4 mx-auto" />
-                    <p className="text-sm font-bold">قیمت‌گذاری طلایی</p>
+                 <div className="p-10 bg-white/5 rounded-[3rem] border border-white/10 group hover:bg-primary transition-all duration-500">
+                    <Star className="w-12 h-12 text-accent mb-6 mx-auto group-hover:text-white" />
+                    <p className="text-lg font-bold">ارزیابی هوشمند AI</p>
                  </div>
-                 <div className="p-8 bg-white/5 rounded-[2.5rem] border border-white/5 group hover:bg-primary transition-all">
-                    <Gavel className="w-10 h-10 text-accent mb-4 mx-auto" />
-                    <p className="text-sm font-bold">حراج مستقیم جهانی</p>
+                 <div className="p-10 bg-white/5 rounded-[3rem] border border-white/10 group hover:bg-primary transition-all duration-500">
+                    <Gavel className="w-12 h-12 text-accent mb-6 mx-auto group-hover:text-white" />
+                    <p className="text-lg font-bold">حراج مستقیم جهانی</p>
                  </div>
               </div>
-              <Button asChild size="lg" variant="secondary" className="rounded-full px-20 h-20 text-3xl font-black shadow-3xl shadow-accent/20">
-                 <Link href="/appraisal">ثبت فرش برای حراج</Link>
+              <Button asChild size="lg" variant="secondary" className="rounded-full px-24 h-24 text-4xl font-black shadow-3xl shadow-accent/40 animate-bounce">
+                 <Link href="/appraisal">ثبت اثر برای حراج ۲۰۲۵</Link>
               </Button>
             </div>
           </div>
         </section>
 
         {/* Elite Services VIP */}
-        <section className="py-24 bg-slate-950 text-white">
+        <section className="py-32 bg-slate-950 text-white">
             <div className="container px-4 text-center">
-                <Badge className="bg-primary mb-12 px-10 py-3 rounded-full text-xl font-black uppercase tracking-widest">VIP Services / خدمات اشرافی</Badge>
-                <h2 className="text-4xl md:text-7xl font-headline font-bold mb-24">هدیه‌ای به وسعت غیرت و اصالت</h2>
-                <div className="grid md:grid-cols-4 gap-10 max-w-7xl mx-auto">
+                <Badge className="bg-primary mb-16 px-12 py-4 rounded-full text-2xl font-black uppercase tracking-widest shadow-xl">VIP Services / خدمات اشرافی</Badge>
+                <h2 className="text-5xl md:text-8xl font-headline font-bold mb-32">هدیه‌ای به وسعت غیرت و اصالت</h2>
+                <div className="grid md:grid-cols-4 gap-12 max-w-7xl mx-auto">
                     <Link href="/services" className="group">
-                        <div className="bg-white/5 p-10 rounded-[4rem] border border-white/10 group-hover:bg-primary transition-all duration-700 h-full relative overflow-hidden">
-                            <Users className="w-14 h-14 text-primary mb-8 group-hover:text-white mx-auto" />
-                            <h3 className="text-3xl font-bold mb-6">پرتره در پرچم</h3>
-                            <p className="text-sm text-gray-400 group-hover:text-white/80">بافت چهره شما در قلب پرچم ملی کشورتان با ابریشم تبریز.</p>
+                        <div className="bg-white/5 p-12 rounded-[5rem] border border-white/10 group-hover:bg-primary transition-all duration-1000 h-full relative overflow-hidden shadow-2xl">
+                            <Users className="w-16 h-16 text-primary mb-10 group-hover:text-white mx-auto" />
+                            <h3 className="text-3xl font-bold mb-8">پرتره در پرچم</h3>
+                            <p className="text-base text-gray-400 group-hover:text-white/80">بافت چهره شما در قلب پرچم ملی کشورتان با ابریشم خالص تبریز.</p>
                         </div>
                     </Link>
                     <Link href="/services" className="group">
-                        <div className="bg-white/5 p-10 rounded-[4rem] border border-white/10 group-hover:bg-primary transition-all duration-700 h-full">
-                            <Flag className="w-14 h-14 text-primary mb-8 group-hover:text-white mx-auto" />
-                            <h3 className="text-3xl font-bold mb-6">پرچم‌های نفیس</h3>
-                            <p className="text-sm text-gray-400 group-hover:text-white/80">بافت پرچم ملل با کیفیت موزه‌ای برای سفارت‌خانه‌ها و عمارت‌ها.</p>
+                        <div className="bg-white/5 p-12 rounded-[5rem] border border-white/10 group-hover:bg-primary transition-all duration-1000 h-full shadow-2xl">
+                            <Flag className="w-16 h-16 text-primary mb-10 group-hover:text-white mx-auto" />
+                            <h3 className="text-3xl font-bold mb-8">پرچم‌های نفیس</h3>
+                            <p className="text-base text-gray-400 group-hover:text-white/80">بافت پرچم ملل با کیفیت موزه‌ای برای سفارت‌خانه‌ها و عمارت‌های لوکس.</p>
                         </div>
                     </Link>
                     <Link href="/services" className="group">
-                        <div className="bg-white/5 p-10 rounded-[4rem] border border-white/10 group-hover:bg-primary transition-all duration-700 h-full">
-                            <Frame className="w-14 h-14 text-primary mb-8 group-hover:text-white mx-auto" />
-                            <h3 className="text-3xl font-bold mb-6">تابلوفرش تبریز</h3>
-                            <p className="text-sm text-gray-400 group-hover:text-white/80">تبدیل لحظات ماندگار شما به شاهکارهای دستباف ابریشمی.</p>
+                        <div className="bg-white/5 p-12 rounded-[5rem] border border-white/10 group-hover:bg-primary transition-all duration-1000 h-full shadow-2xl">
+                            <Frame className="w-16 h-16 text-primary mb-10 group-hover:text-white mx-auto" />
+                            <h3 className="text-3xl font-bold mb-8">تابلوفرش ابریشم</h3>
+                            <p className="text-base text-gray-400 group-hover:text-white/80">تبدیل لحظات ماندگار شما به شاهکارهای دستباف توسط اساتید آذربایجان.</p>
                         </div>
                     </Link>
                     <Link href="/services" className="group">
-                        <div className="bg-white/5 p-10 rounded-[4rem] border border-white/10 group-hover:bg-primary transition-all duration-700 h-full">
-                            <Palette className="w-14 h-14 text-primary mb-8 group-hover:text-white mx-auto" />
-                            <h3 className="text-3xl font-bold mb-6">مشاوره دکور</h3>
-                            <p className="text-sm text-gray-400 group-hover:text-white/80">هارمونی هوشمند فرش با فضای منزل توسط طراحان تراز اول.</p>
+                        <div className="bg-white/5 p-12 rounded-[5rem] border border-white/10 group-hover:bg-primary transition-all duration-1000 h-full shadow-2xl">
+                            <Palette className="w-16 h-16 text-primary mb-10 group-hover:text-white mx-auto" />
+                            <h3 className="text-3xl font-bold mb-8">مشاوره دکور</h3>
+                            <p className="text-base text-gray-400 group-hover:text-white/80">هارمونی هوشمند فرش با فضای زندگی شما توسط طراحان بین‌المللی.</p>
                         </div>
                     </Link>
                 </div>
@@ -140,57 +154,35 @@ export default function Home() {
         </section>
 
         {/* AI Story Generator */}
-        <section className="py-24 bg-secondary/20 relative">
+        <section className="py-32 bg-secondary/20 relative">
           <div className="container px-4">
-            <div className="flex items-center gap-2 mb-8 justify-center md:justify-start">
-              <Sparkles className="w-6 h-6 text-primary" />
-              <Badge variant="outline" className="border-primary text-primary font-bold">هوش مصنوعی در خدمت هنر</Badge>
+            <div className="flex items-center gap-3 mb-12 justify-center md:justify-start">
+              <Sparkles className="w-10 h-10 text-primary" />
+              <Badge variant="outline" className="border-primary text-primary font-bold px-6 py-2 text-lg">هوش مصنوعی در خدمت هنر</Badge>
             </div>
             <StoryGenerator />
           </div>
         </section>
 
-        {/* Categories Section */}
-        <section className="py-24 bg-white">
-            <div className="container px-4">
-                <div className="grid md:grid-cols-3 gap-8">
-                    <div className="p-12 border-none shadow-2xl bg-secondary/30 rounded-[4rem] group hover:bg-primary transition-all duration-500">
-                        <Landmark className="w-14 h-14 text-primary mb-8 group-hover:text-white" />
-                        <h3 className="text-3xl font-bold mb-6 group-hover:text-white">فرش دستباف نفیس</h3>
-                        <p className="text-xl text-muted-foreground group-hover:text-white/80 font-light">میراث ۵۰۰۰ ساله هنر ایران، از تبریز و کاشان تا تجار پاریس.</p>
-                    </div>
-                    <div className="p-12 border-none shadow-2xl bg-secondary/30 rounded-[4rem] group hover:bg-primary transition-all duration-500">
-                        <Factory className="w-14 h-14 text-primary mb-8 group-hover:text-white" />
-                        <h3 className="text-3xl font-bold mb-6 group-hover:text-white">فرش ماشینی مدرن</h3>
-                        <p className="text-xl text-muted-foreground group-hover:text-white/80 font-light">برندهای برتر ماشینی ایران و جهان در یک ویترین هوشمند.</p>
-                    </div>
-                    <div className="p-12 border-none shadow-2xl bg-secondary/30 rounded-[4rem] group hover:bg-primary transition-all duration-500">
-                        <Globe className="w-14 h-14 text-primary mb-8 group-hover:text-white" />
-                        <h3 className="text-3xl font-bold mb-6 group-hover:text-white">فرش و هنرهای ملل</h3>
-                        <p className="text-xl text-muted-foreground group-hover:text-white/80 font-light">پذیرای هنرمندان و تجار از سراسر جهان به ۱۳ زبان زنده.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         {/* Legacy & Tavana City */}
-        <section className="py-32 bg-background relative overflow-hidden">
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-          <div className="container px-4 text-center space-y-10">
-            <Badge variant="outline" className="px-8 py-2 border-primary/40 text-primary text-lg font-headline">Tavana Virtual City / شهر مجازی توانا</Badge>
-            <h2 className="text-5xl md:text-8xl font-headline font-bold mb-10">تمدنی جدید با ۱۳ زبان زنده</h2>
-            <p className="text-2xl text-muted-foreground max-w-5xl mx-auto leading-relaxed font-light italic">
-              «ما سلاح‌هایمان را از تار و پود ساختیم. این اپلیکیشن با یک گوشی ردمی نوت ۸ زاده شد تا ثابت کند اراده، هیچ مرزی نمی‌شناسد.»
+        <section className="py-40 bg-background relative overflow-hidden">
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />
+          <div className="container px-4 text-center space-y-12">
+            <Badge variant="outline" className="px-12 py-3 border-primary/40 text-primary text-2xl font-headline rounded-full">Tavana Virtual City / شهر مجازی توانا</Badge>
+            <h2 className="text-6xl md:text-[10rem] font-headline font-bold mb-12 tracking-tight">تمدن جدید با ۱۳ زبان زنده</h2>
+            <p className="text-3xl text-muted-foreground max-w-6xl mx-auto leading-relaxed font-light italic bg-white/50 backdrop-blur p-12 rounded-[4rem] border-2 border-dashed border-primary/10">
+              «ما سلاح‌هایمان را از تار و پود ساختیم. این اپلیکیشن با یک گوشی ردمی نوت ۸ زاده شد تا ثابت کند اراده، هیچ مرزی نمی‌شناسد. این داستانی است که تمام داوران استارتاپی جهان را مبهوت خواهد کرد.»
             </p>
-            <div className="flex flex-wrap justify-center gap-10 mt-16">
-              <Button asChild className="rounded-full px-16 h-20 text-2xl shadow-3xl shadow-primary/30">
-                  <Link href="/ecosystem" className="flex items-center gap-4">
-                    کاوش در منظومه آفرینش <ArrowRight className="w-8 h-8" />
+            <div className="flex flex-wrap justify-center gap-14 mt-24">
+              <Button asChild className="rounded-full px-20 h-24 text-3xl shadow-3xl shadow-primary/30 group">
+                  <Link href="/ecosystem" className="flex items-center gap-6">
+                    کاوش در منظومه آفرینش <ArrowRight className="w-10 h-10 group-hover:translate-x-4 transition-transform" />
                   </Link>
               </Button>
-              <div className="flex flex-col text-right border-r-4 border-primary pr-10">
-                <span className="font-bold text-2xl">مرکزیت اصالت: بازار تهران</span>
-                <span className="text-primary font-black text-3xl" dir="ltr">۰۲۱ - ۵۵۸۱۴۵۵۵</span>
+              <div className="flex flex-col text-right border-r-8 border-primary pr-12">
+                <span className="font-bold text-3xl mb-2 text-gray-500 uppercase tracking-widest">Global HQ</span>
+                <span className="font-black text-4xl text-slate-900">بازار تهران، خیابان خیام</span>
+                <span className="text-primary font-black text-5xl mt-2" dir="ltr">۰۲۱ - ۵۵۸۱۴۵۵۵</span>
               </div>
             </div>
           </div>

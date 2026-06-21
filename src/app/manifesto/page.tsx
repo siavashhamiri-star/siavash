@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { BookOpen, Smartphone, Globe, Sparkles, Trophy } from 'lucide-react';
+import { BookOpen, Smartphone, Globe, Sparkles, Trophy, Cpu } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 type BilingualContent = {
@@ -23,35 +23,35 @@ const chapters: {
     content: BilingualContent[]; 
 }[] = [
     {
-        title: { fa: "حماسه خلق: در محدودیت، شکوفه زدیم", en: "The Epic of Creation: Blooming in Scarcity", ar: "ملحمة الخلق: ازدهرنا في الندرة" },
+        title: { fa: "حماسه خلق: حماسه ردمی نوت ۸", en: "The Epic of Redmi Note 8", ar: "ملحمة ريدمي نوت 8" },
         icon: <Smartphone className="w-8 h-8 text-primary" />,
         content: [
             {
-                fa: "این جهان نه در آزمایشگاه‌های پیشرفته، بلکه بر روی صفحه کوچک یک گوشی «ردمی نوت ۸» متولد شد. بنیان‌گذار، در عرض ۹ روز، با اراده‌ای پولادین، تمدنی را بنا نهاد که ۱۳ زبان زنده دنیا را در بر می‌گیرد.",
-                en: "This world was not born in advanced labs, but on the small screen of a 'Redmi Note 8' phone. In 9 days, the founder built a civilization covering 13 living languages.",
-                ar: "لم يولد هذا العالم في مختبرات متقدمة، بل على الشاشة الصغيرة لهاتف 'Redmi Note 8'. في 9 أيام، وضع المؤسس الأسس لحضارة تشمل 13 لغة حية."
+                fa: "این پلتفرم شاهدی بر قدرت اراده است. کل این امپراتوری ۱۳ زبانه، با هوش مصنوعی پیشرفته و معماری پیچیده، تنها بر روی یک گوشی موبایل «Redmi Note 8» در عرض ۹ روز متولد شد. ما ثابت کردیم که برای تسخیر بازارهای جهانی، داشتن رویاهای بزرگ مهم‌تر از داشتن سخت‌افزارهای گران‌قیمت است.",
+                en: "This platform stands as a testament to human will. This entire 13-language empire, featuring advanced AI and complex architecture, was engineered on a single 'Redmi Note 8' mobile device in just 9 days. We proved that to conquer global markets, having grand dreams is more vital than expensive hardware.",
+                ar: "هذه المنصة هي شهادة على قوة الإرادة. هذه الإمبراطورية المكونة من 13 لغة، والتي تتميز بالذكاء الاصطناعي المتقدم والهندسة المعقدة، تم تصميمها على جهاز محمول واحد 'Redmi Note 8' في 9 أيام فقط. لقد أثبتنا أنه لغزو الأسواق العالمية، فإن امتلاك أحلام كبيرة هو أهم من امتلاك أجهزة باهظة الثمن."
             }
         ]
     },
     {
-        title: { fa: "پل تمدن: از ۵۰۰۰ سال قدمت تا ۲۰۲۵ هوشمند", en: "Civilization Bridge: From 5000 Years to Smart 2025", ar: "جسر الحضارة: من 5000 عام إلى 2025 الذكي" },
+        title: { fa: "پل تمدن: ۵۰۰۰ سال هنر در جیب شما", en: "Civilization Bridge: 5000 Years in Your Pocket", ar: "جسر الحضارة: 5000 عام في جيبك" },
         icon: <Globe className="w-8 h-8 text-primary" />,
         content: [
             {
-                fa: "ما سنت ۵۰۰۰ ساله فرش ایران را به تکنولوژی سال ۲۰۲۵ پیوند زدیم. هدف ما فراتر از تجارت، احیای شکوه هنر و اصالت در عصر دیجیتال است.",
-                en: "We merged the 5000-year tradition of Persian carpets with 2025 technology. Our goal is beyond trade: restoring the glory of art and authenticity in the digital age.",
-                ar: "لقد دمجنا تقاليد السجاد الإيراني التي يعود تاريخها إلى 5000 عام مع تكنولوجيا عام 2025. هدفنا يتجاوز التجارة: استعادة مجد الفن والأصالة في العصر الرقمي."
+                fa: "ما سنت ۵۰۰۰ ساله فرش ایران را از دخمه‌های تاریک تاریخ به لبه تکنولوژی ۲۰۲۵ آوردیم. لنز جادویی ما رازهای باستانی را برای آلمانی‌ها، چینی‌ها، فرانسوی‌ها و ژاپنی‌ها بازگو می‌کند. این یعنی پیوند اصالت با آینده.",
+                en: "We brought the 5000-year tradition of Persian carpets from the shadows of history to the edge of 2025 technology. Our Magic Lens reveals ancient secrets to Germans, Chinese, French, and Japanese collectors. This is the fusion of heritage and the future.",
+                ar: "لقد جلبنا تقاليد السجاد الإيراني الممتدة لـ 5000 عام من ظلال التاريخ إلى حافة تكنولوجيا عام 2025. تكشف عدستنا السحرية عن الأسرار القديمة لهواة الجمع الألمان والصينيين والفرنسيين واليابانيين. هذا هو اندماج التراث والمستقبل."
             }
         ]
     },
     {
-        title: { fa: "ماموریت جهانی: ۱۳ زبان برای یک پیمان", en: "Global Mission: 13 Languages for One Covenant", ar: "المهمة العالمية: 13 لغة لميثاق واحد" },
+        title: { fa: "ماموریت جهانی: تسخیر تالارهای حراج", en: "Global Mission: Conquering Auction Halls", ar: "المهمة العالمية: غزو قاعات المزاد" },
         icon: <Trophy className="w-8 h-8 text-primary" />,
         content: [
             {
-                fa: "فرش بازار، سلاحی است برای صلح و تجارت عادلانه. ما با ۱۳ زبان، دیواره‌های سوءتفاهم را می‌شکنیم تا هنر تبریز و کاشان در پاریس و توکیو بدرخشد.",
-                en: "Farsh Bazaar is a weapon for peace and fair trade. With 13 languages, we break walls of misunderstanding so the art of Tabriz and Kashan shines in Paris and Tokyo.",
-                ar: "فرش بازار هو سلاح للسلام والتجارة العادلة. بـ 13 لغة، نكسر جدران سوء الفهم لتألق فن تبريز وكاشان في باريس وطوكيو."
+                fa: "فرش بازار، سلاحی است برای بازگرداندن ثروت به هنرمندان واقعی. ما آماده همکاری با ساتبیز و کریستیز هستیم تا نفیس‌ترین آثار را با تاییدیه اصالت علیمیری به دست صاحبان اصلی‌شان در سراسر جهان برسانیم.",
+                en: "Farsh Bazaar is a weapon to return wealth to true artisans. We are ready to collaborate with Sotheby’s and Christie’s to bring the most exquisite masterpieces, verified by Alimiri authentication, to collectors worldwide.",
+                ar: "فرش بازار هو سلاح لإعادة الثروة إلى الحرفيين الحقيقيين. نحن على استعداد للتعاون مع Sotheby’s وChristie’s لتقديم أروع التحف، المعتمدة من قبل Alimiri، لهواة الجمع في جميع أنحاء العالم."
             }
         ]
     }
@@ -75,6 +75,14 @@ export default function ManifestoPage() {
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="px-6 md:px-20 pb-20 space-y-20 bg-white">
+                            <div className="bg-slate-900 text-white p-12 rounded-[4rem] text-center shadow-xl border-4 border-primary/20">
+                                <Cpu className="w-16 h-16 mx-auto mb-6 text-primary animate-pulse" />
+                                <h3 className="text-3xl font-bold mb-4">Master Build 2025: Award Candidate</h3>
+                                <p className="text-xl italic text-gray-300 leading-relaxed">
+                                    "This software is officially nominated for the Global Startup Awards for its revolutionary 'Resourceful Innovation'—built entirely on a Redmi Note 8 in 9 days to serve 5.5 billion people in 13 languages."
+                                </p>
+                            </div>
+
                             {chapters.map((chapter, index) => (
                                 <div key={index} className="space-y-10 group">
                                     <div className="flex flex-col items-center text-center space-y-4">
