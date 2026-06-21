@@ -8,7 +8,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Landmark, MapPin, Phone, ShieldCheck, Sparkles, Smartphone, ArrowLeftRight } from 'lucide-react';
+import { Landmark, MapPin, Phone, ShieldCheck, Sparkles, Smartphone, Mail, ArrowLeftRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -18,7 +18,7 @@ export default function AboutPage() {
         <Header />
         <main className="flex-1 bg-secondary/20">
           <div className="container mx-auto px-4 py-16">
-            <Card className="max-w-4xl mx-auto shadow-2xl border-none overflow-hidden rounded-[3rem]">
+            <Card className="max-w-5xl mx-auto shadow-2xl border-none overflow-hidden rounded-[3rem]">
               <div className="bg-primary h-3" />
               <CardHeader className="text-center p-8 md:p-16">
                 <div className="mx-auto bg-primary/10 p-5 rounded-full w-fit mb-6">
@@ -33,18 +33,24 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent className="px-8 md:px-16 pb-16">
                 
-                <div className="grid md:grid-cols-2 gap-8 mb-16">
-                    <div className="p-10 bg-white rounded-[2rem] shadow-sm border border-primary/5 flex flex-col items-center text-center group hover:border-primary/20 transition-all">
+                <div className="grid md:grid-cols-3 gap-6 mb-16">
+                    <div className="p-8 bg-white rounded-[2.5rem] shadow-sm border border-primary/5 flex flex-col items-center text-center group hover:border-primary/20 transition-all">
                         <MapPin className="w-10 h-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
-                        <h3 className="font-headline font-bold text-2xl mb-2">مرکزیت اصالت (HQ)</h3>
-                        <p className="text-xl font-bold">خیابان خیام شمالی، پلاک ۴۸</p>
-                        <p className="text-sm text-muted-foreground mt-2">48 Khayyam North Ave, Tehran, Iran</p>
+                        <h3 className="font-headline font-bold text-xl mb-2">مرکزیت اصالت (HQ)</h3>
+                        <p className="text-lg font-bold">خیابان خیام شمالی، پلاک ۴۸</p>
+                        <p className="text-xs text-muted-foreground mt-2">48 Khayyam North Ave, Tehran</p>
                     </div>
-                    <div className="p-10 bg-white rounded-[2rem] shadow-sm border border-primary/5 flex flex-col items-center text-center group hover:border-primary/20 transition-all">
+                    <div className="p-8 bg-white rounded-[2.5rem] shadow-sm border border-primary/5 flex flex-col items-center text-center group hover:border-primary/20 transition-all">
                         <Phone className="w-10 h-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
-                        <h3 className="font-headline font-bold text-2xl mb-2">تماس مستقیم (Direct)</h3>
-                        <p className="text-xl font-bold" dir="ltr">۰۲۱ - ۵۵۸۱۴۵۵۵</p>
-                        <p className="text-sm text-muted-foreground mt-2">International Trade Line</p>
+                        <h3 className="font-headline font-bold text-xl mb-2">تماس مستقیم</h3>
+                        <p className="text-lg font-bold" dir="ltr">۰۲۱ - ۵۵۸۱۴۵۵۵</p>
+                        <p className="text-xs text-muted-foreground mt-2">International Trade Line</p>
+                    </div>
+                    <div className="p-8 bg-white rounded-[2.5rem] shadow-sm border border-primary/5 flex flex-col items-center text-center group hover:border-primary/20 transition-all">
+                        <Mail className="w-10 h-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
+                        <h3 className="font-headline font-bold text-xl mb-2">ارتباط دیجیتال</h3>
+                        <p className="text-lg font-bold" dir="ltr">info@fbnewmeta.com</p>
+                        <p className="text-xs text-muted-foreground mt-2">Official Inquiry Email</p>
                     </div>
                 </div>
 
@@ -55,10 +61,10 @@ export default function AboutPage() {
                     <p className="text-lg leading-relaxed text-justify">
                         فرش بازار، اولین ستون از اکوسیستم بزرگ <span className="font-bold text-primary">آفرینش (Afarinesh)</span> و شهر مجازی تواناست. بنیان‌گذار این پروژه، با الهام از همت والای اسطوره‌ی بازار، <span className="font-bold">حاج حسین علیمیری</span>، ثابت کرد که حتی با یک گوشی کوچک (Redmi Note 8)، می‌توان دنیاهایی به وسعت ۷ زبان و مرزهای هوش مصنوعی خلق کرد.
                     </p>
-                    <div className="bg-primary/5 p-8 rounded-3xl border border-primary/10 mt-12">
-                        <h4 className="text-primary font-bold text-xl mb-4">International Gateway</h4>
-                        <div className="grid gap-4">
-                          <p className="text-sm italic" dir="ltr">
+                    <div className="bg-primary/5 p-10 rounded-[3rem] border border-primary/10 mt-12">
+                        <h4 className="text-primary font-bold text-2xl mb-6">International Gateway</h4>
+                        <div className="grid gap-6">
+                          <p className="text-sm italic leading-relaxed" dir="ltr">
                             Our mission bridges the gap between traditional Iranian artistry and the global market. 
                             Whether in Tehran, Berlin, or Dubai, Farsh Bazaar is your trusted partner.
                           </p>

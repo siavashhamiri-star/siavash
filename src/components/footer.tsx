@@ -2,7 +2,7 @@
 'use client';
 import Link from 'next/link';
 import { Logo } from './logo';
-import { Smartphone, Heart, ExternalLink, HeartPulse, MapPin, Phone, Globe, BookOpen, Trophy } from 'lucide-react';
+import { Smartphone, Heart, ExternalLink, HeartPulse, MapPin, Phone, Globe, BookOpen, Trophy, Mail } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export function Footer() {
@@ -29,7 +29,7 @@ export function Footer() {
               این پلتفرم، اولین ستون از اکوسیستم <span className="font-bold text-primary">«FB New Meta»</span> و <span className="font-bold text-primary">«شهر مجازی توانا»</span> است. 
               میراثی برآمده از عشق و همت عالی، تقدیم به نام بزرگ <span className="font-bold">حاج حسین علیمیری</span>.
             </p>
-            <div className="space-y-3 bg-white/50 p-4 rounded-2xl border border-primary/5 backdrop-blur-sm">
+            <div className="space-y-3 bg-white/50 p-6 rounded-2xl border border-primary/5 backdrop-blur-sm shadow-sm">
                 <div className="flex items-center gap-3 text-sm font-bold text-foreground/80">
                     <MapPin className="w-4 h-4 text-primary" />
                     <span>بازار تهران، خیابان خیام شمالی، پلاک ۴۸</span>
@@ -37,6 +37,10 @@ export function Footer() {
                 <div className="flex items-center gap-3 text-sm font-bold text-primary">
                     <Phone className="w-4 h-4" />
                     <span dir="ltr">۰۲۱ - ۵۵۸۱۴۵۵۵</span>
+                </div>
+                <div className="flex items-center gap-3 text-sm font-bold text-foreground/80">
+                    <Mail className="w-4 h-4 text-primary" />
+                    <span dir="ltr">info@fbnewmeta.com</span>
                 </div>
             </div>
           </div>

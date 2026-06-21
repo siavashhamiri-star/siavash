@@ -8,7 +8,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Landmark, HeartPulse, BrainCircuit, BookOpen, Sparkles, Globe, ArrowRight, Phone, MapPin, Factory, Sword } from 'lucide-react';
+import { Landmark, HeartPulse, BrainCircuit, BookOpen, Sparkles, Globe, ArrowRight, Phone, MapPin, Factory, Sword, Mail } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -147,9 +147,16 @@ export default function EcosystemPage() {
                         <p className="text-2xl md:text-3xl font-light mb-16 max-w-4xl mx-auto leading-relaxed">
                             ما در خیابان خیام شمالی، پلاک ۴۸، مرکز فرماندهی این سلاح دیجیتال را بنا کردیم. از تمام تولیدکنندگان فرش ماشینی و تجار بین‌المللی دعوت می‌کنیم تا به این منظومه بپیوندند.
                         </p>
-                        <div className="flex flex-wrap justify-center gap-12 text-2xl font-bold">
-                            <div className="flex items-center gap-4 bg-white/10 px-8 py-4 rounded-3xl backdrop-blur-md"><Phone className="w-10 h-10" /> ۵۵۸۱۴۵۵۵</div>
-                            <div className="flex items-center gap-4 bg-white/10 px-8 py-4 rounded-3xl backdrop-blur-md"><MapPin className="w-10 h-10" /> بازار تهران، خیابان خیام</div>
+                        <div className="flex flex-wrap justify-center gap-8 md:gap-12 text-xl md:text-2xl font-bold">
+                            <div className="flex items-center gap-4 bg-white/10 px-8 py-4 rounded-3xl backdrop-blur-md">
+                                <Phone className="w-8 h-8" /> ۵۵۸۱۴۵۵۵
+                            </div>
+                            <div className="flex items-center gap-4 bg-white/10 px-8 py-4 rounded-3xl backdrop-blur-md">
+                                <Mail className="w-8 h-8" /> info@fbnewmeta.com
+                            </div>
+                            <div className="flex items-center gap-4 bg-white/10 px-8 py-4 rounded-3xl backdrop-blur-md">
+                                <MapPin className="w-8 h-8" /> بازار تهران، خیابان خیام
+                            </div>
                         </div>
                     </div>
                 </div>
