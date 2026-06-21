@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -12,7 +11,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useUser, useFirestore } from '@/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { toast } from '@/hooks/use-toast';
-import { Palette, Image as ImageIcon, Loader2, Sparkles, Sofa, Frame, MapPin, Phone, Flag } from 'lucide-react';
+import { Palette, Image as ImageIcon, Loader2, Sparkles, Sofa, Frame, MapPin, Phone, Flag, UserCircle } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -45,7 +44,7 @@ export default function PremiumServicesPage() {
         toast({ title: "لطفاً نوع سرویس را انتخاب کنید.", variant: "destructive" });
         return;
     }
-    // For flag service, image is optional as we know the flag design, but recommended
+    
     if (serviceType !== 'flag' && !imageDataUri) {
         toast({ title: "لطفاً تصویر مورد نظر را آپلود کنید.", variant: "destructive" });
         return;
@@ -85,7 +84,7 @@ export default function PremiumServicesPage() {
              </div>
              <h1 className="text-4xl md:text-7xl font-headline font-bold text-primary">سرویس‌های اشرافی آفرینش</h1>
              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                از مشاوره دکوراسیون تا بافت پرچم‌های ملی با ابریشم تبریز. ما هنر ایران را با هویت جهانی شما پیوند می‌زنیم.
+                از مشاوره دکوراسیون تا بافت پرتره شخصی در میان پرچم ملی. ما هنر ایران را با هویت جهانی شما پیوند می‌زنیم.
              </p>
           </div>
 
@@ -98,7 +97,7 @@ export default function PremiumServicesPage() {
                 <CardHeader className="p-8 text-center">
                     <Sofa className={`w-12 h-12 mx-auto mb-4 ${serviceType === 'decor' ? 'text-primary' : 'text-muted-foreground'}`} />
                     <CardTitle className="text-2xl font-headline">مشاوره چیدمان</CardTitle>
-                    <CardDescription className="text-sm">انتخاب هوشمندانه فرش بر اساس هارمونی رنگی فضای شما.</CardDescription>
+                    <CardDescription className="text-sm">انتخاب هوشمندانه فرش بر اساس هارمونی فضای شما.</CardDescription>
                 </CardHeader>
                 <CardContent className="p-8 pt-0 text-center text-[10px] text-muted-foreground leading-relaxed">
                     تصویری از فضا بفرستید تا کارشناسان هنری ما بهترین ابعاد و طرح‌ها را پیشنهاد دهند.
@@ -113,25 +112,28 @@ export default function PremiumServicesPage() {
                 <CardHeader className="p-8 text-center">
                     <Frame className={`w-12 h-12 mx-auto mb-4 ${serviceType === 'tableau' ? 'text-primary' : 'text-muted-foreground'}`} />
                     <CardTitle className="text-2xl font-headline">تابلوفرش سفارشی</CardTitle>
-                    <CardDescription className="text-sm">تبدیل عکس‌های شخصی و پرتره‌ها به آثار نفیس دستباف ابریشم.</CardDescription>
+                    <CardDescription className="text-sm">تبدیل عکس‌های شخصی به آثار نفیس دستباف ابریشم.</CardDescription>
                 </CardHeader>
                 <CardContent className="p-8 pt-0 text-center text-[10px] text-muted-foreground leading-relaxed">
-                    خاطرات خود را با دستان هنرمندان تبریز جاودانه کنید. با بهترین متریال و ظرافت بافت.
+                    خاطرات و چهره‌های عزیزان خود را با دستان هنرمندان تبریز جاودانه کنید.
                 </CardContent>
               </Card>
 
-              {/* National Flag Service */}
+              {/* National Flag + Portrait Service */}
               <Card 
                 className={`cursor-pointer transition-all duration-500 border-4 ${serviceType === 'flag' ? 'border-primary shadow-2xl scale-105' : 'border-transparent hover:border-primary/20'}`}
                 onClick={() => setServiceType('flag')}
               >
                 <CardHeader className="p-8 text-center">
-                    <Flag className={`w-12 h-12 mx-auto mb-4 ${serviceType === 'flag' ? 'text-primary' : 'text-muted-foreground'}`} />
-                    <CardTitle className="text-2xl font-headline">پرچم‌های ملل (نفیس)</CardTitle>
-                    <CardDescription className="text-sm">بافت پرچم کشور شما با ابریشم خالص تبریز توسط اساتید تراز اول.</CardDescription>
+                    <div className="relative mx-auto mb-4">
+                        <Flag className={`w-12 h-12 ${serviceType === 'flag' ? 'text-primary' : 'text-muted-foreground'}`} />
+                        <UserCircle className={`w-6 h-6 absolute -bottom-1 -right-1 bg-white rounded-full ${serviceType === 'flag' ? 'text-accent' : 'text-muted-foreground'}`} />
+                    </div>
+                    <CardTitle className="text-2xl font-headline">پرچم ملی و پرتره</CardTitle>
+                    <CardDescription className="text-sm">بافت تصویر شما در میان پرچم کشورتان با ابریشم خالص.</CardDescription>
                 </CardHeader>
                 <CardContent className="p-8 pt-0 text-center text-[10px] text-muted-foreground leading-relaxed">
-                    نمادی از هویت ملی شما در قالب یک اثر هنری دستباف. هدیه‌ای دیپلماتیک و ماندگار.
+                    نمادی باشکوه از هویت ملی و فردی شما. هدیه‌ای دیپلماتیک و بی‌نظیر از قلب تبریز.
                 </CardContent>
               </Card>
           </div>
@@ -141,16 +143,16 @@ export default function PremiumServicesPage() {
                 <CardHeader className="p-10">
                     <CardTitle className="text-3xl font-headline flex items-center gap-4">
                         {serviceType === 'decor' ? <Sofa className="w-8 h-8 text-primary" /> : serviceType === 'tableau' ? <Frame className="w-8 h-8 text-primary" /> : <Flag className="w-8 h-8 text-primary" />}
-                        ثبت درخواست {serviceType === 'flag' ? 'بافت پرچم ملی' : 'سرویس تخصصی'}
+                        ثبت درخواست {serviceType === 'flag' ? 'بافت پرچم و پرتره شخصی' : 'سرویس تخصصی'}
                     </CardTitle>
-                    <CardDescription>جزئیات و تصاویر خود را برای بررسی تیم فنی و هنری ارسال نمایید.</CardDescription>
+                    <CardDescription>جزئیات و تصاویر خود (عکس خود، خانواده یا عزیزان) را برای بررسی تیم فنی و هنری ارسال نمایید.</CardDescription>
                 </CardHeader>
                 <CardContent className="p-10 pt-0">
                     <form onSubmit={handleSubmit} className="grid gap-8">
                         <div className="grid gap-2">
                             <Label className="text-lg font-bold">توضیحات تکمیلی</Label>
                             <Textarea 
-                                placeholder={serviceType === 'flag' ? "نام کشور و ابعاد مورد نظر را ذکر کنید (مثال: پرچم فرانسه، ۱ در ۱.۵ متر)..." : "جزئیات مورد نظر خود را بنویسید..."}
+                                placeholder={serviceType === 'flag' ? "نام کشور و ابعاد مورد نظر را ذکر کنید (مثال: پرچم فرانسه با عکس فرزندم در میان آن، ۱ در ۱.۵ متر)..." : "جزئیات مورد نظر خود را بنویسید..."}
                                 rows={5}
                                 value={description}
                                 onChange={e => setDescription(e.target.value)}
@@ -159,7 +161,7 @@ export default function PremiumServicesPage() {
                         </div>
 
                         <div className="grid gap-2">
-                            <Label className="text-lg font-bold">آپلود تصویر (اختیاری برای پرچم، الزامی برای سایرین)</Label>
+                            <Label className="text-lg font-bold">آپلود تصویر (عکس خود یا عزیزانتان)</Label>
                             <div className="flex flex-col items-center justify-center w-full h-80 border-4 border-dashed border-primary/20 rounded-[2.5rem] bg-secondary/5 overflow-hidden group hover:border-primary/40 transition-all">
                                 {imageDataUri ? (
                                     <div className="relative w-full h-full">
@@ -170,7 +172,7 @@ export default function PremiumServicesPage() {
                                     <label className="flex flex-col items-center justify-center w-full h-full cursor-pointer">
                                         <ImageIcon className="w-16 h-16 text-primary/30 mb-4 group-hover:scale-110 transition-transform" />
                                         <span className="font-bold text-xl">انتخاب و آپلود فایل</span>
-                                        <p className="text-sm text-muted-foreground mt-2">تصویر با کیفیت باعث دقت بیشتر در اجرا می‌شود.</p>
+                                        <p className="text-sm text-muted-foreground mt-2">تصویر با کیفیت باعث دقت بیشتر در بافت چهره می‌شود.</p>
                                         <input type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
                                     </label>
                                 )}

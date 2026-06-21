@@ -1,4 +1,3 @@
-
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Button } from '@/components/ui/button';
@@ -7,7 +6,7 @@ import { StoryGenerator } from '@/components/ai/story-generator';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
-import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, Scale, ShieldCheck, Factory, Landmark, Sword, Palette, Frame, Flag } from 'lucide-react';
+import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, Scale, ShieldCheck, Factory, Landmark, Sword, Palette, Frame, Flag, UserCircle } from 'lucide-react';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-1');
@@ -57,7 +56,7 @@ export default function Home() {
                 <Link href="/vendors">ورود به بازار جهانی (۱۳ زبان)</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-white border-white/40 hover:bg-white/10 px-12 rounded-full backdrop-blur-sm h-16 text-xl">
-                <Link href="/services">سفارش تابلوفرش و پرچم‌های نفیس</Link>
+                <Link href="/services">سفارش پرچم و تابلوفرش نفیس</Link>
               </Button>
             </div>
           </div>
@@ -79,15 +78,18 @@ export default function Home() {
                     <Link href="/services" className="group">
                         <div className="bg-white/5 p-10 rounded-[3rem] border border-white/10 group-hover:bg-primary transition-all duration-500 h-full">
                             <Frame className="w-16 h-16 text-primary mb-6 group-hover:text-white mx-auto" />
-                            <h3 className="text-3xl font-bold mb-4">تابلوفرش سفارشی</h3>
-                            <p className="text-gray-400 group-hover:text-white/80">تبدیل عکس‌های شخصی به شاهکارهای دستباف ابریشم تبریز.</p>
+                            <h3 className="text-3xl font-bold mb-4">تابلوفرش شخصی</h3>
+                            <p className="text-gray-400 group-hover:text-white/80">تبدیل عکس‌های خانوادگی به شاهکارهای دستباف ابریشم تبریز.</p>
                         </div>
                     </Link>
                     <Link href="/services" className="group">
                         <div className="bg-white/5 p-10 rounded-[3rem] border border-white/10 group-hover:bg-primary transition-all duration-500 h-full">
-                            <Flag className="w-16 h-16 text-primary mb-6 group-hover:text-white mx-auto" />
-                            <h3 className="text-3xl font-bold mb-4">پرچم‌های نفیس</h3>
-                            <p className="text-gray-400 group-hover:text-white/80">بافت پرچم کشور شما با ابریشم خالص و ارسال به سراسر جهان.</p>
+                            <div className="relative mx-auto mb-6 w-16 h-16">
+                                <Flag className="w-16 h-16 text-primary group-hover:text-white" />
+                                <UserCircle className="w-6 h-6 absolute -bottom-1 -right-1 bg-slate-950 rounded-full text-accent group-hover:text-white" />
+                            </div>
+                            <h3 className="text-3xl font-bold mb-4">پرچم و پرتره</h3>
+                            <p className="text-gray-400 group-hover:text-white/80">بافت تصویر شما در قلب پرچم ملی‌تان با ابریشم خالص تبریز.</p>
                         </div>
                     </Link>
                 </div>
