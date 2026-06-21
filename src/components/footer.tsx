@@ -1,7 +1,7 @@
 
 import Link from 'next/link';
 import { Logo } from './logo';
-import { Sparkles, Smartphone, Heart, ExternalLink, HeartPulse, MapPin, Phone, Globe } from 'lucide-react';
+import { Smartphone, Heart, ExternalLink, HeartPulse, MapPin, Phone, Globe } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -33,7 +33,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* 7-Language Reach */}
+          {/* Languages - Core 3 for Ads, others for UI */}
           <div className="space-y-4">
             <h4 className="font-headline font-bold text-lg flex items-center gap-2">
               <Globe className="w-4 h-4 text-primary" />

@@ -8,7 +8,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { HeartHandshake, BookHeart, Landmark, Smartphone, MapPin, Phone, ShieldCheck, Sparkles } from 'lucide-react';
+import { Landmark, MapPin, Phone, ShieldCheck, Sparkles, Smartphone, ArrowLeftRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -55,6 +55,17 @@ export default function AboutPage() {
                     <p className="text-lg leading-relaxed text-justify">
                         فرش بازار، اولین ستون از اکوسیستم بزرگ <span className="font-bold text-primary">آفرینش (Afarinesh)</span> و شهر مجازی تواناست. بنیان‌گذار این پروژه، با الهام از همت والای اسطوره‌ی بازار، <span className="font-bold">حاج حسین علیمیری</span>، ثابت کرد که حتی با یک گوشی کوچک (Redmi Note 8)، می‌توان دنیاهایی به وسعت ۷ زبان و مرزهای هوش مصنوعی خلق کرد.
                     </p>
+                    <div className="bg-primary/5 p-8 rounded-3xl border border-primary/10 mt-12">
+                        <h4 className="text-primary font-bold text-xl mb-4">International Gateway</h4>
+                        <p className="text-sm italic" dir="ltr">
+                          Our mission bridges the gap between traditional Iranian artistry and the global market. 
+                          Whether in Tehran, Berlin, or Dubai, Farsh Bazaar is your trusted partner.
+                        </p>
+                        <p className="text-sm font-bold mt-4" dir="rtl">
+                          رسالت ما پل زدن میان هنر سنتی ایران و بازارهای جهانی است. 
+                          فرش بازار شریک مورد اعتماد شما در تهران، برلین یا دبی است.
+                        </p>
+                    </div>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-6 my-16">
@@ -70,7 +81,7 @@ export default function AboutPage() {
                     </div>
                     <div className="p-6 bg-accent/10 rounded-3xl text-center">
                         <Sparkles className="w-8 h-8 text-accent mx-auto mb-3" />
-                        <h4 className="font-bold mb-1">هوش مصنوعی احساسی</h4>
+                        <h4 className="font-bold mb-1">هوش مصنوعی</h4>
                         <p className="text-xs text-muted-foreground">تکنولوژی در خدمت هنر و اصالت</p>
                     </div>
                 </div>
