@@ -9,10 +9,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useUser, useFirestore } from '@/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { toast } from '@/hooks/use-toast';
-import { ShieldCheck, Scale, DollarSign, Image as ImageIcon, Loader2, Sparkles, MapPin, Phone } from 'lucide-react';
+import { ShieldCheck, Scale, DollarSign, Image as ImageIcon, Loader2, Sparkles, MapPin, Factory } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -22,6 +23,7 @@ export default function AppraisalPage() {
   const router = useRouter();
   
   const [carpetName, setCarpetName] = useState('');
+  const [carpetType, setCarpetType] = useState('hand-woven');
   const [dimensions, setDimensions] = useState('');
   const [origin, setOrigin] = useState('');
   const [age, setAge] = useState('');
@@ -45,7 +47,7 @@ export default function AppraisalPage() {
         return;
     }
     if (!imageDataUri) {
-        toast({ title: "لطفاً تصویر فرش را آپلود کنید.", variant: "destructive" });
+        toast({ title: "لطفاً تصویر واضحی از فرش آپلود کنید.", variant: "destructive" });
         return;
     }
 
@@ -53,6 +55,7 @@ export default function AppraisalPage() {
     try {
         await addDoc(collection(firestore, 'appraisals'), {
             carpetName,
+            carpetType,
             dimensions,
             origin,
             age,
@@ -63,8 +66,8 @@ export default function AppraisalPage() {
             createdAt: serverTimestamp()
         });
         toast({
-            title: "درخواست ثبت شد",
-            description: "کارشناسان ما پس از بررسی با شما تماس خواهند گرفت.",
+            title: "درخواست کارشناسی ثبت شد",
+            description: "تیم خبره ما پس از بررسی فنی با شما تماس خواهند گرفت.",
         });
         router.push('/account');
     } catch (err: any) {
@@ -83,8 +86,8 @@ export default function AppraisalPage() {
              <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Scale className="w-10 h-10 text-primary" />
              </div>
-             <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary">کارشناسی و قیمت‌گذاری تخصصی</h1>
-             <p className="text-xl text-muted-foreground">ارزش واقعی میراث خود را با تاییدیه معتبر «فرش علیمیری» بدانید.</p>
+             <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary">ارزیابی و قیمت‌گذاری جهانی</h1>
+             <p className="text-xl text-muted-foreground">ارزش‌گذاری علمی فرش‌های دستباف، ماشینی و بین‌المللی توسط خبرگان بازار.</p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 items-start">
@@ -93,50 +96,47 @@ export default function AppraisalPage() {
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2">
                             <DollarSign className="w-6 h-6" />
-                            تعرفه کارشناسی
+                            تعرفه کارشناسی ۲۰۲۵
                         </CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <div className="flex justify-between items-center border-b border-white/20 pb-2">
                             <span>فرش‌های ماشینی</span>
-                            <span className="font-bold">۵۰۰,۰۰۰ تومان</span>
+                            <span className="font-bold">۳۵۰,۰۰۰ تومان</span>
                         </div>
                         <div className="flex justify-between items-center border-b border-white/20 pb-2">
-                            <span>فرش‌های دستباف معمولی</span>
-                            <span className="font-bold">۱,۵۰۰,۰۰۰ تومان</span>
+                            <span>فرش‌های دستباف ملل</span>
+                            <span className="font-bold">۸۰۰,۰۰۰ تومان</span>
                         </div>
                         <div className="flex justify-between items-center border-b border-white/20 pb-2">
                             <span>آثار نفیس و آنتیک</span>
-                            <span className="font-bold text-accent">تماس بگیرید</span>
+                            <span className="font-bold text-accent">۱,۵۰۰,۰۰۰+</span>
                         </div>
-                        <p className="text-xs text-white/70 italic mt-4">
-                            * هزینه کارشناسی شامل صدور شناسنامه دیجیتال و تاییدیه اصالت می‌باشد.
+                        <p className="text-[10px] text-white/70 italic mt-4">
+                            * هزینه شامل تحلیل تراکم، رنگرزی، اصالت بافت و صدور شناسنامه دیجیتال است.
                         </p>
                     </CardContent>
                 </Card>
 
                 <Card className="border-none shadow-xl">
                     <CardHeader>
-                        <CardTitle className="text-lg">چرا کارشناسی علیمیری؟</CardTitle>
+                        <CardTitle className="text-lg flex items-center gap-2">
+                            <Factory className="w-5 h-5 text-primary" />
+                            بخش فرش ماشینی
+                        </CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                        <div className="flex items-start gap-3">
-                            <ShieldCheck className="w-5 h-5 text-green-600 mt-1" />
-                            <p className="text-sm">بیش از نیم قرن تجربه در قلب بازار تهران (خیابان خیام).</p>
-                        </div>
-                        <div className="flex items-start gap-3">
-                            <Sparkles className="w-5 h-5 text-amber-500 mt-1" />
-                            <p className="text-sm">استفاده از هوش مصنوعی برای تحلیل تراکم و الگوهای بافت.</p>
-                        </div>
-                        <div className="flex items-start gap-3">
-                            <MapPin className="w-5 h-5 text-primary mt-1" />
-                            <p className="text-sm">ارائه گواهی معتبر فیزیکی در صورت مراجعه به شعبه مرکزی.</p>
+                        <p className="text-sm text-muted-foreground">
+                            ما برای اولین بار سیستم ارزیابی کیفیت و قیمت‌گذاری عادلانه را برای برندهای معتبر فرش ماشینی ایرانی و خارجی راه‌اندازی کرده‌ایم.
+                        </p>
+                        <div className="bg-secondary/50 p-4 rounded-xl text-xs font-bold">
+                            تاییدیه اصالت علیمیری، ضامن سرمایه شماست.
                         </div>
                     </CardContent>
-                    <CardFooter className="bg-secondary/50 p-4">
+                    <CardFooter className="bg-primary/5 p-4">
                         <div className="text-center w-full">
-                            <p className="text-sm font-bold">تلفن مشاوره مستقیم:</p>
-                            <p className="text-xl font-black text-primary" dir="ltr">۰۲۱ - ۵۵۸۱۴۵۵۵</p>
+                            <p className="text-xs text-muted-foreground">تماس مستقیم کارشناس:</p>
+                            <p className="text-lg font-black text-primary" dir="ltr">۰۲۱ - ۵۵۸۱۴۵۵۵</p>
                         </div>
                     </CardFooter>
                 </Card>
@@ -145,38 +145,43 @@ export default function AppraisalPage() {
             <div className="lg:col-span-2">
                 <Card className="border-none shadow-2xl rounded-[2.5rem]">
                     <CardHeader className="p-8">
-                        <CardTitle className="text-2xl font-headline">فرم درخواست کارشناسی</CardTitle>
-                        <CardDescription>مشخصات اثر خود را با دقت وارد کنید تا توسط تیم متخصص بررسی شود.</CardDescription>
+                        <CardTitle className="text-2xl font-headline">فرم درخواست کارشناسی هوشمند</CardTitle>
+                        <CardDescription>جزئیات فرش خود را وارد کنید. سیستم ما پذیرای تمامی انواع فرش از سراسر جهان است.</CardDescription>
                     </CardHeader>
                     <CardContent className="p-8">
                         <form onSubmit={handleSubmit} className="grid gap-6">
                             <div className="grid md:grid-cols-2 gap-4">
                                 <div className="grid gap-2">
-                                    <Label>نام یا نوع فرش</Label>
-                                    <Input required placeholder="مثال: فرش اصفهان طرح لچک ترنج" value={carpetName} onChange={e => setCarpetName(e.target.value)} />
+                                    <Label>نام یا برند فرش</Label>
+                                    <Input required placeholder="مثال: فرش فرهی، اصفهان لچک ترنج و..." value={carpetName} onChange={e => setCarpetName(e.target.value)} />
                                 </div>
                                 <div className="grid gap-2">
-                                    <Label>ابعاد (متر)</Label>
-                                    <Input placeholder="مثال: ۳ در ۴" value={dimensions} onChange={e => setDimensions(e.target.value)} />
+                                    <Label>نوع فرش</Label>
+                                    <Select onValueChange={setCarpetType} defaultValue="hand-woven">
+                                      <SelectTrigger>
+                                        <SelectValue placeholder="انتخاب کنید..." />
+                                      </SelectTrigger>
+                                      <SelectContent>
+                                        <SelectItem value="hand-woven">دستباف ایرانی</SelectItem>
+                                        <SelectItem value="machine-made">ماشینی (ایرانی/خارجی)</SelectItem>
+                                        <SelectItem value="international">دستباف سایر ملل</SelectItem>
+                                      </SelectContent>
+                                    </Select>
                                 </div>
                             </div>
                             <div className="grid md:grid-cols-2 gap-4">
                                 <div className="grid gap-2">
-                                    <Label>منطقه بافت</Label>
-                                    <Input placeholder="مثال: تبریز، نائین، کاشان" value={origin} onChange={e => setOrigin(e.target.value)} />
+                                    <Label>ابعاد / شانه و تراکم</Label>
+                                    <Input placeholder="مثال: ۱۲۰۰ شانه، ۳ در ۴ متر" value={dimensions} onChange={e => setDimensions(e.target.value)} />
                                 </div>
                                 <div className="grid gap-2">
-                                    <Label>قدمت تقریبی</Label>
-                                    <Input placeholder="مثال: نو، ۲۰ سال، عتیقه" value={age} onChange={e => setAge(e.target.value)} />
+                                    <Label>منطقه بافت / کشور مبدا</Label>
+                                    <Input placeholder="مثال: کاشان، هند، ترکیه" value={origin} onChange={e => setOrigin(e.target.value)} />
                                 </div>
-                            </div>
-                            <div className="grid gap-2">
-                                <Label>توضیحات تکمیلی</Label>
-                                <Textarea placeholder="هرگونه اطلاعاتی که به قیمت‌گذاری کمک می‌کند..." rows={4} value={description} onChange={e => setDescription(e.target.value)} />
                             </div>
                             
                             <div className="grid gap-2">
-                                <Label>آپلود تصویر واضح از فرش</Label>
+                                <Label>آپلود تصویر واضح (نمای کلی و نمای پشت فرش)</Label>
                                 <div className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-primary/20 rounded-3xl bg-secondary/5 overflow-hidden">
                                     {imageDataUri ? (
                                         <div className="relative w-full h-full">
@@ -194,8 +199,8 @@ export default function AppraisalPage() {
                             </div>
 
                             <Button type="submit" size="lg" className="w-full h-16 text-xl rounded-full shadow-lg" disabled={submitting}>
-                                {submitting ? <Loader2 className="animate-spin ml-2" /> : <Scale className="ml-2" />}
-                                پرداخت و ثبت درخواست کارشناسی
+                                {submitting ? <Loader2 className="animate-spin ml-2" /> : <ShieldCheck className="ml-2" />}
+                                پرداخت و ثبت نهایی درخواست
                             </Button>
                         </form>
                     </CardContent>

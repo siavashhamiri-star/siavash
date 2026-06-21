@@ -15,7 +15,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { useUser, useFirestore } from '@/firebase';
 import { collection, addDoc, serverTimestamp, doc, updateDoc, increment } from 'firebase/firestore';
 import { toast } from '@/hooks/use-toast';
-import { Sparkles, ShieldCheck, Loader2 } from 'lucide-react';
+import { Sparkles, ShieldCheck, Loader2, Globe } from 'lucide-react';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
 
@@ -102,16 +102,16 @@ export default function NewAdPage() {
         <div className="container mx-auto px-4">
           <Card className="max-w-2xl mx-auto shadow-xl border-none">
             <CardHeader className="text-center p-8">
-              <CardTitle className="text-3xl font-headline">ثبت آگهی صنایع دستی و هنر</CardTitle>
+              <CardTitle className="text-3xl font-headline">ثبت آگهی کالا و هنر</CardTitle>
               <CardDescription>
-                اطلاعات هنر خود را وارد کنید تا در بازار «شهر توانا» دیده شوید.
+                اطلاعات اثر یا محصول خود را وارد کنید. ما پذیرای فرش‌های دستباف، ماشینی و هنرهای بین‌المللی هستیم.
               </CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="grid gap-6">
                 <div className="grid gap-2">
                   <Label>عنوان کالا / اثر</Label>
-                  <Input required placeholder="مثال: گلیم شاهسون اصل" value={title} onChange={e => setTitle(e.target.value)} />
+                  <Input required placeholder="مثال: فرش ماشینی ۱۲۰۰ شانه طرح تبریز" value={title} onChange={e => setTitle(e.target.value)} />
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
                    <div className="grid gap-2">
@@ -121,10 +121,10 @@ export default function NewAdPage() {
                         <SelectValue placeholder="انتخاب کنید..." />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="kilim">گلیم (Kilim)</SelectItem>
-                        <SelectItem value="jajim">جاجیم (Jajim)</SelectItem>
-                        <SelectItem value="silver">ظروف نقره</SelectItem>
-                        <SelectItem value="antique">آنتیک و قدیمی</SelectItem>
+                        <SelectItem value="hand-woven">فرش دستباف (ایرانی/ملل)</SelectItem>
+                        <SelectItem value="machine-made">فرش ماشینی (Machine-made)</SelectItem>
+                        <SelectItem value="kilim">گلیم و جاجیم</SelectItem>
+                        <SelectItem value="silver">ظروف نقره و آنتیک</SelectItem>
                         <SelectItem value="painting">تابلو نقاشی / خط</SelectItem>
                         <SelectItem value="other">سایر صنایع دستی</SelectItem>
                       </SelectContent>
@@ -136,15 +136,15 @@ export default function NewAdPage() {
                   </div>
                 </div>
                 <div className="grid gap-2">
-                  <Label>کد ملی (جهت احراز هویت)</Label>
+                  <Label>کد ملی یا شناسنامه تجاری (جهت احراز هویت)</Label>
                   <div className="flex gap-2">
-                    <Input required placeholder="کد ۱۰ رقمی" value={nationalCode} onChange={e => setNationalCode(e.target.value)} />
+                    <Input required placeholder="کد ۱۰ رقمی یا شماره ثبت" value={nationalCode} onChange={e => setNationalCode(e.target.value)} />
                     <ShieldCheck className="w-10 h-10 text-green-600 bg-green-50 p-2 rounded-lg shrink-0" />
                   </div>
                 </div>
                 <div className="grid gap-2">
-                  <Label>توضیحات و شناسنامه اثر</Label>
-                  <Textarea required placeholder="درباره داستان این اثر بنویسید..." rows={5} value={description} onChange={e => setDescription(e.target.value)} />
+                  <Label>توضیحات، ابعاد و مشخصات فنی</Label>
+                  <Textarea required placeholder="درباره متریال، شانه، تراکم یا داستان این اثر بنویسید..." rows={5} value={description} onChange={e => setDescription(e.target.value)} />
                 </div>
 
                 <div className="p-6 bg-accent/10 border-2 border-accent/20 rounded-2xl space-y-4">
@@ -156,19 +156,16 @@ export default function NewAdPage() {
                           درخواست ویترین جادویی (AI Design)
                         </Label>
                         <p className="text-sm text-muted-foreground">
-                          هوش مصنوعی یک صفحه اختصاصی با جلوه‌های بصری خیره‌کننده برای فروش بهتر کالای شما طراحی می‌کند. (دارای هزینه)
+                          هوش مصنوعی یک صفحه اختصاصی با جلوه‌های بصری خیره‌کننده برای فروش بهتر کالای شما طراحی می‌کند.
                         </p>
                       </div>
                    </div>
                 </div>
 
                 <Button type="submit" size="lg" className="w-full text-lg h-14" disabled={isSubmitting}>
-                   {isSubmitting ? <Loader2 className="animate-spin ml-2" /> : null}
-                   ثبت و انتشار نهایی
+                   {isSubmitting ? <Loader2 className="animate-spin ml-2" /> : <Globe className="ml-2 w-5 h-5" />}
+                   ثبت و انتشار در بازار جهانی
                 </Button>
-                <p className="text-[10px] text-center text-muted-foreground">
-                  ثبت ۳ آگهی اول در هر ماه رایگان است.
-                </p>
               </form>
             </CardContent>
           </Card>

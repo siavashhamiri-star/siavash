@@ -6,6 +6,7 @@ export type Carpet = {
     price: string;
     imageUrl: string;
     vendorId: string;
+    type: 'hand-woven' | 'machine-made' | 'international';
     consignment?: boolean;
 };
 
@@ -14,7 +15,7 @@ export type Handicraft = {
     title: string;
     description: string;
     price: string;
-    category: 'kilim' | 'jajim' | 'silver' | 'antique' | 'painting' | 'calligraphy' | 'other';
+    category: 'kilim' | 'jajim' | 'silver' | 'antique' | 'painting' | 'calligraphy' | 'machine-made' | 'other';
     imageUrl: string;
     userId: string;
     userName: string;
@@ -34,6 +35,7 @@ export type Vendor = {
     bio: string;
     userId: string;
     isVerified?: boolean;
+    vendorType?: 'local' | 'international';
 };
 
 export type UserProfile = {
