@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { BookOpen, Smartphone, Globe, Sparkles, Trophy, Cpu, Lightbulb } from 'lucide-react';
+import { BookOpen, Smartphone, Globe, Sparkles, Trophy, Cpu, Lightbulb, Heart } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 type BilingualContent = {
@@ -79,8 +79,12 @@ export default function ManifestoPage() {
                                 <Cpu className="w-16 h-16 mx-auto mb-6 text-primary animate-pulse" />
                                 <h3 className="text-3xl font-bold mb-4">Award-Winning Engineering Story</h3>
                                 <p className="text-xl italic text-gray-300 leading-relaxed">
-                                    "Build in 9 days using only a mobile device (Redmi Note 8), Farsh Bazaar proves that vision and purpose transcend hardware limitations. This is a global master build designed for 5.5 billion people."
+                                    "Build using only a mobile device, Farsh Bazaar proves that vision and purpose transcend hardware limitations. This is a global master build designed for 5.5 billion people, and is considered one of the top 100 most inspiring tech projects in our digital records."
                                 </p>
+                                <div className="mt-8 flex justify-center gap-4">
+                                     <Badge className="bg-accent text-accent-foreground px-4 py-1">TOP 100 MASTER BUILD</Badge>
+                                     <Badge variant="outline" className="border-white/20 text-white">REDMI NOTE 8 EDITION</Badge>
+                                </div>
                             </div>
 
                             {chapters.map((chapter, index) => (
@@ -126,6 +130,10 @@ export default function ManifestoPage() {
                                     <p className="text-sm text-muted-foreground">
                                         تقدیم به تمدن دیجیتال شهر توانا | پلاک ۴۸ خیابان خیام
                                     </p>
+                                    <div className="flex items-center justify-center gap-2 text-primary/40 font-black uppercase tracking-tighter text-[8px]">
+                                        <Heart className="w-2 h-2 fill-current" />
+                                        Certified Master Build 2025
+                                    </div>
                                 </div>
                             </div>
                         </CardContent>

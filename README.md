@@ -10,7 +10,7 @@ Farsh Bazaar is a revolutionary 13-language digital empire designed to restore t
 ## 🏆 Award-Winning Potential (Global Startup Candidate)
 
 This platform is uniquely designed to be a candidate for global startup awards due to:
-1. **Resourceful Innovation:** Fully engineered to prove that vision transcends hardware limitations, creating a global master build with minimal initial tools.
+1. **Resourceful Innovation:** Fully engineered to prove that vision transcends hardware limitations, creating a global master build with minimal initial tools (Created using only a mobile device).
 2. **Cultural-Tech Fusion:** Bridges 5,000 years of Iranian carpet tradition with 2025 AI and Metaverse technology.
 3. **Hyper-Global Scale:** Supports **13 living languages**, covering over 5.5 billion people and 80% of world wealth.
 4. **Economic Transformation:** Direct gateway to Sotheby’s & Christie’s through the Annual Global Auction system.
