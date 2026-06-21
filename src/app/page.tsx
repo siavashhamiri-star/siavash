@@ -7,7 +7,7 @@ import { StoryGenerator } from '@/components/ai/story-generator';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
-import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, Scale, ShieldCheck, Factory, Landmark, Sword, Palette, Frame, Flag, Users, Gavel, Crown, Star, HeartPulse, Cpu } from 'lucide-react';
+import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, ShieldCheck, Gavel, Crown, Cpu, Star } from 'lucide-react';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-1');
@@ -127,49 +127,11 @@ export default function Home() {
                     <p className="text-lg font-bold">حراج مستقیم جهانی</p>
                  </div>
               </div>
-              <Button asChild size="lg" variant="secondary" className="rounded-full px-24 h-24 text-4xl font-black shadow-3xl shadow-accent/40 animate-bounce">
+              <Button asChild size="lg" variant="secondary" className="rounded-full px-24 h-24 text-4xl font-black shadow-3xl shadow-accent/40">
                  <Link href="/appraisal">ثبت اثر برای حراج ۲۰۲۵</Link>
               </Button>
             </div>
           </div>
-        </section>
-
-        {/* VIP Services */}
-        <section className="py-32 bg-slate-950 text-white">
-            <div className="container px-4 text-center">
-                <Badge className="bg-primary mb-16 px-12 py-4 rounded-full text-2xl font-black uppercase tracking-widest shadow-xl">VIP Services / خدمات اشرافی</Badge>
-                <h2 className="text-5xl md:text-8xl font-headline font-bold mb-32">هدیه‌ای به وسعت غیرت و اصالت</h2>
-                <div className="grid md:grid-cols-4 gap-12 max-w-7xl mx-auto">
-                    <Link href="/services" className="group">
-                        <div className="bg-white/5 p-12 rounded-[5rem] border border-white/10 group-hover:bg-primary transition-all duration-1000 h-full relative overflow-hidden shadow-2xl">
-                            <Users className="w-16 h-16 text-primary mb-10 group-hover:text-white mx-auto" />
-                            <h3 className="text-3xl font-bold mb-8">پرتره در پرچم</h3>
-                            <p className="text-base text-gray-400 group-hover:text-white/80">بافت چهره شما در قلب پرچم ملی کشورتان با ابریشم خالص تبریز.</p>
-                        </div>
-                    </Link>
-                    <Link href="/services" className="group">
-                        <div className="bg-white/5 p-12 rounded-[5rem] border border-white/10 group-hover:bg-primary transition-all duration-1000 h-full shadow-2xl">
-                            <Flag className="w-16 h-16 text-primary mb-10 group-hover:text-white mx-auto" />
-                            <h3 className="text-3xl font-bold mb-8">پرچم‌های نفیس</h3>
-                            <p className="text-base text-gray-400 group-hover:text-white/80">بافت پرچم ملل با کیفیت موزه‌ای برای سفارت‌خانه‌ها و عمارت‌های لوکس.</p>
-                        </div>
-                    </Link>
-                    <Link href="/services" className="group">
-                        <div className="bg-white/5 p-12 rounded-[5rem] border border-white/10 group-hover:bg-primary transition-all duration-1000 h-full shadow-2xl">
-                            <Frame className="w-16 h-16 text-primary mb-10 group-hover:text-white mx-auto" />
-                            <h3 className="text-3xl font-bold mb-8">تابلوفرش ابریشم</h3>
-                            <p className="text-base text-gray-400 group-hover:text-white/80">تبدیل لحظات ماندگار شما به شاهکارهای دستباف توسط اساتید آذربایجان.</p>
-                        </div>
-                    </Link>
-                    <Link href="/services" className="group">
-                        <div className="bg-white/5 p-12 rounded-[5rem] border border-white/10 group-hover:bg-primary transition-all duration-1000 h-full shadow-2xl">
-                            <Palette className="w-16 h-16 text-primary mb-10 group-hover:text-white mx-auto" />
-                            <h3 className="text-3xl font-bold mb-8">مشاوره دکور</h3>
-                            <p className="text-base text-gray-400 group-hover:text-white/80">هارمونی هوشمند فرش با فضای زندگی شما توسط طراحان بین‌المللی.</p>
-                        </div>
-                    </Link>
-                </div>
-            </div>
         </section>
 
         {/* AI Story Generator */}
