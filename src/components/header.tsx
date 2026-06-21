@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
-import { Menu, ShoppingCart, Sparkles, Globe, ChevronDown, Wand2, Scale } from 'lucide-react';
+import { Menu, ShoppingCart, Sparkles, Globe, ChevronDown, Wand2, Scale, Trophy } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -26,8 +26,8 @@ const navItems = [
   { href: '/vendors', label: 'Showrooms / نمایشگاه‌ها' },
   { href: '/handicrafts', label: 'Handicrafts / صنایع دستی' },
   { href: '/appraisal', label: 'Appraisal / کارشناسی' },
+  { href: '/leagues', label: 'Leagues / لیگ‌ها' },
   { href: '/magazine', label: 'Magazine / مجله' },
-  { href: '/ecosystem', label: 'Ecosystem / اکوسیستم' },
 ];
 
 export function Header() {
@@ -135,7 +135,11 @@ export function Header() {
                             {item.label}
                         </Link>
                         ))}
-                        <Link href="/appraisal" className="text-primary font-bold flex items-center gap-2 border-t pt-4">
+                        <Link href="/leagues" className="text-primary font-bold flex items-center gap-2 border-t pt-4">
+                           <Trophy className="w-4 h-4" />
+                           لیگ‌های افتخار و XP
+                        </Link>
+                        <Link href="/appraisal" className="text-primary font-bold flex items-center gap-2">
                            <Scale className="w-4 h-4" />
                            درخواست کارشناسی و قیمت‌گذاری
                         </Link>

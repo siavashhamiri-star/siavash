@@ -45,6 +45,10 @@ export type UserProfile = {
     isVendor?: boolean;
     vendorId?: string;
     adCount?: number;
+    referralCode?: string;
+    referredBy?: string;
+    xp?: number;
+    league?: 'Introducer' | 'ValueCreator' | 'Pioneer';
 };
 
 export type Review = {
