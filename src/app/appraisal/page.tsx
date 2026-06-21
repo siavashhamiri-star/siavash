@@ -13,9 +13,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useUser, useFirestore } from '@/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { toast } from '@/hooks/use-toast';
-import { ShieldCheck, Scale, DollarSign, Image as ImageIcon, Loader2, Factory, MapPin, Gavel, Sparkles } from 'lucide-react';
+import { ShieldCheck, Scale, DollarSign, Image as ImageIcon, Loader2, Factory, MapPin, Gavel, Sparkles, Globe } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { Badge } from '@/components/ui/badge';
 
 export default function AppraisalPage() {
   const { data: user, isLoading } = useUser();
@@ -87,35 +88,30 @@ export default function AppraisalPage() {
                 <Scale className="w-12 h-12 text-primary" />
              </div>
              <h1 className="text-4xl md:text-7xl font-headline font-bold text-primary">سلاح ارزیابی و قیمت‌گذاری</h1>
-             <p className="text-xl text-muted-foreground">ارزش‌گذاری علمی فرش‌های دستباف، ماشینی و ملل با تکیه بر ۵۰ سال تجربه میراث علیمیری.</p>
+             <p className="text-xl text-muted-foreground">ارزش‌گذاری علمی با تکیه بر ۵۰ سال تجربه میراث علیمیری و استانداردهای حراجی‌های بین‌المللی.</p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8 items-start">
             <div className="lg:col-span-1 space-y-6">
-                <Card className="border-none shadow-2xl bg-slate-900 text-white overflow-hidden rounded-[2rem]">
-                    <CardHeader className="bg-accent/20 border-b border-white/10">
-                        <CardTitle className="flex items-center gap-2 text-2xl text-accent">
-                            <Gavel className="w-8 h-8" />
-                            مژده: ورود به حراج سالانه
+                <Card className="border-none shadow-2xl bg-slate-950 text-white overflow-hidden rounded-[2rem]">
+                    <CardHeader className="bg-white/5 border-b border-white/10">
+                        <CardTitle className="flex items-center gap-2 text-xl text-accent">
+                            <Globe className="w-6 h-6" />
+                            Sotheby's & Christie's Standard
                         </CardTitle>
                     </CardHeader>
                     <CardContent className="p-8 space-y-4">
-                        <p className="text-sm leading-relaxed">
-                            فرش‌های نفیسی که توسط کارشناسان ما تاییدیه «اصالت و قدمت» دریافت کنند، شانس حضور در **حراج بزرگ سالانه فرش بازار** را خواهند داشت.
+                        <p className="text-xs leading-relaxed text-gray-400 italic">
+                            آثار نفیسی که در این پلتفرم تاییدیه «گرید A» دریافت کنند، با افتخار جهت شرکت در حراجی‌های بین‌المللی نظیر ساتبیز و کریستیز معرفی خواهند شد.
                         </p>
-                        <div className="bg-white/5 p-4 rounded-2xl border border-white/10">
-                            <p className="text-[10px] text-accent font-bold mb-1">مزایای حراج:</p>
-                            <ul className="text-[10px] space-y-1 list-disc list-inside opacity-80">
-                                <li>معرفی به خریداران ۱۳ کشور جهان</li>
-                                <li>فروش با بالاترین قیمت‌های رقابتی</li>
-                                <li>تسویه مالی آنی و تضمین شده</li>
-                            </ul>
+                        <div className="pt-4 border-t border-white/10">
+                            <Badge variant="outline" className="text-accent border-accent/40">International Gateway</Badge>
                         </div>
                     </CardContent>
                 </Card>
 
                 <Card className="border-none shadow-2xl bg-primary text-white overflow-hidden rounded-[2rem]">
-                    <CardHeader>
+                    <CardHeader className="bg-black/5">
                         <CardTitle className="flex items-center gap-2 text-2xl">
                             <DollarSign className="w-8 h-8" />
                             تعرفه کارشناسی ۲۰۲۵
@@ -135,7 +131,7 @@ export default function AppraisalPage() {
                             <span className="font-black text-xl text-accent">۱,۵۰۰,۰۰۰+</span>
                         </div>
                         <p className="text-[10px] text-white/70 italic mt-6 leading-relaxed">
-                            * هزینه شامل تحلیل شانه و تراکم (برای ماشینی)، رنگرزی و قدمت (برای دستباف) و صدور شناسنامه دیجیتال است.
+                            * هزینه شامل تحلیل فنی، شناسنامه دیجیتال و در صورت تمایل، درج در کاتالوگ حراج سالانه است.
                         </p>
                     </CardContent>
                     <CardFooter className="bg-black/10 p-6 flex items-center gap-3">
@@ -149,32 +145,32 @@ export default function AppraisalPage() {
                 <Card className="border-none shadow-2xl rounded-[3rem]">
                     <CardHeader className="p-10">
                         <CardTitle className="text-3xl font-headline">فرم درخواست کارشناسی هوشمند</CardTitle>
-                        <CardDescription className="text-lg">جزئیات اثر خود را وارد کنید. سیستم ما پذیرای تمامی انواع فرش از سراسر جهان است.</CardDescription>
+                        <CardDescription className="text-lg">جزئیات اثر خود را وارد کنید. ما پذیرای فرش‌های دستباف، ماشینی و ملل هستیم.</CardDescription>
                     </CardHeader>
                     <CardContent className="p-10 pt-0">
                         <form onSubmit={handleSubmit} className="grid gap-8">
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="grid gap-2">
-                                    <Label className="text-base">نام یا برند فرش</Label>
-                                    <Input className="h-12" required placeholder="مثال: فرش اصفهان، فرش فرهی و..." value={carpetName} onChange={e => setCarpetName(e.target.value)} />
+                                    <Label className="text-base font-bold">نام یا برند فرش</Label>
+                                    <Input className="h-12 rounded-xl" required placeholder="مثال: فرش اصفهان، فرش فرهی و..." value={carpetName} onChange={e => setCarpetName(e.target.value)} />
                                 </div>
                                 <div className="grid gap-2">
-                                    <Label className="text-base">نوع و دسته تخصصی</Label>
+                                    <Label className="text-base font-bold">نوع و دسته تخصصی</Label>
                                     <Select onValueChange={setCarpetType} defaultValue="hand-woven">
-                                      <SelectTrigger className="h-12">
+                                      <SelectTrigger className="h-12 rounded-xl">
                                         <SelectValue placeholder="انتخاب کنید..." />
                                       </SelectTrigger>
                                       <SelectContent>
                                         <SelectItem value="hand-woven">دستباف ایرانی (نفیس)</SelectItem>
                                         <SelectItem value="machine-made">ماشینی (ایرانی/خارجی)</SelectItem>
-                                        <SelectItem value="international">فرش سایر ملل (هند، پاکستان، ترکیه)</SelectItem>
+                                        <SelectItem value="international">فرش سایر ملل (هند، ترکیه، پاکستان)</SelectItem>
                                       </SelectContent>
                                     </Select>
                                 </div>
                             </div>
                             
                             <div className="grid gap-2">
-                                <Label className="text-base">آپلود تصاویر (نمای کلی و نمای پشت فرش)</Label>
+                                <Label className="text-base font-bold">آپلود تصاویر (نمای کلی و جزییات بافت)</Label>
                                 <div className="flex flex-col items-center justify-center w-full h-80 border-4 border-dashed border-primary/20 rounded-[2.5rem] bg-secondary/5 overflow-hidden group hover:border-primary/40 transition-all">
                                     {imageDataUri ? (
                                         <div className="relative w-full h-full">
@@ -185,7 +181,7 @@ export default function AppraisalPage() {
                                         <label className="flex flex-col items-center justify-center w-full h-full cursor-pointer">
                                             <ImageIcon className="w-16 h-16 text-primary/30 mb-4 group-hover:scale-110 transition-transform" />
                                             <span className="font-bold text-xl">انتخاب و آپلود عکس</span>
-                                            <p className="text-sm text-muted-foreground mt-2">تصویر واضح باعث دقت بیشتر در قیمت‌گذاری می‌شود.</p>
+                                            <p className="text-sm text-muted-foreground mt-2">تصویر واضح باعث دقت در قیمت‌گذاری و معرفی به حراجی‌های جهانی می‌شود.</p>
                                             <input type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
                                         </label>
                                     )}
@@ -194,7 +190,7 @@ export default function AppraisalPage() {
 
                             <Button type="submit" size="lg" className="w-full h-20 text-2xl rounded-full shadow-2xl shadow-primary/20" disabled={submitting}>
                                 {submitting ? <Loader2 className="animate-spin ml-3" /> : <ShieldCheck className="ml-3 w-8 h-8" />}
-                                پرداخت و ثبت نهایی درخواست کارشناسی
+                                ثبت نهایی درخواست و ورود به پروسه کارشناسی
                             </Button>
                         </form>
                     </CardContent>
@@ -207,4 +203,3 @@ export default function AppraisalPage() {
     </div>
   );
 }
-

@@ -8,7 +8,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Landmark, HeartPulse, BrainCircuit, Factory, Sword, Mail, Phone, MapPin, Globe, ArrowRight, Gavel, Sparkles } from 'lucide-react';
+import { Landmark, HeartPulse, BrainCircuit, Factory, Sword, Mail, Phone, MapPin, Globe, ArrowRight, Gavel, Sparkles, Building2 } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -16,21 +16,21 @@ import { Button } from '@/components/ui/button';
 const ecosystemApps = [
     {
         name: "Farsh Bazaar (فرش بازار)",
-        description: "The global hub for hand-woven and machine-made carpets. Our digital weapon to restore carpet glory.",
-        fa_description: "بازار جهانی فرش‌های دستباف و ماشینی. سلاح دیجیتال ما برای احیای شکوه فرش.",
-        ar_description: "المركز العالمي للسجاد اليدوي والآلي. سلاحنا الرقمي لاستعادة مجد السجاد.",
+        description: "The global hub for hand-woven and machine-made carpets. Our digital weapon to restore carpet glory in 13 languages.",
+        fa_description: "بازار جهانی فرش‌های دستباف و ماشینی. سلاح دیجیتال ما برای احیای شکوه فرش به ۱۳ زبان زنده.",
+        ar_description: "المركز العالمي للسجاد اليدوي والآلي. سلاحنا الرقمي لاستعادة مجد السجاد بـ 13 لغة.",
         status: "Live",
         icon: <Landmark className="w-8 h-8 text-primary" />,
         link: "/"
     },
     {
         name: "Global Annual Auction",
-        description: "The premier online auction for exquisite and antique carpets with global reach.",
-        fa_description: "حراج بزرگ سالانه فرش‌های نفیس و آنتیک با دسترسی جهانی (بزودی).",
-        ar_description: "المزاد السنوي العالمي للسجاد الرائع والأثري (قريباً).",
+        description: "Strategic partnerships with Sotheby’s and Christie’s for the annual online auction of antique carpets.",
+        fa_description: "همکاری استراتژیک با حراجی‌های ساتبیز و کریستیز برای حراج سالانه آنلاین فرش‌های آنتیک.",
+        ar_description: "شراكات استراتيجية مع ساتبيز وكريستيز للمزاد السنوي عبر الإنترنت للسجاد الأثري.",
         status: "Announced",
         icon: <Gavel className="w-8 h-8 text-accent" />,
-        link: "/appraisal"
+        link: "/collaboration"
     },
     {
         name: "OpenMind Nexus",
@@ -44,9 +44,9 @@ const ecosystemApps = [
     },
     {
         name: "LingoView (Gooya)",
-        description: "Capability-based education for the global workforce.",
-        fa_description: "آموزش توانمندمحور برای دنیای فردا.",
-        ar_description: "التعليم القائم على القدرة لعالم الغد.",
+        description: "Capability-based education for the global workforce in 13 languages.",
+        fa_description: "آموزش توانمندمحور برای نیروی کار جهانی به ۱۳ زبان.",
+        ar_description: "التعليم القائم على القدرة للقوى العاملة العالمية بـ 13 لغة.",
         status: "Coming Soon",
         icon: <BrainCircuit className="w-8 h-8 text-blue-500" />,
         link: "/lingoview"
@@ -65,7 +65,7 @@ export default function EcosystemPage() {
                         <h1 className="text-6xl md:text-9xl font-headline font-bold mb-10 leading-tight">منظومه‌ی آفرینش</h1>
                         <div className="grid gap-8 max-w-5xl mx-auto mb-16">
                             <p className="text-2xl md:text-4xl font-light leading-relaxed">
-                                تمدنی دیجیتال با ۱۳ زبان زنده برای بازگرداندن شکوه فرش ایران. ما با سلاح تکنولوژی، اصالت را جهانی می‌کنیم.
+                                تمدنی دیجیتال با ۱۳ زبان زنده برای فتح بازارهای پاریس، توکیو، دبی و فراتر از آن. ما با سلاح تکنولوژی، اصالت را جهانی می‌کنیم.
                             </p>
                             <div className="flex flex-col md:flex-row justify-center gap-10 text-xl font-headline italic opacity-80">
                                 <span dir="ltr">"Global reach, ancestral roots."</span>
@@ -87,12 +87,15 @@ export default function EcosystemPage() {
                         <h2 className="text-5xl md:text-7xl font-headline font-bold text-primary mb-12">مژده: حراج سالانه جهانی فرش</h2>
                         <div className="max-w-4xl mx-auto text-lg leading-relaxed space-y-6 text-justify">
                             <p className="font-bold text-2xl text-center text-slate-800">
-                                «فرش بازار با افتخار اعلام می‌کند: بزودی اولین حراج آنلاین سالانه برای فرش‌های نفیس و آنتیک برگزار خواهد شد.»
+                                «فرش بازار آماده همکاری با اکشن‌های سطح اول جهان نظیر ساتبیز (Sotheby's) و کریستیز (Christie's) است.»
                             </p>
                             <p>
-                                تمامی عزیزانی که در پلتفرم ما فرش‌های خود را کارشناسی کرده و تاییدیه دریافت نموده‌اند، می‌توانند در این آکشن جهانی شرکت کنند. این فرصتی استثنایی برای معرفی آثار هنری شما به کلکسیونرهای ۱۳ کشور جهان و فروش با قیمت‌های بی‌نظیر است. شرایط دقیق و زمان‌بندی این رویداد بزودی از طریق همین پلتفرم اعلام خواهد شد.
+                                ما با افتخار اعلام می‌کنیم که بزودی اولین حراج آنلاین سالانه برای فرش‌های نفیس و آنتیک برگزار خواهد شد. تمامی آثاری که توسط کارشناسان ما تاییدیه دریافت کنند، شانس حضور در این آکشن جهانی و معرفی به خانه‌های حراج مطرح بین‌المللی را خواهند داشت. ما از همکاری صمیمانه با پیشروان این حوزه استقبال می‌کنیم.
                             </p>
                         </div>
+                        <Button asChild variant="outline" size="lg" className="mt-12 rounded-full border-primary text-primary px-12 h-14">
+                            <Link href="/collaboration">درخواست همکاری استراتژیک / Partnership Inquiry</Link>
+                        </Button>
                     </Card>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12">
@@ -130,7 +133,7 @@ export default function EcosystemPage() {
 
                     <div className="mt-40 p-20 bg-primary text-white rounded-[5rem] shadow-2xl text-center relative overflow-hidden">
                         <div className="absolute top-0 right-0 p-16 opacity-10">
-                             <Globe className="w-80 h-80" />
+                             <Building2 className="w-80 h-80" />
                         </div>
                         <h2 className="text-5xl md:text-7xl font-headline font-bold mb-10">دعوت جهانی از تولیدکنندگان</h2>
                         <p className="text-2xl md:text-3xl font-light mb-16 max-w-4xl mx-auto leading-relaxed">
@@ -143,9 +146,6 @@ export default function EcosystemPage() {
                             <div className="flex items-center gap-4 bg-white/10 px-8 py-4 rounded-3xl backdrop-blur-md">
                                 <Mail className="w-8 h-8" /> info@fbnewmeta.com
                             </div>
-                            <div className="flex items-center gap-4 bg-white/10 px-8 py-4 rounded-3xl backdrop-blur-md">
-                                <MapPin className="w-8 h-8" /> بازار تهران، خیابان خیام
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -154,4 +154,3 @@ export default function EcosystemPage() {
         </div>
     );
 }
-
