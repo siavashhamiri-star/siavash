@@ -27,6 +27,8 @@ export type Vendor = {
     id: string;
     name: string;
     location: string;
+    address?: string;
+    phone?: string;
     specialties: string[];
     avatarUrl: string;
     bio: string;

@@ -15,7 +15,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { MapPin, Phone, Pencil, ShieldCheck, Loader2 } from 'lucide-react';
+import { MapPin, Phone, Pencil, ShieldCheck, Loader2, Home } from 'lucide-react';
 import { useCollection, useDoc, useFirestore, useUser } from '@/firebase';
 import { collection, doc } from 'firebase/firestore';
 import type { Vendor, Carpet } from '@/lib/types';
@@ -64,10 +64,10 @@ export default function VendorShowroomPage({
       <Header />
       <main className="flex-1 bg-secondary/20">
         <div className="container mx-auto px-4 py-16">
-          <Card className="overflow-hidden mb-12 shadow-lg">
-            <CardHeader className="p-8 bg-card">
+          <Card className="overflow-hidden mb-12 shadow-lg border-none bg-white/80 backdrop-blur-sm">
+            <CardHeader className="p-8">
               <div className="flex flex-col md:flex-row items-start gap-8">
-                <Avatar className="w-32 h-32 border-4 border-primary/10">
+                <Avatar className="w-32 h-32 border-4 border-primary/10 shadow-xl">
                   <AvatarImage
                     src={typedVendor.avatarUrl}
                     alt={typedVendor.name}
@@ -88,18 +88,30 @@ export default function VendorShowroomPage({
                         </div>
                     )}
                   </div>
-                  <div className="flex items-center gap-2 mt-2 text-muted-foreground">
-                    <MapPin className="w-4 h-4" /> {typedVendor.location}
+                  <div className="flex flex-col gap-2 mt-4 text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-primary" /> {typedVendor.location}
+                    </div>
+                    {typedVendor.address && (
+                        <div className="flex items-center gap-2">
+                            <Home className="w-4 h-4 text-primary" /> {typedVendor.address}
+                        </div>
+                    )}
+                     {typedVendor.phone && (
+                        <div className="flex items-center gap-2">
+                            <Phone className="w-4 h-4 text-primary" /> {typedVendor.phone}
+                        </div>
+                    )}
                   </div>
-                  <p className="mt-4 text-foreground max-w-prose">
+                  <p className="mt-6 text-foreground/80 max-w-prose leading-relaxed">
                     {typedVendor.bio}
                   </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="mt-6 flex flex-wrap gap-2">
                     {typedVendor.specialties?.map((specialty) => (
                       <Badge
                         key={specialty}
-                        variant="outline"
-                        className="font-normal border-primary/50 text-primary/80"
+                        variant="secondary"
+                        className="font-normal px-4 py-1"
                       >
                         {specialty}
                       </Badge>
@@ -107,16 +119,20 @@ export default function VendorShowroomPage({
                   </div>
                 </div>
                 {isOwner ? (
-                   <Button asChild className="w-full md:w-auto mt-4 md:mt-0">
+                   <Button asChild className="w-full md:w-auto mt-4 md:mt-0 rounded-full">
                       <Link href={`/account/edit-vendor/${id}`}>
-                        <Pencil className="mr-2 h-4 w-4" />
-                        Edit Showroom
+                        <Pencil className="ml-2 h-4 w-4" />
+                        ویرایش نمایشگاه
                       </Link>
                    </Button>
                 ) : (
-                  <Button className="w-full md:w-auto mt-4 md:mt-0 bg-accent hover:bg-accent/90 text-accent-foreground">
-                    <Phone className="w-4 h-4 mr-2" /> Contact Vendor
-                  </Button>
+                  typedVendor.phone && (
+                    <Button asChild className="w-full md:w-auto mt-4 md:mt-0 bg-primary hover:bg-primary/90 text-white rounded-full">
+                        <a href={`tel:${typedVendor.phone}`}>
+                            <Phone className="w-4 h-4 ml-2" /> تماس با فروشگاه
+                        </a>
+                    </Button>
+                  )
                 )}
               </div>
             </CardHeader>
@@ -124,11 +140,11 @@ export default function VendorShowroomPage({
 
           <div className="flex justify-between items-center mb-8">
              <h2 className="text-3xl font-headline font-bold">
-                Virtual Showroom
+                نمایشگاه مجازی (Virtual Showroom)
             </h2>
             {isOwner && (
-                <Button asChild>
-                    <Link href={`/account/add-carpet/${id}`}>Add a Carpet</Link>
+                <Button asChild className="rounded-full">
+                    <Link href={`/account/add-carpet/${id}`}>افزودن فرش جدید</Link>
                 </Button>
             )}
           </div>
@@ -138,46 +154,45 @@ export default function VendorShowroomPage({
             {typedCarpets.map((carpet) => (
               <Card
                 key={carpet.id}
-                className="overflow-hidden group flex flex-col"
+                className="overflow-hidden group flex flex-col border-none shadow-md hover:shadow-xl transition-all"
               >
                 <Link href={`/carpets/${carpet.id}?vendorId=${id}`} className="flex flex-col flex-grow">
-                  <CardHeader className="p-0 relative">
+                  <div className="p-0 relative aspect-[4/3] overflow-hidden">
                     <Image
                       src={carpet.imageUrl}
                       alt={carpet.name}
-                      width={800}
-                      height={600}
-                      className="w-full h-auto object-cover aspect-[4/3] transition-transform duration-300 group-hover:scale-105"
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                  </CardHeader>
+                  </div>
                   <CardContent className="p-4 flex-grow">
-                    <CardTitle className="font-headline text-lg">
+                    <CardTitle className="font-headline text-lg group-hover:text-primary transition-colors">
                       {carpet.name}
                     </CardTitle>
-                    <CardDescription className="mt-1 text-sm line-clamp-2">
+                    <CardDescription className="mt-2 text-sm line-clamp-2">
                       {carpet.description}
                     </CardDescription>
                   </CardContent>
-                  <CardFooter className="p-4 pt-0 flex justify-between items-center">
-                    <p className="font-semibold text-primary">{carpet.price}</p>
-                    <Button variant="ghost" size="sm" asChild>
-                      <span className="cursor-pointer">View Details</span>
+                  <CardFooter className="p-4 pt-0 flex justify-between items-center border-t border-primary/5 mt-4">
+                    <p className="font-bold text-primary">{carpet.price}</p>
+                    <Button variant="ghost" size="sm" className="text-primary hover:text-primary hover:bg-primary/5">
+                        مشاهده جزئیات
                     </Button>
                   </CardFooter>
                 </Link>
               </Card>
             ))}
             {typedCarpets.length === 0 && (
-              <Card className="col-span-full">
-                <CardContent className="flex flex-col items-center justify-center text-center text-muted-foreground h-64">
-                    <p>This vendor's showroom is currently empty.</p>
-                    {isOwner && <p className="mt-2 text-sm">You can add your first carpet now!</p>}
+              <Card className="col-span-full py-20 bg-white/50 border-dashed border-2">
+                <CardContent className="flex flex-col items-center justify-center text-center text-muted-foreground">
+                    <p className="text-lg">هنوز هیچ محصولی در این نمایشگاه ثبت نشده است.</p>
+                    {isOwner && <p className="mt-2 text-sm font-bold text-primary">همین حالا اولین اثر خود را به نمایش بگذارید!</p>}
                 </CardContent>
               </Card>
             )}
           </div>
 
-          <Separator className="my-16" />
+          <Separator className="my-20" />
 
           <ReviewsSection vendorId={id} vendorUserId={typedVendor.userId} />
 
