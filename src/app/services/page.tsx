@@ -12,7 +12,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useUser, useFirestore } from '@/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { toast } from '@/hooks/use-toast';
-import { Palette, Image as ImageIcon, Loader2, Sparkles, Sofa, Frame, MapPin, Phone } from 'lucide-react';
+import { Palette, Image as ImageIcon, Loader2, Sparkles, Sofa, Frame, MapPin, Phone, Flag } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -21,7 +21,7 @@ export default function PremiumServicesPage() {
   const firestore = useFirestore();
   const router = useRouter();
   
-  const [serviceType, setServiceType] = useState<'decor' | 'tableau' | null>(null);
+  const [serviceType, setServiceType] = useState<'decor' | 'tableau' | 'flag' | null>(null);
   const [description, setDescription] = useState('');
   const [imageDataUri, setImageDataUri] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
@@ -45,7 +45,8 @@ export default function PremiumServicesPage() {
         toast({ title: "لطفاً نوع سرویس را انتخاب کنید.", variant: "destructive" });
         return;
     }
-    if (!imageDataUri) {
+    // For flag service, image is optional as we know the flag design, but recommended
+    if (serviceType !== 'flag' && !imageDataUri) {
         toast({ title: "لطفاً تصویر مورد نظر را آپلود کنید.", variant: "destructive" });
         return;
     }
@@ -55,7 +56,7 @@ export default function PremiumServicesPage() {
         await addDoc(collection(firestore, 'special_requests'), {
             serviceType,
             description,
-            imageDataUri,
+            imageDataUri: imageDataUri || '',
             userId: user.uid,
             userName: user.displayName,
             status: 'pending',
@@ -84,23 +85,23 @@ export default function PremiumServicesPage() {
              </div>
              <h1 className="text-4xl md:text-7xl font-headline font-bold text-primary">سرویس‌های اشرافی آفرینش</h1>
              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                از مشاوره دکوراسیون تا خلق ابدی خاطرات شما بر تار و پود ابریشم تبریز. ما هنر را برای شما شخصی‌سازی می‌کنیم.
+                از مشاوره دکوراسیون تا بافت پرچم‌های ملی با ابریشم تبریز. ما هنر ایران را با هویت جهانی شما پیوند می‌زنیم.
              </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
               {/* Decor Service */}
               <Card 
                 className={`cursor-pointer transition-all duration-500 border-4 ${serviceType === 'decor' ? 'border-primary shadow-2xl scale-105' : 'border-transparent hover:border-primary/20'}`}
                 onClick={() => setServiceType('decor')}
               >
-                <CardHeader className="p-10 text-center">
-                    <Sofa className={`w-16 h-16 mx-auto mb-4 ${serviceType === 'decor' ? 'text-primary' : 'text-muted-foreground'}`} />
-                    <CardTitle className="text-3xl font-headline">مشاوره چیدمان و دکوراسیون</CardTitle>
-                    <CardDescription className="text-lg">انتخاب هوشمندانه فرش بر اساس رنگ مبلمان، پرده‌ها و نورپردازی فضای شما.</CardDescription>
+                <CardHeader className="p-8 text-center">
+                    <Sofa className={`w-12 h-12 mx-auto mb-4 ${serviceType === 'decor' ? 'text-primary' : 'text-muted-foreground'}`} />
+                    <CardTitle className="text-2xl font-headline">مشاوره چیدمان</CardTitle>
+                    <CardDescription className="text-sm">انتخاب هوشمندانه فرش بر اساس هارمونی رنگی فضای شما.</CardDescription>
                 </CardHeader>
-                <CardContent className="p-10 pt-0 text-center text-sm text-muted-foreground leading-relaxed">
-                    تصویری از فضای منزل یا محل کار خود بفرستید تا کارشناسان هنری ما، بهترین ابعاد و طرح‌های فرش را متناسب با هارمونی رنگی محیط شما پیشنهاد دهند.
+                <CardContent className="p-8 pt-0 text-center text-[10px] text-muted-foreground leading-relaxed">
+                    تصویری از فضا بفرستید تا کارشناسان هنری ما بهترین ابعاد و طرح‌ها را پیشنهاد دهند.
                 </CardContent>
               </Card>
 
@@ -109,13 +110,28 @@ export default function PremiumServicesPage() {
                 className={`cursor-pointer transition-all duration-500 border-4 ${serviceType === 'tableau' ? 'border-primary shadow-2xl scale-105' : 'border-transparent hover:border-primary/20'}`}
                 onClick={() => setServiceType('tableau')}
               >
-                <CardHeader className="p-10 text-center">
-                    <Frame className={`w-16 h-16 mx-auto mb-4 ${serviceType === 'tableau' ? 'text-primary' : 'text-muted-foreground'}`} />
-                    <CardTitle className="text-3xl font-headline">بافت سفارشی تابلوفرش تبریز</CardTitle>
-                    <CardDescription className="text-lg">تبدیل عکس‌های شخصی، پرتره‌ها و مناظر به آثار نفیس دستباف.</CardDescription>
+                <CardHeader className="p-8 text-center">
+                    <Frame className={`w-12 h-12 mx-auto mb-4 ${serviceType === 'tableau' ? 'text-primary' : 'text-muted-foreground'}`} />
+                    <CardTitle className="text-2xl font-headline">تابلوفرش سفارشی</CardTitle>
+                    <CardDescription className="text-sm">تبدیل عکس‌های شخصی و پرتره‌ها به آثار نفیس دستباف ابریشم.</CardDescription>
                 </CardHeader>
-                <CardContent className="p-10 pt-0 text-center text-sm text-muted-foreground leading-relaxed">
-                    عکس‌های مورد علاقه خود را آپلود کنید. اساتید بافنده تبریز با استفاده از مرغوب‌ترین ابریشم و پشم، خاطرات شما را در قالب یک اثر هنری ماندگار خلق می‌کنند.
+                <CardContent className="p-8 pt-0 text-center text-[10px] text-muted-foreground leading-relaxed">
+                    خاطرات خود را با دستان هنرمندان تبریز جاودانه کنید. با بهترین متریال و ظرافت بافت.
+                </CardContent>
+              </Card>
+
+              {/* National Flag Service */}
+              <Card 
+                className={`cursor-pointer transition-all duration-500 border-4 ${serviceType === 'flag' ? 'border-primary shadow-2xl scale-105' : 'border-transparent hover:border-primary/20'}`}
+                onClick={() => setServiceType('flag')}
+              >
+                <CardHeader className="p-8 text-center">
+                    <Flag className={`w-12 h-12 mx-auto mb-4 ${serviceType === 'flag' ? 'text-primary' : 'text-muted-foreground'}`} />
+                    <CardTitle className="text-2xl font-headline">پرچم‌های ملل (نفیس)</CardTitle>
+                    <CardDescription className="text-sm">بافت پرچم کشور شما با ابریشم خالص تبریز توسط اساتید تراز اول.</CardDescription>
+                </CardHeader>
+                <CardContent className="p-8 pt-0 text-center text-[10px] text-muted-foreground leading-relaxed">
+                    نمادی از هویت ملی شما در قالب یک اثر هنری دستباف. هدیه‌ای دیپلماتیک و ماندگار.
                 </CardContent>
               </Card>
           </div>
@@ -124,17 +140,17 @@ export default function PremiumServicesPage() {
               <Card className="max-w-4xl mx-auto border-none shadow-2xl rounded-[3rem] animate-in fade-in slide-in-from-bottom-10">
                 <CardHeader className="p-10">
                     <CardTitle className="text-3xl font-headline flex items-center gap-4">
-                        {serviceType === 'decor' ? <Sofa className="w-8 h-8 text-primary" /> : <Frame className="w-8 h-8 text-primary" />}
-                        ثبت درخواست تخصصی
+                        {serviceType === 'decor' ? <Sofa className="w-8 h-8 text-primary" /> : serviceType === 'tableau' ? <Frame className="w-8 h-8 text-primary" /> : <Flag className="w-8 h-8 text-primary" />}
+                        ثبت درخواست {serviceType === 'flag' ? 'بافت پرچم ملی' : 'سرویس تخصصی'}
                     </CardTitle>
-                    <CardDescription>جزئیات و تصاویر خود را برای بررسی تیم فنی ارسال نمایید.</CardDescription>
+                    <CardDescription>جزئیات و تصاویر خود را برای بررسی تیم فنی و هنری ارسال نمایید.</CardDescription>
                 </CardHeader>
                 <CardContent className="p-10 pt-0">
                     <form onSubmit={handleSubmit} className="grid gap-8">
                         <div className="grid gap-2">
                             <Label className="text-lg font-bold">توضیحات تکمیلی</Label>
                             <Textarea 
-                                placeholder={serviceType === 'decor' ? "درباره سبک دکوراسیون و رنگ‌های مورد علاقه خود بنویسید..." : "ابعاد تقریبی و جزئیات مورد نظر برای بافت را ذکر کنید..."}
+                                placeholder={serviceType === 'flag' ? "نام کشور و ابعاد مورد نظر را ذکر کنید (مثال: پرچم فرانسه، ۱ در ۱.۵ متر)..." : "جزئیات مورد نظر خود را بنویسید..."}
                                 rows={5}
                                 value={description}
                                 onChange={e => setDescription(e.target.value)}
@@ -143,7 +159,7 @@ export default function PremiumServicesPage() {
                         </div>
 
                         <div className="grid gap-2">
-                            <Label className="text-lg font-bold">آپلود تصویر (منزل یا عکس شخصی)</Label>
+                            <Label className="text-lg font-bold">آپلود تصویر (اختیاری برای پرچم، الزامی برای سایرین)</Label>
                             <div className="flex flex-col items-center justify-center w-full h-80 border-4 border-dashed border-primary/20 rounded-[2.5rem] bg-secondary/5 overflow-hidden group hover:border-primary/40 transition-all">
                                 {imageDataUri ? (
                                     <div className="relative w-full h-full">
@@ -163,7 +179,7 @@ export default function PremiumServicesPage() {
 
                         <Button type="submit" size="lg" className="w-full h-20 text-2xl rounded-full shadow-2xl shadow-primary/20" disabled={submitting}>
                             {submitting ? <Loader2 className="animate-spin ml-3" /> : <Sparkles className="ml-3 w-8 h-8" />}
-                            ارسال درخواست به دپارتمان هنر و دکوراسیون
+                            ارسال درخواست به دپارتمان هنر و بافت تبریز
                         </Button>
                     </form>
                 </CardContent>
