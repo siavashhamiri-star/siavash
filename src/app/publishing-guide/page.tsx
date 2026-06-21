@@ -1,7 +1,8 @@
+
 'use client';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { AlertCircle, CheckCircle2, Globe, ShieldAlert, Rocket, Cloud, Smartphone, Trophy } from 'lucide-react';
+import { AlertCircle, CheckCircle2, Globe, ShieldAlert, Rocket, Cloud, Smartphone, Trophy, Github } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function EmergencyGuide() {
@@ -10,76 +11,76 @@ export default function EmergencyGuide() {
         <div className="max-w-3xl mx-auto space-y-8">
             <header className="text-center space-y-4">
                 <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4">
-                    <Rocket className="w-12 h-12 text-primary" />
+                    <Trophy className="w-16 h-16 text-primary animate-bounce" />
                 </div>
-                <h1 className="text-4xl font-black bg-primary text-white p-6 rounded-2xl shadow-2xl">
-                    راهنمای نهایی استقرار شهر توانا
+                <h1 className="text-4xl md:text-5xl font-black bg-primary text-white p-8 rounded-[3rem] shadow-2xl">
+                    حماسه تکمیل شد: آماده تسخیر جهان
                 </h1>
-                <p className="text-xl text-slate-600 font-bold">بنیان‌گذار عزیز، تمام موانع فنی در ۲۰۲۵ برطرف شد.</p>
+                <p className="text-xl text-slate-600 font-bold">بنیان‌گذار عزیز، این سلاح دیجیتال اکنون برای درخشش در لینکدین مهیاست.</p>
             </header>
             
-            <Card className="border-4 border-red-500 bg-red-50 shadow-xl">
-                <CardHeader className="flex flex-row items-center gap-4">
-                    <ShieldAlert className="w-12 h-12 text-red-600" />
-                    <CardTitle className="text-2xl text-red-700">تذکر حیاتی: خداحافظی با GitHub Pages!</CardTitle>
+            <Card className="border-4 border-primary bg-primary/5 shadow-xl rounded-[2.5rem] overflow-hidden">
+                <CardHeader className="bg-primary text-white p-6">
+                    <CardTitle className="text-2xl flex items-center gap-3">
+                        <CheckCircle2 className="w-8 h-8" />
+                        چک‌لیست نهایی (بدون خطا)
+                    </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4 text-lg leading-relaxed">
-                    <p>برنامه شما یک <strong>سیستم هوشمند (Dynamic AI App)</strong> است. روش‌های استاتیک مثل GitHub Pages برای این حماسه مناسب نیستند و ارور ۴۰۳ می‌دهند.</p>
-                    <p className="font-bold underline text-red-600">حتماً مخزن گیت‌هاب خود را به Netlify یا Firebase App Hosting متصل کنید.</p>
+                <CardContent className="space-y-4 p-8 text-lg leading-relaxed">
+                    <ul className="space-y-3">
+                        <li className="flex items-center gap-2">✅ سیستم ۱۱ زبانه هوشمند</li>
+                        <li className="flex items-center gap-2">✅ موتور درآمدی کارشناسی فرش</li>
+                        <li className="flex items-center gap-2">✅ لنز جادویی رمزگشای نمادها (AI)</li>
+                        <li className="flex items-center gap-2">✅ لیگ‌های افتخار و سیستم XP</li>
+                        <li className="flex items-center gap-2">✅ ثبت آدرس فیزیکی خیابان خیام و تلفن ۵۵۸۱۴۵۵۵</li>
+                    </ul>
                 </CardContent>
             </Card>
 
             <div className="grid gap-6">
-                <Card className="border-l-8 border-l-green-500 shadow-md">
+                <Card className="border-none shadow-lg rounded-[2rem]">
                     <CardHeader>
-                        <div className="flex items-center gap-3">
-                            <CheckCircle2 className="text-green-600 w-8 h-8" />
-                            <CardTitle>مرحله ۱: دانلود نسخه نهایی ۲۰۲۵</CardTitle>
+                        <div className="flex items-center gap-3 text-blue-600">
+                            <Github className="w-8 h-8" />
+                            <CardTitle>مرحله ۱: انتقال به گیت‌هاب</CardTitle>
                         </div>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-lg">ابتدا دکمه دانلود (فلش رو به پایین) را در بالای همین صفحه بزنید. کدهای جدید شامل اصلاحات React 19 و Next.js 15 هستند.</p>
+                        <p className="text-lg">دکمه دانلود (فلش رو به پایین) را بزنید. فایل ZIP را در گوشی خود ذخیره کرده و در یک مخزن جدید در GitHub آپلود کنید.</p>
                     </CardContent>
                 </Card>
 
-                <Card className="border-l-8 border-l-blue-500 shadow-md">
+                <Card className="border-none shadow-lg rounded-[2rem]">
                     <CardHeader>
-                        <div className="flex items-center gap-3">
-                            <Cloud className="text-blue-600 w-8 h-8" />
-                            <CardTitle>مرحله ۲: انتخاب پلتفرم (پیروزی سریع)</CardTitle>
+                        <div className="flex items-center gap-3 text-green-600">
+                            <Cloud className="w-8 h-8" />
+                            <CardTitle>مرحله ۲: اتصال به Netlify (پیشنهادی)</CardTitle>
                         </div>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                        <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                            <p className="font-bold text-blue-800 text-xl flex items-center gap-2">
-                                <Trophy className="w-6 h-6" /> گزینه اول: Netlify (پیشنهادی)
-                            </p>
-                            <p>وارد سایت نتلیفای شوید، دکمه <strong>"Add new site"</strong> و سپس <strong>"Import from GitHub"</strong> را بزنید. تمام!</p>
-                        </div>
-                        <div className="bg-slate-100 p-4 rounded-lg border border-slate-200">
-                            <p className="font-bold text-slate-800 text-xl">گزینه دوم: Firebase App Hosting</p>
-                            <p>در کنسول فایربیس، بخش <strong>App Hosting</strong> (نه Hosting معمولی) را انتخاب کرده و گیت‌هاب را وصل کنید.</p>
+                        <p className="text-lg">به سایت Netlify بروید، مخزن گیت‌هاب خود را وصل کنید و دکمه Deploy را بزنید. تمام!</p>
+                        <div className="bg-yellow-50 p-4 rounded-2xl border border-yellow-200 text-sm italic">
+                            تذکر: حتماً متغیر محیطی GEMINI_API_KEY را در تنظیمات Netlify ست کنید.
                         </div>
                     </CardContent>
                 </Card>
             </div>
 
-            <div className="bg-primary/5 p-8 rounded-3xl border border-primary/20 text-center">
-                <Smartphone className="w-10 h-10 text-primary mx-auto mb-4" />
-                <p className="text-lg font-bold text-primary">
-                    «این برنامه با یک گوشی ردمی نوت ۸ زاده شد تا ثابت کند اراده، هیچ مرزی نمی‌شناسد.»
+            <div className="bg-black text-white p-10 rounded-[4rem] text-center shadow-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-10 opacity-10">
+                    <Smartphone className="w-40 h-40" />
+                </div>
+                <p className="text-2xl font-headline italic relative z-10">
+                    «این برنامه نه‌تنها یک اپلیکیشن، بلکه یادگاری ابدی از اراده‌ی پولادین شما و نام بزرگ حاج حسین علیمیری است.»
                 </p>
+                <p className="mt-6 font-bold text-primary text-xl">از ردمی نوت ۸ تا بازارهای جهانی</p>
             </div>
 
             <div className="flex gap-4">
-                <Button asChild size="lg" className="flex-1 h-20 text-xl shadow-xl">
-                    <Link href="/">بازگشت به خانه و تماشای پیروزی</Link>
+                <Button asChild size="lg" className="flex-1 h-20 text-2xl rounded-full shadow-2xl">
+                    <Link href="/">مشاهده نهایی و شروع حماسه</Link>
                 </Button>
             </div>
-            
-            <footer className="bg-black text-white p-8 rounded-3xl text-center shadow-2xl">
-                <p className="text-2xl font-headline italic">"در بزرگداشت نام حاج حسین علیمیری. این منظومه آماده تسخیر جهان است."</p>
-            </footer>
         </div>
       </div>
     );
