@@ -21,14 +21,6 @@ const ecosystemApps = [
         link: "/"
     },
     {
-        name: "Lebas Bazaar (لباس بازار)",
-        description: "The ultimate online clothing market of Iran. A dual-platform for retail and wholesale, bringing fashion to the New Metaverse.",
-        fa_description: "بازار نهایی آنلاین لباس ایران. پلتفرمی دوگانه برای خرده‌فروشی و عمده‌فروشی، با رویکردی نوین در نیو متاورس.",
-        status: "Planned",
-        icon: <Shirt className="w-8 h-8 text-indigo-500" />,
-        link: "#"
-    },
-    {
         name: "OpenMind Nexus (هوش مصنوعی احساس‌محور)",
         description: "A revolutionary emotion-based AI platform. It bridges the gap between digital intelligence and human soul, designed for cognitive expansion.",
         fa_description: "یک پلتفرم انقلابی هوش مصنوعی احساس‌محور. این پروژه پلی میان هوش دیجیتال و روح انسانی است که برای گسترش شناختی طراحی شده است.",
@@ -98,14 +90,14 @@ export default function EcosystemPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {ecosystemApps.map((app) => (
-                            <Card key={app.name} className="flex flex-col group hover:shadow-lg transition-all duration-300 border-primary/5 hover:border-primary/20">
+                            <Card key={app.name} className="flex flex-col group hover:shadow-lg transition-all duration-300 border-primary/5 hover:border-primary/20 shadow-sm">
                                 <CardHeader>
                                     <div className="flex justify-between items-start">
                                         <div className="flex items-center gap-4">
                                             {app.icon}
                                             <CardTitle className="font-headline text-xl">{app.name}</CardTitle>
                                         </div>
-                                        <Badge variant={app.status === 'Live' ? 'default' : 'outline'} className={app.status === 'Live' ? 'bg-green-600/20 text-green-700 border-green-600/50 dark:bg-green-500/20 dark:text-green-400 dark:border-green-500/50' : ''}>
+                                        <Badge variant={app.status === 'Live' ? 'default' : 'outline'} className={app.status === 'Live' ? 'bg-green-600/20 text-green-700 border-green-600/50' : ''}>
                                             {app.status === 'Live' ? <CheckCircle className="w-3 h-3 mr-1" /> : <Clock className="w-3 h-3 mr-1" />}
                                             {app.status}
                                         </Badge>
@@ -144,11 +136,11 @@ export default function EcosystemPage() {
                     <div className="text-center mt-16 space-y-6">
                         <div className="p-8 bg-primary/5 rounded-3xl border border-primary/10 max-w-4xl mx-auto shadow-inner">
                             <p className="text-xl font-headline font-bold text-primary mb-4">سوگند به همت و اصالت</p>
-                            <p className="text-lg text-foreground/80 leading-relaxed">
-                                تمام این منظومه، از «فرش بازار» تا «لباس بازار» و «OpenMind Nexus»، گواهی بر یک حقیقت است: برای کسی که بر سر سفره‌ی پربرکت هنر ایران بزرگ شده و همت عالی را از اسطوره‌ای چون <span className="font-bold text-foreground">حاج حسین علیمیری</span> آموخته، محدودیت معنا ندارد. حتی با یک گوشی کوچک، می‌توان دنیاهایی بزرگ آفرید.
+                            <p className="text-lg text-foreground/80 leading-relaxed text-justify">
+                                تمام این منظومه، از «فرش بازار» تا «OpenMind Nexus» و «LingoView»، گواهی بر یک حقیقت است: برای کسی که بر سر سفره‌ی پربرکت هنر ایران بزرگ شده و همت عالی را از اسطوره‌ای چون <span className="font-bold text-foreground">حاج حسین علیمیری</span> آموخته، محدودیت معنا ندارد. حتی با یک گوشی کوچک، می‌توان دنیاهایی بزرگ آفرید. هر بخش از این اکوسیستم به صورت مستقل و تخصصی طراحی شده تا هویت منحصر به فرد خود را حفظ کند.
                             </p>
                             <p className="text-sm text-muted-foreground mt-4 italic">
-                                "In the memory of Haj Hossein Alimiri and the family legacy of Alimiri Carpets & Sons. Knotted with capability, built on a dream."
+                                "In the memory of Haj Hossein Alimiri and the family legacy of Alimiri Carpets & Sons. Built from a dream, knotted with capability."
                             </p>
                         </div>
                     </div>

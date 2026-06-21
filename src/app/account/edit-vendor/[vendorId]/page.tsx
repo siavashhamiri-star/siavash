@@ -1,4 +1,3 @@
-
 'use client';
 import { Button } from '@/components/ui/button';
 import {
@@ -14,7 +13,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useFirestore, useUser, useDoc } from '@/firebase';
 import { doc, updateDoc } from 'firebase/firestore';
 import { useRouter, useParams } from 'next/navigation';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, use } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { toast } from '@/hooks/use-toast';
@@ -23,7 +22,8 @@ import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
 import { Loader2 } from 'lucide-react';
 
-export default function EditVendorPage() {
+export default function EditVendorPage({ params }: { params: Promise<{ vendorId: string }> }) {
+  const { vendorId } = use(params);
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');
   const [bio, setBio] = useState('');
@@ -32,9 +32,6 @@ export default function EditVendorPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const router = useRouter();
-  const params = useParams();
-  const vendorId = params.vendorId as string;
-
   const firestore = useFirestore();
   const { data: user, isLoading: userLoading } = useUser();
   
@@ -120,18 +117,11 @@ export default function EditVendorPage() {
         <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-1 flex items-center justify-center">
-          <div className="flex flex-col items-center gap-4">
             <Loader2 className="w-10 h-10 animate-spin text-primary" />
-            <p>در حال بارگذاری ویرایشگر نمایشگاه...</p>
-          </div>
         </main>
         <Footer />
       </div>
     );
-  }
-
-  if (!vendor || vendor.userId !== user?.uid) {
-     return null; // Handle via redirect
   }
 
   return (

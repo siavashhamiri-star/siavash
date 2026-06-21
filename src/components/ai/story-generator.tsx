@@ -121,7 +121,7 @@ export function StoryGenerator() {
                             <p className="mb-2 text-sm text-muted-foreground"><span className="font-semibold">برای آپلود کلیک کنید</span></p>
                             <p className="text-xs text-muted-foreground">PNG, JPG یا WEBP</p>
                         </div>
-                        <Input id="file-upload" type="file" className="hidden" accept="image/*" onChange={handleFileChange} ref={fileInputRef} />
+                        <input id="file-upload" type="file" className="hidden" accept="image/*" onChange={handleFileChange} ref={fileInputRef} />
                     </label>
                 )}
                  <input type="hidden" name="imageDataUri" value={imageDataUri || ''} />

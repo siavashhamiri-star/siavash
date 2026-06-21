@@ -13,16 +13,18 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useFirestore, useUser, useDoc } from '@/firebase';
 import { addDoc, collection, doc } from 'firebase/firestore';
-import { useRouter, useParams } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { useState, useEffect, use } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { toast } from '@/hooks/use-toast';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
+import { Loader2 } from 'lucide-react';
 
-export default function AddCarpetPage() {
+export default function AddCarpetPage({ params }: { params: Promise<{ vendorId: string }> }) {
+  const { vendorId } = use(params);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
@@ -31,9 +33,6 @@ export default function AddCarpetPage() {
   const [error, setError] = useState<string | null>(null);
   
   const router = useRouter();
-  const params = useParams();
-  const vendorId = params.vendorId as string;
-
   const firestore = useFirestore();
   const { data: user, isLoading: userLoading } = useUser();
   const vendorRef = doc(firestore, 'vendors', vendorId);
@@ -53,8 +52,8 @@ export default function AddCarpetPage() {
   }, [user, userLoading, vendor, vendorLoading, router, vendorId]);
   
   useEffect(() => {
-    // Pre-fill with a random placeholder for ease of use
-    const randomCarpetImage = PlaceHolderImages.filter(p => p.id.startsWith('carpet-'))[Math.floor(Math.random() * 8)];
+    const carpetImages = PlaceHolderImages.filter(p => p.id.startsWith('carpet-'));
+    const randomCarpetImage = carpetImages[Math.floor(Math.random() * carpetImages.length)];
     if(randomCarpetImage) {
         setImageUrl(randomCarpetImage.imageUrl);
     }
@@ -109,7 +108,7 @@ export default function AddCarpetPage() {
         <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-1 flex items-center justify-center">
-          <p>Loading...</p>
+          <Loader2 className="w-10 h-10 animate-spin text-primary" />
         </main>
         <Footer />
       </div>
@@ -121,7 +120,7 @@ export default function AddCarpetPage() {
       <Header />
       <main className="flex-1 bg-secondary/20">
         <div className="container mx-auto px-4 py-16">
-          <Card className="max-w-2xl mx-auto">
+          <Card className="max-w-2xl mx-auto shadow-lg">
             <CardHeader>
               <CardTitle className="text-2xl font-headline">Add a New Carpet</CardTitle>
               <CardDescription>
@@ -162,7 +161,7 @@ export default function AddCarpetPage() {
                     value={imageUrl}
                     onChange={(e) => setImageUrl(e.target.value)}
                   />
-                  {imageUrl && <img src={imageUrl} alt="Carpet preview" className="mt-2 rounded-md object-cover w-full h-48" />}
+                  {imageUrl && <img src={imageUrl} alt="Carpet preview" className="mt-2 rounded-md object-cover w-full h-48 shadow-sm border" />}
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="description">Description</Label>
@@ -176,7 +175,7 @@ export default function AddCarpetPage() {
                   />
                 </div>
                 
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center space-x-2 gap-2">
                   <Checkbox
                     id="consignment"
                     checked={consignment}
@@ -184,13 +183,13 @@ export default function AddCarpetPage() {
                   />
                   <Label
                     htmlFor="consignment"
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    className="text-sm font-medium leading-none"
                   >
                     Request to sell this carpet in the Farsh Bazaar Specialty Catalog (Consignment)
                   </Label>
                 </div>
                 
-                {error && <p className="text-destructive text-sm">{error}</p>}
+                {error && <p className="text-destructive text-sm font-bold">{error}</p>}
                 
                 <Button type="submit" className="w-full">
                   Add Carpet to Showroom

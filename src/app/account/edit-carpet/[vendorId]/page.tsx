@@ -1,4 +1,3 @@
-
 'use client';
 import { Button } from '@/components/ui/button';
 import {
@@ -14,8 +13,8 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useFirestore, useUser, useDoc } from '@/firebase';
 import { doc, updateDoc } from 'firebase/firestore';
-import { useRouter, useParams, useSearchParams, notFound } from 'next/navigation';
-import { useState, useEffect, useMemo } from 'react';
+import { useRouter, useSearchParams, notFound } from 'next/navigation';
+import { useState, useEffect, useMemo, use } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { toast } from '@/hooks/use-toast';
@@ -24,7 +23,11 @@ import { errorEmitter } from '@/firebase/error-emitter';
 import { FirestorePermissionError } from '@/firebase/errors';
 import { Loader2 } from 'lucide-react';
 
-export default function EditCarpetPage() {
+export default function EditCarpetPage({ params }: { params: Promise<{ vendorId: string }> }) {
+  const { vendorId: carpetId } = use(params);
+  const searchParams = useSearchParams();
+  const vendorId = searchParams.get('vendorId');
+
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
@@ -34,11 +37,6 @@ export default function EditCarpetPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const router = useRouter();
-  const params = useParams();
-  const searchParams = useSearchParams();
-
-  const carpetId = params.vendorId as string; 
-  const vendorId = searchParams.get('vendorId');
   
   if (!vendorId) {
     notFound();
@@ -70,8 +68,6 @@ export default function EditCarpetPage() {
     }
   }, [carpet]);
 
-  const isOwner = user && vendor && user.uid === vendor.userId;
-
   useEffect(() => {
     if (!userLoading && !vendorLoading && user && vendor) {
       if (vendor.userId !== user.uid) {
@@ -87,7 +83,7 @@ export default function EditCarpetPage() {
     e.preventDefault();
     setError(null);
 
-    if (!isOwner || !carpetRef) {
+    if (!user || !carpetRef || vendor?.userId !== user.uid) {
       setError('خطایی رخ داد. لطفا دوباره تلاش کنید.');
       return;
     }
@@ -132,18 +128,11 @@ export default function EditCarpetPage() {
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-1 flex items-center justify-center">
-          <div className="flex flex-col items-center gap-4">
             <Loader2 className="w-10 h-10 animate-spin text-primary" />
-            <p>در حال بارگذاری ویرایشگر...</p>
-          </div>
         </main>
         <Footer />
       </div>
     );
-  }
-
-  if (!isOwner) {
-    return null; // Redirect logic will handle this
   }
 
   return (
@@ -189,7 +178,7 @@ export default function EditCarpetPage() {
                     value={imageUrl}
                     onChange={(e) => setImageUrl(e.target.value)}
                   />
-                  {imageUrl && <img src={imageUrl} alt="Carpet preview" className="mt-2 rounded-md object-cover w-full h-48 border" />}
+                  {imageUrl && <img src={imageUrl} alt="Carpet preview" className="mt-2 rounded-md object-cover w-full h-48 border shadow-sm" />}
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="description">توضیحات و شناسنامه</Label>

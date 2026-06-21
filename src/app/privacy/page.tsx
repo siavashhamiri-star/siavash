@@ -15,6 +15,7 @@ import {
     const [currentDate, setCurrentDate] = useState<string>('');
 
     useEffect(() => {
+        // Fix for hydration mismatch: Date is client-side only
         setCurrentDate(new Date().toLocaleDateString());
     }, []);
 
@@ -23,7 +24,7 @@ import {
         <Header />
         <main className="flex-1 bg-secondary/20">
           <div className="container mx-auto px-4 py-16">
-            <Card className="max-w-4xl mx-auto">
+            <Card className="max-w-4xl mx-auto shadow-md">
               <CardHeader className="text-center">
                 <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4">
                   <Shield className="w-10 h-10 text-primary" />
