@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
-import { Menu, ShoppingCart, Sparkles, Globe, ChevronDown, Wand2 } from 'lucide-react';
+import { Menu, ShoppingCart, Sparkles, Globe, ChevronDown, Wand2, Scale } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -23,10 +23,10 @@ import { useState } from 'react';
 
 const navItems = [
   { href: '/', label: 'Home / خانه' },
-  { href: '/magazine', label: 'Magazine / مجله' },
-  { href: '/legends', label: 'Legends / مشاهیر' },
   { href: '/vendors', label: 'Showrooms / نمایشگاه‌ها' },
   { href: '/handicrafts', label: 'Handicrafts / صنایع دستی' },
+  { href: '/appraisal', label: 'Appraisal / کارشناسی' },
+  { href: '/magazine', label: 'Magazine / مجله' },
   { href: '/ecosystem', label: 'Ecosystem / اکوسیستم' },
 ];
 
@@ -135,13 +135,13 @@ export function Header() {
                             {item.label}
                         </Link>
                         ))}
-                        <Link href="/decode" className="text-primary font-bold flex items-center gap-2 border-t pt-4">
+                        <Link href="/appraisal" className="text-primary font-bold flex items-center gap-2 border-t pt-4">
+                           <Scale className="w-4 h-4" />
+                           درخواست کارشناسی و قیمت‌گذاری
+                        </Link>
+                        <Link href="/decode" className="text-primary font-bold flex items-center gap-2">
                            <Wand2 className="w-4 h-4" />
                            لنز جادویی (رمزگشای نمادها)
-                        </Link>
-                        <Link href="/ads/new" className="text-accent font-bold flex items-center gap-2">
-                           <Sparkles className="w-4 h-4" />
-                           ثبت آگهی صنایع دستی
                         </Link>
                     </nav>
                 </div>

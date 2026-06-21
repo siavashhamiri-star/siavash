@@ -33,34 +33,21 @@
             },
             "required": ["title", "description", "price", "category", "userId", "userName", "createdAt"]
         },
-        "Vendor": {
-            "title": "Vendor",
-            "description": "Represents a vendor in the system.",
+        "AppraisalRequest": {
+            "title": "Appraisal Request",
+            "description": "A request for expert carpet valuation.",
             "type": "object",
             "properties": {
-                "name": { "type": "string" },
-                "location": { "type": "string" },
-                "bio": { "type": "string" },
-                "specialties": { "type": "array", "items": { "type": "string" } },
-                "avatarUrl": { "type": "string", "format": "uri" },
+                "carpetName": { "type": "string" },
+                "dimensions": { "type": "string" },
+                "origin": { "type": "string" },
+                "age": { "type": "string" },
+                "imageDataUri": { "type": "string" },
                 "userId": { "type": "string" },
-                "isVerified": { "type": "boolean" }
+                "status": { "type": "string", "enum": ["pending", "paid", "completed"] },
+                "createdAt": { "type": "object" }
             },
-            "required": ["name", "location", "bio", "userId"]
-        },
-        "Carpet": {
-            "title": "Carpet",
-            "description": "Represents a carpet in the system.",
-            "type": "object",
-            "properties": {
-                "name": { "type": "string" },
-                "description": { "type": "string" },
-                "price": { "type": "string" },
-                "imageUrl": { "type": "string", "format": "uri" },
-                "vendorId": { "type": "string" },
-                "consignment": { "type": "boolean" }
-            },
-            "required": ["name", "description", "price", "imageUrl", "vendorId"]
+            "required": ["carpetName", "userId", "status"]
         }
     },
     "auth": {
@@ -68,20 +55,13 @@
     },
     "firestore": {
         "/users/{userId}": {
-            "schema": { "$ref": "#/backend/entities/UserProfile" },
-            "description": "Stores user profiles."
+            "schema": { "$ref": "#/backend/entities/UserProfile" }
         },
         "/handicrafts/{id}": {
-            "schema": { "$ref": "#/backend/entities/Handicraft" },
-            "description": "Stores handicraft advertisements."
+            "schema": { "$ref": "#/backend/entities/Handicraft" }
         },
-        "/vendors/{vendorId}": {
-            "schema": { "$ref": "#/backend/entities/Vendor" },
-            "description": "Stores vendor information."
-        },
-        "/vendors/{vendorId}/carpets/{carpetId}": {
-            "schema": { "$ref": "#/backend/entities/Carpet" },
-            "description": "Stores carpets for a vendor."
+        "/appraisals/{id}": {
+            "schema": { "$ref": "#/backend/entities/AppraisalRequest" }
         }
     }
 }
