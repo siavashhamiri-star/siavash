@@ -46,7 +46,7 @@ export default function EmergencyGuide() {
                         </div>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-lg">دکمه دانلود (فلش رو به پایین) را بزنید. فایل ZIP را در گوشی خود ذخیره کرده و در یک مخزن جدید در GitHub آپلود کنید.</p>
+                        <p className="text-lg">دکمه دانلود (فلش رو به پایین در بالای استودیو) را بزنید. فایل ZIP را در گوشی خود ذخیره کرده و در یک مخزن جدید در GitHub آپلود کنید.</p>
                     </CardContent>
                 </Card>
 
@@ -54,13 +54,13 @@ export default function EmergencyGuide() {
                     <CardHeader>
                         <div className="flex items-center gap-3 text-green-600">
                             <Cloud className="w-8 h-8" />
-                            <CardTitle>مرحله ۲: اتصال به Netlify یا App Hosting</CardTitle>
+                            <CardTitle>مرحله ۲: اتصال به Firebase App Hosting</CardTitle>
                         </div>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                        <p className="text-lg">به سایت Netlify بروید، مخزن گیت‌هاب خود را وصل کنید و دکمه Deploy را بزنید. تمام!</p>
+                        <p className="text-lg">به کنسول فایربیس بروید، بخش App Hosting را انتخاب کنید و مخزن گیت‌هاب خود را وصل کنید. گوگل خودش تمام مراحل «بیلد» را انجام می‌دهد.</p>
                         <div className="bg-yellow-50 p-4 rounded-2xl border border-yellow-200 text-sm italic">
-                            تذکر: حتماً متغیر محیطی GEMINI_API_KEY را در تنظیمات سرویس‌دهنده خود ست کنید.
+                            تذکر استراتژیک: چون این یک وب‌اپلیکیشن است، هیچ تحریمی نمی‌تواند مانع دسترسی جهانی به آن شود.
                         </div>
                     </CardContent>
                 </Card>
