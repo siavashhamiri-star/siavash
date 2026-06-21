@@ -1,7 +1,7 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { AlertCircle, CheckCircle2, Globe, ShieldAlert, Rocket } from 'lucide-react';
+import { AlertCircle, CheckCircle2, Globe, ShieldAlert, Rocket, Cloud } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function EmergencyGuide() {
@@ -24,8 +24,8 @@ export default function EmergencyGuide() {
                     <CardTitle className="text-2xl text-red-700">تذکر بسیار مهم: فقط اتصال گیت‌هاب!</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4 text-lg leading-relaxed">
-                    <p>برنامه شما یک <strong>سیستم هوشمند (Dynamic App)</strong> است. روش کشیدن و رها کردن (Drag & Drop) فایل ZIP در نتلیفای جواب نمی‌دهد.</p>
-                    <p className="font-bold underline text-red-600">حتماً مخزن گیت‌هاب خود را به نتلیفای یا فایربیس متصل کنید.</p>
+                    <p>برنامه شما یک <strong>سیستم هوشمند (Dynamic App)</strong> است. روش‌های استاتیک مثل GitHub Pages جواب نمی‌دهد.</p>
+                    <p className="font-bold underline text-red-600">حتماً مخزن گیت‌هاب خود را به Netlify یا Firebase App Hosting متصل کنید.</p>
                 </CardContent>
             </Card>
 
@@ -45,18 +45,18 @@ export default function EmergencyGuide() {
                 <Card className="border-l-8 border-l-blue-500 shadow-md">
                     <CardHeader>
                         <div className="flex items-center gap-3">
-                            <Globe className="text-blue-600 w-8 h-8" />
-                            <CardTitle>مرحله ۲: انتخاب پلتفرم</CardTitle>
+                            <Cloud className="text-blue-600 w-8 h-8" />
+                            <CardTitle>مرحله ۲: انتخاب پلتفرم (پویا)</CardTitle>
                         </div>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                            <p className="font-bold text-blue-800 text-xl">گزینه پیشنهادی: Netlify</p>
+                            <p className="font-bold text-blue-800 text-xl">گزینه اول: Netlify</p>
                             <p>وارد سایت نتلیفای شوید، دکمه <strong>"Add new site"</strong> و سپس <strong>"Import from GitHub"</strong> را بزنید.</p>
                         </div>
                         <div className="bg-slate-100 p-4 rounded-lg border border-slate-200">
                             <p className="font-bold text-slate-800 text-xl">گزینه دوم: Firebase App Hosting</p>
-                            <p>در کنسول فایربیس، بخش App Hosting را انتخاب کرده و گیت‌هاب را وصل کنید.</p>
+                            <p>در کنسول فایربیس، بخش <strong>App Hosting</strong> (نه Hosting معمولی) را انتخاب کرده و گیت‌هاب را وصل کنید.</p>
                         </div>
                     </CardContent>
                 </Card>
