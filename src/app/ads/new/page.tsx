@@ -126,6 +126,7 @@ export default function NewAdPage() {
                         <SelectItem value="silver">ظروف نقره</SelectItem>
                         <SelectItem value="antique">آنتیک و قدیمی</SelectItem>
                         <SelectItem value="painting">تابلو نقاشی / خط</SelectItem>
+                        <SelectItem value="calligraphy">خوشنویسی</SelectItem>
                         <SelectItem value="other">سایر صنایع دستی</SelectItem>
                       </SelectContent>
                     </Select>
