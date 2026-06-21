@@ -1,3 +1,6 @@
+
+'use client';
+
 // A simple, lightweight event emitter for client-side usage that doesn't depend on Node.js built-ins.
 type ErrorHandler = (error: any) => void;
 
