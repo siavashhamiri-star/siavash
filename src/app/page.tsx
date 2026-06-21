@@ -54,7 +54,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white px-12 rounded-full shadow-2xl transition-all hover:scale-105 h-16 text-xl">
-                <Link href="/vendors">ورود به بازار جهانی</Link>
+                <Link href="/vendors">ورود به بازار جهانی (۱۱ زبان)</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="text-white border-white/40 hover:bg-white/10 px-12 rounded-full backdrop-blur-sm h-16 text-xl">
                 <Link href="/appraisal">کارشناسی و ارزیابی آنلاین</Link>
@@ -67,21 +67,21 @@ export default function Home() {
         <section className="py-24 bg-white">
             <div className="container px-4">
                 <div className="grid md:grid-cols-3 gap-8">
-                    <Card className="p-8 border-none shadow-xl bg-secondary/30 rounded-[3rem] group hover:bg-primary transition-all duration-500">
+                    <div className="p-10 border-none shadow-xl bg-secondary/30 rounded-[3rem] group hover:bg-primary transition-all duration-500">
                         <Landmark className="w-12 h-12 text-primary mb-6 group-hover:text-white" />
                         <h3 className="text-2xl font-bold mb-4 group-hover:text-white">فرش دستباف نفیس</h3>
                         <p className="text-muted-foreground group-hover:text-white/80">میراث ۵۰۰۰ ساله هنر ایران، از تبریز و کاشان تا عشایر قشقایی.</p>
-                    </Card>
-                    <Card className="p-8 border-none shadow-xl bg-secondary/30 rounded-[3rem] group hover:bg-primary transition-all duration-500">
+                    </div>
+                    <div className="p-10 border-none shadow-xl bg-secondary/30 rounded-[3rem] group hover:bg-primary transition-all duration-500">
                         <Factory className="w-12 h-12 text-primary mb-6 group-hover:text-white" />
                         <h3 className="text-2xl font-bold mb-4 group-hover:text-white">فرش ماشینی مدرن</h3>
                         <p className="text-muted-foreground group-hover:text-white/80">تکنولوژی روز دنیا در خدمت صنعت فرش؛ از برندهای برتر ایران و جهان.</p>
-                    </Card>
-                    <Card className="p-8 border-none shadow-xl bg-secondary/30 rounded-[3rem] group hover:bg-primary transition-all duration-500">
+                    </div>
+                    <div className="p-10 border-none shadow-xl bg-secondary/30 rounded-[3rem] group hover:bg-primary transition-all duration-500">
                         <Globe className="w-12 h-12 text-primary mb-6 group-hover:text-white" />
                         <h3 className="text-2xl font-bold mb-4 group-hover:text-white">فرش و هنرهای ملل</h3>
                         <p className="text-muted-foreground group-hover:text-white/80">پذیرای هنرمندان و تجار از سراسر جهان (هند، ترکیه، پاکستان و ...).</p>
-                    </Card>
+                    </div>
                 </div>
             </div>
         </section>
@@ -123,12 +123,4 @@ export default function Home() {
       <Footer />
     </div>
   );
-}
-
-function Card({ children, className }: { children: React.ReactNode, className?: string }) {
-    return (
-        <div className={className}>
-            {children}
-        </div>
-    );
 }

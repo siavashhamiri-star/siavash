@@ -13,7 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useUser, useFirestore } from '@/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { toast } from '@/hooks/use-toast';
-import { ShieldCheck, Scale, DollarSign, Image as ImageIcon, Loader2, Sparkles, MapPin, Factory } from 'lucide-react';
+import { ShieldCheck, Scale, DollarSign, Image as ImageIcon, Loader2, Factory, MapPin } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -112,10 +112,14 @@ export default function AppraisalPage() {
                             <span className="text-lg">آثار نفیس و آنتیک ایران</span>
                             <span className="font-black text-xl text-accent">۱,۵۰۰,۰۰۰+</span>
                         </div>
-                        <p className="text-xs text-white/70 italic mt-6 leading-relaxed">
+                        <p className="text-[10px] text-white/70 italic mt-6 leading-relaxed">
                             * هزینه شامل تحلیل شانه و تراکم (برای ماشینی)، رنگرزی و قدمت (برای دستباف) و صدور شناسنامه دیجیتال است.
                         </p>
                     </CardContent>
+                    <CardFooter className="bg-black/10 p-6 flex items-center gap-3">
+                         <MapPin className="w-5 h-5 text-accent" />
+                         <span className="text-[10px] font-bold">خیابان خیام شمالی، پلاک ۴۸ - مرکزیت ارزیابی</span>
+                    </CardFooter>
                 </Card>
 
                 <Card className="border-none shadow-xl rounded-[2rem] overflow-hidden">
@@ -125,17 +129,14 @@ export default function AppraisalPage() {
                             بخش تخصصی فرش ماشینی
                         </CardTitle>
                     </CardHeader>
-                    <CardContent className="p-6 space-y-4">
+                    <CardContent className="p-6">
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                            ما اولین مرجع قیمت‌گذاری عادلانه برای برندهای معتبر فرش ماشینی هستیم. اصالت برند و کیفیت بافت شما را تایید می‌کنیم.
+                            ما مرجع قیمت‌گذاری عادلانه برای برندهای معتبر فرش ماشینی هستیم. اصالت برند و کیفیت بافت شما را تایید می‌کنیم.
                         </p>
-                        <div className="bg-primary/5 p-4 rounded-xl text-xs font-bold text-primary">
-                            خیابان خیام شمالی، پلاک ۴۸ - مرکزیت ارزیابی
-                        </div>
                     </CardContent>
                     <CardFooter className="bg-primary p-6">
                         <div className="text-center w-full text-white">
-                            <p className="text-xs opacity-80 mb-2">تماس مستقیم کارشناس ارشد:</p>
+                            <p className="text-xs opacity-80 mb-2">تماس مستقیم با کارشناس ارشد:</p>
                             <p className="text-2xl font-black" dir="ltr">۰۲۱ - ۵۵۸۱۴۵۵۵</p>
                         </div>
                     </CardFooter>
@@ -153,7 +154,7 @@ export default function AppraisalPage() {
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="grid gap-2">
                                     <Label className="text-base">نام یا برند فرش</Label>
-                                    <Input className="h-12" required placeholder="مثال: فرش فرهی، اصفهان لچک ترنج و..." value={carpetName} onChange={e => setCarpetName(e.target.value)} />
+                                    <Input className="h-12" required placeholder="مثال: فرش اصفهان، فرش فرهی و..." value={carpetName} onChange={e => setCarpetName(e.target.value)} />
                                 </div>
                                 <div className="grid gap-2">
                                     <Label className="text-base">نوع و دسته تخصصی</Label>
@@ -167,16 +168,6 @@ export default function AppraisalPage() {
                                         <SelectItem value="international">فرش سایر ملل (هند، پاکستان، ترکیه)</SelectItem>
                                       </SelectContent>
                                     </Select>
-                                </div>
-                            </div>
-                            <div className="grid md:grid-cols-2 gap-6">
-                                <div className="grid gap-2">
-                                    <Label className="text-base">ابعاد / شانه و تراکم</Label>
-                                    <Input className="h-12" placeholder="مثال: ۱۲۰۰ شانه، ۳ در ۴ متر" value={dimensions} onChange={e => setDimensions(e.target.value)} />
-                                </div>
-                                <div className="grid gap-2">
-                                    <Label className="text-base">منطقه بافت / کشور مبدا</Label>
-                                    <Input className="h-12" placeholder="مثال: کاشان، هند، ترکیه" value={origin} onChange={e => setOrigin(e.target.value)} />
                                 </div>
                             </div>
                             
