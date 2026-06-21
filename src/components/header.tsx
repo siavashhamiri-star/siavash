@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
-import { Menu, ShoppingCart, Sparkles, Globe, ChevronDown } from 'lucide-react';
+import { Menu, ShoppingCart, Sparkles, Globe, ChevronDown, BookOpen, Trophy } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -23,10 +23,11 @@ import { useState } from 'react';
 
 const navItems = [
   { href: '/', label: 'Home / خانه' },
+  { href: '/magazine', label: 'Magazine / مجله' },
+  { href: '/legends', label: 'Legends / مشاهیر' },
   { href: '/vendors', label: 'Showrooms / نمایشگاه‌ها' },
   { href: '/handicrafts', label: 'Handicrafts / صنایع دستی' },
   { href: '/ecosystem', label: 'Ecosystem / اکوسیستم' },
-  { href: '/manifesto', label: 'Our Vision / چشم‌انداز' },
 ];
 
 export function Header() {
@@ -46,7 +47,7 @@ export function Header() {
               <span className="text-[10px] text-primary font-medium tracking-widest uppercase">FB New Meta</span>
             </div>
           </Link>
-          <nav className="hidden lg:flex items-center space-x-6 text-sm font-medium ml-6">
+          <nav className="hidden xl:flex items-center space-x-6 text-sm font-medium ml-6">
             {navItems.map((item) => (
               <Link
                 key={item.label}
@@ -103,7 +104,7 @@ export function Header() {
             )}
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="lg:hidden text-primary">
+                <Button variant="ghost" size="icon" className="xl:hidden text-primary">
                   <Menu />
                   <span className="sr-only">Open Menu</span>
                 </Button>

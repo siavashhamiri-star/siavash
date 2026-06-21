@@ -2,7 +2,7 @@
 'use client';
 import Link from 'next/link';
 import { Logo } from './logo';
-import { Smartphone, Heart, ExternalLink, HeartPulse, MapPin, Phone, Globe } from 'lucide-react';
+import { Smartphone, Heart, ExternalLink, HeartPulse, MapPin, Phone, Globe, BookOpen, Trophy } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export function Footer() {
@@ -73,6 +73,8 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-headline font-bold text-lg">دسترسی سریع</h4>
             <ul className="grid grid-cols-1 gap-2 text-sm font-medium">
+              <li><Link href="/magazine" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2"><BookOpen className="w-4 h-4" /> مجله و وبلاگ تخصصی</Link></li>
+              <li><Link href="/legends" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2"><Trophy className="w-4 h-4" /> مشاهیر و مصاحبه‌ها</Link></li>
               <li><Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">درباره ما و میراث علیمیری</Link></li>
               <li><Link href="/manifesto" className="text-muted-foreground hover:text-primary transition-colors">کتاب آفرینش (Manifesto)</Link></li>
               <li><Link href="/ecosystem" className="text-muted-foreground hover:text-primary transition-colors">اکوسیستم شهر توانا</Link></li>

@@ -8,7 +8,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Landmark, HeartPulse, BrainCircuit, Mic, BookOpen, Briefcase, Sparkles, Globe, ShieldCheck, Smartphone, Quote, ArrowRight, Phone, MapPin } from 'lucide-react';
+import { Landmark, HeartPulse, BrainCircuit, Mic, BookOpen, Briefcase, Sparkles, Globe, ShieldCheck, Smartphone, Quote, ArrowRight, Phone, MapPin, Trophy } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -22,6 +22,24 @@ const ecosystemApps = [
         status: "Live",
         icon: <Landmark className="w-8 h-8 text-primary" />,
         link: "/"
+    },
+    {
+        name: "Carpet Magazine (مجله فرش)",
+        description: "Specialized blog and knowledge base for Iranian artistry and carpet trade.",
+        fa_description: "مجله و وبلاگ تخصصی دانش، هنر و تجارت فرش.",
+        ar_description: "مجلة فرش بازار المتخصصة في المعرفة وفن وتجارة السجاد.",
+        status: "Live",
+        icon: <BookOpen className="w-8 h-8 text-indigo-500" />,
+        link: "/magazine"
+    },
+    {
+        name: "Carpet Legends (مشاهیر فرش)",
+        description: "Interviews and biographies of the icons who built the global carpet industry.",
+        fa_description: "مصاحبه‌ها و زندگی‌نامه اسطوره‌هایی که صنعت جهانی فرش را ساختند.",
+        ar_description: "مقابلات وسير ذاتية للأيقونات الذين بنوا صناعة السجاد العالمية.",
+        status: "Live",
+        icon: <Trophy className="w-8 h-8 text-amber-500" />,
+        link: "/legends"
     },
     {
         name: "OpenMind Nexus",
@@ -43,28 +61,13 @@ const ecosystemApps = [
         link: "/lingoview"
     },
     {
-        name: "Nava Studio (استودیو نوا)",
-        description: "AI-powered music and video creation for the new era of artists.",
-        fa_description: "خلق موسیقی و ویدیو با هوش مصنوعی.",
-        ar_description: "إنشاء الموسيقى والفيديو باستخدام الذكاء الاصطناعي.",
-        status: "Planned",
-        icon: <Mic className="w-8 h-8 text-purple-500" />
-    },
-    {
-        name: "Ghese Go (قصه‌گو)",
-        description: "A magical digital vault for children's stories and memories.",
-        fa_description: "صندوقچه دیجیتال جادویی برای قصه‌های کودکان.",
-        ar_description: "قبو رقمي سحري لقصص الأطفال وذكرياتهم.",
-        status: "Planned",
-        icon: <BookOpen className="w-8 h-8 text-orange-500" />
-    },
-    {
         name: "Tavana Work (توانا کار)",
         description: "The economic engine of Tavana City. Connecting experts to global opportunities.",
         fa_description: "موتور اقتصادی شهر توانا.",
         ar_description: "المحرك الاقتصادي لمدينة 'توانا'.",
         status: "Coming Soon",
-        icon: <Briefcase className="w-8 h-8 text-emerald-500" />
+        icon: <Briefcase className="w-8 h-8 text-emerald-500" />,
+        link: "/tavana-work"
     }
 ];
 
