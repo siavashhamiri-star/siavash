@@ -65,14 +65,14 @@ export default function Home() {
                 ادای دینی به نام <strong className="text-white font-bold underline decoration-primary underline-offset-8">حاج حسین علیمیری</strong>.
             </p>
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-              <button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white px-20 rounded-full shadow-[0_0_50px_rgba(var(--primary),0.5)] transition-all hover:scale-105 h-24 text-3xl font-black">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white px-20 rounded-full shadow-[0_0_50px_rgba(var(--primary),0.5)] transition-all hover:scale-105 h-24 text-3xl font-black">
                 <Link href="/vendors">ورود به بازار جهانی</Link>
-              </button>
-              <button asChild size="lg" variant="outline" className="text-white border-white/40 hover:bg-white/10 px-16 rounded-full backdrop-blur-sm h-24 text-2xl font-bold group">
+              </Button>
+              <Button asChild size="lg" variant="outline" className="text-white border-white/40 hover:bg-white/10 px-16 rounded-full backdrop-blur-sm h-24 text-2xl font-bold group">
                 <Link href="/manifesto" className="flex items-center gap-3">
                    مطالعه حماسه خلق <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                 </Link>
-              </button>
+              </Button>
             </div>
           </div>
         </section>
