@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
-import { Menu, ShoppingCart, Sparkles, Globe, ChevronDown, BookOpen, Trophy } from 'lucide-react';
+import { Menu, ShoppingCart, Sparkles, Globe, ChevronDown } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
