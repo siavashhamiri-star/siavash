@@ -17,7 +17,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/dropdown-menu";
 import { LANGUAGES, type Language } from '@/lib/types';
 import { useState } from 'react';
 
@@ -60,7 +60,6 @@ export function Header() {
         </div>
         
         <div className="flex items-center space-x-2">
-            {/* Language Selector */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm" className="gap-2 px-2">
@@ -133,21 +132,10 @@ export function Header() {
                            ثبت آگهی صنایع دستی
                         </Link>
                     </nav>
-                    {!user && (
-                       <div className="mt-auto flex flex-col space-y-2">
-                         <Button variant="outline" asChild>
-                           <Link href="/login">Login</Link>
-                         </Button>
-                         <Button className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-                           <Link href="/signup">Sign Up</Link>
-                         </Button>
-                       </div>
-                    )}
                 </div>
               </SheetContent>
             </Sheet>
         </div>
-
       </div>
     </header>
   );

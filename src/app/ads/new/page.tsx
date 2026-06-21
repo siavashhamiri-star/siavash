@@ -76,7 +76,7 @@ export default function NewAdPage() {
       
       toast({
         title: "آگهی با موفقیت ثبت شد",
-        description: isPremium ? "درخواست طراحی ویترین جادویی توسط هوش مصنوعی ثبت شد." : "آگهی شما در بازار صنایع دستی منتشر شد.",
+        description: isPremium ? "درخواست طراحی ویترین جادویی توسط هوش مصنوعی ثبت شد." : "آگهی شما منتشر شد.",
       });
       router.push('/handicrafts');
     } catch (serverError: any) {
@@ -102,7 +102,7 @@ export default function NewAdPage() {
         <div className="container mx-auto px-4">
           <Card className="max-w-2xl mx-auto shadow-xl border-none">
             <CardHeader className="text-center p-8">
-              <CardTitle className="text-3xl font-headline">ثبت آگهی صنایع دستی</CardTitle>
+              <CardTitle className="text-3xl font-headline">ثبت آگهی صنایع دستی و هنر</CardTitle>
               <CardDescription>
                 اطلاعات هنر خود را وارد کنید تا در بازار «شهر توانا» دیده شوید.
               </CardDescription>
@@ -110,7 +110,7 @@ export default function NewAdPage() {
             <CardContent>
               <form onSubmit={handleSubmit} className="grid gap-6">
                 <div className="grid gap-2">
-                  <Label>عنوان کالا</Label>
+                  <Label>عنوان کالا / اثر</Label>
                   <Input required placeholder="مثال: گلیم شاهسون اصل" value={title} onChange={e => setTitle(e.target.value)} />
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
@@ -126,7 +126,6 @@ export default function NewAdPage() {
                         <SelectItem value="silver">ظروف نقره</SelectItem>
                         <SelectItem value="antique">آنتیک و قدیمی</SelectItem>
                         <SelectItem value="painting">تابلو نقاشی / خط</SelectItem>
-                        <SelectItem value="calligraphy">خوشنویسی</SelectItem>
                         <SelectItem value="other">سایر صنایع دستی</SelectItem>
                       </SelectContent>
                     </Select>
@@ -137,7 +136,7 @@ export default function NewAdPage() {
                   </div>
                 </div>
                 <div className="grid gap-2">
-                  <Label>کد ملی (جهت احراز هویت در ایران)</Label>
+                  <Label>کد ملی (جهت احراز هویت)</Label>
                   <div className="flex gap-2">
                     <Input required placeholder="کد ۱۰ رقمی" value={nationalCode} onChange={e => setNationalCode(e.target.value)} />
                     <ShieldCheck className="w-10 h-10 text-green-600 bg-green-50 p-2 rounded-lg shrink-0" />
@@ -145,7 +144,7 @@ export default function NewAdPage() {
                 </div>
                 <div className="grid gap-2">
                   <Label>توضیحات و شناسنامه اثر</Label>
-                  <Textarea required placeholder="درباره قدمت، متریال و داستان این اثر بنویسید..." rows={5} value={description} onChange={e => setDescription(e.target.value)} />
+                  <Textarea required placeholder="درباره داستان این اثر بنویسید..." rows={5} value={description} onChange={e => setDescription(e.target.value)} />
                 </div>
 
                 <div className="p-6 bg-accent/10 border-2 border-accent/20 rounded-2xl space-y-4">
@@ -157,7 +156,7 @@ export default function NewAdPage() {
                           درخواست ویترین جادویی (AI Design)
                         </Label>
                         <p className="text-sm text-muted-foreground">
-                          هوش مصنوعی یک صفحه اختصاصی با جلوه‌های بصری خیره‌کننده و متن‌های هنری برای فروش بهتر کالای شما طراحی می‌کند. (هزینه طبق تعرفه)
+                          هوش مصنوعی یک صفحه اختصاصی با جلوه‌های بصری خیره‌کننده برای فروش بهتر کالای شما طراحی می‌کند. (دارای هزینه)
                         </p>
                       </div>
                    </div>
@@ -168,7 +167,7 @@ export default function NewAdPage() {
                    ثبت و انتشار نهایی
                 </Button>
                 <p className="text-[10px] text-center text-muted-foreground">
-                  ثبت ۳ آگهی اول در هر ماه برای اعضای «فرش بازار» رایگان است.
+                  ثبت ۳ آگهی اول در هر ماه رایگان است.
                 </p>
               </form>
             </CardContent>
