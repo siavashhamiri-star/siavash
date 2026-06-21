@@ -16,9 +16,9 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
-        {/* Master Build Announcement Badge */}
+        {/* Master Build Announcement Badge - The First Message to the World */}
         <div className="bg-slate-950 border-b border-primary/30 py-3 overflow-hidden">
-          <div className="container px-4 flex flex-col md:flex-row items-center justify-center gap-6 text-[10px] md:text-xs font-black text-white tracking-widest uppercase">
+          <div className="container px-4 flex flex-col md:flex-row items-center justify-center gap-6 text-[10px] md:text-xs font-black text-white tracking-widest uppercase text-center md:text-left">
             <div className="flex items-center gap-2 text-primary animate-pulse">
                 <Trophy className="w-4 h-4" />
                 <span>Global Master Build 2025 Candidate</span>
@@ -77,7 +77,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* The Engineering Saga Highlight */}
+        {/* The Engineering Saga Highlight - Concrete Proof of Willpower */}
         <section className="py-24 bg-white">
             <div className="container px-4 text-center">
                 <div className="max-w-4xl mx-auto space-y-8">

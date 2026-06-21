@@ -71,12 +71,12 @@ export default function ManifestoPage() {
                                 منشور آفرینش
                             </CardTitle>
                             <CardDescription className="text-2xl font-light text-muted-foreground">
-                                The Book of Creation | پیروزی اندیشه بر ابزار
+                                The Book of Creation | پیروزی اندیشه بر ابزار | کتاب آفرینش
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="px-6 md:px-20 pb-20 space-y-20 bg-white">
                             
-                            {/* Technical Master Build Badge */}
+                            {/* Technical Master Build Badge - The Engineering Statement */}
                             <div className="bg-slate-950 text-white p-12 rounded-[4rem] text-center shadow-2xl border-4 border-primary/40 relative overflow-hidden">
                                 <div className="absolute top-0 right-0 p-10 opacity-10">
                                     <Zap className="w-64 h-64 text-primary" />

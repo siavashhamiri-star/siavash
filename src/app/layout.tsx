@@ -6,9 +6,9 @@ import { cn } from '@/lib/utils';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export const metadata: Metadata = {
-  title: 'فرش بازار | نیو متاورس آفرینش',
+  title: 'فرش بازار | Global Master Build 2025',
   description:
-    'فرش بازار، اولین ستون اکوسیستم FB New Meta و شهر مجازی توانا. میراثی از همت و اصالت، تقدیم به نام حاج حسین علیمیری.',
+    'فرش بازار، اولین امپراتوری ۱۳ زبانه فرش ایران. کاندیدای جایزه جهانی استارتاپ سال. میراثی از همت و اصالت، تقدیم به نام حاج حسین علیمیری.',
 };
 
 export default function RootLayout({
