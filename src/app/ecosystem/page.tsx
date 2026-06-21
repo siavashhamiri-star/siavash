@@ -1,3 +1,4 @@
+
 import {
     Card,
     CardContent,
@@ -7,23 +8,23 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Blocks, CheckCircle, Clock, Music, Mic, Users, BookOpen, ToyBrick, Briefcase, BrainCircuit, Diamond, Banknote, Link as LinkIcon, ExternalLink, Sparkles, HeartPulse, Shirt } from 'lucide-react';
+import { Blocks, CheckCircle, Clock, Music, Mic, Users, BookOpen, Briefcase, BrainCircuit, Sparkles, HeartPulse, ShieldCheck, Globe, Smartphone, Landmark } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 
 const ecosystemApps = [
     {
         name: "Farsh Bazaar (فرش بازار)",
-        description: "A global marketplace for artisans, connecting creators directly with a worldwide audience. The first pillar of our new economy.",
-        fa_description: "یک بازار جهانی برای صنعتگران که خالقان را مستقیماً به مخاطبان جهانی متصل می‌کند. اولین ستون اقتصاد جدید ما.",
+        description: "The first pillar of Afarinesh. A global marketplace honoring the legacy of Haj Hossein Alimiri.",
+        fa_description: "اولین ستون آفرینش. بازار جهانی فرش در بزرگداشت نام حاج حسین علیمیری.",
         status: "Live",
-        icon: <Blocks className="w-8 h-8 text-primary" />,
+        icon: <Landmark className="w-8 h-8 text-primary" />,
         link: "/"
     },
     {
         name: "OpenMind Nexus (هوش مصنوعی احساس‌محور)",
-        description: "A revolutionary emotion-based AI platform. It bridges the gap between digital intelligence and human soul, designed for cognitive expansion.",
-        fa_description: "یک پلتفرم انقلابی هوش مصنوعی احساس‌محور. این پروژه پلی میان هوش دیجیتال و روح انسانی است که برای گسترش شناختی طراحی شده است.",
+        description: "The soul of our digital world. An emotion-based AI platform bridging technology and humanity.",
+        fa_description: "روح دنیای دیجیتال ما. پلتفرم هوش مصنوعی احساس‌محور که پلی میان تکنولوژی و انسانیت است.",
         status: "Live",
         icon: <HeartPulse className="w-8 h-8 text-rose-500" />,
         link: "https://openmind-nexuse-dbbbbb.netlify.app/",
@@ -31,46 +32,32 @@ const ecosystemApps = [
     },
     {
         name: "LingoView (آپ گویا)",
-        description: "A revolutionary educational platform focused on building 'capability', not just providing knowledge. Starting with language, expanding to all skills.",
-        fa_description: "یک پلتفرم آموزشی انقلابی که بر ساختن «توانایی» تمرکز دارد، نه فقط ارائه دانش. شروع با زبان، و گسترش به تمام مهارت‌ها.",
+        description: "Revolutionary education focusing on 'Capability'. Building the workforce of Tavana City.",
+        fa_description: "آموزش انقلابی با تمرکز بر «توانایی». ساخت نیروی انسانی متخصص برای شهر توانا.",
         status: "Coming Soon",
-        icon: <BrainCircuit className="w-8 h-8 text-muted-foreground" />,
+        icon: <BrainCircuit className="w-8 h-8 text-blue-500" />,
         link: "/lingoview"
     },
     {
         name: "Nava Studio (استودیو نوا)",
-        description: "An AI-powered suite for music creation. Generate melodies, write lyrics, produce songs, and create stunning music videos.",
-        fa_description: "یک مجموعه ابزار مجهز به هوش مصنوعی برای خلق موسیقی. ملودی بسازید، شعر بنویسید، آهنگ تولید کنید و موزیک ویدیوهای خیره‌کننده بسازید.",
+        description: "AI-powered music and video creation for the new era of artists.",
+        fa_description: "خلق موسیقی و ویدیو با هوش مصنوعی برای نسل جدید هنرمندان.",
         status: "Planned",
-        icon: <Mic className="w-8 h-8 text-muted-foreground" />
+        icon: <Mic className="w-8 h-8 text-purple-500" />
     },
     {
-        name: "Hamnava (هم‌نوا)",
-        description: "The social heart of our music ecosystem. Connect with artists, share your creations, and discover emerging talent.",
-        fa_description: "قلب اجتماعی اکوسیستم موسیقی ما. با هنرمندان ارتباط برقرار کنید، آثار خود را به اشتراک بگذارید و استعدادهای نوظهور را کشف نمایید.",
-        status: "Planned",
-        icon: <Users className="w-8 h-8 text-muted-foreground" />
-    },
-     {
         name: "Ghese Go (قصه‌گو)",
-        description: "A magical space for children's stories and a digital vault for capturing precious childhood moments.",
-        fa_description: "یک فضای جادویی برای قصه‌های کودکان و یک صندوقچه دیجیتال برای ثبت لحظات ارزشمند کودکی.",
+        description: "A magical digital vault for children's stories and childhood memories.",
+        fa_description: "صندوقچه دیجیتال جادویی برای قصه‌های کودکان و خاطرات کودکی.",
         status: "Planned",
-        icon: <BookOpen className="w-8 h-8 text-muted-foreground" />
-    },
-    {
-        name: "Afarinesh Hub (آفرینش هاب)",
-        description: "The central hub for creators. Leverage AI tools for content creation and bring your ideas to life.",
-        fa_description: "هاب مرکزی برای آفرینش‌گران. از ابزارهای هوش مصنوعی برای تولید محتوا استفاده کنید و ایده‌های خود را به واقعیت تبدیل کنید.",
-        status: "Coming Soon",
-        icon: <Sparkles className="w-8 h-8 text-muted-foreground" />
+        icon: <BookOpen className="w-8 h-8 text-orange-500" />
     },
     {
         name: "Tavana Work (توانا کار)",
-        description: "The future-of-work platform. Find freelance opportunities and leverage AI to enhance your capabilities.",
-        fa_description: "پلتفرم آینده‌ی کار. فرصت‌های فریلنسری پیدا کنید و از هوش مصنوعی برای افزایش توانایی‌هایتان بهره ببرید.",
+        description: "The economic engine of Tavana City. Connecting experts to global opportunities.",
+        fa_description: "موتور اقتصادی شهر توانا. اتصال متخصصان به فرصت‌های جهانی.",
         status: "Coming Soon",
-        icon: <Briefcase className="w-8 h-8 text-muted-foreground" />
+        icon: <Briefcase className="w-8 h-8 text-emerald-500" />
     }
 ];
 
@@ -78,70 +65,68 @@ export default function EcosystemPage() {
     return (
         <div className="flex flex-col min-h-screen">
             <Header />
-            <main className="flex-1 bg-secondary/20">
-                <div className="container mx-auto px-4 py-16">
-                    <div className="text-center mb-12">
-                        <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4">
-                            <Blocks className="w-10 h-10 text-primary" />
-                        </div>
-                        <h1 className="text-4xl md:text-5xl font-headline font-bold">The FB New Meta Ecosystem</h1>
-                        <p className="mt-2 text-xl text-muted-foreground">The Executive Arms of Tavana City (بازوهای اجرایی شهر توانا)</p>
+            <main className="flex-1 bg-secondary/10">
+                <section className="relative py-24 bg-primary text-white overflow-hidden">
+                    <div className="absolute inset-0 opacity-10 bg-[url('https://picsum.photos/seed/vision/1920/1080')] bg-cover bg-center" />
+                    <div className="container relative z-10 px-4 text-center">
+                        <Badge variant="outline" className="mb-6 border-white text-white px-4 py-1 text-sm font-bold">Tavana Virtual City / شهر مجازی توانا</Badge>
+                        <h1 className="text-5xl md:text-7xl font-headline font-bold mb-6">منظومه‌ی آفرینش (Afarinesh)</h1>
+                        <p className="text-xl md:text-2xl max-w-4xl mx-auto font-light leading-relaxed">
+                            اینجا پایانِ محدودیت و آغازِ همت است. اکوسیستم آفرینش با ۹ بازوی اجرایی، رویای شهر مجازی توانا را به واقعیت بدل می‌کند. از قلب بازار تهران تا مرزهای هوش مصنوعی احساس‌محور.
+                        </p>
                     </div>
+                </section>
 
+                <div className="container mx-auto px-4 py-16">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {ecosystemApps.map((app) => (
-                            <Card key={app.name} className="flex flex-col group hover:shadow-lg transition-all duration-300 border-primary/5 hover:border-primary/20 shadow-sm">
+                            <Card key={app.name} className="group hover:shadow-2xl transition-all duration-500 border-none bg-white/80 backdrop-blur-sm">
                                 <CardHeader>
                                     <div className="flex justify-between items-start">
                                         <div className="flex items-center gap-4">
-                                            {app.icon}
+                                            <div className="p-3 bg-secondary/50 rounded-2xl group-hover:scale-110 transition-transform">
+                                                {app.icon}
+                                            </div>
                                             <CardTitle className="font-headline text-xl">{app.name}</CardTitle>
                                         </div>
-                                        <Badge variant={app.status === 'Live' ? 'default' : 'outline'} className={app.status === 'Live' ? 'bg-green-600/20 text-green-700 border-green-600/50' : ''}>
-                                            {app.status === 'Live' ? <CheckCircle className="w-3 h-3 mr-1" /> : <Clock className="w-3 h-3 mr-1" />}
+                                        <Badge variant={app.status === 'Live' ? 'default' : 'outline'}>
                                             {app.status}
                                         </Badge>
                                     </div>
                                 </CardHeader>
-                                <CardContent className="flex-grow">
-                                    <p className="text-foreground/80">{app.description}</p>
-                                    <p className="text-sm text-muted-foreground mt-2">({app.fa_description})</p>
+                                <CardContent>
+                                    <p className="text-foreground/80 leading-relaxed">{app.description}</p>
+                                    <p className="text-sm text-muted-foreground mt-3 font-medium">({app.fa_description})</p>
                                     
                                     {app.link && (
-                                        <div className="mt-4 pt-4 border-t border-primary/5">
-                                            {app.isExternal ? (
-                                                <a 
-                                                    href={app.link} 
-                                                    target="_blank" 
-                                                    rel="noopener noreferrer"
-                                                    className="text-primary font-bold text-sm flex items-center gap-2 hover:underline"
-                                                >
-                                                    ورود به برنامه <ExternalLink className="w-4 h-4" />
-                                                </a>
-                                            ) : (
-                                                <Link 
-                                                    href={app.link}
-                                                    className="text-primary font-bold text-sm flex items-center gap-2 hover:underline"
-                                                >
-                                                    مشاهده جزئیات <ExternalLink className="w-4 h-4" />
-                                                </Link>
-                                            )}
-                                        </div>
+                                        <Button asChild className="w-full mt-6 rounded-full group-hover:bg-primary transition-colors">
+                                            <Link href={app.link} target={app.isExternal ? "_blank" : "_self"}>
+                                                {app.isExternal ? "ورود به پلتفرم" : "مشاهده جزئیات"}
+                                            </Link>
+                                        </Button>
                                     )}
                                 </CardContent>
                             </Card>
                         ))}
                     </div>
 
-                    <div className="text-center mt-16 space-y-6">
-                        <div className="p-8 bg-primary/5 rounded-3xl border border-primary/10 max-w-4xl mx-auto shadow-inner">
-                            <p className="text-xl font-headline font-bold text-primary mb-4">سوگند به همت و اصالت</p>
-                            <p className="text-lg text-foreground/80 leading-relaxed text-justify">
-                                تمام این منظومه، از «فرش بازار» تا «OpenMind Nexus» و «LingoView»، گواهی بر یک حقیقت است: برای کسی که بر سر سفره‌ی پربرکت هنر ایران بزرگ شده و همت عالی را از اسطوره‌ای چون <span className="font-bold text-foreground">حاج حسین علیمیری</span> آموخته، محدودیت معنا ندارد. حتی با یک گوشی کوچک، می‌توان دنیاهایی بزرگ آفرید. هر بخش از این اکوسیستم به صورت مستقل و تخصصی طراحی شده تا هویت منحصر به فرد خود را حفظ کند.
+                    <div className="mt-24 p-12 bg-white rounded-[3rem] shadow-xl border border-primary/5 text-center relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-8">
+                             <Sparkles className="w-12 h-12 text-primary/20 animate-pulse" />
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-headline font-bold mb-8 text-primary">سوگند به همت و اصالت (The Sacred Oath)</h2>
+                        <div className="max-w-4xl mx-auto space-y-6 text-lg leading-relaxed text-foreground/80">
+                            <p>
+                                تمام این منظومه، گواهی بر قدرت اراده است. برای کسی که بر سر سفره‌ی پربرکت هنر ایران بزرگ شده و همت عالی را از اسطوره‌ای چون <span className="font-bold text-foreground">حاج حسین علیمیری</span> آموخته، هیچ مرزی وجود ندارد. 
                             </p>
-                            <p className="text-sm text-muted-foreground mt-4 italic">
-                                "In the memory of Haj Hossein Alimiri and the family legacy of Alimiri Carpets & Sons. Built from a dream, knotted with capability."
+                            <p className="italic">
+                                "Even with a simple mobile phone, we created worlds. This is the testament of capability."
                             </p>
+                            <div className="pt-8 border-t flex flex-col md:flex-row justify-center gap-8 text-sm font-bold text-muted-foreground">
+                                <div className="flex items-center gap-2"><Globe className="w-4 h-4" /> ۷ زبان زنده دنیا</div>
+                                <div className="flex items-center gap-2"><ShieldCheck className="w-4 h-4" /> امنیت و اصالت فیزیکی</div>
+                                <div className="flex items-center gap-2"><Smartphone className="w-4 h-4" /> خلق شده با ردمی نوت ۸</div>
+                            </div>
                         </div>
                     </div>
                 </div>

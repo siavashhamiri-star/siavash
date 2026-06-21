@@ -1,3 +1,4 @@
+
 import {
     Card,
     CardContent,
@@ -7,32 +8,9 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { HeartHandshake, BookHeart, Landmark, Smartphone, MapPin, Phone } from 'lucide-react';
+import { HeartHandshake, BookHeart, Landmark, Smartphone, MapPin, Phone, ShieldCheck, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-
-const features = [
-    {
-        title: 'اعتبار صنفی (Guild Credibility)',
-        description: 'حمایت بزرگان اتحادیه و حضورشان ستون اعتبار پلتفرم است.',
-        en_description: 'The support and presence of the union\'s elders is the pillar of the platform\'s credibility.'
-    },
-    {
-        title: 'منبع درآمد پایدار (Sustainable Income)',
-        description: 'درصدی از درآمد پلتفرم به اتحادیه اختصاص یافته است.',
-        en_description: 'A percentage of the platform\'s revenue is allocated to the union.'
-    },
-    {
-        title: 'ارتباط جهانی (Global Connection)',
-        description: 'ایجاد بستری برای ارتباط تجار و هنرمندان فرش در سطح بین‌الملل.',
-        en_description: 'Creating a platform for the connection of carpet traders and artists internationally.'
-    },
-    {
-        title: 'حفظ میراث (Heritage Preservation)',
-        description: 'ترویج و حفظ هنر ارزشمند فرش دستباف ایران برای نسل‌های آینده.',
-        en_description: 'Promoting and preserving the valuable art of Iranian handwoven carpets for future generations.'
-    }
-]
 
 export default function AboutPage() {
     return (
@@ -40,79 +18,67 @@ export default function AboutPage() {
         <Header />
         <main className="flex-1 bg-secondary/20">
           <div className="container mx-auto px-4 py-16">
-            <Card className="max-w-4xl mx-auto shadow-lg border-none overflow-hidden">
-              <div className="bg-primary h-2" />
-              <CardHeader className="text-center p-8 md:p-12">
-                <div className="mx-auto bg-primary/10 p-4 rounded-full w-fit mb-4">
-                  <Landmark className="w-10 h-10 text-primary" />
+            <Card className="max-w-4xl mx-auto shadow-2xl border-none overflow-hidden rounded-[3rem]">
+              <div className="bg-primary h-3" />
+              <CardHeader className="text-center p-8 md:p-16">
+                <div className="mx-auto bg-primary/10 p-5 rounded-full w-fit mb-6">
+                  <Landmark className="w-12 h-12 text-primary" />
                 </div>
-                <CardTitle className="text-3xl md:text-5xl font-headline font-bold">
-                    فرش حسین علیمیری و پسران
+                <CardTitle className="text-4xl md:text-6xl font-headline font-bold text-primary">
+                    میراث فرش علیمیری و پسران
                 </CardTitle>
-                <CardDescription className="text-xl mt-2 font-headline">
-                    Legacy of Haj Hossein Alimiri & Sons
+                <CardDescription className="text-2xl mt-4 font-headline text-muted-foreground">
+                    Honoring the Legacy of Haj Hossein Alimiri
                 </CardDescription>
               </CardHeader>
-              <CardContent className="px-6 md:px-12 pb-12">
+              <CardContent className="px-8 md:px-16 pb-16">
                 
-                <div className="grid md:grid-cols-2 gap-8 mb-12">
-                    <div className="p-8 bg-primary/5 rounded-3xl border border-primary/10 flex flex-col items-center text-center">
-                        <MapPin className="w-8 h-8 text-primary mb-4" />
-                        <h3 className="font-headline font-bold text-xl mb-2">مرکزیت اصالت (HQ)</h3>
-                        <p className="text-lg font-medium">خیابان خیام شمالی، پلاک ۴۸</p>
-                        <p className="text-sm text-muted-foreground mt-1">48 Khayyam North Ave, Tehran</p>
+                <div className="grid md:grid-cols-2 gap-8 mb-16">
+                    <div className="p-10 bg-white rounded-[2rem] shadow-sm border border-primary/5 flex flex-col items-center text-center group hover:border-primary/20 transition-all">
+                        <MapPin className="w-10 h-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
+                        <h3 className="font-headline font-bold text-2xl mb-2">مرکزیت اصالت (HQ)</h3>
+                        <p className="text-xl font-bold">خیابان خیام شمالی، پلاک ۴۸</p>
+                        <p className="text-sm text-muted-foreground mt-2">48 Khayyam North Ave, Tehran, Iran</p>
                     </div>
-                    <div className="p-8 bg-primary/5 rounded-3xl border border-primary/10 flex flex-col items-center text-center">
-                        <Phone className="w-8 h-8 text-primary mb-4" />
-                        <h3 className="font-headline font-bold text-xl mb-2">تماس مستقیم</h3>
-                        <p className="text-lg font-medium" dir="ltr">۰۲۱ - ۵۵۸۱۴۵۵۵</p>
-                        <p className="text-sm text-muted-foreground mt-1">Direct Trade Line</p>
+                    <div className="p-10 bg-white rounded-[2rem] shadow-sm border border-primary/5 flex flex-col items-center text-center group hover:border-primary/20 transition-all">
+                        <Phone className="w-10 h-10 text-primary mb-4 group-hover:scale-110 transition-transform" />
+                        <h3 className="font-headline font-bold text-2xl mb-2">تماس مستقیم (Direct)</h3>
+                        <p className="text-xl font-bold" dir="ltr">۰۲۱ - ۵۵۸۱۴۵۵۵</p>
+                        <p className="text-sm text-muted-foreground mt-2">International Trade Line</p>
                     </div>
                 </div>
 
-                <div className="prose prose-lg max-w-none mx-auto text-foreground/80 text-center mb-12">
-                    <p className="font-bold text-primary text-xl">بال‌های دوباره برای فرش دستباف ایران در نیو متاورس</p>
-                    <p>
-                    این پلتفرم، برآمده از خاندانی است که نامشان با اعتبار فرش ایران در بازارهای جهانی گره خورده است. آفرینش «فرش بازار» تلاشی است برای زنده نگه داشتن مسیری که اساتید بزرگی چون حاج حسین علیمیری با عشق و همت خود بنا نهادند.
+                <div className="prose prose-xl max-w-none mx-auto text-foreground/80 text-center mb-16 space-y-6">
+                    <p className="font-black text-primary text-2xl leading-relaxed">
+                        «این یک اپلیکیشن نیست؛ این حماسه‌ای است که با دستان خالی و اراده‌ای پولادین آفریده شد.»
+                    </p>
+                    <p className="text-lg leading-relaxed text-justify">
+                        فرش بازار، اولین ستون از اکوسیستم بزرگ <span className="font-bold text-primary">آفرینش (Afarinesh)</span> و شهر مجازی تواناست. بنیان‌گذار این پروژه، با الهام از همت والای اسطوره‌ی بازار، <span className="font-bold">حاج حسین علیمیری</span>، ثابت کرد که حتی با یک گوشی کوچک (Redmi Note 8)، می‌توان دنیاهایی به وسعت ۷ زبان و مرزهای هوش مصنوعی خلق کرد.
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8 my-12">
-                    <div className="p-6 bg-primary/5 rounded-2xl border border-primary/10 flex flex-col items-center text-center">
-                        <Smartphone className="w-10 h-10 text-primary mb-4" />
-                        <h3 className="font-headline font-bold text-lg mb-2">خلق در محدودیت (Creation in Limitation)</h3>
-                        <p className="text-sm text-foreground/70">
-                            این اپلیکیشن تنها با یک گوشی ردمی نوت ۸ و در طی ۹ روز خلق شده است؛ گواهی بر قدرت اراده.
-                        </p>
+                <div className="grid md:grid-cols-3 gap-6 my-16">
+                    <div className="p-6 bg-primary/5 rounded-3xl text-center">
+                        <Smartphone className="w-8 h-8 text-primary mx-auto mb-3" />
+                        <h4 className="font-bold mb-1">خلق در محدودیت</h4>
+                        <p className="text-xs text-muted-foreground">ساخته شده با ردمی نوت ۸ در ۹ روز</p>
                     </div>
-                    <div className="p-6 bg-accent/5 rounded-2xl border border-accent/10 flex flex-col items-center text-center">
-                        <BookHeart className="w-10 h-10 text-accent mb-4" />
-                        <h3 className="font-headline font-bold text-lg mb-2">اصالت و سفره فرش (Heritage Table)</h3>
-                        <p className="text-sm text-foreground/70">
-                            ما بر سر سفره‌ی پربرکت فرش زاده شدیم و این پلتفرم ادای دینی است به میراث علیمیری.
-                        </p>
+                    <div className="p-6 bg-blue-50 rounded-3xl text-center">
+                        <ShieldCheck className="w-8 h-8 text-blue-600 mx-auto mb-3" />
+                        <h4 className="font-bold mb-1">اعتبار جهانی</h4>
+                        <p className="text-xs text-muted-foreground">۷ زبان زنده برای ارتباط با دنیا</p>
+                    </div>
+                    <div className="p-6 bg-accent/10 rounded-3xl text-center">
+                        <Sparkles className="w-8 h-8 text-accent mx-auto mb-3" />
+                        <h4 className="font-bold mb-1">هوش مصنوعی احساسی</h4>
+                        <p className="text-xs text-muted-foreground">تکنولوژی در خدمت هنر و اصالت</p>
                     </div>
                 </div>
 
-                <div className="my-10 border-t" />
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {features.map((feature) => (
-                        <Card key={feature.title} className="bg-background border-primary/10">
-                            <CardHeader>
-                                <CardTitle className="text-lg font-semibold text-primary">{feature.title}</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <p className='text-foreground/80'>{feature.description}</p>
-                            </CardContent>
-                        </Card>
-                    ))}
-                </div>
-
-                <div className="mt-12 text-center">
-                    <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-12 h-14 text-lg">
+                <div className="mt-16 text-center">
+                    <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-16 h-16 text-xl shadow-xl shadow-primary/20">
                         <Link href="/manifesto">
-                            Read the Book of Creation / کتاب آفرینش
+                            مطالعه کتاب آفرینش / Read Manifesto
                         </Link>
                     </Button>
                 </div>

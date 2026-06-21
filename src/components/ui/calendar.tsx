@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -15,6 +16,15 @@ function Calendar({
   showOutsideDays = true,
   ...props
 }: CalendarProps) {
+  // Avoid hydration mismatch by not rendering anything until client-side
+  const [mounted, setMounted] = React.useState(false)
+  
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return <div className="p-3 w-[276px] h-[348px] bg-muted animate-pulse rounded-md" />
+
   return (
     <DayPicker
       showOutsideDays={showOutsideDays}
