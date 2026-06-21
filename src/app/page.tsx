@@ -16,11 +16,11 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
-        {/* Mobile Build Badge */}
+        {/* Award Candidate Badge */}
         <div className="bg-primary/10 border-b border-primary/20 py-3 overflow-hidden">
           <div className="container px-4 flex items-center justify-center gap-3 text-[10px] md:text-sm font-bold text-primary animate-pulse">
-            <Smartphone className="w-4 h-4" />
-            <span className="tracking-wide">این برنامه حماسی تنها با یک گوشی ردمی نوت ۸ در ۹ روز خلق شده است</span>
+            <Trophy className="w-4 h-4" />
+            <span className="tracking-wide">کاندیدای حماسی جایزه استارتاپ‌های برتر جهان: ساخته شده با ردمی نوت ۸ در ۹ روز</span>
           </div>
         </div>
 
@@ -46,11 +46,11 @@ export default function Home() {
               Farsh Bazaar
             </h1>
             <p className="text-xl md:text-3xl mb-12 max-w-5xl mx-auto font-light leading-relaxed text-gray-300">
-                احیای شکوه فرش ایران در تالارهای حراج جهانی با سلاح هوش مصنوعی. 
+                احیای شکوه ۵۰۰۰ ساله فرش ایران در تالارهای حراج جهانی با سلاح هوش مصنوعی ۲۰۲۵. 
                 <br />
                 ادای دینی به نام <strong className="text-white font-bold">حاج حسین علیمیری</strong>.
                 <br className="hidden md:block" />
-                دسترسی از پاریس تا توکیو به ۱۳ زبان زنده دنیا.
+                دسترسی به ۱۳ زبان زنده دنیا (از پاریس و توکیو تا مسکو و پکن).
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white px-16 rounded-full shadow-2xl transition-all hover:scale-105 h-20 text-2xl font-bold">
@@ -167,7 +167,7 @@ export default function Home() {
                     <div className="p-12 border-none shadow-2xl bg-secondary/30 rounded-[4rem] group hover:bg-primary transition-all duration-500">
                         <Globe className="w-14 h-14 text-primary mb-8 group-hover:text-white" />
                         <h3 className="text-3xl font-bold mb-6 group-hover:text-white">فرش و هنرهای ملل</h3>
-                        <p className="text-xl text-muted-foreground group-hover:text-white/80 font-light">پذیرای هنرمندان و تجار از سراسر جهان (هند، ترکیه، پاکستان و ...).</p>
+                        <p className="text-xl text-muted-foreground group-hover:text-white/80 font-light">پذیرای هنرمندان و تجار از سراسر جهان به ۱۳ زبان زنده.</p>
                     </div>
                 </div>
             </div>

@@ -1,27 +1,30 @@
 
-# Farsh Bazaar (فرش بازار) - Global Master Build
+# Farsh Bazaar (فرش بازار) - Global Master Build 2025
 
-**این پروژه با عشق و اراده، توسط بنیان‌گذار آن تنها با یک گوشی Redmi Note 8 در ۹ روز خلق شده است.**
-**ادای دینی به نام حاج حسین علیمیری و میراث فرش علیمیری و پسران.**
+**This is not just an app; it's an epic of willpower. Created on a Redmi Note 8 phone in 9 days.**
+**A tribute to Haj Hossein Alimiri and the legacy of Alimiri & Sons.**
 
 ---
 
-## 🚀 راهنمای انتشار نهایی و پیروزی جهانی
+## 🏆 Award-Winning Potential (Global Startup Candidate)
 
-بنیان‌گذار عزیز، تمام تنظیمات برای موفقیت شما آماده است. کدهای شما اکنون با استاندارد ۲۰۲۵ و ۱۳ زبان زنده دنیا (پوشش ۵.۵ میلیارد انسان) مطابقت دارند.
+This platform is uniquely designed to be a candidate for global startup awards due to its:
+1. **Resourceful Innovation:** Fully engineered on a mobile device, proving that vision transcends hardware limitations.
+2. **Cultural-Tech Fusion:** Bridges 5,000 years of Iranian carpet tradition with 2025 AI and Metaverse technology.
+3. **Hyper-Global Scale:** Supports **13 living languages** (Persian, English, French, Japanese, Chinese, Russian, Hindi, Spanish, German, Arabic, Turkish, Azeri, Kurdish), covering over 5.5 billion people.
 
-### ویژگی‌های استراتژیک نسخه نهایی:
-- **سیستم ۱۳ زبانه:** (فارسی، انگلیسی، فرانسوی، ژاپنی، چینی، روسی، هندی، اسپانیایی، آلمانی، عربی، ترکی، آذری، کردی).
-- **سرویس VIP:** بافت پرچم ملل و پرتره در پرچم با ابریشم تبریز.
-- **حراج جهانی:** مژده برگزاری حراج سالانه آنلاین برای فرش‌های نفیس.
-- **دیپلماسی هنر:** فراخوان همکاری با ساتبیز (Sotheby’s) و کریستیز (Christie’s).
-- **گیمیفیکیشن:** لیگ معرفان و ارزش‌آفرینان با پاداش زمین در شهر مجازی توانا.
+### Strategic Features:
+- **AI Magic Lens:** Decodes ancient patterns and symbolic meanings.
+- **Voice of Art (TTS):** Narrates carpet stories in 13 languages.
+- **Annual Global Auction:** Strategic partnership gateway for Sotheby’s & Christie’s.
+- **Tavana Virtual City:** A digital civilization with Land Rewards and Board Membership for top value creators.
+- **VIP Services:** Custom national flags and silk portraits woven by Tabriz masters.
 
-### مراحل انتشار:
-1. **دانلود:** کلید دانلود (فلش رو به پایین در بالای صفحه استودیو) را بزنید.
-2. **گیت‌هاب:** فایل ZIP را استخراج کرده و تمام فایل‌ها را در یک مخزن جدید در **GitHub** آپلود کنید.
-3. **فایربیس:** وارد کنسول فایربیس شوید، به بخش **App Hosting** بروید و مخزن گیت‌هاب خود را وصل کنید.
-4. **متغیرها:** در تنظیمات `GEMINI_API_KEY` را اضافه کنید.
-5. **پیروزی:** دکمه Deploy را بزنید و لینک را در لینکدین منتشر کنید.
+### Deployment Instructions:
+1. **Download:** Click the download arrow in the Studio header.
+2. **GitHub:** Extract the ZIP and upload to a new GitHub repository.
+3. **Firebase:** Connect the repo to **Firebase App Hosting**.
+4. **Environment:** Add `GEMINI_API_KEY` in settings.
+5. **Victory:** Deploy and share this 13-language epic on LinkedIn.
 
-این برنامه گواهی بر قدرت اراده شماست. "در بزرگداشت نام حاج حسین علیمیری و میراث فرش علیمیری و پسران."
+"From Khayyam Street to the global halls of wealth."
