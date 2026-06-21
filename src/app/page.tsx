@@ -16,7 +16,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
-        {/* Master Build Announcement Badge - The First Message to the World */}
+        {/* Master Build Announcement Badge - The Engineering Statement */}
         <div className="bg-slate-950 border-b border-primary/30 py-3 overflow-hidden">
           <div className="container px-4 flex flex-col md:flex-row items-center justify-center gap-6 text-[10px] md:text-xs font-black text-white tracking-widest uppercase text-center md:text-left">
             <div className="flex items-center gap-2 text-primary animate-pulse">
@@ -45,7 +45,7 @@ export default function Home() {
               fill
               className="object-cover"
               priority
-              data-ai-hint={heroImage.imageHint}
+              data-ai-hint="persian carpet"
             />
           )}
           <div className="absolute inset-0 bg-black/85" />
@@ -77,15 +77,15 @@ export default function Home() {
           </div>
         </section>
 
-        {/* The Engineering Saga Highlight - Concrete Proof of Willpower */}
+        {/* The Engineering Saga Highlight */}
         <section className="py-24 bg-white">
             <div className="container px-4 text-center">
                 <div className="max-w-4xl mx-auto space-y-8">
                     <div className="bg-primary/5 p-12 rounded-[4rem] border-2 border-dashed border-primary/20">
                         <Smartphone className="w-16 h-16 text-primary mx-auto mb-6 animate-bounce" />
-                        <h2 className="text-4xl font-headline font-bold text-slate-900 mb-4">پیروزی اندیشه بر ابزار</h2>
+                        <h2 className="text-4xl font-headline font-bold text-slate-900 mb-4">پیروزی اندیشه بر ابزار (Engineering Saga)</h2>
                         <p className="text-xl text-muted-foreground leading-relaxed italic">
-                            «این پلتفرم ۱۳ زبانه، شاهدی بر قدرت اراده است. کل این امپراتوریِ پیچیده، تنها بر روی یک گوشی موبایل ردمی نوت ۸ متولد شد تا پیامی به جهانیان باشد: رویاهای بزرگ مهم‌تر از سخت‌افزارهای گران‌قیمت هستند.»
+                            «این پلتفرم شاهدی بر قدرت اراده است. ساخت یک امپراتوری ۱۳ زبانه با قابلیت‌های هوش مصنوعی تنها با یک گوشی Redmi Note 8، پیامی به جهانیان است که رؤیاهای بزرگ هیچ مرزی نمی‌شناسند.»
                         </p>
                         <div className="mt-8 flex justify-center gap-4">
                              <Badge className="bg-slate-900 text-white px-6 py-1.5 rounded-full font-black">MASTER BUILD 2025</Badge>
@@ -109,24 +109,6 @@ export default function Home() {
               <p className="text-2xl md:text-5xl font-light leading-relaxed mb-20 text-gray-300 italic max-w-5xl mx-auto">
                 «آماده همکاری استراتژیک با حراجی‌های مطرح جهان نظیر <span className="text-white font-bold">Sotheby's</span> و <span className="text-white font-bold">Christie's</span> برای معرفی شاهکارهای تایید شده ایران و ملل.»
               </p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
-                 <div className="p-10 bg-white/5 rounded-[3rem] border border-white/10 group hover:bg-primary transition-all duration-500 text-center">
-                    <ShieldCheck className="w-12 h-12 text-accent mb-6 mx-auto group-hover:text-white" />
-                    <p className="text-lg font-bold">تایید اصالت علیمیری</p>
-                 </div>
-                 <div className="p-10 bg-white/5 rounded-[3rem] border border-white/10 group hover:bg-primary transition-all duration-500 text-center">
-                    <Globe className="w-12 h-12 text-accent mb-6 mx-auto group-hover:text-white" />
-                    <p className="text-lg font-bold">دسترسی به ۱۳ زبان</p>
-                 </div>
-                 <div className="p-10 bg-white/5 rounded-[3rem] border border-white/10 group hover:bg-primary transition-all duration-500 text-center">
-                    <Star className="w-12 h-12 text-accent mb-6 mx-auto group-hover:text-white" />
-                    <p className="text-lg font-bold">ارزیابی هوشمند AI</p>
-                 </div>
-                 <div className="p-10 bg-white/5 rounded-[3rem] border border-white/10 group hover:bg-primary transition-all duration-500 text-center">
-                    <Gavel className="w-12 h-12 text-accent mb-6 mx-auto group-hover:text-white" />
-                    <p className="text-lg font-bold">حراج مستقیم جهانی</p>
-                 </div>
-              </div>
               <Button asChild size="lg" variant="secondary" className="rounded-full px-24 h-24 text-4xl font-black shadow-3xl shadow-accent/40">
                  <Link href="/appraisal">ثبت اثر برای حراج ۲۰۲۵</Link>
               </Button>
@@ -151,9 +133,6 @@ export default function Home() {
           <div className="container px-4 text-center space-y-12">
             <Badge variant="outline" className="px-12 py-3 border-primary/40 text-primary text-2xl font-headline rounded-full">Tavana Virtual City / شهر مجازی توانا</Badge>
             <h2 className="text-6xl md:text-[10rem] font-headline font-bold mb-12 tracking-tight">تمدن جدید با ۱۳ زبان زنده</h2>
-            <p className="text-3xl text-muted-foreground max-w-6xl mx-auto leading-relaxed font-light italic bg-white/50 backdrop-blur p-12 rounded-[4rem] border-2 border-dashed border-primary/10">
-              «ما سلاح‌هایمان را از تار و پود ساختیم. این اپلیکیشن شاهدی بر پیروزی هدف و اندیشه بر ابزار است؛ حماسه‌ای که ثابت می‌کند اراده هیچ مرزی نمی‌شناسد.»
-            </p>
             <div className="flex flex-wrap justify-center gap-14 mt-24">
               <Button asChild className="rounded-full px-20 h-24 text-3xl shadow-3xl shadow-primary/30 group">
                   <Link href="/ecosystem" className="flex items-center gap-6">

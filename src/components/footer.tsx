@@ -76,12 +76,11 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-headline font-bold text-lg">دسترسی سریع</h4>
             <ul className="grid grid-cols-1 gap-2 text-sm font-medium">
-              <li><Link href="/magazine" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2"><BookOpen className="w-4 h-4" /> مجله و وبلاگ تخصصی</Link></li>
-              <li><Link href="/legends" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2"><Trophy className="w-4 h-4" /> مشاهیر و مصاحبه‌ها</Link></li>
-              <li><Link href="/appraisal" className="text-muted-foreground hover:text-primary transition-colors">کارشناسی و ارزیابی آنلاین</Link></li>
-              <li><Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">درباره ما و میراث علیمیری</Link></li>
-              <li><Link href="/manifesto" className="text-muted-foreground hover:text-primary transition-colors">کتاب آفرینش (Manifesto)</Link></li>
-              <li><Link href="/ecosystem" className="text-muted-foreground hover:text-primary transition-colors">اکوسیستم شهر توانا</Link></li>
+              <li><Link href="/magazine" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2"><BookOpen className="w-4 h-4" /> مجله تخصصی</Link></li>
+              <li><Link href="/legends" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2"><Trophy className="w-4 h-4" /> مشاهیر فرش</Link></li>
+              <li><Link href="/appraisal" className="text-muted-foreground hover:text-primary transition-colors">کارشناسی آنلاین</Link></li>
+              <li><Link href="/manifesto" className="text-muted-foreground hover:text-primary transition-colors">منشور آفرینش</Link></li>
+              <li><Link href="/ecosystem" className="text-muted-foreground hover:text-primary transition-colors">اکوسیستم توانا</Link></li>
             </ul>
           </div>
         </div>
@@ -89,7 +88,7 @@ export function Footer() {
         <div className="border-t border-primary/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start">
             <p className="text-sm text-muted-foreground">
-              &copy; {currentYear} Farsh Bazaar | Part of Afarinesh Hub.
+              &copy; {currentYear} Farsh Bazaar | Master Build Edition.
             </p>
             <div className="flex items-center gap-4 mt-2">
                 <p className="text-[10px] text-muted-foreground flex items-center gap-2">
