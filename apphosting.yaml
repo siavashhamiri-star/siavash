@@ -3,11 +3,11 @@
 # https://firebase.google.com/docs/app-hosting/configure
 
 runConfig:
-  # Increase this value if you'd like to automatically spin up
-  # more instances in response to increased traffic.
-  maxInstances: 1
+  # Optimal for Next.js SSR with AI capabilities
+  maxInstances: 5
   minInstances: 0
-  memory: 512Mi
+  memory: 1Gi
+  cpu: 1
 
 env:
   - name: NODE_ENV

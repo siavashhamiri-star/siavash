@@ -16,20 +16,24 @@ Farsh Bazaar is a revolutionary 13-language digital empire designed to restore t
 
 ---
 
-## 🚀 Deployment Instructions (Master Build)
+## 🚀 How to Publish to Firebase (Direct Guide)
 
-### 1. GitHub Integration
-- Download the source code from Firebase Studio.
-- Push to a private or public GitHub repository.
+### 1. Download & GitHub
+- Click the **Download** button in Firebase Studio.
+- Create a new repository on **GitHub** (e.g., `my-farsh-bazaar`).
+- Push your downloaded code to this GitHub repository.
 
-### 2. Firebase App Hosting Setup
+### 2. Firebase Console Setup
 - Go to the [Firebase Console](https://console.firebase.google.com/).
 - Navigate to **Build > App Hosting**.
-- Connect your GitHub repository.
-- **Environment Variables:** Ensure `GEMINI_API_KEY` is added to the secrets in Firebase Console to power the AI Story Generator and Decoding flows.
+- Click **Get Started** and connect your GitHub repository.
 
-### 3. Live URL
-- Once deployed, Firebase will provide a live URL (e.g., `farsh-bazaar.web.app`).
+### 3. Environment Variables (Secret)
+- In the App Hosting setup, ensure you add the following secret:
+  - `GEMINI_API_KEY`: Your Google AI API Key (required for AI Story & Symbol Decoding).
+
+### 4. Deploy
+- Firebase will automatically detect Next.js and deploy your app. Your live URL will be provided instantly (e.g., `farsh-bazaar.web.app`).
 
 ---
 
