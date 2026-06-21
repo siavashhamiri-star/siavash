@@ -7,7 +7,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Blocks, CheckCircle, Clock, Music, Mic, Users, BookOpen, ToyBrick, Briefcase, BrainCircuit, Diamond, Banknote, Link as LinkIcon, ExternalLink, Sparkles, HeartPulse } from 'lucide-react';
+import { Blocks, CheckCircle, Clock, Music, Mic, Users, BookOpen, ToyBrick, Briefcase, BrainCircuit, Diamond, Banknote, Link as LinkIcon, ExternalLink, Sparkles, HeartPulse, Shirt } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 
@@ -19,6 +19,14 @@ const ecosystemApps = [
         status: "Live",
         icon: <Blocks className="w-8 h-8 text-primary" />,
         link: "/"
+    },
+    {
+        name: "Lebas Bazaar (لباس بازار)",
+        description: "The ultimate online clothing market of Iran. A dual-platform for retail and wholesale, bringing fashion to the New Metaverse.",
+        fa_description: "بازار نهایی آنلاین لباس ایران. پلتفرمی دوگانه برای خرده‌فروشی و عمده‌فروشی، با رویکردی نوین در نیو متاورس.",
+        status: "Planned",
+        icon: <Shirt className="w-8 h-8 text-indigo-500" />,
+        link: "#"
     },
     {
         name: "OpenMind Nexus (هوش مصنوعی احساس‌محور)",
@@ -66,39 +74,11 @@ const ecosystemApps = [
         icon: <Sparkles className="w-8 h-8 text-muted-foreground" />
     },
     {
-        name: "Siavash Studio (استودیو سیاوش)",
-        description: "An exclusive, invitation-only virtual studio for a curated collective of elite, versatile specialists. This is the inner circle of Tavana City's master creators.",
-        fa_description: "یک استودیوی مجازی انحصاری و دعوتی برای مجموعه‌ای از متخصصان زبده و همه‌فن‌حریف. این حلقه داخلی استادان و خالقان شهر توانا است.",
-        status: "Planned",
-        icon: <Diamond className="w-8 h-8 text-muted-foreground" />
-    },
-    {
         name: "Tavana Work (توانا کار)",
         description: "The future-of-work platform. Find freelance opportunities, advertise your skills, and leverage AI to enhance your capabilities. Merit over resumes.",
         fa_description: "پلتفرم آینده‌ی کار. فرصت‌های فریلنسری پیدا کنید، مهارت‌های خود را تبلیغ کنید و از هوش مصنوعی برای افزایش توانایی‌هایتان بهره ببرید. شایستگی فراتر از رزومه.",
         status: "Coming Soon",
         icon: <Briefcase className="w-8 h-8 text-muted-foreground" />
-    },
-     {
-        name: "Bazi Land (بازی لند)",
-        description: "The entertainment and gaming wing of Tavana City, where playing games creates value and connects the community in new, exciting ways.",
-        fa_description: "بازوی سرگرمی و بازی شهر توانا، جایی که بازی کردن، ارزش خلق می‌کند و جامعه را به شیوه‌هایی نوین و هیجان‌انگیز به هم متصل می‌سازد.",
-        status: "Planned",
-        icon: <ToyBrick className="w-8 h-8 text-muted-foreground" />
-    },
-    {
-        name: "Mehr Bank (مهر بانک)",
-        description: "A community-driven micro-investment and funding platform designed to support new projects and ideas that align with the ecosystem's values.",
-        fa_description: "یک پلتفرم سرمایه‌گذاری خرد و تأمین مالی جامعه‌محور که برای حمایت از پروژه‌ها و ایده‌های جدید همسو با ارزش‌های اکوسیستم طراحی شده است.",
-        status: "Planned",
-        icon: <Banknote className="w-8 h-8 text-muted-foreground" />
-    },
-    {
-        name: "Unity Chain (زنجیره وحدت)",
-        description: "Our native digital currency and blockchain infrastructure, designed to facilitate a fair, transparent, and self-sustaining economy within Tavana City.",
-        fa_description: "ارز دیجیتال بومی و زیرساخت بلاکچین ما که برای تسهیل یک اقتصاد عادلانه، شفاف و خودپایدار در شهر توانا طراحی شده است.",
-        status: "Planned",
-        icon: <LinkIcon className="w-8 h-8 text-muted-foreground" />
     }
 ];
 
@@ -165,7 +145,7 @@ export default function EcosystemPage() {
                         <div className="p-8 bg-primary/5 rounded-3xl border border-primary/10 max-w-4xl mx-auto shadow-inner">
                             <p className="text-xl font-headline font-bold text-primary mb-4">سوگند به همت و اصالت</p>
                             <p className="text-lg text-foreground/80 leading-relaxed">
-                                تمام این منظومه، از «فرش بازار» تا «OpenMind Nexus»، گواهی بر یک حقیقت است: برای کسی که بر سر سفره‌ی پربرکت هنر ایران بزرگ شده و همت عالی را از اسطوره‌ای چون <span className="font-bold text-foreground">حاج حسین علیمیری</span> آموخته، محدودیت معنا ندارد. حتی با یک گوشی کوچک، می‌توان دنیاهایی بزرگ آفرید.
+                                تمام این منظومه، از «فرش بازار» تا «لباس بازار» و «OpenMind Nexus»، گواهی بر یک حقیقت است: برای کسی که بر سر سفره‌ی پربرکت هنر ایران بزرگ شده و همت عالی را از اسطوره‌ای چون <span className="font-bold text-foreground">حاج حسین علیمیری</span> آموخته، محدودیت معنا ندارد. حتی با یک گوشی کوچک، می‌توان دنیاهایی بزرگ آفرید.
                             </p>
                             <p className="text-sm text-muted-foreground mt-4 italic">
                                 "In the memory of Haj Hossein Alimiri and the family legacy of Alimiri Carpets & Sons. Knotted with capability, built on a dream."
