@@ -15,8 +15,9 @@ import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Building, Store, Trophy, Star, Users, MapPin, Phone, Mail } from 'lucide-react';
+import { Building, Store, Trophy, Star, Users, MapPin, Phone, Mail, Sparkles } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { ShareInvite } from '@/components/share-invite';
 
 export default function AccountPage() {
   const { data: user, isLoading } = useUser();
@@ -77,7 +78,6 @@ export default function AccountPage() {
                       <p className="text-white/70 mb-2">کد معرف اختصاصی شما:</p>
                       <div className="flex items-center gap-4">
                         <code className="bg-black/20 px-6 py-3 rounded-2xl text-2xl font-mono" dir="ltr">{user.referralCode || 'N/A'}</code>
-                        <Button variant="secondary" size="sm" className="rounded-full">کپی</Button>
                       </div>
                    </div>
                 </CardContent>
@@ -159,20 +159,24 @@ export default function AccountPage() {
                 </CardContent>
               </Card>
 
-              <Card className="rounded-[2.5rem] shadow-xl border-2 border-blue-100">
-                <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
+              <Card className="rounded-[2.5rem] shadow-xl border-2 border-blue-100 overflow-hidden">
+                <CardHeader className="bg-blue-50">
+                    <CardTitle className="flex items-center gap-2 text-blue-800">
                         <Users className="w-5 h-5 text-blue-600" />
-                        دعوت از دوستان
+                        دعوت‌نامه هوشمند (۱۱ زبانه)
                     </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                    <p className="text-sm text-muted-foreground">با دعوت از فعالان فرش و صنایع دستی، ۵۰ XP دریافت کنید و رتبه خود را در لیگ معرفان ارتقا دهید.</p>
-                    <div className="p-4 bg-blue-50 rounded-2xl text-center">
-                        <span className="text-xs font-bold text-blue-600">کد شما:</span>
-                        <h4 className="text-2xl font-black text-blue-800" dir="ltr">{user.referralCode}</h4>
+                <CardContent className="p-6 space-y-4">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                        با ارسال دعوت‌نامه به همکاران جهانی، ۵۰ XP دریافت کنید و رتبه خود را در لیگ برای دریافت **زمین‌های شهر توانا** ارتقا دهید.
+                    </p>
+                    
+                    <ShareInvite referralCode={user.referralCode || 'N/A'} />
+
+                    <div className="pt-4 border-t flex items-center gap-2 text-[10px] font-bold text-blue-600">
+                        <Sparkles className="w-3 h-3" />
+                        <span>امتیاز مضاعف برای دعوت از تولیدکنندگان آلمانی و چینی!</span>
                     </div>
-                    <Button variant="outline" className="w-full rounded-full border-blue-200">کپی لینک دعوت</Button>
                 </CardContent>
               </Card>
             </div>
