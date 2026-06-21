@@ -8,7 +8,7 @@ import {
   } from '@/components/ui/card';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
-import { Landmark, HeartPulse, BrainCircuit, Factory, Sword, Mail, Phone, MapPin, Globe, ArrowRight } from 'lucide-react';
+import { Landmark, HeartPulse, BrainCircuit, Factory, Sword, Mail, Phone, MapPin, Globe, ArrowRight, Gavel, Sparkles } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -24,13 +24,13 @@ const ecosystemApps = [
         link: "/"
     },
     {
-        name: "Machine-Made Pavilion",
-        description: "Specialized sector for industrial excellence and brand valuation.",
-        fa_description: "بخش تخصصی فرش‌های ماشینی و ارزیابی برندهای صنعتی.",
-        ar_description: "قطاع متخصص للتميز الصناعي وتقييم العلامات التجارية.",
-        status: "Live",
-        icon: <Factory className="w-8 h-8 text-blue-600" />,
-        link: "/vendors"
+        name: "Global Annual Auction",
+        description: "The premier online auction for exquisite and antique carpets with global reach.",
+        fa_description: "حراج بزرگ سالانه فرش‌های نفیس و آنتیک با دسترسی جهانی (بزودی).",
+        ar_description: "المزاد السنوي العالمي للسجاد الرائع والأثري (قريباً).",
+        status: "Announced",
+        icon: <Gavel className="w-8 h-8 text-accent" />,
+        link: "/appraisal"
     },
     {
         name: "OpenMind Nexus",
@@ -79,30 +79,19 @@ export default function EcosystemPage() {
                 </section>
 
                 <div className="container mx-auto px-4 py-32">
-                    <Card className="mb-32 bg-white shadow-2xl border-none p-12 md:p-24 text-center rounded-[5rem] relative overflow-hidden">
+                    <Card className="mb-32 bg-white shadow-2xl border-none p-12 md:p-24 text-center rounded-[5rem] relative overflow-hidden border-4 border-accent/20">
                         <div className="absolute top-0 right-0 p-16 opacity-5">
-                             <Sword className="w-80 h-80 text-primary" />
+                             <Gavel className="w-80 h-80 text-accent" />
                         </div>
-                        <h2 className="text-5xl md:text-7xl font-headline font-bold text-primary mb-16">سلاح دیجیتال در ۱۳ زبان</h2>
-                        <div className="grid md:grid-cols-3 gap-12 text-justify relative z-10 text-lg leading-relaxed">
-                            <div className="space-y-6 bg-primary/5 p-10 rounded-[3rem] border border-primary/10">
-                                <h3 className="font-bold text-3xl border-b border-primary/20 pb-6 text-center">فارسی</h3>
-                                <p>
-                                    هدف ما فراتر از یک اپلیکیشن است؛ ما سلاحی ساخته‌ایم برای بازگرداندن رونق به میراث فرش ایران. از دستباف‌های نفیس تا صنایع ماشینی، «فرش بازار» مرکز ثقل این تحول است. این میراثی است که به نام حاج حسین علیمیری اعتبار یافته و در شهر توانا به تکامل می‌رسد.
-                                </p>
-                            </div>
-                            <div className="space-y-6 bg-secondary/50 p-10 rounded-[3rem] border border-primary/10" dir="ltr">
-                                <h3 className="font-bold text-3xl border-b border-primary/20 pb-6 text-center">English</h3>
-                                <p>
-                                    Our goal transcends a mere application; we have forged a digital weapon to restore prosperity to Iran's carpet heritage. From exquisite hand-woven pieces to industrial machine-made excellence, 'Farsh Bazaar' is the epicenter of this transformation.
-                                </p>
-                            </div>
-                            <div className="space-y-6 bg-primary/5 p-10 rounded-[3rem] border border-primary/10" dir="rtl">
-                                <h3 className="font-bold text-3xl border-b border-primary/20 pb-6 text-center">العربية</h3>
-                                <p>
-                                    هدفنا يتجاوز مجرد تطبيق؛ لقد صنعنا سلاحاً رقمياً لاستعادة الرخاء لتراث السجاد الإيراني. من السجاد اليدوي الرائع إلى التميز الصناعي الآلي، 'فرش بازار' هو مركز ثقل هذا التحول التاريخي.
-                                </p>
-                            </div>
+                        <Badge className="bg-accent text-accent-foreground mb-4 px-6 py-1 rounded-full font-black">MAJOR ANNOUNCEMENT</Badge>
+                        <h2 className="text-5xl md:text-7xl font-headline font-bold text-primary mb-12">مژده: حراج سالانه جهانی فرش</h2>
+                        <div className="max-w-4xl mx-auto text-lg leading-relaxed space-y-6 text-justify">
+                            <p className="font-bold text-2xl text-center text-slate-800">
+                                «فرش بازار با افتخار اعلام می‌کند: بزودی اولین حراج آنلاین سالانه برای فرش‌های نفیس و آنتیک برگزار خواهد شد.»
+                            </p>
+                            <p>
+                                تمامی عزیزانی که در پلتفرم ما فرش‌های خود را کارشناسی کرده و تاییدیه دریافت نموده‌اند، می‌توانند در این آکشن جهانی شرکت کنند. این فرصتی استثنایی برای معرفی آثار هنری شما به کلکسیونرهای ۱۳ کشور جهان و فروش با قیمت‌های بی‌نظیر است. شرایط دقیق و زمان‌بندی این رویداد بزودی از طریق همین پلتفرم اعلام خواهد شد.
+                            </p>
                         </div>
                     </Card>
 
@@ -165,3 +154,4 @@ export default function EcosystemPage() {
         </div>
     );
 }
+

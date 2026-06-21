@@ -7,7 +7,7 @@ import { StoryGenerator } from '@/components/ai/story-generator';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
-import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, Scale, ShieldCheck, Factory, Landmark, Sword, Palette, Frame, Flag, Users } from 'lucide-react';
+import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, Scale, ShieldCheck, Factory, Landmark, Sword, Palette, Frame, Flag, Users, Gavel } from 'lucide-react';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-1');
@@ -59,6 +59,32 @@ export default function Home() {
               <Button asChild size="lg" variant="outline" className="text-white border-white/40 hover:bg-white/10 px-12 rounded-full backdrop-blur-sm h-16 text-xl">
                 <Link href="/services">بافت پرتره و پرچم‌های اشرافی</Link>
               </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Global Auction Announcement - New Section */}
+        <section className="py-24 bg-gradient-to-b from-slate-900 to-primary/20 text-white overflow-hidden relative">
+          <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none bg-[url('https://picsum.photos/seed/auction/1920/1080')] bg-cover" />
+          <div className="container px-4 relative z-10">
+            <div className="max-w-5xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 rounded-[4rem] p-10 md:p-20 text-center shadow-3xl">
+              <div className="bg-accent/20 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8 border-2 border-accent/40 animate-pulse">
+                <Gavel className="w-12 h-12 text-accent" />
+              </div>
+              <Badge className="bg-accent text-accent-foreground mb-6 px-8 py-2 rounded-full text-lg font-black tracking-widest">COMING SOON / بزودی</Badge>
+              <h2 className="text-4xl md:text-7xl font-headline font-bold mb-8">حراج بزرگ سالانه فرش بازار</h2>
+              <p className="text-xl md:text-3xl font-light leading-relaxed mb-12 text-gray-300 italic">
+                «مژده به کلکسیونرها و تجار جهان: اولین آکشن تخصصی فرش‌های نفیس و آنتیک در بستر شهر مجازی توانا. فرصتی بی‌نظیر برای معرفی و فروش آثار شما با قیمت‌های رقابتی جهانی.»
+              </p>
+              <div className="grid md:grid-cols-3 gap-8 text-sm font-bold opacity-80 mb-12">
+                 <div className="p-6 bg-white/5 rounded-3xl border border-white/5">تحلیل تخصصی قدمت و اصالت</div>
+                 <div className="p-6 bg-white/5 rounded-3xl border border-white/5">حضور خریداران از ۱۳ کشور جهان</div>
+                 <div className="p-6 bg-white/5 rounded-3xl border border-white/5">تضمین امنیت مالی و لجستیک</div>
+              </div>
+              <Button asChild size="lg" variant="secondary" className="rounded-full px-16 h-16 text-xl">
+                 <Link href="/appraisal">آماده‌سازی فرش برای حراج</Link>
+              </Button>
+              <p className="mt-8 text-xs text-accent font-bold tracking-widest uppercase">Global Annual Auction | حراج جهانی سالانه</p>
             </div>
           </div>
         </section>
@@ -162,3 +188,4 @@ export default function Home() {
     </div>
   );
 }
+

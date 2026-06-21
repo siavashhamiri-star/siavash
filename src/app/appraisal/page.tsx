@@ -13,7 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useUser, useFirestore } from '@/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { toast } from '@/hooks/use-toast';
-import { ShieldCheck, Scale, DollarSign, Image as ImageIcon, Loader2, Factory, MapPin } from 'lucide-react';
+import { ShieldCheck, Scale, DollarSign, Image as ImageIcon, Loader2, Factory, MapPin, Gavel, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -92,6 +92,28 @@ export default function AppraisalPage() {
 
           <div className="grid lg:grid-cols-3 gap-8 items-start">
             <div className="lg:col-span-1 space-y-6">
+                <Card className="border-none shadow-2xl bg-slate-900 text-white overflow-hidden rounded-[2rem]">
+                    <CardHeader className="bg-accent/20 border-b border-white/10">
+                        <CardTitle className="flex items-center gap-2 text-2xl text-accent">
+                            <Gavel className="w-8 h-8" />
+                            مژده: ورود به حراج سالانه
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-8 space-y-4">
+                        <p className="text-sm leading-relaxed">
+                            فرش‌های نفیسی که توسط کارشناسان ما تاییدیه «اصالت و قدمت» دریافت کنند، شانس حضور در **حراج بزرگ سالانه فرش بازار** را خواهند داشت.
+                        </p>
+                        <div className="bg-white/5 p-4 rounded-2xl border border-white/10">
+                            <p className="text-[10px] text-accent font-bold mb-1">مزایای حراج:</p>
+                            <ul className="text-[10px] space-y-1 list-disc list-inside opacity-80">
+                                <li>معرفی به خریداران ۱۳ کشور جهان</li>
+                                <li>فروش با بالاترین قیمت‌های رقابتی</li>
+                                <li>تسویه مالی آنی و تضمین شده</li>
+                            </ul>
+                        </div>
+                    </CardContent>
+                </Card>
+
                 <Card className="border-none shadow-2xl bg-primary text-white overflow-hidden rounded-[2rem]">
                     <CardHeader>
                         <CardTitle className="flex items-center gap-2 text-2xl">
@@ -119,26 +141,6 @@ export default function AppraisalPage() {
                     <CardFooter className="bg-black/10 p-6 flex items-center gap-3">
                          <MapPin className="w-5 h-5 text-accent" />
                          <span className="text-[10px] font-bold">خیابان خیام شمالی، پلاک ۴۸ - مرکزیت ارزیابی</span>
-                    </CardFooter>
-                </Card>
-
-                <Card className="border-none shadow-xl rounded-[2rem] overflow-hidden">
-                    <CardHeader className="bg-secondary/50">
-                        <CardTitle className="text-lg flex items-center gap-2">
-                            <Factory className="w-5 h-5 text-primary" />
-                            بخش تخصصی فرش ماشینی
-                        </CardTitle>
-                    </CardHeader>
-                    <CardContent className="p-6">
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                            ما مرجع قیمت‌گذاری عادلانه برای برندهای معتبر فرش ماشینی هستیم. اصالت برند و کیفیت بافت شما را تایید می‌کنیم.
-                        </p>
-                    </CardContent>
-                    <CardFooter className="bg-primary p-6">
-                        <div className="text-center w-full text-white">
-                            <p className="text-xs opacity-80 mb-2">تماس مستقیم با کارشناس ارشد:</p>
-                            <p className="text-2xl font-black" dir="ltr">۰۲۱ - ۵۵۸۱۴۵۵۵</p>
-                        </div>
                     </CardFooter>
                 </Card>
             </div>
@@ -205,3 +207,4 @@ export default function AppraisalPage() {
     </div>
   );
 }
+
