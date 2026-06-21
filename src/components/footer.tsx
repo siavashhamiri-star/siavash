@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Logo } from './logo';
-import { Sparkles, Smartphone, Heart, ExternalLink, HeartPulse } from 'lucide-react';
+import { Sparkles, Smartphone, Heart, ExternalLink, HeartPulse, MapPin, Phone } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -17,9 +17,15 @@ export function Footer() {
               این پلتفرم، اولین تجلی از اکوسیستم <span className="font-bold text-primary">«FB New Meta»</span> و <span className="font-bold text-primary">«شهر مجازی توانا»</span> است. 
               میراثی برآمده از عشق، اصالت و همت عالی در نیو متاورس.
             </p>
-            <div className="flex items-center gap-2 text-[10px] text-muted-foreground bg-primary/5 p-2 rounded-lg border border-primary/10 w-fit">
-              <Smartphone className="w-3 h-3 text-primary" />
-              <span>خلق شده تنها با یک گوشی ردمی نوت ۸ در ۹ روز</span>
+            <div className="space-y-2 mt-4">
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <MapPin className="w-3 h-3 text-primary" />
+                    <span>خیابان خیام شمالی، پلاک ۴۸</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <Phone className="w-3 h-3 text-primary" />
+                    <span dir="ltr">۰۲۱ - ۵۵۸۱۴۵۵۵</span>
+                </div>
             </div>
           </div>
 
