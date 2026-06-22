@@ -1,9 +1,10 @@
+
 'use client';
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
-import { Menu, ShoppingCart, Sparkles, Globe, ChevronDown, Wand2, Scale, Trophy, Palette, Rocket } from 'lucide-react';
+import { Menu, ShoppingCart, Globe, ChevronDown, Wand2, Scale, Palette } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -60,14 +61,6 @@ export function Header() {
         </div>
         
         <div className="flex items-center space-x-2">
-            {/* Publishing Guide Link for the Founder */}
-            <Button asChild variant="default" size="sm" className="hidden lg:flex bg-blue-600 hover:bg-blue-700 text-white font-bold gap-2 rounded-full px-4 animate-pulse">
-               <Link href="/publishing-guide">
-                  <Rocket className="w-4 h-4" />
-                  راهنمای انتشار
-               </Link>
-            </Button>
-
             <Button asChild variant="ghost" size="sm" className="hidden lg:flex text-primary font-bold gap-2 hover:bg-primary/5 rounded-full px-4">
                <Link href="/services">
                   <Palette className="w-4 h-4" />
@@ -133,10 +126,6 @@ export function Header() {
                         </div>
                     </Link>
                     <nav className="flex flex-col space-y-6">
-                        <Link href="/publishing-guide" className="text-blue-600 font-black flex items-center gap-2 bg-blue-50 p-4 rounded-2xl">
-                           <Rocket className="w-5 h-5" />
-                           راهنمای انتشار در فایربیس
-                        </Link>
                         {navItems.map((item) => (
                         <Link
                             key={item.label}

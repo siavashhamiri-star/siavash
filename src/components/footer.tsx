@@ -1,7 +1,8 @@
+
 'use client';
 import Link from 'next/link';
 import { Logo } from './logo';
-import { Smartphone, Heart, ExternalLink, HeartPulse, MapPin, Phone, Globe, BookOpen, Trophy, Mail, ShieldCheck, Rocket } from 'lucide-react';
+import { Smartphone, Heart, ExternalLink, HeartPulse, MapPin, Phone, Globe, BookOpen, Trophy, Mail, ShieldCheck } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { LANGUAGES } from '@/lib/types';
 
@@ -68,10 +69,6 @@ export function Footer() {
                   <HeartPulse className="w-4 h-4" />
                   OpenMind Nexus (AI احساسی) <ExternalLink className="w-3 h-3" />
                 </a>
-                <Link href="/publishing-guide" className="text-blue-600 font-black hover:underline flex items-center gap-2 text-sm">
-                   <Rocket className="w-4 h-4" />
-                   راهنمای انتشار در فایربیس
-                </Link>
             </div>
           </div>
 
