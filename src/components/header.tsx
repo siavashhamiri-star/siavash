@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
-import { Menu, ShoppingCart, Globe, ChevronDown, Wand2, Scale, Palette } from 'lucide-react';
+import { Menu, ShoppingCart, Globe, ChevronDown, Palette, Scale, Wand2 } from 'lucide-react';
 import {
   Sheet,
   SheetContent,

@@ -6,7 +6,7 @@ import { StoryGenerator } from '@/components/ai/story-generator';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
-import { Smartphone, Trophy, Heart, Sparkles, Globe, ArrowRight, ShieldCheck, Gavel, Crown, Cpu, Star } from 'lucide-react';
+import { Smartphone, Trophy, Sparkles, Globe, ArrowRight, Gavel, Crown, Cpu } from 'lucide-react';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-1');
@@ -123,27 +123,6 @@ export default function Home() {
               <Badge variant="outline" className="border-primary text-primary font-bold px-6 py-2 text-lg">هوش مصنوعی در خدمت هنر</Badge>
             </div>
             <StoryGenerator />
-          </div>
-        </section>
-
-        {/* Legacy & Tavana City */}
-        <section className="py-40 bg-background relative overflow-hidden">
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />
-          <div className="container px-4 text-center space-y-12">
-            <Badge variant="outline" className="px-12 py-3 border-primary/40 text-primary text-2xl font-headline rounded-full">Tavana Virtual City / شهر مجازی توانا</Badge>
-            <h2 className="text-6xl md:text-[10rem] font-headline font-bold mb-12 tracking-tight">تمدن جدید با ۱۳ زبان زنده</h2>
-            <div className="flex flex-wrap justify-center gap-14 mt-24">
-              <Button asChild className="rounded-full px-20 h-24 text-3xl shadow-3xl shadow-primary/30 group">
-                  <Link href="/ecosystem" className="flex items-center gap-6">
-                    کاوش در منظومه آفرینش <ArrowRight className="w-10 h-10 group-hover:translate-x-4 transition-transform" />
-                  </Link>
-              </Button>
-              <div className="flex flex-col text-right border-r-8 border-primary pr-12">
-                <span className="font-bold text-3xl mb-2 text-gray-500 uppercase tracking-widest">Global HQ</span>
-                <span className="font-black text-4xl text-slate-900">بازار تهران، خیابان خیام</span>
-                <span className="text-primary font-black text-5xl mt-2" dir="ltr">۰۲۱ - ۵۵۸۱۴۵۵۵</span>
-              </div>
-            </div>
           </div>
         </section>
       </main>
