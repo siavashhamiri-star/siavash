@@ -1,24 +1,24 @@
-# Aras Heritage | Global Persian Carpet & Rug Bazaar 2025 (Farsh Bazaar)
+# Aras Heritage | Global Persian Carpet & Rug Bazaar (Farsh Bazaar)
 
 Aras Heritage, the premier 13-language digital empire for the revival of Persian Carpet & Rug glory in the AI era. Dedicated to the legacy of Haj Hossein Alimiri.
 
-## 🚀 Deployment Guide (Cloudflare Pages - Next.js)
+## 🚀 راهنمای انتشار در Cloudflare Pages (بسیار مهم)
 
-To fix the white screen and successfully deploy:
+برای رفع مشکل صفحه سفید و دپلوی موفق، تنظیمات زیر را در پنل Cloudflare اعمال کنید:
 
-1. **GitHub Repository:** Push your code to the **`main`** branch.
-2. **Framework Preset:** Change this from "None" to **`Next.js`**.
-3. **Build Command:** Enter **`npm run build`**.
-4. **Build Output Directory:** Set this to **`.next`**.
-5. **Environment Variables:** Ensure you add your `GEMINI_API_KEY` in the deployment settings.
+1. **اتصال به گیت‌هاب:** پروژه را به شاخه **`main`** متصل کنید.
+2. **Framework Preset:** این گزینه را حتماً از None به **`Next.js`** تغییر دهید.
+3. **Build Command:** عبارت **`npm run build`** را وارد کنید.
+4. **Build Output Directory:** این پوشه را روی **`.next`** تنظیم کنید.
+5. **Environment Variables:** متغیر `GEMINI_API_KEY` را در بخش تنظیمات دپلوی اضافه کنید.
 
-## 📱 Publishing on Bazaar & Myket (Iranian App Stores)
+## 📱 انتشار در بازار و مایکت (استورهای ایرانی)
 
-To publish on Iranian app stores:
-1. First, deploy your site to Cloudflare or Vercel.
-2. Use a WebView wrapper tool (like PWA Builder or Capacitor) to convert your site URL into an APK file.
-3. Upload the generated APK to your Bazaar or Myket developer console.
+برای انتشار در استورهای ایرانی:
+1. ابتدا سایت را در Cloudflare یا Vercel دپلو کنید.
+2. از ابزارهای WebView (مانند PWA Builder یا Capacitor) برای تبدیل آدرس سایت به فایل APK استفاده کنید.
+3. فایل APK تولید شده را در پنل توسعه‌دهندگان بازار یا مایکت آپلود کنید.
 
 ---
-**HQ Center of Authenticity:** 48 Khayyam North Ave, Tehran, Iran (Farsh Bazaar).
-**Dedicated to:** The legendary Haj Hossein Alimiri.
+**مرکزیت اصالت:** تهران، خیابان خیام شمالی، پلاک ۴۸ (بازار فرش ایران).
+**تقدیم به:** اسطوره بازار، حاج حسین علیمیری.

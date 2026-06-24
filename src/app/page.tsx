@@ -15,7 +15,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
-        {/* Master Build Announcement Badge - The Engineering Statement */}
+        {/* Master Build Announcement Badge */}
         <div className="bg-slate-950 border-b border-primary/30 py-3 overflow-hidden">
           <div className="container px-4 flex flex-col md:flex-row items-center justify-center gap-6 text-[10px] md:text-xs font-black text-white tracking-widest uppercase text-center md:text-left">
             <div className="flex items-center gap-2 text-primary animate-pulse">
@@ -61,7 +61,7 @@ export default function Home() {
                 <br />
                 احیای شکوه ۵۰۰۰ ساله هنر ایران با سلاح هوش مصنوعی ۲۰۲۵ (Farsh Bazaar). 
                 <br className="hidden md:block" />
-                ادای دینی به نام <strong className="text-white font-bold underline decoration-primary underline-offset-8">حاج حسین علیمیری</strong>.
+                ادای دینی به نام <strong className="text-white font-bold underline decoration-primary underline-offset-8">حاج حسین علیمیری (بازار فرش ایران)</strong>.
             </p>
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white px-20 rounded-full shadow-[0_0_50px_rgba(239,68,68,0.4)] transition-all hover:scale-105 h-24 text-3xl font-black">
@@ -76,7 +76,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* The Engineering Saga Highlight */}
+        {/* Engineering Saga Highlight */}
         <section className="py-24 bg-white">
             <div className="container px-4 text-center">
                 <div className="max-w-4xl mx-auto space-y-8">
