@@ -57,9 +57,9 @@ export default function Home() {
               Aras Heritage
             </h1>
             <p className="text-xl md:text-4xl mb-14 max-w-6xl mx-auto font-light leading-relaxed text-gray-300 italic">
-                احیای شکوه ۵۰۰۰ ساله هنر ایران با سلاح هوش مصنوعی ۲۰۲۵. 
+                The World's Elite Destination for **Persian Carpets & Rugs**. 
                 <br />
-                تنها استارتاپ جهان که با قدرت اراده و تکیه بر اصالت، ۱۳ زبان زنده را تسخیر کرد.
+                احیای شکوه ۵۰۰۰ ساله هنر ایران با سلاح هوش مصنوعی ۲۰۲۵. 
                 <br className="hidden md:block" />
                 ادای دینی به نام <strong className="text-white font-bold underline decoration-primary underline-offset-8">حاج حسین علیمیری</strong>.
             </p>
@@ -84,7 +84,7 @@ export default function Home() {
                         <Smartphone className="w-16 h-16 text-primary mx-auto mb-6 animate-bounce" />
                         <h2 className="text-4xl font-headline font-bold text-slate-900 mb-4">پیروزی اندیشه بر ابزار (Engineering Saga)</h2>
                         <p className="text-xl text-muted-foreground leading-relaxed italic">
-                            «این پلتفرم شاهدی بر قدرت اراده است. ساخت یک امپراتوری ۱۳ زبانه با قابلیت‌های هوش مصنوعی تنها با یک گوشی Redmi Note 8، پیامی به جهانیان است که رؤیاهای بزرگ هیچ مرزی نمی‌شناسند.»
+                            «این پلتفرم شاهدی بر قدرت اراده است. ساخت یک امپراتوری ۱۳ زبانه برای تجارت جهانی **Carpet & Rug** تنها با یک گوشی Redmi Note 8، پیامی به جهانیان است که رؤیاهای بزرگ هیچ مرزی نمی‌شناسند.»
                         </p>
                         <div className="mt-8 flex justify-center gap-4">
                              <Badge className="bg-slate-900 text-white px-6 py-1.5 rounded-full font-black">MASTER BUILD 2025</Badge>

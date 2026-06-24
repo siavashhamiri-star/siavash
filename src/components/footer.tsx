@@ -21,8 +21,8 @@ export function Footer() {
             <div className="flex items-center space-x-2">
               <Logo className="w-10 h-10" />
               <div className="flex flex-col">
-                <span className="font-bold font-headline text-2xl tracking-tight text-primary">Farsh Bazaar</span>
-                <span className="text-[10px] text-primary font-bold uppercase tracking-[0.2em]">Afarinesh Ecosystem</span>
+                <span className="font-bold font-headline text-2xl tracking-tight text-primary">Aras Heritage</span>
+                <span className="text-[10px] text-primary font-bold uppercase tracking-[0.2em]">Carpet & Rug Empire</span>
               </div>
             </div>
             <p className="text-sm text-foreground/70 leading-relaxed max-w-sm text-justify">
@@ -49,7 +49,7 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-headline font-bold text-lg flex items-center gap-2">
               <Globe className="w-4 h-4 text-primary" />
-              دسترسی ۱۳ زبانه (Global)
+              Global Access (13 Languages)
             </h4>
             <div className="grid grid-cols-2 gap-2 text-[10px] font-bold text-muted-foreground">
               {LANGUAGES.map((lang) => (
@@ -87,7 +87,7 @@ export function Footer() {
         <div className="border-t border-primary/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start">
             <p className="text-sm text-muted-foreground">
-              &copy; {currentYear} Farsh Bazaar | Master Build Edition.
+              &copy; {currentYear} Aras Heritage | Global Carpet & Rug Bazaar.
             </p>
             <div className="flex items-center gap-4 mt-2">
                 <p className="text-[10px] text-muted-foreground flex items-center gap-2">

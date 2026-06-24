@@ -5,9 +5,9 @@ import { cn } from '@/lib/utils';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export const metadata: Metadata = {
-  title: 'Aras Heritage | Global Persian Rug Bazaar 2025',
+  title: 'Aras Heritage | Global Persian Carpet & Rug Bazaar 2025',
   description:
-    'Aras Heritage (Farsh Bazaar), the first 13-language Persian rug empire. A global nominee for Startup of the Year. A legacy of willpower and authenticity, dedicated to Haj Hossein Alimiri.',
+    'Aras Heritage (Farsh Bazaar), the premier 13-language digital empire for Persian carpets and rugs. A global nominee for Startup of the Year 2025. A legacy of willpower and authenticity, dedicated to Haj Hossein Alimiri.',
 };
 
 export default function RootLayout({
