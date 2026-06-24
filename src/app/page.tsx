@@ -57,7 +57,7 @@ export default function Home() {
               Aras Heritage
             </h1>
             <p className="text-xl md:text-4xl mb-14 max-w-6xl mx-auto font-light leading-relaxed text-gray-300 italic">
-                The World's Elite Destination for **Persian Carpets & Rugs**. 
+                The World&apos;s Elite Destination for **Persian Carpets & Rugs**. 
                 <br />
                 احیای شکوه ۵۰۰۰ ساله هنر ایران با سلاح هوش مصنوعی ۲۰۲۵ (Farsh Bazaar). 
                 <br className="hidden md:block" />

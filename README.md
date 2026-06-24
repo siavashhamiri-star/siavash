@@ -8,8 +8,8 @@ A digital civilization bridging the legendary bazaars of Tehran with the elite a
 ## HQ Location
 48 Khayyam North Ave, Tehran Carpet Bazaar, Iran.
 
-## Acknowledgements
-Engineered with willpower on a Redmi Note 8. Certified Global Master Build 2025.
+## Technical Master Build
+Engineered with sheer willpower on a Redmi Note 8. Certified Global Master Build 2025. This platform represents the triumph of vision over hardware limitations.
 
 ---
 **Dedicated to the legend of the market, Haj Hossein Alimiri.**
