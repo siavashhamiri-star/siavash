@@ -39,7 +39,7 @@ export function Footer() {
                     <span dir="ltr">۰۲۱ - ۵۵۸۱۴۵۵۵</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm font-bold text-foreground/80">
-                    <MapPin className="w-4 h-4 text-primary" />
+                    <Mail className="w-4 h-4 text-primary" />
                     <span dir="ltr">info@fbnewmeta.com</span>
                 </div>
             </div>

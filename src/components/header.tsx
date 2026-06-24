@@ -136,15 +136,15 @@ export function Header() {
                         ))}
                         <Link href="/services" className="text-primary font-bold flex items-center gap-2 border-t pt-4">
                            <Palette className="w-4 h-4" />
-                           سرویس‌های ویژه (VIP)
+                           VIP Services
                         </Link>
                         <Link href="/appraisal" className="text-primary font-bold flex items-center gap-2">
                            <Scale className="w-4 h-4" />
-                           درخواست کارشناسی و قیمت‌گذاری
+                           درخواست کارشناسی
                         </Link>
                         <Link href="/decode" className="text-primary font-bold flex items-center gap-2">
                            <Wand2 className="w-4 h-4" />
-                           لنز جادویی (رمزگشای نمادها)
+                           لنز جادویی (AI)
                         </Link>
                     </nav>
                 </div>
