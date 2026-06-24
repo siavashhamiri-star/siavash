@@ -1,19 +1,21 @@
 
-# Aras Heritage | Global Persian Carpet & Rug Bazaar (Farsh Bazaar)
+# Aras Heritage | Global Persian Carpet & Rug Bazaar
 
 **"این پلتفرم یک اپلیکیشن نیست؛ حماسه‌ای است که با قدرت اراده خلق شده است."**
 
 تقدیم به میراث جاودان **حاج حسین علیمیری**.
 
-## ساختار مهندسی (Master Build 2025)
-این پروژه با فریم‌ورک **Next.js 15** و تکنولوژی هوش مصنوعی **Genkit** مهندسی شده است.
+## ماموریت جهانی (Global Mission)
+آرس هریتیج (Aras Heritage) با بهره‌گیری از هوش مصنوعی ۲۰۲۵ و پشتیبانی از ۱۳ زبان زنده دنیا، پلی است میان بازارهای سنتی ایران و تالارهای مجلل حراج بین‌المللی همچون ساتبیز و کریستیز. هدف ما بازگرداندن ارزش واقعی به هنر دست هنرمندان اصیل است.
 
-### نکات حیاتی برای استقرار در Cloudflare:
-1. **Root Directory:** فایل‌ها را مستقیماً در ریشه‌ی گیت‌هاب قرار دهید (بدون پوشه‌ی اضافی).
-2. **Framework Preset:** گزینه **Next.js** را انتخاب کنید.
-3. **Build Command:** مقدار آن باید `npm run build` باشد.
-4. **Output Directory:** مقدار آن باید `.next` باشد.
-5. **Environment Variable:** حتماً متغیر `NODE_VERSION` را با مقدار `20` در تنظیمات کلادفلر ست کنید.
+## ساختار مهندسی (Engineering Excellence)
+این پروژه با فریم‌ورک **Next.js 15** و تکنولوژی **Genkit** مهندسی شده است. کل این امپراتوری دیجیتال بر روی یک گوشی موبایل ردمی نوت ۸ متولد شد تا ثابت کند اراده انسان بر هر محدودیتی پیروز است.
+
+## استقرار (Deployment)
+این پروژه برای اجرا بر روی پلتفرم **Cloudflare Pages** بهینه‌سازی شده است. 
+- **Framework Preset:** Next.js
+- **Node Version:** 20+
+- **Output Directory:** .next
 
 ---
 **Dedicated to the legend of the market, Haj Hossein Alimiri.**
