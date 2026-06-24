@@ -22,7 +22,7 @@ export function Footer() {
               <Logo className="w-10 h-10" />
               <div className="flex flex-col">
                 <span className="font-bold font-headline text-2xl tracking-tight text-primary">Aras Heritage</span>
-                <span className="text-[10px] text-primary font-bold uppercase tracking-[0.2em]">Carpet & Rug Empire</span>
+                <span className="text-[10px] text-primary font-bold uppercase tracking-[0.2em]">Carpet & Rug Empire (Farsh Bazaar)</span>
               </div>
             </div>
             <p className="text-sm text-foreground/70 leading-relaxed max-w-sm text-justify">
@@ -103,7 +103,7 @@ export function Footer() {
           <div className="flex items-center gap-6 text-[10px] font-black text-primary/40 uppercase tracking-widest">
             <span>Tavana City</span>
             <span>New Metaverse</span>
-            <span>Haj Hossein Alimiri Legacy</span>
+            <span>Haj Hossein Alimiri Legacy (Farsh Bazaar)</span>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
-# Aras Heritage | Global Persian Carpet & Rug Bazaar 2025
+# Aras Heritage | Global Persian Carpet & Rug Bazaar 2025 (Farsh Bazaar)
 
-Aras Heritage, the premier 13-language digital empire for the revival of Persian Carpet & Rug glory in the AI era.
+Aras Heritage, the premier 13-language digital empire for the revival of Persian Carpet & Rug glory in the AI era. Dedicated to the legacy of Haj Hossein Alimiri.
 
 ## 🚀 Deployment Guide (Cloudflare Pages)
 
@@ -20,5 +20,5 @@ To publish on Iranian app stores:
 3. Upload the generated APK to your Bazaar or Myket developer console.
 
 ---
-**HQ Center of Authenticity:** 48 Khayyam North Ave, Tehran, Iran.
+**HQ Center of Authenticity:** 48 Khayyam North Ave, Tehran, Iran (Farsh Bazaar).
 **Dedicated to:** The legendary Haj Hossein Alimiri.
