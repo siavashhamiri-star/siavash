@@ -13,9 +13,6 @@
 
 ## استقرار (Deployment)
 این پروژه برای اجرا بر روی پلتفرم **Cloudflare Pages** بهینه‌سازی شده است. 
-- **Framework Preset:** Next.js
-- **Node Version:** 20+
-- **Output Directory:** .next
 
 ---
 **Dedicated to the legend of the market, Haj Hossein Alimiri.**
