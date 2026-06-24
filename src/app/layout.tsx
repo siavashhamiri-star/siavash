@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Aras Heritage | Global Persian Carpet & Rug Bazaar (Farsh Bazaar)',
   description:
     'Aras Heritage (Farsh Bazaar), the premier 13-language digital empire for Persian carpets and rugs. A global destination for authenticity, dedicated to the legacy of Haj Hossein Alimiri.',
+  keywords: 'Persian Carpet, Persian Rug, Aras Heritage, Farsh Bazaar, Luxury Rugs, Hand-woven carpets, Alimiri Legacy',
 };
 
 export default function RootLayout({
