@@ -1,17 +1,19 @@
+
 # Aras Heritage | Global Persian Carpet & Rug Bazaar (Farsh Bazaar)
 
-**"This platform is not just an application; it is an epic created with the power of will and a gaze into the future."**
+**"این پلتفرم یک اپلیکیشن نیست؛ حماسه‌ای است که با قدرت اراده خلق شده است."**
 
-Dedicated to the eternal legacy of **Haj Hossein Alimiri**.
+تقدیم به میراث جاودان **حاج حسین علیمیری**.
 
-## Vision
-Aras Heritage is the premier 13-language digital empire for the revival of Persian Carpet & Rug glory in the AI era. We serve as a digital civilization bridging the legendary bazaars of Tehran with the elite auction halls of Paris, London, and New York. Powered by advanced AI, we are the ultimate gateway for the world's most exquisite masterpieces.
+## ساختار مهندسی (Master Build 2025)
+این پروژه با فریم‌ورک **Next.js 15** و تکنولوژی هوش مصنوعی **Genkit** مهندسی شده است.
 
-## HQ Location
-48 Khayyam North Ave, Tehran Carpet Bazaar, Iran.
-
-## Technical Master Build
-Engineered with sheer willpower on a Redmi Note 8. Certified Global Master Build 2025. This platform represents the triumph of vision over hardware limitations, proving that great architecture and a strong will can conquer any boundary.
+### نکات حیاتی برای استقرار در Cloudflare:
+1. **Root Directory:** فایل‌ها را مستقیماً در ریشه‌ی گیت‌هاب قرار دهید (بدون پوشه‌ی اضافی).
+2. **Framework Preset:** گزینه **Next.js** را انتخاب کنید.
+3. **Build Command:** مقدار آن باید `npm run build` باشد.
+4. **Output Directory:** مقدار آن باید `.next` باشد.
+5. **Environment Variable:** حتماً متغیر `NODE_VERSION` را با مقدار `20` در تنظیمات کلادفلر ست کنید.
 
 ---
 **Dedicated to the legend of the market, Haj Hossein Alimiri.**
