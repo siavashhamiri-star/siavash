@@ -1,4 +1,3 @@
-
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Button } from '@/components/ui/button';
@@ -55,7 +54,7 @@ export default function Home() {
               Certified Global Master Build
             </div>
             <h1 className="text-6xl md:text-[11rem] font-headline font-bold mb-8 tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500">
-              Farsh Bazaar
+              Aras Heritage
             </h1>
             <p className="text-xl md:text-4xl mb-14 max-w-6xl mx-auto font-light leading-relaxed text-gray-300 italic">
                 احیای شکوه ۵۰۰۰ ساله هنر ایران با سلاح هوش مصنوعی ۲۰۲۵. 

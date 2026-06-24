@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
@@ -6,9 +5,9 @@ import { cn } from '@/lib/utils';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export const metadata: Metadata = {
-  title: 'فرش بازار | Global Master Build 2025',
+  title: 'Aras Heritage | Global Persian Rug Bazaar 2025',
   description:
-    'فرش بازار، اولین امپراتوری ۱۳ زبانه فرش ایران. کاندیدای جایزه جهانی استارتاپ سال. میراثی از همت و اصالت، تقدیم به نام حاج حسین علیمیری.',
+    'Aras Heritage (Farsh Bazaar), the first 13-language Persian rug empire. A global nominee for Startup of the Year. A legacy of willpower and authenticity, dedicated to Haj Hossein Alimiri.',
 };
 
 export default function RootLayout({

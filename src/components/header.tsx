@@ -42,8 +42,8 @@ export function Header() {
           <Link href="/" className="flex items-center space-x-2">
             <Logo className="w-10 h-10" />
             <div className="flex flex-col">
-              <span className="font-bold font-headline text-xl leading-none text-primary">Farsh Bazaar</span>
-              <span className="text-[10px] text-primary font-medium tracking-widest uppercase">FB New Meta</span>
+              <span className="font-bold font-headline text-xl leading-none text-primary">Aras Heritage</span>
+              <span className="text-[10px] text-primary font-medium tracking-widest uppercase">Global Persian Bazaar</span>
             </div>
           </Link>
           <nav className="hidden xl:flex items-center space-x-6 text-sm font-medium ml-6">
@@ -120,8 +120,8 @@ export function Header() {
                     <Link href="/" className="flex items-center space-x-2 mb-8 border-b pb-4">
                         <Logo className="w-10 h-10" />
                         <div className="flex flex-col">
-                          <span className="font-bold font-headline text-lg text-primary">Farsh Bazaar</span>
-                          <span className="text-[10px] text-primary uppercase">FB New Meta</span>
+                          <span className="font-bold font-headline text-lg text-primary">Aras Heritage</span>
+                          <span className="text-[10px] text-primary uppercase">Global Persian Bazaar</span>
                         </div>
                     </Link>
                     <nav className="flex flex-col space-y-6">

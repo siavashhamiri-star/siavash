@@ -1,23 +1,24 @@
-# Farsh Bazaar (فرش بازار) - Global Master Build 2025
+# Aras Heritage (فرش بازار) - Global Master Build 2025
 
-فرش بازار، اولین امپراتوری دیجیتال ۱۳ زبانه برای احیای شکوه فرش ایران در عصر هوش مصنوعی.
+Aras Heritage, the premier 13-language digital empire for the revival of Persian Rug glory in the AI era.
 
-## 🚀 راهنمای استقرار در Cloudflare Pages (Deployment Guide)
+## 🚀 Deployment Guide (Cloudflare Pages)
 
-بنیان‌گذار عزیز، برای انتشار موفقیت‌آمیز در Cloudflare Pages، مراحل زیر را دنبال کنید:
+To successfully deploy on Cloudflare Pages, follow these exact settings:
 
-1. **GitHub Repository:** کدها را در شاخه (Branch) اصلی با نام **`main`** آپلود کنید.
-2. **Framework Preset:** تنظیمات فریم‌ورک را روی **`None`** قرار دهید.
-3. **Build Command:** این فیلد را کاملاً خالی بگذارید یا مقدار آن را **`clear`** قرار دهید.
-4. **Build Output Directory:** این فیلد را روی ریشه پروژه یعنی **`.`** (نقطه) تنظیم کنید.
-5. **Environment Variables:** حتماً کلید `GEMINI_API_KEY` را در بخش تنظیمات دپلو اضافه کنید.
+1. **GitHub Repository:** Push your code to the **`main`** branch.
+2. **Framework Preset:** Set this to **`None`**.
+3. **Build Command:** Leave this field empty or enter **`clear`**.
+4. **Build Output Directory:** Set this to the root of the project: **`.`** (a single dot).
+5. **Environment Variables:** Ensure you add your `GEMINI_API_KEY` in the deployment settings.
 
-## 📱 راهنمای انتشار در بازار و مایکت
-برای انتشار در استورهای ایرانی:
-1. ابتدا سایت را در کلادفلر یا ورسل دپلو کنید.
-2. از ابزارهای WebView (مانند PWA Builder یا پلتفرم‌های تبدیل سایت به اپلیکیشن) استفاده کنید تا لینک سایت خود را به یک فایل APK تبدیل کنید.
-3. فایل APK را در پنل توسعه‌دهندگان بازار یا مایکت آپلود نمایید.
+## 📱 Publishing on Bazaar & Myket (Iranian App Stores)
+
+To publish on Iranian app stores:
+1. First, deploy your site to Cloudflare or Vercel.
+2. Use a WebView wrapper tool (like PWA Builder or Capacitor) to convert your site URL into an APK file.
+3. Upload the generated APK to your Bazaar or Myket developer console.
 
 ---
-**مرکزیت اصالت:** خیابان خیام شمالی، پلاک ۴۸، تهران، ایران.
-**تقدیم به:** نام بزرگ حاج حسین علیمیری.
+**HQ Center of Authenticity:** 48 Khayyam North Ave, Tehran, Iran.
+**Dedicated to:** The legendary Haj Hossein Alimiri.
