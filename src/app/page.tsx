@@ -76,45 +76,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Engineering Saga Highlight */}
-        <section className="py-24 bg-white">
-            <div className="container px-4 text-center">
-                <div className="max-w-4xl mx-auto space-y-8">
-                    <div className="bg-primary/5 p-12 rounded-[4rem] border-2 border-dashed border-primary/20">
-                        <Smartphone className="w-16 h-16 text-primary mx-auto mb-6 animate-bounce" />
-                        <h2 className="text-4xl font-headline font-bold text-slate-900 mb-4">پیروزی اندیشه بر ابزار (Engineering Saga)</h2>
-                        <p className="text-xl text-muted-foreground leading-relaxed italic">
-                            «این پلتفرم شاهدی بر قدرت اراده است. ساخت یک امپراتوری ۱۳ زبانه برای تجارت جهانی **Carpet & Rug** تنها با یک گوشی Redmi Note 8، پیامی به جهانیان است که رؤیاهای بزرگ هیچ مرزی نمی‌شناسند.»
-                        </p>
-                        <div className="mt-8 flex justify-center gap-4">
-                             <Badge className="bg-slate-900 text-white px-6 py-1.5 rounded-full font-black">MASTER BUILD 2025</Badge>
-                             <Badge variant="outline" className="border-primary text-primary px-6 py-1.5 rounded-full font-black">REDMI NOTE 8 EDITION</Badge>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {/* Global Auction Section */}
-        <section className="py-32 bg-gradient-to-b from-slate-950 to-slate-900 text-white overflow-hidden relative">
-          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none bg-[url('https://picsum.photos/seed/auction/1920/1080')] bg-cover" />
-          <div className="container px-4 relative z-10">
-            <div className="max-w-6xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 rounded-[6rem] p-12 md:p-28 text-center shadow-[0_0_150px_rgba(239,68,68,0.15)]">
-              <div className="bg-accent/20 w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-12 border-4 border-accent/40 shadow-inner">
-                <Gavel className="w-16 h-14 text-accent" />
-              </div>
-              <Badge className="bg-accent text-accent-foreground mb-10 px-12 py-3 rounded-full text-2xl font-black tracking-[0.2em]">ANNUAL GLOBAL AUCTION</Badge>
-              <h2 className="text-5xl md:text-9xl font-headline font-bold mb-12">اولین حراج سالانه جهانی</h2>
-              <p className="text-2xl md:text-5xl font-light leading-relaxed mb-20 text-gray-300 italic max-w-5xl mx-auto">
-                «آماده همکاری استراتژیک با حراجی‌های مطرح جهان نظیر <span className="text-white font-bold">Sotheby's</span> و <span className="text-white font-bold">Christie's</span> برای معرفی شاهکارهای تایید شده ایران و ملل.»
-              </p>
-              <Button asChild size="lg" variant="secondary" className="rounded-full px-24 h-24 text-4xl font-black shadow-3xl shadow-accent/40">
-                 <Link href="/appraisal">ثبت اثر برای حراج ۲۰۲۵</Link>
-              </Button>
-            </div>
-          </div>
-        </section>
-
         {/* AI Story Generator */}
         <section className="py-32 bg-secondary/20 relative">
           <div className="container px-4">
