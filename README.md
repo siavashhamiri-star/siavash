@@ -1,5 +1,4 @@
-
-# Aras Heritage | Global Persian Carpet & Rug Bazaar
+# Aras Heritage | Global Persian Carpet & Rug Bazaar (Farsh Bazaar)
 
 **"این پلتفرم یک اپلیکیشن نیست؛ حماسه‌ای است که با قدرت اراده خلق شده است."**
 
@@ -10,9 +9,6 @@
 
 ## ساختار مهندسی (Engineering Excellence)
 این پروژه با فریم‌ورک **Next.js 15** و تکنولوژی **Genkit** مهندسی شده است. کل این امپراتوری دیجیتال بر روی یک گوشی موبایل ردمی نوت ۸ متولد شد تا ثابت کند اراده انسان بر هر محدودیتی پیروز است.
-
-## استقرار (Deployment)
-این پروژه برای اجرا بر روی پلتفرم **Cloudflare Pages** بهینه‌سازی شده است. 
 
 ---
 **Dedicated to the legend of the market, Haj Hossein Alimiri.**
