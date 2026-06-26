@@ -1,14 +1,15 @@
 # Aras Heritage | Global Persian Carpet & Rug Bazaar (Farsh Bazaar)
 
-**"این پلتفرم یک اپلیکیشن نیست؛ حماسه‌ای است که با قدرت اراده خلق شده است."**
+**"This platform is not just an application; it is a saga of willpower."**
 
-تقدیم به میراث جاودان **حاج حسین علیمیری**.
+Dedicated to the eternal legacy of **Haj Hossein Alimiri**.
 
-## ماموریت جهانی (Global Mission)
-آرس هریتیج (Aras Heritage) با بهره‌گیری از هوش مصنوعی ۲۰۲۵ و پشتیبانی از ۱۳ زبان زنده دنیا، پلی است میان بازارهای سنتی ایران و تالارهای مجلل حراج بین‌المللی همچون ساتبیز و کریستیز. هدف ما بازگرداندن ارزش واقعی به هنر دست هنرمندان اصیل است.
+## Global Mission
+Aras Heritage (Farsh Bazaar) is the premier digital gateway bridging traditional Iranian artistry with elite international auction houses like Sotheby’s and Christie’s. Powered by 2025 Generative AI and supporting 13 global languages, we restore the true value of authentic, hand-woven masterpieces to the world stage.
 
-## ساختار مهندسی (Engineering Excellence)
-این پروژه با فریم‌ورک **Next.js 15** و تکنولوژی **Genkit** مهندسی شده است. کل این امپراتوری دیجیتال بر روی یک گوشی موبایل ردمی نوت ۸ متولد شد تا ثابت کند اراده انسان بر هر محدودیتی پیروز است.
+## Engineering Excellence
+This entire digital empire was engineered on a mobile device, proving that vision and architectural integrity triumph over any hardware limitation. Built with **Next.js 15** and **Genkit AI**, it stands as a testament to modern engineering efficiency.
 
 ---
-**Dedicated to the legend of the market, Haj Hossein Alimiri.**
+**مرکزیت اصالت: بازار تهران، خیابان خیام شمالی، پلاک ۴۸**
+**Official HQ: 48 Khayyam North Ave, Tehran Bazaar**

@@ -2,11 +2,12 @@ name = "aras-heritage"
 compatibility_date = "2024-11-01"
 compatibility_flags = ["nodejs_compat"]
 
+[vars]
+NODE_VERSION = "20"
+
+# تنظیمات مخصوص برای استقرار Next.js روی Cloudflare Pages
 [site]
 bucket = ".next"
 
 [env.production]
 build_output_directory = ".next"
-
-[vars]
-NODE_VERSION = "20"
