@@ -5,9 +5,8 @@ compatibility_flags = ["nodejs_compat"]
 [vars]
 NODE_VERSION = "20"
 
-# تنظیمات مخصوص برای استقرار Next.js روی Cloudflare Pages
-[site]
-bucket = ".next"
-
 [env.production]
 build_output_directory = ".next"
+
+[site]
+bucket = ".next"
