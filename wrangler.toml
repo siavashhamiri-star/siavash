@@ -5,8 +5,5 @@ compatibility_flags = ["nodejs_compat"]
 [vars]
 NODE_VERSION = "20"
 
-[env.production]
-build_output_directory = ".next"
-
 [site]
 bucket = ".next"
