@@ -7,7 +7,7 @@ compatibility_flags = ["nodejs_compat"]
 NODE_VERSION = "20"
 
 [site]
-bucket = "out" # Changed from .next to out for static export compatibility
+bucket = "out" # Next.js static export directory
 
 [build]
 command = "npm run build"
