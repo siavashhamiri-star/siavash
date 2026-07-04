@@ -1,3 +1,4 @@
+
 name = "aras-heritage"
 compatibility_date = "2024-11-01"
 compatibility_flags = ["nodejs_compat"]
@@ -6,8 +7,8 @@ compatibility_flags = ["nodejs_compat"]
 NODE_VERSION = "20"
 
 [site]
-bucket = ".next"
+bucket = "out" # Changed from .next to out for static export compatibility
 
 [build]
 command = "npm run build"
-upload_dir = ".next"
+upload_dir = "out" # Next.js static export directory

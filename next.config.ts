@@ -1,23 +1,23 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   typescript: {
-    // Ensuring build succeeds regardless of type issues
     ignoreBuildErrors: true,
   },
   eslint: {
-    // Ensuring build succeeds regardless of linting issues
     ignoreDuringBuilds: true,
   },
   images: {
+    unoptimized: true, // Required for static export
     remotePatterns: [
       { protocol: 'https', hostname: 'placehold.co' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'picsum.photos' },
     ],
   },
-  // Essential for Cloudflare/Netlify deployment
-  output: 'standalone'
+  output: 'export', // Enables static export resulting in an 'out' folder with index.html
+  distDir: 'out',
 };
 
 export default nextConfig;
