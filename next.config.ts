@@ -2,11 +2,11 @@ import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   typescript: {
-    // This ensures deployment succeeds even if there are small type mismatches
+    // Ensuring build succeeds regardless of type issues
     ignoreBuildErrors: true,
   },
   eslint: {
-    // This ensures deployment succeeds even if there are linting warnings
+    // Ensuring build succeeds regardless of linting issues
     ignoreDuringBuilds: true,
   },
   images: {
@@ -16,6 +16,8 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: 'picsum.photos' },
     ],
   },
+  // Essential for Cloudflare/Netlify deployment
+  output: 'standalone'
 };
 
 export default nextConfig;

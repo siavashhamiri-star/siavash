@@ -7,3 +7,7 @@ NODE_VERSION = "20"
 
 [site]
 bucket = ".next"
+
+[build]
+command = "npm run build"
+upload_dir = ".next"
