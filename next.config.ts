@@ -21,6 +21,8 @@ const nextConfig: NextConfig = {
       bodySizeLimit: '2mb',
     },
   },
+  // Ensure we don't try to pre-render pages that depend on Firebase if keys are missing
+  trailingSlash: true,
 };
 
 export default nextConfig;

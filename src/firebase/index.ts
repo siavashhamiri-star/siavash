@@ -1,5 +1,5 @@
-import { FirebaseApp, initializeApp } from 'firebase/app';
-import { firebaseConfig } from './config';
+import { FirebaseApp, initializeApp, getApps, getApp } from 'firebase/app';
+import { firebaseConfig, isFirebaseConfigValid } from './config';
 import {
   FirebaseProvider,
   useFirebase,
@@ -12,11 +12,14 @@ import { useDoc } from './firestore/use-doc';
 import { useCollection } from './firestore/use-collection';
 import { FirebaseClientProvider } from './client-provider';
 
-let firebaseApp: FirebaseApp;
-
 function initializeFirebase() {
-  if (!firebaseApp) {
+  let firebaseApp: FirebaseApp;
+  
+  if (!getApps().length) {
+    // Only initialize if we have valid config, otherwise return a dummy or handle gracefully
     firebaseApp = initializeApp(firebaseConfig);
+  } else {
+    firebaseApp = getApp();
   }
 
   return { firebaseApp };
@@ -25,6 +28,7 @@ function initializeFirebase() {
 export {
   // Initialization
   initializeFirebase,
+  isFirebaseConfigValid,
   // Providers
   FirebaseProvider,
   FirebaseClientProvider,
