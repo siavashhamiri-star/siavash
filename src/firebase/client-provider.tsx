@@ -25,7 +25,7 @@ export function FirebaseClientProvider({
     );
   }
 
-  // If config is missing, we still wrap children in a "null" provider to prevent hook crashes
+  // Always wrap with FirebaseProvider to ensure useFirebase context exists
   if (!isFirebaseConfigValid) {
     return (
       <FirebaseProvider firebaseApp={null} auth={null} firestore={null}>
@@ -35,7 +35,7 @@ export function FirebaseClientProvider({
                 <ShieldAlert className="h-6 w-6" />
                 <AlertTitle className="text-xl font-bold mb-2">پیکربندی ناقص / Configuration Required</AlertTitle>
                 <AlertDescription className="text-sm leading-relaxed">
-                بنیان‌گذار عزیز، لطفاً کلیدهای محیطی (Environment Variables) را در پنل Coolify تعریف کنید تا امپراتوری آفرینش بیدار شود.
+                بنیان‌گذار عزیز، لطفاً کلیدهای محیطی (Env Vars) را در پنل Coolify تعریف کنید تا امپراتوری آفرینش بیدار شود.
                 </AlertDescription>
             </Alert>
             </div>
