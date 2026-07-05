@@ -9,15 +9,16 @@ import { useFirestore } from '..';
 export function useUser() {
   const auth = useAuth();
   const firestore = useFirestore();
-  const [user, setUser] = useState<User | null>(auth.currentUser);
+  const [user, setUser] = useState<User | null>(auth?.currentUser || null);
 
   useEffect(() => {
+    if (!auth) return;
     return auth.onAuthStateChanged((user) => {
       setUser(user);
     });
   }, [auth]);
 
-  const userRef = user ? doc(firestore, 'users', user.uid) : undefined;
+  const userRef = (user && firestore) ? doc(firestore, 'users', user.uid) : undefined;
   const { data: profile, ...rest } = useDoc(userRef);
 
   return { ...rest, data: user ? { ...user, ...profile } : null };

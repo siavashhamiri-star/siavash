@@ -3,7 +3,7 @@ import { initializeFirebase, isFirebaseConfigValid, FirebaseProvider } from '.';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
-import { ShieldAlert, Key, Loader2 } from 'lucide-react';
+import { ShieldAlert, Loader2 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export function FirebaseClientProvider({
@@ -25,33 +25,33 @@ export function FirebaseClientProvider({
     );
   }
 
-  // Defensive check to prevent crash during build or if keys are missing
+  // If config is missing, we still wrap children in a "null" provider to prevent hook crashes
   if (!isFirebaseConfigValid) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-secondary/10 p-6">
-        <div className="max-w-md w-full space-y-4">
-          <Alert variant="destructive" className="border-2 shadow-xl rounded-2xl bg-white">
-            <ShieldAlert className="h-6 w-6" />
-            <AlertTitle className="text-xl font-bold mb-2">پیکربندی ناقص / Configuration Required</AlertTitle>
-            <AlertDescription className="text-sm leading-relaxed">
-              <p className="mb-4">بنیان‌گذار عزیز، لطفاً کلیدهای محیطی (Environment Variables) را در پنل Coolify یا سرور خود تعریف کنید تا امپراتوری آفرینش بیدار شود.</p>
-              <div className="bg-black/5 p-3 rounded-lg font-mono text-[10px] space-y-1">
-                <p>NEXT_PUBLIC_FIREBASE_API_KEY</p>
-                <p>NEXT_PUBLIC_FIREBASE_PROJECT_ID</p>
-              </div>
-            </AlertDescription>
-          </Alert>
-          <div className="opacity-20 pointer-events-none select-none">
-            {children}
-          </div>
+      <FirebaseProvider firebaseApp={null} auth={null} firestore={null}>
+        <div className="min-h-screen flex flex-col items-center justify-center bg-secondary/10 p-6">
+            <div className="max-w-md w-full space-y-4 mb-8">
+            <Alert variant="destructive" className="border-2 shadow-xl rounded-2xl bg-white">
+                <ShieldAlert className="h-6 w-6" />
+                <AlertTitle className="text-xl font-bold mb-2">پیکربندی ناقص / Configuration Required</AlertTitle>
+                <AlertDescription className="text-sm leading-relaxed">
+                بنیان‌گذار عزیز، لطفاً کلیدهای محیطی (Environment Variables) را در پنل Coolify تعریف کنید تا امپراتوری آفرینش بیدار شود.
+                </AlertDescription>
+            </Alert>
+            </div>
+            <div className="opacity-20 pointer-events-none select-none w-full">
+                {children}
+            </div>
         </div>
-      </div>
+      </FirebaseProvider>
     );
   }
 
   const { firebaseApp } = initializeFirebase();
   
-  if (!firebaseApp) return <>{children}</>;
+  if (!firebaseApp) {
+    return <FirebaseProvider firebaseApp={null} auth={null} firestore={null}>{children}</FirebaseProvider>;
+  }
 
   try {
     const auth = getAuth(firebaseApp);
@@ -68,6 +68,6 @@ export function FirebaseClientProvider({
     );
   } catch (error) {
     console.error("Firebase Auth initialization failed", error);
-    return <>{children}</>;
+    return <FirebaseProvider firebaseApp={null} auth={null} firestore={null}>{children}</FirebaseProvider>;
   }
 }
