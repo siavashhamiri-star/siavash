@@ -9,15 +9,14 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true, 
     remotePatterns: [
       { protocol: 'https', hostname: 'placehold.co' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'picsum.photos' },
     ],
   },
-  output: 'export', // Enables static export resulting in an 'out' folder with index.html
-  distDir: 'out',
+  // Removed output: 'export' to ensure Server Actions and AI flows work on your personal server
 };
 
 export default nextConfig;

@@ -6,9 +6,7 @@ compatibility_flags = ["nodejs_compat"]
 [vars]
 NODE_VERSION = "20"
 
-[site]
-bucket = "out" # Next.js static export directory
-
 [build]
 command = "npm run build"
-upload_dir = "out" # Next.js static export directory
+# Updated to standard .next for full functionality
+upload_dir = ".next" 
