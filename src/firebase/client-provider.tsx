@@ -1,44 +1,73 @@
 'use client';
-import { FirebaseProvider, initializeFirebase, isFirebaseConfigValid } from '.';
+import { initializeFirebase, isFirebaseConfigValid, FirebaseProvider } from '.';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
-import { ShieldAlert } from 'lucide-react';
+import { ShieldAlert, Key, Loader2 } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export function FirebaseClientProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader2 className="animate-spin text-primary w-10 h-10" />
+      </div>
+    );
+  }
+
   // Defensive check to prevent crash during build or if keys are missing
   if (!isFirebaseConfigValid) {
     return (
-      <div className="p-4 max-w-md mx-auto mt-10">
-        <Alert variant="destructive">
-          <ShieldAlert className="h-4 w-4" />
-          <AlertTitle>پیکربندی ناقص / Configuration Missing</AlertTitle>
-          <AlertDescription>
-            لطفاً کلیدهای محیطی (Firebase Environment Variables) را در پنل دپلوی خود وارد کنید.
-          </AlertDescription>
-        </Alert>
-        <div className="mt-4 opacity-50">
-           {children}
+      <div className="min-h-screen flex items-center justify-center bg-secondary/10 p-6">
+        <div className="max-w-md w-full space-y-4">
+          <Alert variant="destructive" className="border-2 shadow-xl rounded-2xl bg-white">
+            <ShieldAlert className="h-6 w-6" />
+            <AlertTitle className="text-xl font-bold mb-2">پیکربندی ناقص / Configuration Required</AlertTitle>
+            <AlertDescription className="text-sm leading-relaxed">
+              <p className="mb-4">بنیان‌گذار عزیز، لطفاً کلیدهای محیطی (Environment Variables) را در پنل Coolify یا سرور خود تعریف کنید تا امپراتوری آفرینش بیدار شود.</p>
+              <div className="bg-black/5 p-3 rounded-lg font-mono text-[10px] space-y-1">
+                <p>NEXT_PUBLIC_FIREBASE_API_KEY</p>
+                <p>NEXT_PUBLIC_FIREBASE_PROJECT_ID</p>
+              </div>
+            </AlertDescription>
+          </Alert>
+          <div className="opacity-20 pointer-events-none select-none">
+            {children}
+          </div>
         </div>
       </div>
     );
   }
 
   const { firebaseApp } = initializeFirebase();
-  const auth = getAuth(firebaseApp);
-  const firestore = getFirestore(firebaseApp);
+  
+  if (!firebaseApp) return <>{children}</>;
 
-  return (
-    <FirebaseProvider
-      firebaseApp={firebaseApp}
-      auth={auth}
-      firestore={firestore}
-    >
-      {children}
-    </FirebaseProvider>
-  );
+  try {
+    const auth = getAuth(firebaseApp);
+    const firestore = getFirestore(firebaseApp);
+
+    return (
+      <FirebaseProvider
+        firebaseApp={firebaseApp}
+        auth={auth}
+        firestore={firestore}
+      >
+        {children}
+      </FirebaseProvider>
+    );
+  } catch (error) {
+    console.error("Firebase Auth initialization failed", error);
+    return <>{children}</>;
+  }
 }

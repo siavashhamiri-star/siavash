@@ -16,8 +16,14 @@ function initializeFirebase() {
   let firebaseApp: FirebaseApp;
   
   if (!getApps().length) {
-    // Only initialize if we have valid config, otherwise return a dummy or handle gracefully
-    firebaseApp = initializeApp(firebaseConfig);
+    // Only initialize if config is valid to avoid auth/invalid-api-key error
+    if (isFirebaseConfigValid) {
+      firebaseApp = initializeApp(firebaseConfig);
+    } else {
+      // Return a minimal object that won't crash standard getAuth calls 
+      // but the Provider will handle the UI state
+      return { firebaseApp: null as any };
+    }
   } else {
     firebaseApp = getApp();
   }
@@ -26,20 +32,15 @@ function initializeFirebase() {
 }
 
 export {
-  // Initialization
   initializeFirebase,
   isFirebaseConfigValid,
-  // Providers
   FirebaseProvider,
   FirebaseClientProvider,
-  // Base Hooks
   useFirebase,
   useFirebaseApp,
   useFirestore,
   useAuth,
-  // Auth Hooks
   useUser,
-  // Firestore Hooks
   useDoc,
   useCollection,
 };

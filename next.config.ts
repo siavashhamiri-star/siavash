@@ -18,11 +18,11 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     serverActions: {
-      bodySizeLimit: '2mb',
+      bodySizeLimit: '5mb',
     },
   },
-  // Ensure we don't try to pre-render pages that depend on Firebase if keys are missing
-  trailingSlash: true,
+  // Ensure we can deploy to any subpath or IP
+  poweredByHeader: false,
 };
 
 export default nextConfig;
