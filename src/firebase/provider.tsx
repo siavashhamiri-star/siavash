@@ -24,7 +24,6 @@ export function FirebaseProvider({
   return (
     <FirebaseContext.Provider value={value}>
       {children}
-      {/* The FirebaseErrorListener is only active in development to prevent exposing detailed errors in production. */}
       {process.env.NODE_ENV === 'development' && value.firestore && <FirebaseErrorListener />}
     </FirebaseContext.Provider>
   );
@@ -32,7 +31,7 @@ export function FirebaseProvider({
 
 export function useFirebase() {
   const context = useContext(FirebaseContext);
-  // Return an empty context instead of throwing to prevent runtime crashes when config is missing
+  // Return a safe empty context instead of throwing to prevent runtime crashes
   if (context === undefined) {
     return {
         firebaseApp: null,
