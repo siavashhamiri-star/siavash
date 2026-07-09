@@ -7,8 +7,12 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build"
-    "start": "next start",
+    "scripts": {
+    "build": "next build",
+    "start": "next start"
+    }
+    
+  
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
   },
