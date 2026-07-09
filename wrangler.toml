@@ -1,12 +1,1 @@
 
-name = "aras-heritage"
-compatibility_date = "2024-11-01"
-compatibility_flags = ["nodejs_compat"]
-
-[vars]
-NODE_VERSION = "20"
-
-[build]
-command = "npm run build"
-# Updated to standard .next for full functionality
-upload_dir = ".next" 
