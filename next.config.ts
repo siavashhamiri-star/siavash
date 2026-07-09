@@ -24,5 +24,5 @@ const nextConfig: NextConfig = {
   // Ensure we can deploy to any subpath or IP
   poweredByHeader: false,
 };
-output: 'standalone',
+
 export default nextConfig;
