@@ -1,16 +1,24 @@
 {
   "name": "aras-heritage",
-  "version": "1.0.0",
-  "private": true,
-  "engines": {
-    "node": ">=20.0.0"
-  },
+
+  {
+  
+  "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
-    "scripts": {
     "build": "next build",
-    "start": "next start"
-    }
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    ...
+  }
+}
+
+  
+  
+
+  
     
   
     "lint": "next lint",
