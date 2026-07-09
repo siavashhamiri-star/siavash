@@ -1,28 +1,10 @@
-import type {NextConfig} from 'next';
-
-const nextConfig: NextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
   images: {
-    unoptimized: true, 
-    remotePatterns: [
-      { protocol: 'https', hostname: 'placehold.co' },
-      { protocol: 'https', hostname: 'images.unsplash.com' },
-      { protocol: 'https', hostname: 'picsum.photos' },
-      { protocol: 'https', hostname: 'ui-avatars.com' },
-    ],
+    unoptimized: true,
   },
-  experimental: {
-    serverActions: {
-      bodySizeLimit: '5mb',
-    },
-  },
-  // Ensure we can deploy to any subpath or IP
-  poweredByHeader: false,
+  trailingSlash: true,
 };
 
-export default nextConfig;
+module.exports = nextConfig;
